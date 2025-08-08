@@ -20,29 +20,16 @@ OasisW는 다양한 템플릿을 제공하여 빠르게 프로젝트를 시작�
 
 <img src="/img/usage-guide/create_project.png" alt="프로젝트 생성 화면" width="50%" />
 
-## 프로젝트 생성 시 설정
-
-### 기본 설정 항목
-
-- **Project Name**: 프로젝트 이름
-- **Folder Path**: 프로젝트 경로
-- **Templates**: 프로젝트 템플릿
-
-### 버튼 기능
-
-- **Create Project**: 새로운 프로젝트 생성
-- **Open Project**: 기존 프로젝트 열기
-
 ## 1. 새 프로젝트 생성하기
 
 ### 생성 절차
 
-1. Template 창에서 템플릿 선택
-2. Create Project 버튼 클릭
+1. Project Name에 프로젝트 이름 생성
+2. Folder Path에서 프로젝트 경로 설정
+3. Templates 창에서 템플릿 선택
+4. Create Project 버튼 클릭
 
 ### 템플릿 종류
-
-OasisW는 다음과 같은 템플릿을 제공합니다:
 
 #### **Blank Project**
 - 카메라, 조명, 하늘, 기본 도형이 포함된 최소 구성
