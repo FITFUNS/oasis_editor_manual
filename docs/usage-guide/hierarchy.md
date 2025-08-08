@@ -1,7 +1,7 @@
 ---
 id: hierarchy
 title: Hierarchy
-sidebar_label: Hierarchy
+sidebar_label: 하이어라키
 ---
 
 # Hierarchy

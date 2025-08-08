@@ -1,7 +1,7 @@
 ---
 id: assets
 title: Assets
-sidebar_label: Assets
+sidebar_label: 에셋
 ---
 
 # Assets

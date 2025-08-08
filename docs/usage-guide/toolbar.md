@@ -1,7 +1,7 @@
 ---
 id: toolbar
 title: Toolbar
-sidebar_label: Toolbar
+sidebar_label: 툴바
 ---
 
 # Toolbar
@@ -16,7 +16,7 @@ OasisW의 툴바에 있는 각 버튼의 단축키와 기능을 설명합니다.
 | ![Rotate](/img/usage-guide/3_2_rotate.svg) | **Rotate** | 2 | 오브젝트 회전 모드 |
 | ![Scale](/img/usage-guide/3_3_scale.svg) | **Scale** | 3 | 오브젝트 크기 조정 모드 |
 | ![Resize Element Component](/img/usage-guide/3_4_resize_element_component.svg) | **Resize Element Component** | 4 | 엘리먼트 컴포넌트 크기 조정 |
-| ![World/Local](/img/usage-guide/3_5_world_local.svg) | **World/Local** | L | world / local 좌표계 전환 |
+| ![World/Local](/img/usage-guide/3_5_world_local.svg) | **World/Local** | L | World / Local 좌표계 전환 |
 | ![Snap](/img/usage-guide/3_6_snap.svg) | **Snap** | Shift | 그리드에 맞춰 정렬 |
 | ![Focus](/img/usage-guide/3_7_focus.svg) | **Focus** | F | 선택한 오브젝트에 포커스 |
 | ![Image Generation](/img/usage-guide/3_8_image_generation.svg) | **Image Generation** |  | AI로 이미지 생성 |
@@ -68,7 +68,7 @@ OasisW의 툴바에 있는 각 버튼의 단축키와 기능을 설명합니다.
 - **단축키**: 
 - **기능**: AI로 이미지를 생성하고 생성한 이미지를 오브젝트에 추가
 - **사용법**: 툴바에서 Image Generation 아이콘 클릭 → 프롬프트 입력 → 이미지 생성 → 오브젝트에 텍스처로 적용
-- **상세 가이드**: [AI 이미지 생성](../usage-guide/image-generation) 참조
+- **상세 가이드**: [이미지 제네레이션](../usage-guide/image-generation) 참조
 
 ### Hide Panels
 - **단축키**: Space
@@ -78,10 +78,10 @@ OasisW의 툴바에 있는 각 버튼의 단축키와 기능을 설명합니다.
 - **단축키**: 
 - **기능**: 새 탭에서 씬 실행
 
-## 툴바 사용 팁
+<!-- ## 툴바 사용 팁
 
 ### 효율적인 작업을 위한 팁
 1. **단축키 숙지**: 자주 사용하는 도구의 단축키를 외워두면 작업 속도가 향상됩니다.
 2. **모드 전환**: 각 모드(Translate, Rotate, Scale)는 서로 다른 기능을 제공하므로 상황에 맞게 적절히 전환하세요.
 3. **Snap 활용**: 정확한 배치가 필요한 경우 Snap 기능을 활성화하여 그리드에 맞춰 정렬하세요.
-4. **툴바 위치 조정**: 원하는 위치에 툴바를 놓고 사용할 수 있습니다.
+4. **툴바 위치 조정**: 원하는 위치에 툴바를 놓고 사용할 수 있습니다. -->

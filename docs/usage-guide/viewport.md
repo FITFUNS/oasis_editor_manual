@@ -1,7 +1,7 @@
 ---
 id: viewport
 title: Viewport
-sidebar_label: Viewport
+sidebar_label: 뷰포트
 ---
 
 # Viewport

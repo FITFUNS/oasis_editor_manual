@@ -1,7 +1,7 @@
 ---
 id: inspector
 title: Inspector
-sidebar_label: Inspector
+sidebar_label: 인스팩터
 ---
 
 # Inspector

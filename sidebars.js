@@ -18,13 +18,34 @@ const sidebars = {
   // 사용법 사이드바
   usageSidebar: [
     'usage-guide/create-a-project',
-    'usage-guide/usage-guide',
-    'usage-guide/toolbar',
-    'usage-guide/image-generation',
-    'usage-guide/hierarchy',
-    'usage-guide/viewport',
-    'usage-guide/assets',
-    'usage-guide/inspector',
+    {
+      type: 'category',
+      label: '인터페이스',
+      link: {
+        type: 'doc',
+        id: 'usage-guide/interface',
+      },
+      items: [
+        'usage-guide/toolbar',
+        'usage-guide/project-toolbar',
+        'usage-guide/hierarchy',
+        'usage-guide/viewport',
+        'usage-guide/inspector',
+        'usage-guide/assets',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'AI',
+      link: {
+        type: 'doc',
+        id: 'usage-guide/ai-generation',
+      },
+      items: [
+        'usage-guide/image-generation',
+        'usage-guide/code-generation',
+      ],
+    },
   ],
   
   // 튜토리얼 사이드바
