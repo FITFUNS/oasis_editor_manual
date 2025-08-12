@@ -46,6 +46,19 @@ const sidebars = {
         'usage-guide/code-generation',
       ],
     },
+    {
+      type: 'category',
+      label: '서버',
+      link: {
+        type: 'doc',
+        id: 'usage-guide/server',
+      },
+      items: [
+        'usage-guide/authentication',
+        'usage-guide/chat',
+        'usage-guide/leaderboard',
+      ],
+    },
   ],
   
   // 튜토리얼 사이드바
