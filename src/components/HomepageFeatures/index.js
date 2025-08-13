@@ -8,7 +8,7 @@ const FeatureList = [
     image: require('@site/static/img/OasisW.png').default,
     description: (
       <>
-        OasisW는 처음부터 쉽게 설치하고 사용할 수 있도록 설계되었습니다.
+        OasisW는 처음부터 쉽게 사용할 수 있도록 설계되었습니다.
         3D 웹 애플리케이션을 빠르게 구축할 수 있습니다.
       </>
     ),
@@ -27,7 +27,7 @@ const FeatureList = [
 
 function Feature({image, title, description}) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--6')}>
       <div className="text--center">
         <img src={image} className={styles.featureSvg} alt={title} />
       </div>
