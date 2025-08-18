@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -12,7 +12,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'OasisW',
   tagline: '3D 웹 개발을 위한 강력한 도구',
-          favicon: 'img/OasisW.png',
+  favicon: 'img/OasisW.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -20,15 +20,16 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://oasisw.com',
+  url: 'https://manual.oasisserver.link',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'oasisw', // Usually your GitHub org/user name.
-  projectName: 'oasisw', // Usually your repo name.
+  organizationName: 'FITFUNS', // Usually your GitHub org/user name.
+  projectName: 'oasis_editor_manual', // Usually your repo name.
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -61,7 +62,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-              image: 'img/OasisW.png',
+      image: 'img/OasisW.png',
       navbar: {
         title: 'OasisW',
         logo: {
