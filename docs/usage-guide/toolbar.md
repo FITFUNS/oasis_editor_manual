@@ -19,8 +19,8 @@ OasisW의 툴바에 있는 각 버튼의 단축키와 기능을 설명합니다.
 | ![World/Local](/img/usage-guide/3_5_world_local.svg) | **World/Local** | L | World / Local 좌표계 전환 |
 | ![Snap](/img/usage-guide/3_6_snap.svg) | **Snap** | Shift | 그리드에 맞춰 정렬 |
 | ![Focus](/img/usage-guide/3_7_focus.svg) | **Focus** | F | 선택한 오브젝트에 포커스 |
-| ![Image Generation](/img/usage-guide/3_8_image_generation.svg) | **Image Generation** | I | AI로 이미지 생성 |
-| ![Hide Panels](/img/usage-guide/3_9_hide_panels.svg) | **Hide Panels** | Space | 모든 패널 숨기기/보이기 (뷰포트 최대화) |
+| ![AI Image Generation](/img/usage-guide/3_8_image_generation.svg) | **AI Image Generation** | I | AI로 이미지 생성 |
+| ![Fullscreen](/img/usage-guide/3_9_hide_panels.svg) | **Fullscreen** | Space | 모든 패널 숨기기/보이기 (뷰포트 최대화) |
 | ![Launch](/img/usage-guide/3_10_launch.svg) | **Launch** | Ctrl+Enter | 새 탭에서 씬 실행 |
 
 ### Translate (이동)
@@ -71,13 +71,13 @@ OasisW의 툴바에 있는 각 버튼의 단축키와 기능을 설명합니다.
 - **단축키**: `F`
 - **기능**: 선택된 오브젝트에 카메라 포커스
 
-### Image Generation
+### AI Image Generation
 - **단축키**: `I`
 - **기능**: AI로 이미지를 생성하고 생성한 이미지를 오브젝트에 추가
 - **사용법**: 툴바에서 Image Generation 아이콘 클릭하여 이미지 생성
 - **상세 가이드**: [이미지 제네레이션](../usage-guide/image-generation) 참조
 
-### Hide Panels
+### Fullscreen
 - **단축키**: `Space`
 - **기능**: 모든 패널 숨기기/보이기 (뷰포트 최대화)
 
