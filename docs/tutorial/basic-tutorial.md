@@ -12,9 +12,10 @@ OasisW의 기본 기능들을 단계별로 학습해보겠습니다.
 
 ### 1단계: 프로젝트 시작
 1. OasisW 에디터 실행
-2. **New Project** 클릭
-3. 프로젝트 이름 입력
-4. **Create** 버튼 클릭
+2. 프로젝트 이름 입력
+3. 폴더 경로 선택
+4. 탬플릿 선택
+5. **Create Project** 버튼 클릭
 
 ### 2단계: 기본 씬 설정
 - 기본 카메라와 조명이 자동으로 생성됩니다
@@ -27,9 +28,8 @@ OasisW의 기본 기능들을 단계별로 학습해보겠습니다.
 2. **3D** → **Plane** 선택
 
 ### 2단계: 크기 조정
-1. **Inspector 뷰**에서 **Transform** 컴포넌트 선택
-2. **Scale** 값을 조정하여 크기 설정
-   - X: 10, Y: 1, Z: 10 (기본값)
+1. **Scale** 값을 조정하여 크기 설정
+   - X: 10, Y: 1, Z: 10
 
 ### 3단계: 위치 조정
 1. **Position** 값을 조정
@@ -59,7 +59,7 @@ OasisW의 기본 기능들을 단계별로 학습해보겠습니다.
 
 ### 1단계: 지면에 물리 적용
 1. **Hierarchy 뷰**에서 Plane 선택
-2. **Inspector 뷰**에서 **Add Component** → **Physics** → **Collision**
+2. **Inspector 뷰**에서 **Add Component** → **Physics** → **Collision** → **Half Extents** 설정
 3. **Add Component** → **Physics** → **Rigid Body**
 4. **IMPORT AMMO** 클릭
 
@@ -76,7 +76,7 @@ OasisW의 기본 기능들을 단계별로 학습해보겠습니다.
 ## 템플릿
 
 ### 1단계: 템플릿 생성
-1. **Hierarchy 뷰**에서 Box 선택
+1. **Hierarchy 뷰**에서 Box 오른쪽 클릭
 2. **Template** → **New Template** 클릭
 3. 템플릿 이름 입력 (예: "MyBox")
 
@@ -95,44 +95,48 @@ OasisW의 기본 기능들을 단계별로 학습해보겠습니다.
 ### 1단계: 스크립트 생성
 1. **Assets 뷰**에서 우클릭
 2. **New Asset** → **Script** 선택
-3. 스크립트 이름 입력 (예: "MoveScript")
+3. 스크립트 이름 입력 (예: "move-script")
 
 ### 2단계: 스크립트 편집
 1. 생성된 스크립트 더블클릭
 2. 기본 코드 확인:
 ```javascript
-pc.createScript('moveScript');
+var MoveScript = pc.createScript('moveScript');
 
-moveScript.prototype.initialize = function() {
-    // 초기화 코드
+// initialize code called once per entity
+MoveScript.prototype.initialize = function() {
+
 };
 
-moveScript.prototype.update = function(dt) {
-    // 매 프레임 실행 코드
+// update code called every frame
+MoveScript.prototype.update = function(dt) {
+
 };
 ```
 
 ### 3단계: 간단한 움직임 구현
 ```javascript
-pc.createScript('moveScript');
+var MoveScript = pc.createScript('moveScript');
 
-moveScript.prototype.initialize = function() {
+MoveScript.prototype.initialize = function() {
     this.speed = 5;
 };
 
-moveScript.prototype.update = function(dt) {
-    // 키보드 입력 처리
-    if (pc.input.isPressed(pc.KEY_W)) {
-        this.entity.translate(0, 0, -this.speed * dt);
-    }
-    if (pc.input.isPressed(pc.KEY_S)) {
-        this.entity.translate(0, 0, this.speed * dt);
-    }
-    if (pc.input.isPressed(pc.KEY_A)) {
-        this.entity.translate(-this.speed * dt, 0, 0);
-    }
-    if (pc.input.isPressed(pc.KEY_D)) {
-        this.entity.translate(this.speed * dt, 0, 0);
+MoveScript.prototype.update = function(dt) {
+    var forward = this.app.keyboard.isPressed(pc.KEY_W);
+    var backward = this.app.keyboard.isPressed(pc.KEY_S);
+    var left = this.app.keyboard.isPressed(pc.KEY_A);
+    var right = this.app.keyboard.isPressed(pc.KEY_D);
+    
+    var move = new pc.Vec3();
+    if (forward) move.z -= 1;
+    if (backward) move.z += 1;
+    if (left) move.x -= 1;
+    if (right) move.x += 1;
+    
+    if (move.length() > 0) {
+        move.normalize().scale(this.speed);
+        this.entity.translateLocal(move.x * dt, 0, move.z * dt);
     }
 };
 ```

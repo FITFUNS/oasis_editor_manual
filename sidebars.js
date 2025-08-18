@@ -55,7 +55,7 @@ const sidebars = {
       },
       items: [
         'usage-guide/authentication',
-        'usage-guide/chat',
+        // 'usage-guide/chat',
         'usage-guide/leaderboard',
       ],
     },

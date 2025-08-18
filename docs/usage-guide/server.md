@@ -12,18 +12,36 @@ OasisW의 서버 기능과 도구들을 알아보겠습니다.
 
 프로젝트에서 서버 기능을 사용하려면 먼저 서버를 생성해야 합니다. 
 
-### 생성 절차
+### 오아시스 사이트 서버 생성 절차
 
-1. [OasisW 서버 사이트](https://oasisserver.link/)에 접속하여 로그인
+1. [OasisW 서버 사이트](https://oasisserver.link/)에 접속
+
+![Server](/img/usage-guide/9_1.png)
+
+2. 로그인 클릭, 계정이 없을 경우 생성
+
+<div style={{display: 'flex', gap: '10px'}}>
+  <img src="/img/usage-guide/9_2.png" alt="Image" style={{maxWidth: '45%'}} />
+  <img src="/img/usage-guide/9_3.png" alt="Image" style={{maxWidth: '45%'}} />
+</div>
+<br />
+
+3. Server 클릭 → 서버 이름 입력 후 시작 버튼 클릭
+
+![Server](/img/usage-guide/9_4.png)
+
+4. 2~3분 지나면 생성된 서버 확인 가능
 
 ![Server](/img/usage-guide/9_server.png)
 
-2. 에디터 페이지의 하이어라키 뷰에서 **Add Entity(+)** 버튼 클릭 후 **Server Side → Server** 선택
+### 에디터 서버 생성 절차
+
+1. 에디터 페이지의 하이어라키 뷰에서 **Add Entity(+)** 버튼 클릭 후 **Server Side → Server** 선택
     - 에셋 뷰에 server.js 파일 자동 생성
 
 ![Server](/img/usage-guide/9_1_server.png)
 
-3. Server 클릭 → 인스팩터 뷰 → Script → 생성된 server 선택 
+2. Server 엔티티 클릭 → 인스팩터 뷰 → Script → 생성된 server 선택 
 
 ![Server](/img/usage-guide/9_2_server.png)
 
@@ -37,8 +55,8 @@ OasisW의 서버 기능과 도구들을 알아보겠습니다.
 ### [1. 인증](./authentication)
 사용자 로그인, 회원가입, 계정 관리 등 인증 시스템에 대한 상세한 설명을 확인할 수 있습니다.
 
-### [2. 채팅](./chat)
-실시간 멀티플레이어 채팅 시스템의 설정과 사용 방법에 대한 상세한 가이드입니다.
+<!-- ### [2. 채팅](./chat)
+실시간 멀티플레이어 채팅 시스템의 설정과 사용 방법에 대한 상세한 가이드입니다. -->
 
-### [3. 리더보드](./leaderboard)
+### [2. 리더보드](./leaderboard)
 게임 점수 및 순위 관리 시스템의 구성과 운영 방법에 대한 상세한 설명을 확인할 수 있습니다.
