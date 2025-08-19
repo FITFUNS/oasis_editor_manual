@@ -84,13 +84,13 @@ const config = {
             label: '튜토리얼',
             to: '/docs/tutorial/basic-tutorial',
           },
-          {
-            type: 'docSidebar',
-            sidebarId: 'advancedSidebar',
-            position: 'left',
-            label: '한 단계 더 나아가기',
-            to: '/docs/advanced/advanced-tutorial',
-          },
+          // {
+          //   type: 'docSidebar',
+          //   sidebarId: 'advancedSidebar',
+          //   position: 'left',
+          //   label: '한 단계 더 나아가기',
+          //   to: '/docs/advanced/advanced-tutorial',
+          // },
         ],
       },
       footer: {
@@ -107,10 +107,10 @@ const config = {
                 label: '튜토리얼',
                 to: '/docs/tutorial/basic-tutorial',
               },
-              {
-                label: '한 단계 더 나아가기',
-                to: '/docs/advanced/advanced-tutorial',
-              },
+              // {
+              //   label: '한 단계 더 나아가기',
+              //   to: '/docs/advanced/advanced-tutorial',
+              // },
             ],
           },
 

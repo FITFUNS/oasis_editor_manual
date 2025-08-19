@@ -41,7 +41,7 @@ OasisW의 서버 기능과 도구들을 알아보겠습니다.
 
 ![Server](/img/usage-guide/9_1_server.png)
 
-2. Server 엔티티 클릭 → 인스팩터 뷰 → Script → 생성된 server 선택 
+2. **Server 엔티티** 클릭 → **인스팩터 뷰** → **Script** → 생성된 server 선택 
 
 ![Server](/img/usage-guide/9_2_server.png)
 

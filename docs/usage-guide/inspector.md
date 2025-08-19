@@ -10,7 +10,7 @@ OasisW의 인스팩터 뷰는 선택된 오브젝트의 모든 속성과 컴포�
 
 ![Inspector](/img/usage-guide/7_1_inspector.png)
 
-## 선택 항목에 따른 Inspector 패널 종류
+## 선택 항목에 따른 Inspector 뷰 종류
 
 - **Entity/Component Inspector**: 엔티티 및 컴포넌트 속성 편집
 - **Texture Inspector**: 텍스처 관련 속성 편집
@@ -24,7 +24,7 @@ OasisW의 인스팩터 뷰는 선택된 오브젝트의 모든 속성과 컴포�
 
 - 단순 텍스트나 숫자 속성은 텍스트 필드 또는 슬라이더로 조절 가능  
 - 특수한 입력 방식이 필요한 경우도 있음  
-  예) 에셋 선택 시 Asset 패널에서 사용 가능한 에셋을 강조 표시
+  예) 에셋 선택 시 Asset 뷰에서 사용 가능한 에셋을 강조 표시
 
 - 뷰포트에서 직접 조작 가능한 값도 있음  
   예) Translate, Rotate, Scale 값은 기즈모를 드래그하여 변경 가능

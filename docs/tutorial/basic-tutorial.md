@@ -14,17 +14,17 @@ OasisW의 기본 기능들을 단계별로 학습해보겠습니다.
 1. OasisW 에디터 실행
 2. 프로젝트 이름 입력
 3. 폴더 경로 선택
-4. 탬플릿 선택
+4. 템플릿 선택
 5. **Create Project** 버튼 클릭
 
 ### 2단계: 기본 씬 설정
 - 기본 카메라와 조명이 자동으로 생성됩니다
-- Hierarchy 뷰에서 Scene 구조 확인
+- 하이어라키 뷰에서 Scene 구조 확인
 
 ## 지면 생성
 
 ### 1단계: Plane 생성
-1. **Hierarchy 뷰**에서 **Add Entity** 클릭
+1. **하이어라키 뷰**에서 **Add Entity** 클릭
 2. **3D** → **Plane** 선택
 
 ### 2단계: 크기 조정
@@ -38,51 +38,51 @@ OasisW의 기본 기능들을 단계별로 학습해보겠습니다.
 ## 머티리얼
 
 ### 1단계: Box 오브젝트 생성
-1. **Hierarchy 뷰**에서 **Add Entity** → **3D** → **Box** 선택
+1. **하이어라키 뷰**에서 **Add Entity** → **3D** → **Box** 선택
 2. **Position**에서 Y값을 1로 설정하여 지면 위에 배치
 
 ### 2단계: 머티리얼 생성
-1. **Assets 뷰**에서 우클릭
+1. **에셋 뷰**에서 우클릭
 2. **New Asset** → **Material** 선택
 3. 머티리얼 이름을 "BoxMaterial"로 변경
 
 ### 3단계: 색상 설정
 1. 생성된 머티리얼 클릭
-2. **Inspector 뷰**에서 **Diffuse** 색상 변경
+2. **인스팩터 뷰**에서 **Diffuse** 색상 변경
 3. 원하는 색상 선택 (예: 빨간색)
 
 ### 4단계: 머티리얼 적용
-1. **Hierarchy 뷰**에서 Box 선택
-2. **Assets 뷰**의 머티리얼을 **Inspector 뷰**의 **Materials**에 드래그
+1. **하이어라키 뷰**에서 Box 선택
+2. **에셋 뷰**의 머티리얼을 **인스팩터 뷰**의 **Materials**에 드래그
 
 ## 물리운동
 
 ### 1단계: 지면에 물리 적용
-1. **Hierarchy 뷰**에서 Plane 선택
-2. **Inspector 뷰**에서 **Add Component** → **Physics** → **Collision** → **Half Extents** 설정
+1. **하이어라키 뷰**에서 Plane 선택
+2. **인스팩터 뷰**에서 **Add Component** → **Physics** → **Collision** → **Half Extents** 설정
 3. **Add Component** → **Physics** → **Rigid Body**
 4. **IMPORT AMMO** 클릭
 
 ### 2단계: Box에 물리 적용
-1. **Hierarchy 뷰**에서 Box 선택
+1. **하이어라키 뷰**에서 Box 선택
 2. **Add Component** → **Physics** → **Collision**
 3. **Add Component** → **Physics** → **Rigid Body**
 4. **Type**을 **Dynamic**으로 변경
 
 ### 3단계: 테스트
-1. **Viewport**에서 **Launch** 클릭
+1. **뷰포트**에서 **Launch** 클릭
 2. Box가 떨어져서 Plane에 멈추는 것 확인
 
 ## 템플릿
 
 ### 1단계: 템플릿 생성
-1. **Hierarchy 뷰**에서 Box 오른쪽 클릭
+1. **하이어라키 뷰**에서 Box 오른쪽 클릭
 2. **Template** → **New Template** 클릭
 3. 템플릿 이름 입력 (예: "MyBox")
 
 ### 2단계: 템플릿 사용
-1. **Assets 뷰**에서 생성된 템플릿 확인
-2. 템플릿을 **Hierarchy 뷰**에 드래그하여 인스턴스 생성
+1. **에셋 뷰**에서 생성된 템플릿 확인
+2. 템플릿을 **하이어라키 뷰**에 드래그하여 인스턴스 생성
 3. 여러 개의 동일한 Box 생성
 
 ### 3단계: 인스턴스 수정
@@ -93,7 +93,7 @@ OasisW의 기본 기능들을 단계별로 학습해보겠습니다.
 ## 스크립트 추가
 
 ### 1단계: 스크립트 생성
-1. **Assets 뷰**에서 우클릭
+1. **에셋 뷰**에서 우클릭
 2. **New Asset** → **Script** 선택
 3. 스크립트 이름 입력 (예: "move-script")
 
@@ -142,17 +142,17 @@ MoveScript.prototype.update = function(dt) {
 ```
 
 ### 4단계: 스크립트 적용
-1. **Hierarchy 뷰**에서 Box 선택
-2. **Inspector 뷰**에서 **Add Component** → **Script**
+1. **하이어라키 뷰**에서 Box 선택
+2. **인스팩터 뷰**에서 **Add Component** → **Script**
 3. **Add Script** 클릭
 4. 생성한 스크립트 선택
 
 ### 5단계: 테스트
-1. **Viewport**에서 **Launch** 클릭
+1. **뷰포트**에서 **Launch** 클릭
 2. WASD 키로 Box 움직임 확인
 
-## 다음 단계
+<!-- ## 다음 단계
 
 기본 기능들을 모두 학습했습니다. 이제 더 복잡한 프로젝트를 만들어보겠습니다:
 
-- [공 굴리기 게임 만들기](../advanced/advanced-tutorial) 
+- [공 굴리기 게임 만들기](../advanced/advanced-tutorial)  -->
