@@ -12,7 +12,6 @@ OasisW의 AI 이미지 생성 기능을 활용하여 프로젝트에 필요한 �
 
 ## 1. API Key 발급받기
 
-
 1. **AI Image Generation 버튼** 클릭  
 
 ![Image](/img/usage-guide/3_8_1.png)
