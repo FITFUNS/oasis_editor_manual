@@ -61,7 +61,7 @@ const sidebars = {
     },
   ],
   
-  // 튜토리얼 사이드바
+  // 메뉴얼 사이드바
   tutorialSidebar: [
     'tutorial/basic-tutorial',
     'tutorial/ground-writing',

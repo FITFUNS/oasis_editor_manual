@@ -20,7 +20,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/usage-guide/create-a-project">
-            OasisW 튜토리얼 시작하기 🚀
+            OasisW 메뉴얼 시작하기 🚀
           </Link>
         </div>
       </div>

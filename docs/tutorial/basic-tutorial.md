@@ -1,10 +1,10 @@
 ---
 id: basic-tutorial
-title: OasisW 튜토리얼 - 기초다지기
+title: OasisW 메뉴얼 - 기초다지기
 sidebar_label: 기초다지기
 ---
 
-# OasisW 튜토리얼 - 기초다지기
+# OasisW 메뉴얼 - 기초다지기
 
 OasisW의 기본 기능들을 단계별로 학습해보겠습니다.
 

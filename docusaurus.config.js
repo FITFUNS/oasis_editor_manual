@@ -81,7 +81,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: '튜토리얼',
+            label: '메뉴얼',
             to: '/docs/tutorial/basic-tutorial',
           },
           // {
@@ -104,7 +104,7 @@ const config = {
                 to: '/docs/usage-guide/create-a-project',
               },
               {
-                label: '튜토리얼',
+                label: '메뉴얼',
                 to: '/docs/tutorial/basic-tutorial',
               },
               // {
