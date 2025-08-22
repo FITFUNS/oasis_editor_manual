@@ -12,9 +12,9 @@ OasisW의 리더보드 시스템에 대한 가이드입니다.
 **서버 엔티티가 생성되어 있어야 사용 가능한 기능입니다.**
 :::
 
-### 오아시스 사이트 리더보드 생성 절차
+### 오아시스 스튜디오 리더보드 생성 절차
 
-1. [OasisW 서버 사이트](https://oasisserver.link/)에 접속
+1. [OasisW Studio](https://oasisserver.link/)에 접속
 
 2. **Leaderboard** 클릭 → 새 리더보드 만들기 클릭
 

@@ -12,25 +12,15 @@ OasisW의 서버 기능과 도구들을 알아보겠습니다.
 
 프로젝트에서 서버 기능을 사용하려면 먼저 서버를 생성해야 합니다. 
 
-### 오아시스 사이트 서버 생성 절차
+### 오아시스 스튜디오 서버 생성 절차
 
-1. [OasisW 서버 사이트](https://oasisserver.link/)에 접속
+1. [OasisW Studio](https://oasisserver.link/)에 접속 
 
-![Server](/img/usage-guide/9_1.png)
-
-2. 로그인 클릭, 계정이 없을 경우 생성
-
-<div style={{display: 'flex', gap: '10px'}}>
-  <img src="/img/usage-guide/9_2.png" alt="Image" style={{maxWidth: '45%'}} />
-  <img src="/img/usage-guide/9_3.png" alt="Image" style={{maxWidth: '45%'}} />
-</div>
-<br />
-
-3. Server 클릭 → 서버 이름 입력 후 시작 버튼 클릭
+2. Server 클릭 → 서버 이름 입력 후 시작 버튼 클릭
 
 ![Server](/img/usage-guide/9_4.png)
 
-4. 2~3분 지나면 생성된 서버 확인 가능
+3. 2~3분 지나면 생성된 서버 확인 가능
 
 ![Server](/img/usage-guide/9_server.png)
 

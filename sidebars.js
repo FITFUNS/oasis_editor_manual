@@ -15,8 +15,25 @@
  @type {import('@docusaurus/plugin-content-docs').SidebarsConfig}
  */
 const sidebars = {
+  
   // 사용법 사이드바
   usageSidebar: [
+    {
+      type: 'category',
+      label: 'OasisW 스튜디오',
+      link: {
+        type: 'doc',
+        id: 'usage-guide/dashboard',
+      },
+      items: [
+        'usage-guide/organization',
+      ],
+    },
+    {
+      type: 'html',
+      value: '<hr style="margin: 1rem 0; border-top: 1px solid var(--ifm-color-emphasis-300);" />',
+      className: 'sidebar-divider',
+    },
     'usage-guide/create-a-project',
     {
       type: 'category',
