@@ -25,7 +25,14 @@ OasisW는 다양한 템플릿을 제공하여 빠르게 프로젝트를 시작�
 ### 생성 절차
 
 1. Project Name에 프로젝트 이름 생성
-2. Folder Path에서 프로젝트 경로 설정
+2. **Folder Path**에서 프로젝트 경로 설정
+
+:::danger 주의사항
+브라우저에서 파일 수정 권한을 반드시 허용해야 에디터 사용이 가능합니다.
+:::
+
+![Create](/img/usage-guide/0.png)
+
 3. Templates 창에서 템플릿 선택
 4. Create Project 버튼 클릭
 
