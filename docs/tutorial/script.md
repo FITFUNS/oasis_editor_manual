@@ -37,6 +37,81 @@ OasisW에서 스크립트를 사용하여 객체의 동작을 프로그래밍하
 </div>
 <br />
 
+1. x, y축 기준 플레이어 엔티티 방향키로 동작
+- 예: `"Player 엔티티가 wasd 방향키로 x, y축 기준 상하좌우 움직일 수 있도록 코드 추가"`  
+
+```javascript
+var PlayerController = pc.createScript('playerController');
+
+PlayerController.prototype.initialize = function() {
+    this.force = 5;
+};
+
+PlayerController.prototype.update = function(dt) {
+    var inputForce = new pc.Vec3();
+    
+    if (this.app.keyboard.isPressed(pc.KEY_A)) {
+        inputForce.x = -this.force;
+    }
+    if (this.app.keyboard.isPressed(pc.KEY_D)) {
+        inputForce.x = this.force;
+    }
+    if (this.app.keyboard.isPressed(pc.KEY_W)) {
+        inputForce.y = this.force;
+    }
+    if (this.app.keyboard.isPressed(pc.KEY_S)) {
+        inputForce.y = -this.force;
+    }
+    
+    this.entity.translate(inputForce.x * dt, inputForce.y * dt, 0);
+};
+```
+
+2. y축 방향으로 미사일 발사
+
+```javascript
+var GameManager = pc.createScript('gameManager');
+
+GameManager.prototype.initialize = function() {
+    this.missile = null;
+    this.missileSpeed = 10;
+    this.fireInterval = 1;
+    this.fireTimer = 0;
+    this.activeMissiles = [];
+};
+
+GameManager.prototype.update = function(dt) {
+    this.fireTimer += dt;
+    if (this.fireTimer >= this.fireInterval) {
+        this.fireMissile();
+        this.fireTimer = 0;
+    }
+    
+    for (var i = 0; i < this.activeMissiles.length; i++) {
+        var missile = this.activeMissiles[i];
+        var pos = missile.getPosition();
+        missile.setPosition(pos.x, pos.y + this.missileSpeed * dt, pos.z);
+    }
+};
+
+GameManager.prototype.fireMissile = function() {
+    this.missile = this.app.root.findByName('Missile');
+    if (this.missile) {
+        var player = this.app.root.findByName('Player');
+        if (player) {
+            var missileClone = this.missile.clone();
+            missileClone.setPosition(player.getPosition());
+            missileClone.setEulerAngles(0, 0, 0);
+            this.app.root.addChild(missileClone);
+            missileClone.collision.enabled = true;
+            this.activeMissiles.push(missileClone);
+        }
+    }
+};
+
+GameManager.prototype.swap = function(old) { };
+```
+
 ## 스크립트 적용하기
 
 ### 1단계: 스크립트 컴포넌트 추가
