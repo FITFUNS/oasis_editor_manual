@@ -19,20 +19,29 @@ OasisW Studio 조직 설정 기능에 대한 가이드입니다.
 ### 1. 기본 정보 확인
 - 자신의 **이름**, **이메일**, **권한(멤버/관리자)** 을 확인할 수 있음
 
-### 2. 사용자 초대
+### 2. 조직명 변경
+- 조직 설정 옆 **수정 아이콘** 클릭하여 조직명을 변경할 수 있음
+
+<div style={{display: 'flex', gap: '10px'}}>
+  <img src="/img/usage-guide/14_7.png" alt="Image" style={{maxWidth: '35%'}} />
+  <img src="/img/usage-guide/14_6.png" alt="Image" style={{maxWidth: '55%'}} />
+</div>
+<br />
+
+### 3. 사용자 초대
 - `멤버 초대` 버튼을 클릭하여 이메일을 통해 조직에 새로운 사용자를 초대할 수 있음
 - 초대 시 권한을 **관리자** 또는 **멤버**로 설정 가능
 
 ![Organization](/img/usage-guide/14_2.png)
 ![Organization](/img/usage-guide/14_3.png)
 
-### 3. 권한 및 제약
+### 4. 권한 및 제약
 - **관리자**: 멤버 권한을 가진 사용자를 **내보내기**할 수 있음  
 - **멤버**: 스스로 조직을 **나갈 수 없음**
 
 ![Organization](/img/usage-guide/14_4.png)
 
-### 4. 접근 권한
+### 5. 접근 권한
 - 같은 조직에 속한 사용자들은 조직을 선택하여 해당 조직의 **서버 제어** 및 **프로젝트 접근**이 가능함
 
 ![Organization](/img/usage-guide/14_5.png)
