@@ -112,6 +112,52 @@ GameManager.prototype.fireMissile = function() {
 GameManager.prototype.swap = function(old) { };
 ```
 
+3. 적 엔티티 드롭
+
+```javascript
+var EnemyController = pc.createScript('enemyController');
+
+EnemyController.prototype.initialize = function () {
+    this.enemyTemplate = this.app.root.findByName('Enemy');
+    this.timer = 0;
+    this.spawnInterval = 2.0;
+    this.enemySpeed = 3.0;
+    this.enemyCount = 5;
+    this.spawnY = 10.0;
+    this.enemies = [];
+};
+
+EnemyController.prototype.update = function (dt) {
+    this.timer += dt;
+
+    if (this.timer >= this.spawnInterval) {
+        this.timer = 0;
+        this.spawnEnemies();
+    }
+
+    this.moveEnemies(dt);
+};
+
+EnemyController.prototype.spawnEnemies = function () {
+    for (let i = 0; i < this.enemyCount; i++) {
+        const xPos = -4 + (i * 2);
+        const enemy = this.enemyTemplate.clone();
+        enemy.setPosition(xPos, this.spawnY, 0);
+        enemy.enabled = true;
+        this.entity.addChild(enemy);
+        this.enemies.push(enemy);
+    }
+};
+
+EnemyController.prototype.moveEnemies = function (dt) {
+    for (let i = 0; i < this.enemies.length; i++) {
+        const enemy = this.enemies[i];
+        const pos = enemy.getPosition();
+        enemy.setPosition(pos.x, pos.y - this.enemySpeed * dt, pos.z);
+    }
+};
+```
+
 ## 스크립트 적용하기
 
 ### 1단계: 스크립트 컴포넌트 추가
