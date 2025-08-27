@@ -12,7 +12,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 const config = {
   title: 'OasisW',
   tagline: '3D 웹 개발을 위한 강력한 도구',
-  favicon: 'img/OasisW.png',
+  favicon: '/engine/assets/fitfuns-logo1.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -37,10 +37,6 @@ const config = {
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
 
   presets: [
     [
@@ -84,6 +80,11 @@ const config = {
             label: '메뉴얼',
             to: '/docs/tutorial/basic-tutorial',
           },
+          {
+            label: 'API',
+            href: 'https://manual.oasisserver.link/engine',
+          },
+
           // {
           //   type: 'docSidebar',
           //   sidebarId: 'advancedSidebar',
@@ -106,6 +107,10 @@ const config = {
               {
                 label: '메뉴얼',
                 to: '/docs/tutorial/basic-tutorial',
+              },
+              {
+                label: 'API',
+                href: 'https://manual.oasisserver.link/engine',
               },
               // {
               //   label: '한 단계 더 나아가기',
