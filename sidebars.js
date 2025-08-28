@@ -15,7 +15,6 @@
  @type {import('@docusaurus/plugin-content-docs').SidebarsConfig}
  */
 const sidebars = {
-  
   // 사용법 사이드바
   usageSidebar: [
     {
@@ -76,18 +75,19 @@ const sidebars = {
         'usage-guide/leaderboard',
       ],
     },
+    {
+      type: 'html',
+      value: '<hr style="margin: 1rem 0; border-top: 1px solid var(--ifm-color-emphasis-300);" />',
+      className: 'sidebar-divider',
+    },
+    'usage-guide/basic-tutorial',
+    'usage-guide/ground-writing',
+    'usage-guide/material',
+    'usage-guide/physics-movement',
+    'usage-guide/template',
+    'usage-guide/script'
   ],
-  
-  // 메뉴얼 사이드바
-  tutorialSidebar: [
-    'tutorial/basic-tutorial',
-    'tutorial/ground-writing',
-    'tutorial/material',
-    'tutorial/physics-movement',
-    'tutorial/template',
-    'tutorial/script'
-  ],
-  
+
   // 한 단계 더 나아가기 사이드바
   advancedSidebar: [
     'advanced/advanced-tutorial',

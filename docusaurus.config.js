@@ -73,13 +73,7 @@ const config = {
             label: '사용법',
             to: '/docs/usage-guide/create-a-project',
           },
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: '메뉴얼',
-            to: '/docs/tutorial/basic-tutorial',
-          },
+
           {
             label: 'API',
             href: 'https://manual.oasisserver.link/engine',
@@ -106,7 +100,7 @@ const config = {
               },
               {
                 label: '메뉴얼',
-                to: '/docs/tutorial/basic-tutorial',
+                to: '/docs/usage-guide/basic-tutorial',
               },
               {
                 label: 'API',
