@@ -45,6 +45,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          routeBasePath: '/',
         },
 
         theme: {
@@ -58,12 +59,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/OasisW.png',
+      image: '/engine/assets/fitfuns-logo1.svg',
       navbar: {
         title: 'OasisW',
         logo: {
           alt: 'OasisW Logo',
-          src: 'img/OasisW.png',
+          src: '/engine/assets/fitfuns-logo1.svg',
         },
         items: [
           {
@@ -71,9 +72,15 @@ const config = {
             sidebarId: 'usageSidebar',
             position: 'left',
             label: '사용법',
-            to: '/docs/usage-guide/create-a-project',
+            to: '/docs/usage-guide/dashboard',
           },
-
+          {
+            type: 'docSidebar',
+            sidebarId: 'userManualSidebar',
+            position: 'left',
+            label: '메뉴얼',
+            path: '/user-manual',
+          },
           {
             label: 'API',
             href: 'https://manual.oasisserver.link/engine',
@@ -96,11 +103,11 @@ const config = {
             items: [
               {
                 label: '사용법',
-                to: '/docs/usage-guide/create-a-project',
+                to: '/docs/usage-guide/dashboard',
               },
               {
                 label: '메뉴얼',
-                to: '/docs/usage-guide/basic-tutorial',
+                to: '/docs/user-manual/',
               },
               {
                 label: 'API',

@@ -1,0 +1,23 @@
+/* User Manual 관련 스타일들 */
+.sidebar-section-header {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--ifm-color-emphasis-600);
+    margin: 1.5rem 0 0.5rem 0;
+    padding: 0.25rem 0;
+    border-top: 1px solid var(--ifm-color-emphasis-200);
+    padding-left: var(--ifm-menu-link-padding-horizontal);
+  }
+  
+  /* Web Components 테이블 스타일 */
+  .attribute-table td:nth-child(1),
+  .attribute-table td:nth-child(2), 
+  .attribute-table td:nth-child(3),
+  .attribute-table th:nth-child(1),
+  .attribute-table th:nth-child(2),
+  .attribute-table th:nth-child(3) {
+    white-space: nowrap;
+  }
+  
