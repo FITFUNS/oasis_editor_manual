@@ -79,7 +79,6 @@ const config = {
             sidebarId: 'userManualSidebar',
             position: 'left',
             label: '메뉴얼',
-            path: '/user-manual',
           },
           {
             label: 'API',
@@ -103,11 +102,11 @@ const config = {
             items: [
               {
                 label: '사용법',
-                to: '/docs/usage-guide/dashboard',
+                to: '/usage-guide/dashboard',
               },
               {
                 label: '메뉴얼',
-                to: '/docs/user-manual/',
+                to: '/user-manual',
               },
               {
                 label: 'API',

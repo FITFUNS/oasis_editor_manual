@@ -21,7 +21,7 @@ There are three top-level Stores to chose from:
 | Store | Description |
 | ----- | ----------- |
 | OasisW | Assets curated and supplied by OasisW and selected partner creators. This store contains: 3D models, fonts, scripts, sky boxes, templates and textures. |
-| SKETCHFAB  | Assets curated and supplied by [Sketchfab](https://sketchfab.com/). This store contains 3D models only. [Learn more](sketchfab) about the Sketchfab Store. |
+| SKETCHFAB  | Assets curated and supplied by [Sketchfab](https://sketchfab.com/). This store contains 3D models only. |
 | MY ASSETS  | Assets imported by you and stored in your user account. This store is currently in a closed beta. |
 
 ## Searching the Store

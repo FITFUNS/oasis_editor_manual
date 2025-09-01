@@ -9,7 +9,7 @@ It is possible to build applications on the PlayCanvas Engine without using the 
 
 * [glTF Viewer](https://playcanvas.com/viewer) \[[GitHub](https://github.com/playcanvas/model-viewer)\]
 * [SuperSplat](https://playcanvas.com/supersplat/editor) \[[GitHub](https://github.com/playcanvas/supersplat)\]
-* ...and, of course, the [PlayCanvas Editor](../../editor) itself!
+* ...and, of course, the PlayCanvas Editor itself!
 
 This page guides you in how to get started.
 

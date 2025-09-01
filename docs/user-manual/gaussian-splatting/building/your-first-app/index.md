@@ -8,7 +8,7 @@ Welcome to building your first Gaussian splat application! This section provides
 
 We'll build this app using the PlayCanvas Engine API directly for maximum control and flexibility:
 
-### 🔧 [Using the Engine API](./engine)
+### 🔧 Using the Engine API
 
 **Best for:** Experienced JavaScript developers who want full control
 

@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: '쉬운 사용법',
-    image: require('@site/static/img/OasisW.png').default,
+    image: '/engine/assets/fitfuns-logo1.svg',
     description: (
       <>
         OasisW는 처음부터 쉽게 사용할 수 있도록 설계되었습니다.
@@ -16,7 +16,7 @@ const FeatureList = [
   },
   {
     title: '코딩은 AI',
-    image: require('@site/static/img/OasisW.png').default,
+    image: '/engine/assets/fitfuns-logo1.svg',
     description: (
       <>
         글로 설명하면 AI가 콘텐츠를 만들어 줘요.
@@ -27,7 +27,7 @@ const FeatureList = [
   },
   {
     title: '완전한 3D 도구',
-    image: require('@site/static/img/OasisW.png').default,
+    image: '/engine/assets/fitfuns-logo1.svg',
     description: (
       <>
         지면 작성, 머티리얼 적용, 물리운동, 스크립트 등 3D 개발에 필요한 모든 기능을 제공합니다.

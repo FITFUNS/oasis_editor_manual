@@ -61,7 +61,7 @@ Sometimes developers use this approach to ensure that certain code and entities 
 
 Please note that multiple instances of the scene hierarchy cannot be loaded at once. This is due to the entities having their unique GUIDs assigned in the Editor. When multiple instances of the same scene hierarchy are attempted to be loaded at once, there's a clash of GUIDs which are meant to be unique per entity.
 
-If you need multiple instances of an entity hierarchy, please use [Templates][templates] instead as unique GUIDs are given on instantiation of the template instance.
+If you need multiple instances of an entity hierarchy, please use templates instead as unique GUIDs are given on instantiation of the template instance.
 
 ## Understanding how scenes work
 
@@ -197,7 +197,7 @@ The [example project][asset-load-for-scene-project] below loads the assets when 
 
 [switch-scenes-completely-project]: https://playcanvas.com/project/924351/overview/switch-full-scene-example
 [additively-loading-scenes-project]: https://playcanvas.com/project/685077/overview/additive-loading-scenes
-[templates]: /user-manual/editor/templates/
+<!-- [templates]: /user-manual/editor/templates/ -->
 [assets]: /user-manual/assets/
 [loadscenehierarchy-api]: https://manual.oasisserver.link/engine/classes/SceneRegistry.html#loadscenehierarchy
 [loadscenesettings-api]: https://manual.oasisserver.link/engine/classes/SceneRegistry.html#loadscenesettings

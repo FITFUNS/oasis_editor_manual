@@ -174,7 +174,7 @@ const sidebars = {
             'user-manual/scenes/components/camera',
             'user-manual/scenes/components/collision',
             'user-manual/scenes/components/element',
-            'user-manual/scenes/components/gsplat',
+            // 'user-manual/scenes/components/gsplat',
             'user-manual/scenes/components/layout-child',
             'user-manual/scenes/components/layout-group',
             'user-manual/scenes/components/light',
@@ -215,7 +215,7 @@ const sidebars = {
             'user-manual/assets/types/css',
             'user-manual/assets/types/cubemap',
             'user-manual/assets/types/font',
-            'user-manual/assets/types/gsplat',
+            // 'user-manual/assets/types/gsplat',
             'user-manual/assets/types/html',
             'user-manual/assets/types/json',
             'user-manual/assets/types/material',
@@ -254,20 +254,20 @@ const sidebars = {
             'user-manual/assets/models/units',
           ],
         },
-        {
-          type: 'category',
-          label: 'Asset Store',
-          link: {
-            type: 'doc',
-            id: 'user-manual/assets/asset-store/index',
-          },
-          items: [
-            'user-manual/assets/asset-store/sketchfab',
-          ],
-        },
+        // {
+        //   type: 'category',
+        //   label: 'Asset Store',
+        //   link: {
+        //     type: 'doc',
+        //     id: 'user-manual/assets/asset-store/index',
+        //   },
+        //   items: [
+        //     'user-manual/assets/asset-store/sketchfab',
+        //   ],
+        // },
         'user-manual/assets/finding',
         'user-manual/assets/preloading-and-streaming',
-        'user-manual/assets/viewers',
+        // 'user-manual/assets/viewers',
       ],
     },
     {
@@ -287,7 +287,7 @@ const sidebars = {
           },
           items: [
             'user-manual/scripting/fundamentals/getting-started',
-            'user-manual/scripting/fundamentals/esm-scripts',
+            // 'user-manual/scripting/fundamentals/esm-scripts',
             'user-manual/scripting/fundamentals/script-lifecycle',
             'user-manual/scripting/fundamentals/application-lifecycle',
             {
@@ -299,7 +299,7 @@ const sidebars = {
               },
               items: [
                 'user-manual/scripting/fundamentals/script-attributes/classic',
-                'user-manual/scripting/fundamentals/script-attributes/esm',
+                // 'user-manual/scripting/fundamentals/script-attributes/esm',
               ],
             },
             'user-manual/scripting/fundamentals/engine-api',
@@ -307,19 +307,19 @@ const sidebars = {
           ],
         },
 
-        {
-          type: 'category',
-          label: 'Debugging',
-          link: {
-            type: 'doc',
-            id: 'user-manual/scripting/debugging/index',
-          },
-          items: [
-            'user-manual/scripting/debugging/console-logging',
-            'user-manual/scripting/debugging/browser-dev-tools'
-          ],
-        },
-        'user-manual/scripting/migration-guide'
+        // {
+        //   type: 'category',
+        //   label: 'Debugging',
+        //   link: {
+        //     type: 'doc',
+        //     id: 'user-manual/scripting/debugging/index',
+        //   },
+        //   items: [
+        //     'user-manual/scripting/debugging/console-logging',
+        //     'user-manual/scripting/debugging/browser-dev-tools'
+        //   ],
+        // },
+        // 'user-manual/scripting/migration-guide'
       ],
     },
     {
@@ -412,113 +412,113 @@ const sidebars = {
         },
         'user-manual/graphics/particles',
         'user-manual/graphics/layers/index',
-        {
-          type: 'category',
-          label: 'Advanced Rendering',
-          link: {
-            type: 'doc',
-            id: 'user-manual/graphics/advanced-rendering/index',
-          },
-          items: [
-            'user-manual/graphics/advanced-rendering/batching',
-            'user-manual/graphics/advanced-rendering/hardware-instancing',
-            'user-manual/graphics/advanced-rendering/multiple-render-targets',
-            'user-manual/graphics/advanced-rendering/indirect-drawing',
-          ],
-        },
+        // {
+        //   type: 'category',
+        //   label: 'Advanced Rendering',
+        //   link: {
+        //     type: 'doc',
+        //     id: 'user-manual/graphics/advanced-rendering/index',
+        //   },
+        //   items: [
+        //     'user-manual/graphics/advanced-rendering/batching',
+        //     'user-manual/graphics/advanced-rendering/hardware-instancing',
+        //     'user-manual/graphics/advanced-rendering/multiple-render-targets',
+        //     'user-manual/graphics/advanced-rendering/indirect-drawing',
+        //   ],
+        // },
       ],
     },
-    {
-      type: 'category',
-      label: 'Gaussian Splatting',
-      link: {
-        type: 'doc',
-        id: 'user-manual/gaussian-splatting/index',
-      },
-      items: [
-        'user-manual/gaussian-splatting/what-is-gaussian-splatting',
-        {
-          type: 'category',
-          label: 'Creating Splats',
-          link: {
-            type: 'doc',
-            id: 'user-manual/gaussian-splatting/creating/index',
-          },
-          items: [
-            'user-manual/gaussian-splatting/creating/taking-photos',
-            'user-manual/gaussian-splatting/creating/recommended-tools',
-            'user-manual/gaussian-splatting/creating/ply-format',
-          ],
-        },
-        'user-manual/gaussian-splatting/viewing',
-        {
-          type: 'category',
-          label: 'Editing Splats',
-          link: {
-            type: 'doc',
-            id: 'user-manual/gaussian-splatting/editing/index',
-          },
-          items: [
-            {
-              type: 'category',
-              label: 'SuperSplat',
-              link: {
-                type: 'doc',
-                id: 'user-manual/gaussian-splatting/editing/supersplat/index',
-              },
-              items: [
-                'user-manual/gaussian-splatting/editing/supersplat/interface',
-                'user-manual/gaussian-splatting/editing/supersplat/managing-projects',
-                'user-manual/gaussian-splatting/editing/supersplat/import-export',
-                'user-manual/gaussian-splatting/editing/supersplat/camera-controls',
-                'user-manual/gaussian-splatting/editing/supersplat/editing-splats',
-                'user-manual/gaussian-splatting/editing/supersplat/data-panel',
-                'user-manual/gaussian-splatting/editing/supersplat/timeline',
-                'user-manual/gaussian-splatting/editing/supersplat/rendering',
-                'user-manual/gaussian-splatting/editing/supersplat/publishing',
-              ],
-            },
-            'user-manual/gaussian-splatting/editing/splat-transform',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Building Splat Applications',
-          link: {
-            type: 'doc',
-            id: 'user-manual/gaussian-splatting/building/index',
-          },
-          items: [
-            {
-              type: 'category',
-              label: 'Your First App',
-              link: {
-                type: 'doc',
-                id: 'user-manual/gaussian-splatting/building/your-first-app/index',
-              },
-              items: [
-                'user-manual/gaussian-splatting/building/your-first-app/engine',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Engine Features',
-              link: {
-                type: 'doc',
-                id: 'user-manual/gaussian-splatting/building/engine-features/index',
-              },
-              items: [
-                'user-manual/gaussian-splatting/building/engine-features/draw-order',
-                'user-manual/gaussian-splatting/building/engine-features/picking',
-                'user-manual/gaussian-splatting/building/engine-features/shadows',
-                'user-manual/gaussian-splatting/building/engine-features/custom-shaders',
-                'user-manual/gaussian-splatting/building/engine-features/performance',
-              ],
-            },
-          ],
-        },
-      ],
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Gaussian Splatting',
+    //   link: {
+    //     type: 'doc',
+    //     id: 'user-manual/gaussian-splatting/index',
+    //   },
+    //   items: [
+    //     'user-manual/gaussian-splatting/what-is-gaussian-splatting',
+    //     {
+    //       type: 'category',
+    //       label: 'Creating Splats',
+    //       link: {
+    //         type: 'doc',
+    //         id: 'user-manual/gaussian-splatting/creating/index',
+    //       },
+    //       items: [
+    //         'user-manual/gaussian-splatting/creating/taking-photos',
+    //         'user-manual/gaussian-splatting/creating/recommended-tools',
+    //         'user-manual/gaussian-splatting/creating/ply-format',
+    //       ],
+    //     },
+    //     'user-manual/gaussian-splatting/viewing',
+    //     {
+    //       type: 'category',
+    //       label: 'Editing Splats',
+    //       link: {
+    //         type: 'doc',
+    //         id: 'user-manual/gaussian-splatting/editing/index',
+    //       },
+    //       items: [
+    //         {
+    //           type: 'category',
+    //           label: 'SuperSplat',
+    //           link: {
+    //             type: 'doc',
+    //             id: 'user-manual/gaussian-splatting/editing/supersplat/index',
+    //           },
+    //           items: [
+    //             'user-manual/gaussian-splatting/editing/supersplat/interface',
+    //             'user-manual/gaussian-splatting/editing/supersplat/managing-projects',
+    //             'user-manual/gaussian-splatting/editing/supersplat/import-export',
+    //             'user-manual/gaussian-splatting/editing/supersplat/camera-controls',
+    //             'user-manual/gaussian-splatting/editing/supersplat/editing-splats',
+    //             'user-manual/gaussian-splatting/editing/supersplat/data-panel',
+    //             'user-manual/gaussian-splatting/editing/supersplat/timeline',
+    //             'user-manual/gaussian-splatting/editing/supersplat/rendering',
+    //             'user-manual/gaussian-splatting/editing/supersplat/publishing',
+    //           ],
+    //         },
+    //         'user-manual/gaussian-splatting/editing/splat-transform',
+    //       ],
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Building Splat Applications',
+    //       link: {
+    //         type: 'doc',
+    //         id: 'user-manual/gaussian-splatting/building/index',
+    //       },
+    //       items: [
+    //         {
+    //           type: 'category',
+    //           label: 'Your First App',
+    //           link: {
+    //             type: 'doc',
+    //             id: 'user-manual/gaussian-splatting/building/your-first-app/index',
+    //           },
+    //           items: [
+    //             'user-manual/gaussian-splatting/building/your-first-app/engine',
+    //           ],
+    //         },
+    //         {
+    //           type: 'category',
+    //           label: 'Engine Features',
+    //           link: {
+    //             type: 'doc',
+    //             id: 'user-manual/gaussian-splatting/building/engine-features/index',
+    //           },
+    //           items: [
+    //             'user-manual/gaussian-splatting/building/engine-features/draw-order',
+    //             'user-manual/gaussian-splatting/building/engine-features/picking',
+    //             'user-manual/gaussian-splatting/building/engine-features/shadows',
+    //             'user-manual/gaussian-splatting/building/engine-features/custom-shaders',
+    //             'user-manual/gaussian-splatting/building/engine-features/performance',
+    //           ],
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
     {
       type: 'category',
       label: 'Animation',
@@ -633,27 +633,25 @@ const sidebars = {
     //     'user-manual/xr/optimizing-webxr',
     //   ],
     // },
-    {
-      type: 'category',
-      label: 'Optimization',
-      link: {
-        type: 'doc',
-        id: 'user-manual/optimization/index',
-      },
-      items: [
-        'user-manual/optimization/guidelines',
-        'user-manual/optimization/texture-compression',
-        'user-manual/optimization/gpu-profiling',
-        'user-manual/optimization/profiler',
-        'user-manual/optimization/mini-stats',
-        'user-manual/optimization/runtime-devicepixelratio',
-        'user-manual/optimization/load-time',
-        'user-manual/optimization/optimizing-scene-format',
-        'user-manual/optimization/troubleshooting-performance',
-      ],
-    },
-
-
+    // {
+    //   type: 'category',
+    //   label: 'Optimization',
+    //   link: {
+    //     type: 'doc',
+    //     id: 'user-manual/optimization/index',
+    //   },
+    //   items: [
+    //     'user-manual/optimization/guidelines',
+    //     'user-manual/optimization/texture-compression',
+    //     'user-manual/optimization/gpu-profiling',
+    //     'user-manual/optimization/profiler',
+    //     'user-manual/optimization/mini-stats',
+    //     'user-manual/optimization/runtime-devicepixelratio',
+    //     'user-manual/optimization/load-time',
+    //     'user-manual/optimization/optimizing-scene-format',
+    //     'user-manual/optimization/troubleshooting-performance',
+    //   ],
+    // },
   ],
 };
 

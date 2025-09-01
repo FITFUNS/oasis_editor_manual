@@ -47,5 +47,5 @@ The PlayCanvas Model Viewer is **open source** and available on [GitHub](https:/
 
 After previewing your splats in the Model Viewer:
 
-- If cleanup is needed → continue to [Editing Splats](../editing) for optimization and refinement
-- If the quality meets your needs → proceed directly to [Building Splat-based Apps](../building)
+- If cleanup is needed → continue to the Editing Splats section for optimization and refinement
+- If the quality meets your needs → proceed directly to Building Splat-based Apps

@@ -8,7 +8,7 @@ OasisW is a ✨ **web graphics creation platform** ✨
 
 OasisW provides a powerful open-source JavaScript engine for building interactive, graphical web applications:
 
-🦾 [**OasisW Engine**](../engine) - Open source JavaScript run-time that powers all OasisW applications
+🦾 **OasisW Engine** - Open source JavaScript run-time that powers all OasisW applications
 
 ## Getting Started with OasisW Engine
 

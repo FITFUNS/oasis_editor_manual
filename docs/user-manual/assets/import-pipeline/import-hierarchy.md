@@ -60,4 +60,4 @@ How the Editor decides what is a new or removed mesh instance is done by the fol
 [texture_asset]: /user-manual/assets/types/texture/
 [render_component]: https://manual.oasisserver.link/engine/classes/RenderComponent.html
 [collision_component]: https://manual.oasisserver.link/engine/classes/CollisionComponent.html
-[first_model_animation_import]: /tutorials/importing-first-model-and-animation/
+<!-- [first_model_animation_import]: /tutorials/importing-first-model-and-animation/ -->

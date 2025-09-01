@@ -134,5 +134,5 @@ For the complete engine API reference for localization see [this page][2].
 [6]: http://www.thai-language.com/ref/breaking-words
 [7]: https://en.wikipedia.org/wiki/Zero-width_space
 [8]: http://www.thai-language.com/?nav=zwsp
-[10]: /tutorials/right-to-left-language-support/
+<!-- [10]: /tutorials/right-to-left-language-support/ -->
 <!-- [11]: /user-manual/editor/interface/assets/#copy-and-paste-between-projects -->
