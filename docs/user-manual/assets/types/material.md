@@ -82,7 +82,7 @@ Some map slots can be a flat color instead of a texture map. Some slots also sup
 
 Some maps only require a single grayscale value e.g. 0.0 -> 1.0. In this case it is possible to select which channel of the texture to use. **RGB** means that all three channels are used. **R**, **G** or **B** means that only the red, green or blue channel will be used.
 
-### Offset & Tiling
+### Texture Transform
 
 <img loading="lazy" src="/img/user-manual/material-inspector/offset-tiling.jpg" width="300" />
 
