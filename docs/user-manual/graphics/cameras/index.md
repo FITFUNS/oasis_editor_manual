@@ -2,7 +2,7 @@
 title: Cameras
 ---
 
-Cameras are responsible for rendering a scene to the screen. You need at least one camera in your scene to see anything. When you create a new scene in PlayCanvas, it is automatically populated with a single camera (along with a directional light).
+Cameras are responsible for rendering a scene to the screen. You need at least one camera in your scene to see anything. When you create a new scene in OasisW, it is automatically populated with a single camera (along with a directional light).
 
 ## Creating a Camera
 

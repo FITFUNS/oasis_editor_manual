@@ -10,7 +10,7 @@ Layers allow you to customize the render loop for your application. Using layers
 * set cameras to render only some meshes
 * set which lights affect which meshes
 
-A PlayCanvas application is created with a default set of layers which are always present. You can create your own layers and re-order them to suit your particular requirements.
+A OasisW application is created with a default set of layers which are always present. You can create your own layers and re-order them to suit your particular requirements.
 
 At a fundamental level a layer is list of meshes to render. Each layer is divided into two sub-layers: Opaque and Transparent. When a mesh is added to a layer the layer stores it in one of the two sub-layers, depending on whether the material on the mesh needs to render transparently or not. This is because transparent sub-layers are often sorted differently than opaque sub-layers.
 
@@ -46,7 +46,7 @@ In addition to these sort modes, the `MeshInstance.drawBucket` property provides
 
 ## Default Layers {#default-layers}
 
-PlayCanvas applications are created with a set of default layers. You should leave these layers in place as some engine features will not function correctly if they are not present. They default order is below:
+OasisW applications are created with a set of default layers. You should leave these layers in place as some engine features will not function correctly if they are not present. They default order is below:
 
 ![Default Layers](/img/user-manual/graphics/layers/default-layers.jpg)
 

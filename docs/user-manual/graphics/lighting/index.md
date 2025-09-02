@@ -4,7 +4,7 @@ title: Lighting
 
 Lighting a scene is the process of calculating the color or shading of a pixel render to the screen based on the material properties of the surface and the light sources that are applied to that material.
 
-In PlayCanvas, lighting can be broadly divided up into two basic categories: dynamic lights and lightmaps.
+In OasisW, lighting can be broadly divided up into two basic categories: dynamic lights and lightmaps.
 
 ## Dynamic Lights
 
@@ -20,6 +20,6 @@ There are two methods of creating lightmaps:
 
 Many 3D creation tools have lightmap generation included or available as an add-on, including 3DS Max, Maya and Blender. These tools generally generate lightmap textures which can be uploaded as regular assets and added to the Lightmap slot in the standard Physical Material.
 
-### PlayCanvas Runtime Lightmap Generation
+### OasisW Runtime Lightmap Generation
 
-The PlayCanvas Engine has built in lightmap generation. This can be used to generate lightmaps automatically just before your game runs. With this method you can use the standard light components, make changes and preview your scene directly in the Editor.
+The OasisW Engine has built in lightmap generation. This can be used to generate lightmaps automatically just before your game runs. With this method you can use the standard light components, make changes and preview your scene directly in the Editor.

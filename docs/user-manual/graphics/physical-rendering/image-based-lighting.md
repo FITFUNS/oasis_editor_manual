@@ -2,7 +2,7 @@
 title: Image Based Lighting
 ---
 
-To get best results with Physically Based Rendering in PlayCanvas you can use the technique called Image Based Lighting or IBL, it allows to use pre-rendered image data as source information for ambient and reflection light.
+To get best results with Physically Based Rendering in OasisW you can use the technique called Image Based Lighting or IBL, it allows to use pre-rendered image data as source information for ambient and reflection light.
 
 This technique relies on [CubeMap][3] - the environment map that is made of 6 texture (faces) forming a cube to have full surround texture coverage.
 
@@ -18,7 +18,7 @@ Notice how bright parts in the texture are clamped using LDR.
 
 The concept is derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practice this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
 
-In nature, smoother surfaces have sharper reflections and rougher surfaces have blurrier. The reason for that is basically that rougher surfaces have larger, more prominent microfacets, reflecting light in many directions, while smooth surfaces tend to reflect it mostly in one direction. When light coming from different directions is averaged inside a tiny visible point, the result looks blurry to us, and also less bright, thanks to energy conservation. PlayCanvas simulates this behavior with the glossiness parameter, which works automatically for lights, however, for IBL we must precalculate the correct blurred response in advance. This is what the Prefilter button does.
+In nature, smoother surfaces have sharper reflections and rougher surfaces have blurrier. The reason for that is basically that rougher surfaces have larger, more prominent microfacets, reflecting light in many directions, while smooth surfaces tend to reflect it mostly in one direction. When light coming from different directions is averaged inside a tiny visible point, the result looks blurry to us, and also less bright, thanks to energy conservation. OasisW simulates this behavior with the glossiness parameter, which works automatically for lights, however, for IBL we must precalculate the correct blurred response in advance. This is what the Prefilter button does.
 
 **Prefilter** button is available on CubeMap asset in the Inspector, it is mandatory to enable IBL on physical materials using a CubeMap.
 
@@ -38,7 +38,7 @@ CubeMap is made of 6 faces, each representing square side of a cube, simply put:
 
 You can use popular 3D modelling tools, or photography and 360 Imagery software. They should be rendered in linear gamma space and without color corrections that is described in [Lightmapping Gamma Correction section][1].
 
-One of the plugins for 3D Studio Max such as [this][2] can be used to render VRay CubeMap Faces, ready to be uploaded into PlayCanvas Editor.
+One of the plugins for 3D Studio Max such as [this][2] can be used to render VRay CubeMap Faces, ready to be uploaded into OasisW Editor.
 
 ## Applying IBL
 
@@ -55,9 +55,9 @@ This technique changes the projection of environment map which allows to specify
 
 ## Example
 
-Here is an [example][7] and [project][8] of the scene using CubeMap Box Projection. Notice the reflection on the wooden floor from the windows and the subtle reflection on the ceiling, as well as the reflection of the room on the metal PlayCanvas logo on the wall on the right. This is a dynamic effect and can provide very realistic reflections and control to the artist of how surfaces reflect the room environment.
+Here is an example and project of the scene using CubeMap Box Projection. Notice the reflection on the wooden floor from the windows and the subtle reflection on the ceiling, as well as the reflection of the room on the metal OasisW logo on the wall on the right. This is a dynamic effect and can provide very realistic reflections and control to the artist of how surfaces reflect the room environment.
 
-[![Environment Box Projection Mapping](/img/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg)][7]
+![Environment Box Projection Mapping](/img/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg)
 
 The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections).
 
@@ -66,8 +66,8 @@ The lighting in this scene is implemented using Lightmap and AO textures and Box
 [2]: http://www.scriptspot.com/3ds-max/scripts/vray-cubemap-generator-for-unity
 [3]: /user-manual/assets/types/cubemap/
 [6]: http://www.hdrlabs.com/sibl/archive.html
-[7]: https://playcanv.as/p/zdkARz26/
-[8]: https://playcanvas.com/project/446587/overview/archviz-example
+<!-- [7]: https://playcanv.as/p/zdkARz26/ -->
+<!-- [8]: https://playcanvas.com/project/446587/overview/archviz-example -->
 [10]: http://noemotionhdrs.net/
 [11]: https://www.openfootage.net/?tag=hdri
 [12]: https://www.pauldebevec.com/Probes/

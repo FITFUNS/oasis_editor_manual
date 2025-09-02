@@ -9,7 +9,7 @@ Physically based rendering (PBR) is a combination of artist workflow, measured p
 
 ## Fundamental Principles
 
-Below, we'll try and summarize the basic principles behind how physically based shaders calculate the lighting. In the next sections we'll cover in more detail the specifics of how physically based rendering can be used with in PlayCanvas.
+Below, we'll try and summarize the basic principles behind how physically based shaders calculate the lighting. In the next sections we'll cover in more detail the specifics of how physically based rendering can be used with in OasisW.
 
 ## Diffuse & Specular
 
@@ -36,7 +36,7 @@ Because of these differences one of the PBR workflows includes a **metalness** p
 
 ## Fresnel
 
-Fresnel is a term that you don't really have to know about to work with PBR in PlayCanvas, but it will give you a better view of how materials behave if you do.
+Fresnel is a term that you don't really have to know about to work with PBR in OasisW, but it will give you a better view of how materials behave if you do.
 
 All you need to know about Fresnel is it means that the angle at which you are viewing a surface influences how reflective that surface appears. If the surface is almost edge on to your view, it will be almost completely reflective.
 

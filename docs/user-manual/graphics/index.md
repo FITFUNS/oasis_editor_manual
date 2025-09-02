@@ -2,11 +2,11 @@
 title: Graphics
 ---
 
-PlayCanvas incorporates an advanced graphics engine that delivers high-performance 3D rendering on the web. The engine provides both [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) and [WebGPU](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API) support, ensuring compatibility across all modern browsers while offering cutting-edge graphics capabilities.
+OasisW incorporates an advanced graphics engine that delivers high-performance 3D rendering on the web. The engine provides both [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) and [WebGPU](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API) support, ensuring compatibility across all modern browsers while offering cutting-edge graphics capabilities.
 
 ## Graphics Engine Backends
 
-The PlayCanvas engine supports multiple graphics backends:
+The OasisW engine supports multiple graphics backends:
 
 * **WebGPU (Beta)** - Next-generation graphics API with reduced driver overhead and compute shader support
 * **WebGL 2.0** - Mature and [widely supported](https://caniuse.com/webgl2) across all browsers and devices
@@ -74,4 +74,4 @@ The CameraFrame system provides a full suite of post-processing effects:
 * **Preprocessor support** for shader variants and includes
 * **WebGPU compute shaders** for GPU-accelerated computation
 
-The graphics engine is continuously updated to leverage the latest web standards and hardware capabilities, ensuring PlayCanvas applications deliver exceptional visual quality and performance across all platforms.
+The graphics engine is continuously updated to leverage the latest web standards and hardware capabilities, ensuring OasisW applications deliver exceptional visual quality and performance across all platforms.

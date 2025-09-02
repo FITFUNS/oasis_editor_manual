@@ -2,7 +2,7 @@
 title: Physical Materials
 ---
 
-To use Physically Based Rendering in PlayCanvas you will need to understand how the Physical Material is configured and what effect altering the various parameters will have.
+To use Physically Based Rendering in OasisW you will need to understand how the Physical Material is configured and what effect altering the various parameters will have.
 
 In this section we'll talk about the most useful properties of the material and you can see in the live demos how altering them affects the appearance of a material.
 
@@ -16,7 +16,7 @@ First a note about Cubemaps and Workflows
 
 ![Workflows](/img/user-manual/graphics/physical-rendering/specular-metalness-workflows.png)
 
-PBR is often split into two different methods of building assets or workflows. The two workflows are equivalent and offer the same results. It is really down to your preference as to which you choose. At PlayCanvas we usually choose the "metalness" flow as we find the metalness map simpler to create and is as it is only a single channel it is usually more efficient.
+PBR is often split into two different methods of building assets or workflows. The two workflows are equivalent and offer the same results. It is really down to your preference as to which you choose. At OasisW we usually choose the "metalness" flow as we find the metalness map simpler to create and is as it is only a single channel it is usually more efficient.
 
 The **metalness** workflow involves setting a metalness value or creating a metalness map which determines which areas of the material are metal or non-metal. Usually this is a simple binary choice. 1 for metal, 0 for non-metal. It is not often that you have a value between the two.
 

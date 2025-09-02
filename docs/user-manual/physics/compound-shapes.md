@@ -10,7 +10,7 @@ The main advantage is that you are able to have dynamic rigidbody collisions bet
     <iframe src="https://playcanv.as/e/p/KXZ5Lsda/" title="Compound Physic Shapes" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
 </div>
 
-[PlayCanvas project link][compound-shapes-project] -->
+[OasisW project link][compound-shapes-project] -->
 
 The shape of a compound physics object is defined by the children's collision shapes as shown below.
 

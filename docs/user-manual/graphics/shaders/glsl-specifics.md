@@ -2,13 +2,13 @@
 title: GLSL Specifics
 ---
 
-GLSL shaders used by the PlayCanvas engine must satisfy certain requirements. These requirements allow the engine to correctly integrate shaders, ensuring they receive the necessary resources such as attributes, uniforms, and varyings. Following these rules also allows us to automatically process the shader for slightly different requirements when transpiling to WGSL for use with WebGPU.
+GLSL shaders used by the OasisW engine must satisfy certain requirements. These requirements allow the engine to correctly integrate shaders, ensuring they receive the necessary resources such as attributes, uniforms, and varyings. Following these rules also allows us to automatically process the shader for slightly different requirements when transpiling to WGSL for use with WebGPU.
 
-The following sections outline key aspects of writing GLSL shaders for PlayCanvas.
+The following sections outline key aspects of writing GLSL shaders for OasisW.
 
 :::note
 
-`#version` should not be included in the shader source. PlayCanvas automatically adds the appropriate version directive based on whether WebGL2 or WebGPU is targeted.
+`#version` should not be included in the shader source. OasisW automatically adds the appropriate version directive based on whether WebGL2 or WebGPU is targeted.
 
 :::
 

@@ -9,7 +9,7 @@ Lightmap generation is the process of pre-calculating lighting information for a
 
 ## Runtime Lightmap Generation {#runtime-lightmap-generation}
 
-PlayCanvas offers a convenient solution to generating lightmaps. Using the standard light components in the Editor, you can choose which lights are used to bake lightmaps and which are used to dynamically light the scene at runtime. The lights that you set to bake will be used when the application generates the lightmaps that light the scene.
+OasisW offers a convenient solution to generating lightmaps. Using the standard light components in the Editor, you can choose which lights are used to bake lightmaps and which are used to dynamically light the scene at runtime. The lights that you set to bake will be used when the application generates the lightmaps that light the scene.
 
 There are multiple advantages to runtime lightmap generation:
 
@@ -64,7 +64,7 @@ The following images show the difference between hard shadows and soft shadows. 
 
 ## Baking an Environment Light {#baking-an-environment-light}
 
-PlayCanvas supports two types of environment lighting: Ambient Color and Skybox. By default, these are both applied at runtime.
+OasisW supports two types of environment lighting: Ambient Color and Skybox. By default, these are both applied at runtime.
 
 A limitation of runtime environment light application is the lack of **Ambient Occlusion**. As an alternative, the environment light can be baked into the lightmap, including Ambient Occlusion. This can be configured in the Lightmapping section of the global settings.
 
@@ -115,7 +115,7 @@ There several combinations of light settings that can be used. Each one has a us
 
 ## Lightmapping Settings {#lightmapping-settings}
 
-The **Size Multiplier** setting affects all Model and Render Components. PlayCanvas will automatically decide what resolution lightmaps are required for a model. It calculates this value based on the scale and geometry area size of the model. You can influence this calculation by modifying the **Size Multiplier** field in the Model or Render Component's Global Settings.
+The **Size Multiplier** setting affects all Model and Render Components. OasisW will automatically decide what resolution lightmaps are required for a model. It calculates this value based on the scale and geometry area size of the model. You can influence this calculation by modifying the **Size Multiplier** field in the Model or Render Component's Global Settings.
 
 For example, consider a plane that is 1x1 unit (meter) in size. If the Global Size Multiplier is 16 and the Model Component Multiplier is 2, it will generate a Lightmap Texture size of 32x32 (`1 sq/m * 16 * 2`). You will have 32x32 pixels on one square meter, which is about 3cm a pixel size.
 
@@ -127,9 +127,9 @@ For example, consider a plane that is 1x1 unit (meter) in size. If the Global Si
 
 ## Auto-Unwrapping and UV1 Generation {#auto-unwrapping-and-uv1-generation}
 
-Lightmaps are always applied using the second set of **UV coordinates (UV1)** on the model asset. For the best results, we recommend that you add a second UV set from the 3D content tool to your model, before you upload it to PlayCanvas. For more information about lightmap friendly UV's, see the [UV Mapping][9] section.
+Lightmaps are always applied using the second set of **UV coordinates (UV1)** on the model asset. For the best results, we recommend that you add a second UV set from the 3D content tool to your model, before you upload it to OasisW. For more information about lightmap friendly UV's, see the [UV Mapping][9] section.
 
-If your model doesn't have a UV1 set, the PlayCanvas Editor can automatically unwrap and generate UV1 co-ordinates for the model.
+If your model doesn't have a UV1 set, the OasisW Editor can automatically unwrap and generate UV1 co-ordinates for the model.
 
 ![Model Component: UV1 Missing](/img/user-manual/graphics/lighting/lightmapping/model-uv1-missing.png)
 

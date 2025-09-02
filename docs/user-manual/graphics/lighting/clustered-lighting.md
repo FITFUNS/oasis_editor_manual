@@ -4,7 +4,7 @@ title: Clustered Lighting
 
 :::note
 
-Clustered lighting is enabled by default from PlayCanvas Engine v1.56 onwards. The older lighting system will still be available in the Engine for the short term. However, we will deprecate it in a future minor release.
+Clustered lighting is enabled by default from OasisW Engine v1.56 onwards. The older lighting system will still be available in the Engine for the short term. However, we will deprecate it in a future minor release.
 
 :::
 
@@ -16,7 +16,7 @@ Part of the solution to reduce performance costs may involve limiting the amount
 - Large objects need to be split into smaller objects in order for this strategy to be effective.
 - Large numbers of shadow casting lights can cause the shader to run out of the available texture slots used by shadow maps.
 
-To address these issues, PlayCanvas uses the **Clustered Lighting** solution to provide a performant implementation of Omni Lights and Spot Lights. It stores information about the lights in textures and allows the GPU to easily use only the lights that are nearby the shaded fragment. There are multiple advantages to Clustered Lighting:
+To address these issues, OasisW uses the **Clustered Lighting** solution to provide a performant implementation of Omni Lights and Spot Lights. It stores information about the lights in textures and allows the GPU to easily use only the lights that are nearby the shaded fragment. There are multiple advantages to Clustered Lighting:
 
 - Shaders do not need to be recompiled when lights are added or removed from the scene, since the shader can handle multiple lights.
 - Large numbers of lights (including Shadows and Cookies) can be used in the scene, since only the lights nearby each pixel are evaluated.

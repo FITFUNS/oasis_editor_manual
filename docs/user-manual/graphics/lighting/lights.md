@@ -2,13 +2,13 @@
 title: Lights
 ---
 
-In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a PlayCanvas scene, you have the ability to set up a number of different types of light sources and the shape of the light source to approximate the different types of light we find in reality.
+In the real world, the environment around you is lit from many sources. The Sun, street lights, TV screens and so on. In a OasisW scene, you have the ability to set up a number of different types of light sources and the shape of the light source to approximate the different types of light we find in reality.
 
 Descriptions of each light type and light source shape are below and examples of different combinations of light types and given in [table](#use-cases) below.
 
 ## Light Types {#light-types}
 
-There are three types of light in PlayCanvas:
+There are three types of light in OasisW:
 
 * Directional lights
 * Omni lights
@@ -16,7 +16,7 @@ There are three types of light in PlayCanvas:
 
 ### Directional Lights {#directional-lights}
 
-The most familiar light source to us is the Sun. Because the Sun is so far from Earth, light that hits the surface of our planet can be approximated as traveling in a single direction. In PlayCanvas, this type of light source is called a Directional light.
+The most familiar light source to us is the Sun. Because the Sun is so far from Earth, light that hits the surface of our planet can be approximated as traveling in a single direction. In OasisW, this type of light source is called a Directional light.
 
 When unselected, a directional light is represented by the following icon in the Editor's 3D view:
 

@@ -5,6 +5,9 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
+    "start:search": "npm run build && docusaurus start",
+    "dev": "npm run build && npm run serve",
+    "dev:search": "npm run build && npm run serve",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -16,8 +19,10 @@
   "dependencies": {
     "@docusaurus/core": "^3.8.1",
     "@docusaurus/plugin-client-redirects": "^3.8.1",
+    "@docusaurus/plugin-content-docs": "^3.8.1",
     "@docusaurus/preset-classic": "^3.8.1",
     "@docusaurus/theme-mermaid": "^3.8.1",
+    "@easyops-cn/docusaurus-search-local": "^0.52.1",
     "@mdx-js/react": "^3.1.0",
     "@playcanvas/react": "^0.7.0",
     "canvas-confetti": "^1.9.3",

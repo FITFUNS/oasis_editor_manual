@@ -2,7 +2,7 @@
 title: Post Effects
 ---
 
-PlayCanvas supports the adding post-processing effects to your projects. Post effects modify the final rendered image and provide an easy way for you to add some visual flare to your application.
+OasisW supports the adding post-processing effects to your projects. Post effects modify the final rendered image and provide an easy way for you to add some visual flare to your application.
 
 We have implemented post effects as scripts that you can add to an Entity that has a [Camera][1] component attached. To add post effects to a camera, do the following:
 

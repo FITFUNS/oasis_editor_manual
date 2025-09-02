@@ -6,13 +6,13 @@ Shadows are a great way to add realism to your games. However, dynamic (realtime
 
 ![Characters with shadow casting](/img/user-manual/graphics/lighting/shadows/doom3_shadows.jpg)
 
-The PlayCanvas engine implements a shadowing algorithm called shadow mapping. It is completely cross-platform and so is guaranteed to work on both mobile and the desktop.
+The OasisW engine implements a shadowing algorithm called shadow mapping. It is completely cross-platform and so is guaranteed to work on both mobile and the desktop.
 
 ## Enabling Shadows {#enabling-shadows}
 
 <img loading="lazy" src="/img/user-manual/graphics/lighting/shadows/light-shadow-options.png" width="480" />
 
-By default, shadow casting is disabled in PlayCanvas. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, identify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
+By default, shadow casting is disabled in OasisW. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, identify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
 
 ![Model Component](/img/user-manual/scenes/components/component-model.png)
 
@@ -46,7 +46,7 @@ The distribution of subdivision of the camera frustum for individual shadow casc
 
 ## Tuning Shadows {#tuning-shadows}
 
-The shadow mapping technique used by PlayCanvas has only finite resolution. Therefore, you may need to tune some values to make them look as good as possible. The following properties can be found in the [Light Component][2] UI.
+The shadow mapping technique used by OasisW has only finite resolution. Therefore, you may need to tune some values to make them look as good as possible. The following properties can be found in the [Light Component][2] UI.
 
 ### Shadow Distance {#shadow-distance}
 
@@ -74,7 +74,7 @@ The Normal Offset Bias solves this problem. In addition to using the depth bias,
 
 ## Soft Shadows vs Hard Shadows {#soft-shadows-vs-hard-shadows}
 
-The outline of a shadow is called the penumbra. This is a transition from dark to light which gives shadows a soft edge. Softening shadow edges is the default in PlayCanvas but you can change this setting if you wish to achieve hard edged shadows. See below for a comparison of soft and hard edged shadows:
+The outline of a shadow is called the penumbra. This is a transition from dark to light which gives shadows a soft edge. Softening shadow edges is the default in OasisW but you can change this setting if you wish to achieve hard edged shadows. See below for a comparison of soft and hard edged shadows:
 
 ![Hard vs soft shadows](/img/user-manual/graphics/lighting/shadows/hard_vs_soft.jpg)
 

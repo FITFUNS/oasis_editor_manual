@@ -40,9 +40,9 @@ When rendering in HDR mode, an HDR display output can be enabled by configuring 
 
 **Note:** Currently, HDR display output is only supported by WebGPU. On other platforms, `GraphicsDevice.isHdr()` will always return `false`.
 
-## PlayCanvas Engine - CameraFrame Class
+## OasisW Engine - CameraFrame Class
 
-The PlayCanvas Engine offers a comprehensive rendering setup through the `CameraFrame` class, which integrates advanced effects such as High Dynamic Range (HDR) rendering, bloom, Screen Space Ambient Occlusion (SSAO), and more. This setup enhances visual fidelity by simulating realistic lighting and post-processing effects.
+The OasisW Engine offers a comprehensive rendering setup through the `CameraFrame` class, which integrates advanced effects such as High Dynamic Range (HDR) rendering, bloom, Screen Space Ambient Occlusion (SSAO), and more. This setup enhances visual fidelity by simulating realistic lighting and post-processing effects.
 
 ### Key Features of CameraFrame
 

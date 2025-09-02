@@ -5,7 +5,7 @@ title: Using the Engine Standalone
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-It is possible to build applications on the PlayCanvas Engine without using the Editor. Some examples of applications built directly against the Engine are:
+It is possible to build applications on the OasisW Engine without using the Editor. Some examples of applications built directly against the Engine are:
 
 * [glTF Viewer](https://playcanvas.com/viewer) \[[GitHub](https://github.com/playcanvas/model-viewer)\]
 * [SuperSplat](https://playcanvas.com/supersplat/editor) \[[GitHub](https://github.com/playcanvas/supersplat)\]

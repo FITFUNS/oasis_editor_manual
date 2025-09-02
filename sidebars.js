@@ -378,7 +378,7 @@ const sidebars = {
           },
           items: [
             'user-manual/graphics/linear-workflow/textures',
-            'user-manual/graphics/linear-workflow/hdr-rendering',
+            // 'user-manual/graphics/linear-workflow/hdr-rendering',
           ],
         },
         {
@@ -394,22 +394,22 @@ const sidebars = {
             'user-manual/graphics/shaders/migrations',
           ],
         },
-        {
-          type: 'category',
-          label: 'Post Effects',
-          link: {
-            type: 'doc',
-            id: 'user-manual/graphics/posteffects/index',
-          },
-          items: [
-            'user-manual/graphics/posteffects/bloom',
-            'user-manual/graphics/posteffects/brightness_contrast',
-            'user-manual/graphics/posteffects/fxaa',
-            'user-manual/graphics/posteffects/hue_saturation',
-            'user-manual/graphics/posteffects/sepia',
-            'user-manual/graphics/posteffects/vignette',
-          ],
-        },
+        // {
+        //   type: 'category',
+        //   label: 'Post Effects',
+        //   link: {
+        //     type: 'doc',
+        //     id: 'user-manual/graphics/posteffects/index',
+        //   },
+        //   items: [
+        //     'user-manual/graphics/posteffects/bloom',
+        //     'user-manual/graphics/posteffects/brightness_contrast',
+        //     'user-manual/graphics/posteffects/fxaa',
+        //     'user-manual/graphics/posteffects/hue_saturation',
+        //     'user-manual/graphics/posteffects/sepia',
+        //     'user-manual/graphics/posteffects/vignette',
+        //   ],
+        // },
         'user-manual/graphics/particles',
         'user-manual/graphics/layers/index',
         // {

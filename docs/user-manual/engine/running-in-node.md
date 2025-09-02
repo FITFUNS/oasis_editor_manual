@@ -26,13 +26,13 @@ npm install jsdom playcanvas --save-dev
 
 :::info
 
-The `jsdom` package is used to simulate a DOM environment in Node.js. This is required because the PlayCanvas Engine uses the DOM API in a number of places.
+The `jsdom` package is used to simulate a DOM environment in Node.js. This is required because the OasisW Engine uses the DOM API in a number of places.
 
 :::
 
 ## Configuring jsdom
 
-Let's create a function that uses `jsdom` to configure the DOM environment so that the PlayCanvas Engine can run successfully.
+Let's create a function that uses `jsdom` to configure the DOM environment so that the OasisW Engine can run successfully.
 
 ```javascript
 import { JSDOM } from 'jsdom';
@@ -62,16 +62,16 @@ export function jsdomSetup() {
     global.MouseEvent = jsdom.window.MouseEvent;
     global.XMLHttpRequest = jsdom.window.XMLHttpRequest;
 
-    // Copy the PlayCanvas API to global scope (only required for 'classic' scripts)
+    // Copy the OasisW API to global scope (only required for 'classic' scripts)
     jsdom.window.pc = pc;
 }
 ```
 
-Once you have called `jsdomSetup()`, you can create your PlayCanvas application as normal.
+Once you have called `jsdomSetup()`, you can create your OasisW application as normal.
 
-## Creating a PlayCanvas Application
+## Creating a OasisW Application
 
-When running a PlayCanvas application in Node.js, you are unlikely to require rendering. In this case, you can create a Null graphics device which will not output any graphics.
+When running a OasisW application in Node.js, you are unlikely to require rendering. In this case, you can create a Null graphics device which will not output any graphics.
 
 ```javascript
 import { Application, NullGraphicsDevice } from 'playcanvas';

@@ -2,7 +2,7 @@
 title: Lightmapping
 ---
 
-[![PlayCanvas Lightmapping](/img/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg)][13]
+[![OasisW Lightmapping](/img/user-manual/graphics/lighting/lightmapping/playcanvas-lightmapping-scene.jpg)][13]
 *The lighting in this scene is implemented using Lightmap and AO textures and Box Projected IBL (reflections)*
 
 Here is the link to [final scene][13] and [project][14] that uses these techniques to achieve results in image above: External HDR Lightmaps (described in this page below), [Ambient Occlusion][12] and HDR Cubemap applied using Box Projection using [Image Based Lighting][11] technique to achieve realistic reflections.
@@ -11,13 +11,13 @@ Here is the link to [final scene][13] and [project][14] that uses these techniqu
 
 Lightmap generation is the process of pre-calculating lighting information for a static scene and storing it in textures which are then applied on materials. This is an efficient way of lighting a scene if many of the light sources and geometry are static or environmental.
 
-PlayCanvas offers two ways to use lightmaps in your scene: **External lightmap generation** using a 3rd-party tool and [**Runtime Lightmapping**][0] that can be generated automatically by the Engine on loading or later while application is running.
+OasisW offers two ways to use lightmaps in your scene: **External lightmap generation** using a 3rd-party tool and [**Runtime Lightmapping**][0] that can be generated automatically by the Engine on loading or later while application is running.
 
 This page gives details and best practices on rendering lightmaps from external tools.
 
 ## External Lightmap Generation {#external-lightmap-generation}
 
-Many 3D content tools have ways to generate lightmap textures. For example, 3ds Max, Maya, Blender and other tools all have ways to bake lightmaps into textures. The advantages of using an offline tool for lightmap generation is that you can use very sophisticated lighting calculations like Global Illumination for bounce lighting, soft shadows, ambient occlusion, etc. The major disadvantage is that you have to have a complete representation of your scene inside the 3D tool. So if your PlayCanvas scene is made up of lots of instances positioned in the Editor, you need to re-create this inside your lightmapping tool.
+Many 3D content tools have ways to generate lightmap textures. For example, 3ds Max, Maya, Blender and other tools all have ways to bake lightmaps into textures. The advantages of using an offline tool for lightmap generation is that you can use very sophisticated lighting calculations like Global Illumination for bounce lighting, soft shadows, ambient occlusion, etc. The major disadvantage is that you have to have a complete representation of your scene inside the 3D tool. So if your OasisW scene is made up of lots of instances positioned in the Editor, you need to re-create this inside your lightmapping tool.
 
 Once you have created lightmaps using an external tool you simply upload them as regular texture assets and they can be added to your materials using the lightmap slot in the standard Physical Material.
 
@@ -27,7 +27,7 @@ In this page we will use 3ds Max with VRay to generate lightmaps, but the same f
 
 ## Gamma Correction {#gamma-correction}
 
-When rendering Lightmaps or CubeMaps they should be rendered in Linear Space to ensure color curves are not affected by gamma correction twice. The PlayCanvas Engine will apply gamma correction during real-time rendering.
+When rendering Lightmaps or CubeMaps they should be rendered in Linear Space to ensure color curves are not affected by gamma correction twice. The OasisW Engine will apply gamma correction during real-time rendering.
 
 In 3ds Max this option (Enable Gamma/LUT Correction) should be disabled and can be found in Preference Settings (Customize > Preferences):
 
@@ -78,7 +78,7 @@ To get illumination data out of the modeling tool we want to render the light da
 
 In 3ds Max this is done using the Render To Texture window. Where Padding needs to be set to larger value; selected 2nd UV Channel; and Output profile depending on your renderer, in screenshot below `VRayRawTotalLightingMap` is used.
 
-![Render To Texture: PlayCanvas Lightmapping](/img/user-manual/graphics/lighting/lightmapping/3ds-max-render-to-texture-window.png)
+![Render To Texture: OasisW Lightmapping](/img/user-manual/graphics/lighting/lightmapping/3ds-max-render-to-texture-window.png)
 
 ## Noise {#noise}
 
@@ -88,18 +88,18 @@ Depending on the quality and time of rendering in some situations the illuminati
 
 ## Upload to Editor {#upload-to-editor}
 
-At this stage you have your geometry with a second UV channel (UV1) and HDR lightmap textures and it is time to upload them to your PlayCanvas scene and setup the materials. This is done by drag 'n' dropping the files or using the upload button in assets panel. After you've uploaded your geometry it will auto-generate materials. For each material that a lightmap is rendered for you need to set the lightmap texture. Simply select all required materials and drag'n'drop or pick lightmap texture for the Lightmap slot.
+At this stage you have your geometry with a second UV channel (UV1) and HDR lightmap textures and it is time to upload them to your OasisW scene and setup the materials. This is done by drag 'n' dropping the files or using the upload button in assets panel. After you've uploaded your geometry it will auto-generate materials. For each material that a lightmap is rendered for you need to set the lightmap texture. Simply select all required materials and drag'n'drop or pick lightmap texture for the Lightmap slot.
 
-![PlayCanvas Editor: Material Lightmap Texture Slot](/img/user-manual/graphics/lighting/lightmapping/lightmapping-material-slot.png)
+![OasisW Editor: Material Lightmap Texture Slot](/img/user-manual/graphics/lighting/lightmapping/lightmapping-material-slot.png)
 
 ## Final remarks {#final-remarks}
 
 Gamma correction, tone mapping and exposure - are good settings that you will want to play with to get the desired look and color for your scene.
 
-You can [explore the example][13] that uses the techniques described above and also its [project][14].
+<!-- You can [explore the example][13] that uses the techniques described above and also its [project][14]. -->
 
 [0]: /user-manual/graphics/lighting/runtime-lightmaps/
 [11]: /user-manual/graphics/physical-rendering/image-based-lighting/
 [12]: /user-manual/graphics/lighting/ambient-occlusion/
-[13]: https://playcanv.as/p/zdkARz26/
-[14]: https://playcanvas.com/project/446587/overview/archviz-example
+<!-- [13]: https://playcanv.as/p/zdkARz26/ -->
+<!-- [14]: https://playcanvas.com/project/446587/overview/archviz-example -->

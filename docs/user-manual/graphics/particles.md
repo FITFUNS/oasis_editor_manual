@@ -2,7 +2,7 @@
 title: Particles
 ---
 
-PlayCanvas provides comprehensive support for creating and editing particle systems.
+OasisW provides comprehensive support for creating and editing particle systems.
 
 ## What is a Particle System?
 

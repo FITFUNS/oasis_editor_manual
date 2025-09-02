@@ -35,3 +35,207 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Custom search styles */
+.DocSearch-Button {
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-content);
+  font-size: 14px;
+  padding: 8px 12px 8px 40px;
+  margin-left: 16px;
+  min-width: 200px;
+  height: 36px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.DocSearch-Button:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add search icon */
+.DocSearch-Button::before {
+  content: "🔍";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  opacity: 0.6;
+}
+
+.DocSearch-Button-Placeholder {
+  font-size: 14px;
+  color: var(--ifm-color-content-secondary);
+}
+
+/* Override search placeholder text with Korean */
+.DocSearch-Button-Placeholder::after {
+  content: "검색...";
+}
+
+.DocSearch-Button-Placeholder {
+  font-size: 0;
+}
+
+.DocSearch-Button-Placeholder::after {
+  font-size: 14px;
+}
+
+.DocSearch-Button-Keys {
+  display: flex;
+  align-items: center;
+}
+
+.DocSearch-Button-Key {
+  background: var(--ifm-color-emphasis-200);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 3px;
+  color: var(--ifm-color-content);
+  font-size: 11px;
+  font-weight: 500;
+  height: 18px;
+  line-height: 18px;
+  margin-left: 4px;
+  min-width: 18px;
+  padding: 0 4px;
+  text-align: center;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .DocSearch-Button {
+  background: var(--ifm-background-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .DocSearch-Button-Key {
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+/* Search modal customization */
+.DocSearch-Modal {
+  max-width: 560px;
+}
+
+.DocSearch-SearchBar {
+  padding: 0 16px;
+}
+
+.DocSearch-MagnifierLabel {
+  color: var(--ifm-color-primary);
+}
+
+.DocSearch-Hit-source {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.DocSearch-Hit-title {
+  font-weight: 500;
+}
+
+.DocSearch-Hit-path {
+  color: var(--ifm-color-content-secondary);
+  font-size: 12px;
+}
+
+.DocSearch-Hits mark {
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+[data-theme='dark'] .DocSearch-Hits mark {
+  background: var(--ifm-color-primary-darkest);
+  color: var(--ifm-color-primary-lightest);
+}
+
+/* Responsive search */
+@media (max-width: 996px) {
+  .DocSearch-Button {
+    min-width: auto;
+    width: 36px;
+    padding: 8px;
+  }
+  
+  .DocSearch-Button::before {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .DocSearch-Button-Placeholder {
+    display: none;
+  }
+  
+  .DocSearch-Button-Keys {
+    display: none;
+  }
+}
+
+/* Additional search enhancements */
+.DocSearch-Form {
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.DocSearch-Input {
+  font-size: 16px;
+  color: var(--ifm-color-content);
+}
+
+.DocSearch-Input::placeholder {
+  color: var(--ifm-color-content-secondary);
+}
+
+.DocSearch-Dropdown {
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-top: none;
+}
+
+.DocSearch-Footer {
+  background: var(--ifm-background-surface-color);
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+/* Keyboard shortcut styling */
+.DocSearch-Button-Key {
+  background: var(--ifm-color-emphasis-200);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 3px;
+  color: var(--ifm-color-content);
+  font-size: 11px;
+  font-weight: 500;
+  height: 18px;
+  line-height: 16px;
+  margin-left: 4px;
+  min-width: 18px;
+  padding: 0 4px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sidebar section headers */
+.sidebar-section-header {
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ifm-color-content-secondary);
+  margin: 16px 0 8px 0;
+  padding: 0 12px;
+}
+
+.sidebar-divider {
+  margin: 12px 0;
+}
