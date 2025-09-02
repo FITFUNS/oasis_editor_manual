@@ -2,11 +2,11 @@
 title: Clustered Lighting
 ---
 
-:::note
+<!-- :::note
 
 Clustered lighting is enabled by default from OasisW Engine v1.56 onwards. The older lighting system will still be available in the Engine for the short term. However, we will deprecate it in a future minor release.
 
-:::
+::: -->
 
 Lights are a great way to add realism to your application. However, real time lights can also create significant runtime performance cost, especially when you have large numbers of lights that cast shadows.
 

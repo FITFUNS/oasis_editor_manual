@@ -96,7 +96,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
+<!-- <TabItem  value="esm" label="ESM">
 
 ```javascript
 import { Script, MOUSEBUTTON_LEFT } from 'playcanvas';
@@ -121,7 +121,7 @@ export class InputScript extends Script {
 
 ```
 
-</TabItem>
+</TabItem> -->
 <TabItem value="classic" label="Classic">
 
 ```javascript
@@ -154,7 +154,7 @@ To prevent this behavior you can call the ```preventDefault()``` method of the n
 Here is small script to include once in your scene:
 
 <Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
+<!-- <TabItem  value="esm" label="ESM">
 
 ```javascript
 import { Script, EVENT_TOUCHEND } from 'playcanvas';
@@ -175,7 +175,7 @@ export class TouchFix extends Script {
 }
 ```
 
-</TabItem>
+</TabItem> -->
 <TabItem value="classic" label="Classic">
 
 ```javascript

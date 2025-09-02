@@ -16,7 +16,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
+<!-- <TabItem  value="esm" label="ESM">
 
 ```javascript
 import { Script, Vec3, Entity, Color } from 'playcanvas';
@@ -163,7 +163,7 @@ export class PointToPointConstraint extends Script {
 
 ```
 
-</TabItem>
+</TabItem> -->
 <TabItem value="classic" label="Classic">
 
 ```javascript
@@ -299,7 +299,7 @@ Sometimes, you might find that fast moving rigid bodies in your simulations pass
 You can enable CCD for any OasisW rigid body using the following script:
 
 <Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
+<!-- <TabItem  value="esm" label="ESM">
 
 ```javascript
 import { Script } from 'playcanvas';
@@ -342,7 +342,7 @@ export class Ccd extends Script {
 }
 ```
 
-</TabItem>
+</TabItem> -->
 <TabItem value="classic" label="Classic">
 
 ```javascript

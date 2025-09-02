@@ -36,7 +36,7 @@ Generally, clicking on a material preview icon will take you to the material ins
 
 You can modify which materials are assigned to where on a model asset or you can customize the materials of a particular Entity that has a model component.
 
-When you select an Entity with a model component you will see two buttons - Asset Materials and Entity Materials.
+<!-- When you select an Entity with a model component you will see two buttons - Asset Materials and Entity Materials. -->
 
 ![Model Inspector Free Slot](/img/user-manual/assets/materials/model-inspector-free-slot.jpg)
 

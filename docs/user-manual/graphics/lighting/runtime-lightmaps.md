@@ -25,7 +25,8 @@ However, a disadvantage of runtime lightmap generation is that currently we do n
 
 :::note
 
-The use of [batching][11] is not compatible with runtime lightmaps, as each lightmapped object requires its own unique lightmap texture.
+The use of batching is not compatible with runtime lightmaps, as each lightmapped object requires its own unique lightmap texture.
+<!-- [batching][11] -->
 
 :::
 
@@ -125,7 +126,7 @@ For example, consider a plane that is 1x1 unit (meter) in size. If the Global Si
 
 ![Global Lightmapping Settings](/img/user-manual/graphics/lighting/lightmapping/lightmapping-settings.png)
 
-## Auto-Unwrapping and UV1 Generation {#auto-unwrapping-and-uv1-generation}
+<!-- ## Auto-Unwrapping and UV1 Generation {#auto-unwrapping-and-uv1-generation}
 
 Lightmaps are always applied using the second set of **UV coordinates (UV1)** on the model asset. For the best results, we recommend that you add a second UV set from the 3D content tool to your model, before you upload it to OasisW. For more information about lightmap friendly UV's, see the [UV Mapping][9] section.
 
@@ -139,11 +140,11 @@ If your model is missing a UV1 map, you will see a warning in the Model Componen
 
 To fix the warning, select the model asset and open the **Pipeline** section. Click the **Auto-Unwrap** button and wait for the progress bar to complete. Auto-unwrap will edit the model asset, so if you re-import the model from the source (e.g. upload a new FBX) the precomputed UV1 will be lost. If the uploaded model has no UV1, you will need to auto-unwrap the model again.
 
-The **Padding** option determines the space between sections when unwrapping occurs. If you see light bleeding (i.e. light that shouldn't be in the lightmap), you can increase the padding to reduce bleeding.
+The **Padding** option determines the space between sections when unwrapping occurs. If you see light bleeding (i.e. light that shouldn't be in the lightmap), you can increase the padding to reduce bleeding. -->
 
 [4]: /user-manual/graphics/lighting/shadows
-[9]: /user-manual/graphics/lighting/lightmapping/#uv-mapping
-[11]: /user-manual/graphics/advanced-rendering/batching
+<!-- [9]: /user-manual/graphics/lighting/lightmapping/#uv-mapping -->
+<!-- [11]: /user-manual/graphics/advanced-rendering/batching -->
 <!-- [14]: /user-manual/editor/interface/settings/rendering/
 [15]: /user-manual/editor/interface/settings/rendering/
 [16]: /user-manual/editor/interface/settings/lightmapping/ -->

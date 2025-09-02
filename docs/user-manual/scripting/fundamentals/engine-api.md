@@ -101,8 +101,8 @@ this.app.on('game:start', this.onGameStart, this);
 
 ## Learning More
 
+<!-- * **[Engine Guide](../../engine/index.md)** - In-depth guide to the OasisW Engine runtime -->
 * **[Full Engine API Reference](https://manual.oasisserver.link/engine/)** - Complete documentation
-* **[Engine Guide](../../engine/index.md)** - In-depth guide to the OasisW Engine runtime
 * **[Script Lifecycle](./script-lifecycle.md)** - When your script methods are called
 * **[Events](./events.md)** - Script communication patterns
 

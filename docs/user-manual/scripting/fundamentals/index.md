@@ -10,9 +10,9 @@ Master the core concepts of OasisW scripting. Whether you're using modern ESM sc
 
 Learn the basic structure and syntax of OasisW scripts. Understand how scripts work, their lifecycle, and how to attach them to entities.
 
-### [ESM Scripts](./esm-scripts.md)
+<!-- ### [ESM Scripts](./esm-scripts.md)
 
-Explore modern ES Module-based scripting with classes, imports, and better tooling. **Recommended for new projects.**
+Explore modern ES Module-based scripting with classes, imports, and better tooling. **Recommended for new projects.** -->
 
 ### [Script Lifecycle](./script-lifecycle.md)
 

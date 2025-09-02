@@ -36,7 +36,9 @@ The text element renders a string of text using a [font asset][4].
 | Margin      | The distance from the edge of the element to the Anchor. This is only available when the Anchor is split (non-equal in one axis). |
 | Use Input   | If enabled, this Element is added to the list of elements that check for input and fire input related events. |
 | Layers      | The Layers to render this element into. More on Layers [here][8]. |
-| Batch Group | The Batch Group that this model belongs to. More on Batching [here][9]. |
+| Batch Group | The Batch Group that this model belongs to. |
+<!-- More on Batching [here][9].  -->
+
 
 ## Image Component Properties
 

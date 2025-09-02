@@ -86,7 +86,17 @@ const sidebars = {
     'usage-guide/material',
     'usage-guide/physics-movement',
     'usage-guide/template',
-    'usage-guide/script'
+    {
+      type: 'category',
+      label: '스크립트',
+      link: {
+        type: 'doc',
+        id: 'usage-guide/script',
+      },
+      items: [
+        'usage-guide/tutorial-script',
+      ],
+    }
   ],
 
   // 한 단계 더 나아가기 사이드바
@@ -229,18 +239,18 @@ const sidebars = {
             'user-manual/assets/types/wasm',
           ],
         },
-        'user-manual/assets/importing',
-        {
-          type: 'category',
-          label: 'Import Pipeline',
-          link: {
-            type: 'doc',
-            id: 'user-manual/assets/import-pipeline/index',
-          },
-          items: [
-            'user-manual/assets/import-pipeline/import-hierarchy',
-          ],
-        },
+        // 'user-manual/assets/importing',
+        // {
+        //   type: 'category',
+        //   label: 'Import Pipeline',
+        //   link: {
+        //     type: 'doc',
+        //     id: 'user-manual/assets/import-pipeline/index',
+        //   },
+        //   items: [
+        //     'user-manual/assets/import-pipeline/import-hierarchy',
+        //   ],
+        // },
         {
           type: 'category',
           label: 'Models',
@@ -250,7 +260,7 @@ const sidebars = {
           },
           items: [
             'user-manual/assets/models/building',
-            'user-manual/assets/models/exporting',
+            // 'user-manual/assets/models/exporting',
             'user-manual/assets/models/units',
           ],
         },
@@ -354,7 +364,7 @@ const sidebars = {
             'user-manual/graphics/lighting/lightmapping',
             'user-manual/graphics/lighting/ambient-occlusion',
             'user-manual/graphics/lighting/runtime-lightmaps',
-            'user-manual/graphics/lighting/clustered-lighting',
+            // 'user-manual/graphics/lighting/clustered-lighting',
           ],
         },
         {
@@ -381,19 +391,19 @@ const sidebars = {
             // 'user-manual/graphics/linear-workflow/hdr-rendering',
           ],
         },
-        {
-          type: 'category',
-          label: 'Shaders',
-          link: {
-            type: 'doc',
-            id: 'user-manual/graphics/shaders/index',
-          },
-          items: [
-            'user-manual/graphics/shaders/glsl-specifics',
-            'user-manual/graphics/shaders/wgsl-specifics',
-            'user-manual/graphics/shaders/migrations',
-          ],
-        },
+        // {
+        //   type: 'category',
+        //   label: 'Shaders',
+        //   link: {
+        //     type: 'doc',
+        //     id: 'user-manual/graphics/shaders/index',
+        //   },
+        //   items: [
+        //     'user-manual/graphics/shaders/glsl-specifics',
+        //     'user-manual/graphics/shaders/wgsl-specifics',
+        //     'user-manual/graphics/shaders/migrations',
+        //   ],
+        // },
         // {
         //   type: 'category',
         //   label: 'Post Effects',

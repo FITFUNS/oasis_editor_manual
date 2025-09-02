@@ -22,13 +22,13 @@ When you declare an attribute in your script, you are essentially defining a pro
 
 For example, a `speed` attribute in a rotation script could be exposed. Programmatically, you could set `this.speed = 5;` in an `initialize` method or `entity.script.myScript.speed = 5;` when setting up an entity. This allows you to set different rotation speeds for different spinning objects, all using the same underlying script logic.
 
-## Two Systems: ESM and Classic
+## Systems: Classic
 
-OasisW has two systems for defining script attributes, corresponding to the two types of scripting methodologies:
+OasisW has systems for defining script attributes, corresponding to the types of scripting methodologies:
 
-1. **[ESM Script Attributes](./esm.md):** Used with modern ES Module (`.mjs`) scripts. Attributes are typically declared using JSDoc comments above class member variables. This is the recommended approach for new projects.
-2. **[Classic Script Attributes](./classic.md):** Used with the older "Classic" script (`.js`) files. Attributes are declared using a specific `MyScript.attributes.add(...)` API.
+<!-- 1. **[ESM Script Attributes](./esm.md):** Used with modern ES Module (`.mjs`) scripts. Attributes are typically declared using JSDoc comments above class member variables. This is the recommended approach for new projects. -->
+1. **[Classic Script Attributes](./classic.md):** Used with the older "Classic" script (`.js`) files. Attributes are declared using a specific `MyScript.attributes.add(...)` API.
 
-While the underlying goal is the same—to define a configurable interface—the syntax and some capabilities differ between the two. Click the links above to learn the specifics for each system.
+<!-- While the underlying goal is the same—to define a configurable interface—the syntax and some capabilities differ between the two. Click the links above to learn the specifics for each system. -->
 
 Understanding and utilizing Script Attributes is key to building flexible, maintainable, and collaboratively-friendly projects in OasisW when constructing your scenes through code.

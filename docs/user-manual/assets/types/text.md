@@ -17,7 +17,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs defaultValue="classic" groupId='script-code'>
-<TabItem  value="esm" label="ESM">
+<!-- <TabItem  value="esm" label="ESM">
 
 ```javascript
 import { Script } from 'playcanvas';
@@ -45,7 +45,7 @@ export class TextScript extends Script {
 }
 ```
 
-</TabItem>
+</TabItem> -->
 <TabItem value="classic" label="Classic">
 
 ```javascript

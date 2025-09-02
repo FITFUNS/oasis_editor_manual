@@ -6,7 +6,7 @@ title: Classic Reference
 
 This page documents Script Attributes for the deprecated **Classic Scripts** system.
 
-For **ESM Script Attributes**, click [here](./esm.md).
+<!-- For **ESM Script Attributes**, click [here](./esm.md). -->
 
 :::
 

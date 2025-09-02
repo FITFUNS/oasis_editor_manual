@@ -39,7 +39,7 @@ When this option is enabled textures that are not a power of two will be convert
 
 Images that are uploaded will be imported as a texture atlas instead of a normal texture asset. This is a useful time saver when uploading many spritesheets or UI assets.
 
-## Model Import Settings {#model-import-settings}
+<!-- ## Model Import Settings {#model-import-settings}
 
 These options only affect the importing of model or scene files (e.g. FBX, Collada, obj, etc)
 
@@ -77,7 +77,7 @@ Only available if using [Convert to GLB](#convert-to-glb) option. Setting this t
 
 If using Draco compression, remember to import the Draco WASM module into the project otherwise the models will not load.
 
-<img loading="lazy" src="/img/user-manual/assets/import-pipeline/draco-import-button.png" width="480" />
+<img loading="lazy" src="/img/user-manual/assets/import-pipeline/draco-import-button.png" width="480" /> -->
 
 ### Create FBX Folder {#create-fbx-folder}
 

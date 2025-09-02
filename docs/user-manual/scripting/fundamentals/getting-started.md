@@ -19,8 +19,8 @@ Every OasisW script follows a similar pattern, regardless of which system you us
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs defaultValue="esm" groupId='script-code'>
-<TabItem value="esm" label="ESM (Recommended)">
+<Tabs defaultValue="classic" groupId='script-code'>
+<!-- <TabItem value="esm" label="ESM (Recommended)">
 
 ```javascript
 import { Script } from 'playcanvas';
@@ -50,7 +50,7 @@ export class MyScript extends Script {
 * Use `/** @attribute */` to expose properties to the editor
 * File must have `.mjs` extension
 
-</TabItem>
+</TabItem> -->
 <TabItem value="classic" label="Classic">
 
 ```javascript
@@ -96,8 +96,8 @@ Learn more about the [Script Lifecycle](./script-lifecycle.md).
 
 Attributes let you expose script properties to the editor, making scripts configurable without code changes:
 
-<Tabs defaultValue="esm" groupId='script-code'>
-<TabItem value="esm" label="ESM">
+<Tabs defaultValue="classic" groupId='script-code'>
+<!-- <TabItem value="esm" label="ESM">
 
 ```javascript
 import { Color, Entity, Script } from 'playcanvas';
@@ -119,7 +119,7 @@ export class Configurable extends Script {
 }
 ```
 
-</TabItem>
+</TabItem> -->
 <TabItem value="classic" label="Classic">
 
 ```javascript
@@ -153,14 +153,14 @@ const rigidbody = this.entity.rigidbody;
 
 ## Next Steps
 
-* **Learn ESM Scripts:** If you're starting fresh, check out [ESM Scripts](./esm-scripts.md) for the modern approach
+<!-- * **Learn ESM Scripts:** If you're starting fresh, check out [ESM Scripts](./esm-scripts.md) for the modern approach -->
 * **Understand Lifecycle:** Read about [Script Lifecycle](./script-lifecycle.md) to understand when your code runs
 * **Add Interactivity:** Explore [Events](./events.md) to make scripts communicate with each other
 
-:::tip
+<!-- :::tip
 
 **Which system should I use?**
 
 For new projects, we recommend **ESM Scripts** as they offer better tooling, cleaner syntax, and modern JavaScript features. Classic scripts are still fully supported for existing projects.
 
-:::
+::: -->

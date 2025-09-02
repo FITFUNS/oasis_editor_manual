@@ -71,7 +71,7 @@ When an entity is cloned using the `entity.clone()` method, the `initialize` met
 **Example:**
 
 <Tabs>
-<TabItem value="esm" label="ESM">
+<!-- <TabItem value="esm" label="ESM">
 
 ```javascript
 import { Script } from 'playcanvas';
@@ -94,7 +94,7 @@ export class MyScript extends Script {
 }
 ```
 
-</TabItem>
+</TabItem> -->
 <TabItem value="classic" label="Classic">
 
 ```javascript
@@ -132,7 +132,7 @@ MyScript.prototype.initialize = function() {
 **Example:**
 
 <Tabs>
-<TabItem value="esm" label="ESM">
+<!-- <TabItem value="esm" label="ESM">
 
 ```javascript
 import { Script } from 'playcanvas';
@@ -156,7 +156,7 @@ export class MyScript extends Script {
 }
 ```
 
-</TabItem>
+</TabItem> -->
 <TabItem value="classic" label="Classic">
 
 ```javascript
@@ -208,7 +208,7 @@ Keep update as efficient as possible, as it runs very frequently. Avoid heavy co
 **Example:**
 
 <Tabs>
-<TabItem value="esm" label="ESM">
+<!-- <TabItem value="esm" label="ESM">
 
 ```javascript
 import { Script } from 'playcanvas';
@@ -223,7 +223,7 @@ export class Rotator extends Script {
 }
 ```
 
-</TabItem>
+</TabItem> -->
 <TabItem value="classic" label="Classic">
 
 ```javascript
@@ -257,7 +257,7 @@ Rotator.prototype.update = function(dt) {
 **Example:**
 
 <Tabs>
-<TabItem value="esm" label="ESM">
+<!-- <TabItem value="esm" label="ESM">
 
 ```javascript
 import { Script } from 'playcanvas';
@@ -277,7 +277,7 @@ export class TrackingCamera extends Script {
 }
 ```
 
-</TabItem>
+</TabItem> -->
 <TabItem value="classic" label="Classic">
 
 ```javascript
