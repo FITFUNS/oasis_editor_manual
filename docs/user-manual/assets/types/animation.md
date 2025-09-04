@@ -14,7 +14,7 @@ There is also a viewer in the [Anim State Graph Editor][anim-state-graph-editor]
 
 ![Anim State Graph Preview](/img/user-manual/assets/animation/anim-state-graph-preview.gif)
 
-## Animation Import Settings
+<!-- ## Animation Import Settings
 
 :::warning
 
@@ -50,7 +50,7 @@ This is a value between 0 and 100 where the higher number, the smaller the file 
 
 Only available for GLB export formats. Enable this option if you wish to keep the easing in the animation curves from the original animation. However, this will mean that the file will have extra information per keyframe and increase the size.
 
-If enabling this option, it is recommended that Sample Rate is disabled and Curve Tolerance is set to 0.
+If enabling this option, it is recommended that Sample Rate is disabled and Curve Tolerance is set to 0. -->
 
 [mixamo]: https://www.mixamo.com/
 [anim-state-graph-editor]: /user-manual/animation/anim-state-graph-assets/

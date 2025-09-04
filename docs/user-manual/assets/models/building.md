@@ -20,7 +20,7 @@ The import of GLBs supports the following glTF features for incredibly fast scen
 As such, to target OasisW, you do not have to use any special art tool plugins and there are no OasisW-specific workflows you must follow.
 
 ![GLB Import Example](/img/user-manual/assets/models/building/glb-import.gif)  
-*Model by Loïc Norgeot and mosquito scan by Geoffrey Marchal for [Sketchfab](https://sketchfab.com/3d-models/real-time-refraction-demo-mosquito-in-amber-37233d6ed84844fea1ebe88069ea58d1) licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)*
+*Artwork by MAR.COS.*
 
 OasisW also supports the importing of FBX files which is another common interchange format. However, FBX materials are not imported as faithfully as glTF materials and might require some editing after import.
 
