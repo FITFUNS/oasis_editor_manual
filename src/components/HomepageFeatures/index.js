@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: '쉬운 사용법',
-    image: '/engine/assets/fitfuns-logo1.svg',
+    image: '/engine/assets/open-book.png',
     description: (
       <>
         OasisW는 처음부터 쉽게 사용할 수 있도록 설계되었습니다.
@@ -14,20 +14,20 @@ const FeatureList = [
       </>
     ),
   },
+  // {
+  //   title: '코딩은 AI',
+  //   image: '/engine/assets/fitfuns-logo1.svg',
+  //   description: (
+  //     <>
+  //       글로 설명하면 AI가 콘텐츠를 만들어 줘요.
+  //       원하는 게임을 글로 설명하면 AI가 코딩을 도와주고, 멋진 3D 모델과 움직임까지 쉽게
+  //       만들어 줘요!
+  //     </>
+  //   ),
+  // },
   {
-    title: '코딩은 AI',
-    image: '/engine/assets/fitfuns-logo1.svg',
-    description: (
-      <>
-        글로 설명하면 AI가 콘텐츠를 만들어 줘요.
-        원하는 게임을 글로 설명하면 AI가 코딩을 도와주고, 멋진 3D 모델과 움직임까지 쉽게
-        만들어 줘요!
-      </>
-    ),
-  },
-  {
-    title: '완전한 3D 도구',
-    image: '/engine/assets/fitfuns-logo1.svg',
+    title: '다양한 3D 도구',
+    image: '/engine/assets/3d-cube.png',
     description: (
       <>
         지면 작성, 머티리얼 적용, 물리운동, 스크립트 등 3D 개발에 필요한 모든 기능을 제공합니다.
@@ -38,7 +38,7 @@ const FeatureList = [
 
 function Feature({image, title, description}) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--6')}>
       <div className="text--center">
         <img src={image} className={styles.featureSvg} alt={title} />
       </div>
