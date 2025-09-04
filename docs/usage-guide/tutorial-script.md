@@ -213,10 +213,10 @@ UIManager.prototype.initialize = function () {
 };
 
 UIManager.prototype.update = function (dt) {
-  var width = this.timeBarEntity.parent.element.calculatedWidth;
+  var width = this.timeBarEntity.parent.element.width;
   var remain = this._gm.getPlayerTimePercentage();
   this._margin.z = (1 - remain) * width;
-  this.timeBarEntity.element.margin = this._margin;
+  this.timeBarEntity.element.width = remain * width;
 };
 
 UIManager.prototype._onCollected = function () {
