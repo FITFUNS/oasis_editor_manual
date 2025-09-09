@@ -63,41 +63,6 @@ The **Cells** property allows you to specify the number of cells along each worl
 
 The **Max Lights Per Cell** property allows you to specify the maximum number of lights stored in each individual cell. This represents the maximum number of lights that overlap. Usually, the number of lights must be increased for coarser grid subdivisions, since the light overlap is larger.
 
-### Configuring Atlas {#configuring-atlas}
-
-All of the Shadow Maps and Cookie Textures used by visible lights are stored in an atlas. There is one atlas texture for Shadows and another for Cookies. The atlases can have different resolutions, although internally they use the same subdivision into smaller areas used by individual lights.
-
-**Shadow Atlas Resolution** allows the Shadow atlas size to be configured, while **Cookie Atlas Resolution** allows for the Cookie atlas to be set. The sizes do not need to be a power of 2.
-
-**Atlas Split** controls how the atlas is split into the individual sub-textures used by lights. There are two split strategies:
-
-- **Automatic** – When the array size is specified as 0, the engine automatically splits the atlas as needed, to assign each visible light an equally sized sub-texture. For example, if you have three lights visible in a frame, the atlas will split into 2x2 sub-textures, and three of those four sub-textures will be assigned to the lights.
-
-    ![Atlas Split 0](/img/user-manual/graphics/lighting/lights/atlas_split_0.png)
-
-- **Manual** – Allows the atlas to be split into a fixed number of sub-textures, which can be different sizes. It is set up using an array of numbers, where each number represents a split, both vertically and horizontally. See the next section for an example of manual atlas splits.
-
-### Configuring Manual Atlas Split {#configuring-manual-atlas-split}
-
-To understand how an atlas is manually split, take an array with two numbers: [2, 2]. The first number in the array splits the atlas into 2x2, for a total of four areas. Any following numbers in the array would split these areas again. In this case, the second number in the array splits one of the existing areas into another 2x2 (e.g. four areas), for a combined total of 7 areas.
-
-![Manual Split](/img/user-manual/graphics/lighting/lights/manual_split.png)
-
-The following image shows how the manual atlas split should be specified.
-
-![Atlas Split 2](/img/user-manual/graphics/lighting/lights/atlas_split_2.png)
-
-Other Examples:
-
-- [3, 2] – The first number splits the atlas into 3x3 (9 areas). The second number splits one of these areas into 2x2 (4 areas), for a total of 12 areas.
-- [4] – The atlas is split into 4x4 (16 areas).
-
-The main advantage of using manual subdivision is the level of detail that can be achieved. You can set up a fixed amount of sub-textures, which are assigned to the lights by order of their screen-space size. This allows lights that are larger on screen to receive a larger area of the atlas, while smaller lights in the distance use a smaller area of the atlas. If there are more lights than the number of available areas, the smallest screen-space lights will not cast any shadows.
-
-### Shadows Type {#shadows-type}
-
-All lights that cast shadows use the same shadow type. This allows you to globally set the shadow softness and related performance impact. The supported options are PCF1, PCF3, and PCF5. For more information, see the [Shadows][shadows] page.
-
 ## Limitations {#limitations}
 
 Internally, a light index is stored using 8 bits, so the maximum number of visible lights at any frame is 254 (one index is reserved). In the future, there may be an additional option to use 16 bits to store the index and increase the limit.

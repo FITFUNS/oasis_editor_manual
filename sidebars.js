@@ -364,7 +364,7 @@ const sidebars = {
             'user-manual/graphics/lighting/lightmapping',
             'user-manual/graphics/lighting/ambient-occlusion',
             'user-manual/graphics/lighting/runtime-lightmaps',
-            // 'user-manual/graphics/lighting/clustered-lighting',
+            'user-manual/graphics/lighting/clustered-lighting',
           ],
         },
         {
