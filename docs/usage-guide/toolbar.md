@@ -22,6 +22,7 @@ OasisW의 툴바에 있는 각 버튼의 단축키와 기능을 설명합니다.
 | ![AI Image Generation](/img/usage-guide/3_8_image_generation.svg) | **AI Image Generation** | I | AI로 이미지 생성 |
 | ![Fullscreen](/img/usage-guide/3_9_hide_panels.svg) | **Fullscreen** | Space | 모든 패널 숨기기/보이기 (뷰포트 최대화) |
 | ![Launch](/img/usage-guide/3_10_launch.svg) | **Launch** | Ctrl+Enter | 새 탭에서 씬 실행 |
+| <img src="/img/usage-guide/3_11_publish.svg" alt="Deploy Test" style={{width: '24px'}} /> | **Deploy Test** |  | 배포 테스트 |
 
 ### Translate (이동)
 - **단축키**: `1`
@@ -84,6 +85,25 @@ OasisW의 툴바에 있는 각 버튼의 단축키와 기능을 설명합니다.
 ### Launch
 - **단축키**: `Ctrl+Enter`
 - **기능**: 새 탭에서 씬 실행
+
+### Deploy Test
+<!-- - **단축키**: ``   -->
+- **기능**: 배포 테스트  
+- **사용법**:  
+새 탭에서 **배포**된 프로젝트 테스트 가능  
+**오른쪽 상단에 표시되는 QR 코드** 스캔 시, **모바일 기기에서도 테스트** 가능
+
+:::warning 주의사항
+Deploy 버튼 클릭 시 **주소창 옆에 팝업 차단됨 아이콘**이 표시되면,  
+**팝업을 허용**해야 씬이 새 탭에서 정상적으로 실행됩니다.
+:::
+
+<br />
+<div style={{display: 'flex', gap: '10px'}}>
+  <img src="/img/usage-guide/3_12.png" alt="Image" style={{maxWidth: '45%'}} />
+  <img src="/img/usage-guide/3_13.png" alt="Image" style={{maxWidth: '45%'}} />
+</div>
+
 
 <!-- ## 툴바 사용 팁
 
