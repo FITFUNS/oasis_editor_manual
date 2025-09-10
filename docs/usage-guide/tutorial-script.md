@@ -114,6 +114,8 @@ GameManager.prototype.initialize = function () {
   this.app.on("ui:restartRound", this._startRound, this);
 
   this._startRound();
+
+  this.app.root.findByName("MushRoom").setPosition(0, 0, 3);
 };
 
 GameManager.prototype.update = function (dt) {
