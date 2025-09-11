@@ -59,7 +59,7 @@ const sidebars = {
         id: 'usage-guide/ai-generation',
       },
       items: [
-        'usage-guide/image-generation',
+        // 'usage-guide/image-generation',
         'usage-guide/code-generation',
       ],
     },
