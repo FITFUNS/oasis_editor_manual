@@ -4,6 +4,9 @@
  * work well for content-centric websites.
  */
 
+/* 한글 폰트 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #007bff;
@@ -15,6 +18,10 @@
   --ifm-color-primary-lightest: #99ccff;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* 한글 폰트 변수 */
+  --ifm-font-family-base: 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', sans-serif;
+  --ifm-heading-font-family: 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', sans-serif;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -27,6 +34,94 @@
   --ifm-color-primary-lighter: #80bfff;
   --ifm-color-primary-lightest: #b3d9ff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* 한글 텍스트 렌더링 개선 */
+body, html {
+  font-family: 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', sans-serif !important;
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 모든 텍스트 요소에 한글 폰트 적용 */
+h1, h2, h3, h4, h5, h6, p, div, span, a, li, td, th {
+  font-family: 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', sans-serif !important;
+  color: var(--ifm-color-content) !important;
+  opacity: 1 !important;
+}
+
+/* 제목 요소 강제 표시 */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600 !important;
+  color: var(--ifm-color-content) !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+/* # 기호 완전히 숨기기 (드롭다운 화살표는 제외) */
+h1::before, h2::before, h3::before, h4::before, h5::before, h6::before,
+.markdown h1::before,
+.markdown h2::before,
+.markdown h3::before,
+.markdown h4::before,
+.markdown h5::before,
+.markdown h6::before,
+.anchor::before,
+.anchor-link::before,
+.hash-link::before {
+  display: none !important;
+  content: '' !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  font-size: 0 !important;
+}
+
+/* 헤더 링크의 # 기호 숨기기 */
+h1 a::before,
+h2 a::before,
+h3 a::before,
+h4 a::before,
+h5 a::before,
+h6 a::before {
+  display: none !important;
+  content: '' !important;
+}
+
+/* 드롭다운 화살표는 표시되도록 복원 */
+.navbar__item--has-dropdown .navbar__link::after,
+.menu__link--sublist::after {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  content: '' !important;
+  width: auto !important;
+  height: auto !important;
+  font-size: inherit !important;
+}
+
+
+/* Footer 글자 색상 하얀색으로 설정 */
+.footer {
+  color: white !important;
+}
+
+.footer a {
+  color: white !important;
+}
+
+.footer .footer__title {
+  color: white !important;
+}
+
+.footer .footer__link-item {
+  color: white !important;
+}
+
+.footer .footer__copyright {
+  color: white !important;
 }
 
 /* Center align all images */

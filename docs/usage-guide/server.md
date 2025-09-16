@@ -6,7 +6,7 @@ sidebar_label: 서버
 
 # 서버
 
-OasisW의 서버 기능과 도구들을 알아보겠습니다.
+OasisW의 서버 기능과 도구들을 학습합니다.
 
 ## 서버 생성
 
@@ -14,24 +14,24 @@ OasisW의 서버 기능과 도구들을 알아보겠습니다.
 
 ### 오아시스 스튜디오 서버 생성 절차
 
-1. [OasisW Studio](https://oasisserver.link/)에 접속 
+1. [OasisW Studio](https://oasisserver.link/)에 접속합니다. 
 
-2. Server 클릭 → 서버 이름 입력 후 시작 버튼 클릭
+2. Server를 클릭한 후 서버 이름을 입력하고 시작 버튼을 클릭합니다.
 
 ![Server](/img/usage-guide/9_4.png)
 
-3. 2~3분 지나면 생성된 서버 확인 가능
+3. 2~3분 지나면 생성된 서버를 확인할 수 있습니다.
 
 ![Server](/img/usage-guide/9_server.png)
 
 ### 에디터 서버 생성 절차
 
-1. 에디터 페이지의 하이어라키 뷰에서 **Add Entity(+)** 버튼 클릭 후 **Server Side → Server** 선택
-    - 에셋 뷰에 server.js 파일 자동 생성
+1. 에디터 페이지의 하이어라키 뷰에서 **Add Entity(+)** 버튼 클릭 후 **Server Side → Server** 선택합니다.
+    - 에셋 뷰에 server.js 파일 자동 생성합니다.
 
 ![Server](/img/usage-guide/9_1_server.png)
 
-2. **Server 엔티티** 클릭 → **인스팩터 뷰** → **Script** → 생성된 server 선택 
+2. **Server 엔티티** 클릭 → **인스팩터 뷰** → **Script** → 생성된 server를 선택합니다.
 
 ![Server](/img/usage-guide/9_2_server.png)
 

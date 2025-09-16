@@ -34,9 +34,7 @@ The Diffuse Color is the base color of the material. This is an RGB color value.
 
 It can also be known as **albedo** or **base color**.
 
-<div className="iframe-container">
-    <iframe src="https://playcanv.as/p/Q28EwTwQ/?color" title="Physical Materials - Diffuse" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
-</div>
+![Diffuse](/img/user-manual/graphics/physical-rendering/diffuse.png)
 
 You can often find the charts of recorded values for diffuse/albedo values on the internet.
 
@@ -60,23 +58,19 @@ The metalness value should almost always be 0 or 1. It is rare that you will nee
 
 You can also supply a metalness map which lets you define specific areas of your material as metal or non-metal.
 
-<div className="iframe-container">
-    <iframe src="https://playcanv.as/p/Q28EwTwQ/?metal" title="Physical Materials - Metalness" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
-</div>
+![Metalness](/img/user-manual/graphics/physical-rendering/metalness.png)
 
 ### Glossiness
 
 Glossiness is used in both  **metalness** and **specular** workflows and it defines how smooth your material surface is. The glossiness will affect how blurry or sharp the reflections on the material are, or how broad or narrow the specular highlights are. Glossiness is provided as a single value between 0-100 or a glossiness map.
 
-<div className="iframe-container">
-    <iframe src="https://playcanv.as/p/Q28EwTwQ/?gloss" title="Physical Materials - Glossiness" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
-</div>
+![Glossiness](/img/user-manual/graphics/physical-rendering/glossiness.png)
 
 Some PBR systems use **Roughness** instead of Glossiness. The roughness is the inverse of the glossiness. If you need to convert a roughness map to a glossiness map, simply invert it.
 
 Sometimes glossiness and roughness are referred to as the **microsurface** value.
 
-### All together
+<!-- ### All together
 
 These three properties **diffuse**, **metalness** and **glossiness** are the core of the physical material system. You can try different combinations in the live demo below.
 
@@ -84,7 +78,7 @@ There are many other additional properties to investigate that can be used to ma
 
 <div className="iframe-container">
     <iframe src="https://playcanv.as/p/Q28EwTwQ/" title="Physical Materials - All" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
-</div>
+</div> -->
 
 [5]: https://marmoset.co/posts/pbr-texture-conversion/
 [6]: /user-manual/graphics/physical-rendering/image-based-lighting/

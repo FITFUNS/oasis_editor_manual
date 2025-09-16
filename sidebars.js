@@ -361,9 +361,9 @@ const sidebars = {
           items: [
             'user-manual/graphics/lighting/lights',
             'user-manual/graphics/lighting/shadows',
-            'user-manual/graphics/lighting/lightmapping',
+            // 'user-manual/graphics/lighting/lightmapping',
             'user-manual/graphics/lighting/ambient-occlusion',
-            'user-manual/graphics/lighting/runtime-lightmaps',
+            // 'user-manual/graphics/lighting/runtime-lightmaps',
             'user-manual/graphics/lighting/clustered-lighting',
           ],
         },

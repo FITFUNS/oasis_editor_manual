@@ -2,7 +2,7 @@
 title: 계정 설정
 ---
 
-OasisW Studio 계정 설정 기능에 대한 가이드입니다. 
+OasisW Studio 계정 설정 기능을 학습합니다. 
 
 ![계정 설정](/img/usage-guide/account-settings.png)
 

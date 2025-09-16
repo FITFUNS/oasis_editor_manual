@@ -30,7 +30,7 @@ const FeatureList = [
     image: '/engine/assets/3d-cube.png',
     description: (
       <>
-        지면 작성, 머티리얼 적용, 물리운동, 스크립트 등 3D 개발에 필요한 모든 기능을 제공합니다.
+        바닥면 작성, 머티리얼 적용, 물리운동, 스크립트 등 3D 개발에 필요한 모든 기능을 제공합니다.
       </>
     ),
   },

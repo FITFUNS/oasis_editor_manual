@@ -24,7 +24,7 @@ A [Texture Atlas][2] is a enhanced version of the standard [Texture][3] asset. I
 
 The [Sprite Editor][4] is the tool used to generate Texture Atlas frames and Sprite Assets. You can open the Sprite Editor by double-clicking on any Texture Atlas or Sprite Asset. [Read More][4].
 
-*Artwork created by [PixelBoy](https://twitter.com/2pblog1)*
+<!-- *Artwork created by [PixelBoy](https://twitter.com/2pblog1)* -->
 
 [0]: /user-manual/assets/types/sprite
 [1]: /user-manual/scenes/components/sprite

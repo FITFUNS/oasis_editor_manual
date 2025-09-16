@@ -16,20 +16,21 @@ Supported image formats are:
 
 * JPG
 * PNG
-* AVIF
-* WEBP
 * GIF
-* TGA
 * BMP
+* WEBP
+* AVIF
+
+<!-- * TGA
 * TIF
 * HDR
-* EXR
+* EXR -->
 
 Imported JPG, PNG, AVIF, WebP and GIF files remain in their original format.
 
-GIF, TGA, BMP and TIF image types will be converted to JPG or PNG on import. If the imported image has transparency, it will be converted to PNG. Otherwise, it will be converted to JPG.
+GIF, BMP image types will be converted to JPG or PNG on import. If the imported image has transparency, it will be converted to PNG. Otherwise, it will be converted to JPG.
 
-HDR and EXR are [high dynamic range formats][2] formats. Images of these types are converted to PNG on import and marked as being stored in RGBM format. RGBM essentially stores a multiplier for RGB values in the PNG's alpha channel, enabling the compression of an HDR format into a low dynamic range format.
+<!-- HDR and EXR are [high dynamic range formats][2] formats. Images of these types are converted to PNG on import and marked as being stored in RGBM format. RGBM essentially stores a multiplier for RGB values in the PNG's alpha channel, enabling the compression of an HDR format into a low dynamic range format. -->
 
 By default, imported images will be resized to the nearest power of two. For example, an image that is 323x414 will be resized to 256x512 on import. This is done because the graphics engine cannot utilize mipmapping with non-power of two textures. However, this behavior can be overridden by disabling the 'Textures POT' setting in the Asset Tasks panel before importing a non-power of two texture.
 

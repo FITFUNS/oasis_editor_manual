@@ -6,14 +6,14 @@ sidebar_label: 스크립트 추가하기
 
 # 스크립트 추가하기
 
-OasisW에서 스크립트를 사용하여 객체의 동작을 프로그래밍하는 방법을 배워보겠습니다.
+OasisW에서 스크립트를 사용하여 객체의 동작을 프로그래밍하는 방법을 학습합니다.
 
 ## 스크립트 생성하기
 
 ### 1단계: 스크립트 에셋 생성
 
-1. **에셋 뷰**에서 마우스 오른쪽 클릭
-2. **New Asset** → **Script** 클릭
+1. **에셋 뷰**에서 마우스 오른쪽 클릭합니다.
+2. **New Asset** → **Script**를 클릭합니다.
 
 ![script](/img/tutorial/6_1.png)
 
@@ -23,13 +23,13 @@ OasisW에서 스크립트를 사용하여 객체의 동작을 프로그래밍하
 
 ### 3단계: 스크립트 편집
 
-**에셋 뷰**에 생성된 스크립트를 더블 클릭하여 편집기 오픈
+**에셋 뷰**에 생성된 스크립트를 더블 클릭하여 편집기를 엽니다.
 
 ![script](/img/tutorial/6_3.png)
 
 ### 4단계: 움직임 로직 구현
 
-프롬프트를 활용하여 움직임 로직을 구현한 후 **Apply**를 눌러 적용하고 **Save** 후 닫음
+프롬프트를 활용하여 움직임 로직을 구현한 후 **Apply**를 눌러 적용하고 **Save** 후 닫습니다.
 
 <div style={{display: 'flex', gap: '10px'}}>
   <img src="/img/tutorial/6_4.png" alt="Image" style={{maxWidth: '45%'}} />
@@ -162,25 +162,25 @@ EnemyController.prototype.moveEnemies = function (dt) {
 
 ### 1단계: 스크립트 컴포넌트 추가
 
-1. **하이어라키 뷰**에서 Box 오브젝트 선택
-2. **인스팩터 뷰**에서 **Add Component** → **Script** 클릭
+1. **하이어라키 뷰**에서 Box 오브젝트를 선택합니다.
+2. **인스팩터 뷰**에서 **Add Component** → **Script**를 클릭합니다.
 
 ![script](/img/tutorial/6_6.png)
 
 ### 2단계: 스크립트 추가
 
-**인스팩터 뷰** 하단에 스크립트 컴포넌트가 생성되면 **Add Script** 클릭
+**인스팩터 뷰** 하단에 스크립트 컴포넌트가 생성되면 **Add Script**를 클릭합니다.
 
 ![script](/img/tutorial/6_7.png)
 
 ### 3단계: 스크립트 선택
 
-생성해놓은 스크립트를 클릭하여 적용
+생성해놓은 스크립트를 클릭하여 적용합니다.
 
 ![script](/img/tutorial/6_8.png)
 
 ### 4단계: 결과 확인
 
-**뷰포트**의 **Launch**를 눌러서 박스 오브젝트의 움직임 확인
+**뷰포트**의 **Launch**를 클릭하여 박스 오브젝트의 움직임을 확인합니다.
 
 ![script](/img/tutorial/6_9.png)

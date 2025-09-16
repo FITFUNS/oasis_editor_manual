@@ -79,7 +79,7 @@ The Frames Panel let's you select and delete Frames from the Texture Atlas
 
 The Asset Panel shows you all the Sprite Assets that have been created from the current Texture Atlas. You can select Sprite Assets from this panel.
 
-*Artwork created by [PixelBoy](https://twitter.com/2pblog1)*
+<!-- *Artwork created by [PixelBoy](https://twitter.com/2pblog1)* -->
 
 [6]: /user-manual/assets/types/sprite/
 [7]: /user-manual/2D/slicing/
