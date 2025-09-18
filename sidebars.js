@@ -95,6 +95,7 @@ const sidebars = {
       },
       items: [
         'usage-guide/tutorial-script',
+        'usage-guide/volleyball-tutorial-script',
       ],
     }
   ],
