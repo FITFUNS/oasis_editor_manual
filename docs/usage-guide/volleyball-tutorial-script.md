@@ -294,42 +294,6 @@ UiMenu.prototype.start = function (event) {
 };
 ```
 
-## 점수 UI
-
-게임 중 점수를 표시하는 UI 스크립트입니다.
-
-```javascript
-var UiScore = pc.createScript('uiScore');
-
-UiScore.prototype.initialize = function() {
-    this.score = this.entity.findByName('Score');
-    this._changeScore = this._changeScore.bind(this);
-
-    this.on('enable', this.onEnable, this);
-    this.on('disable', this.onDisable, this);
-
-    this.onEnable();
-};
-
-UiScore.prototype.onEnable = function() {
-    this.app.on('game:score', this._changeScore, this);
-    this._changeScore(0);
-};
-
-UiScore.prototype.onDisable = function() {
-    this.app.off('game:score', this._changeScore, this);
-};
-
-UiScore.prototype._changeScore = function(newScore) {
-    if (this.score && this.score.element) {
-        this.score.element.text = newScore.toString();
-    }
-};
-
-UiScore.prototype.update = function(dt) {
-};
-```
-
 ## 게임 오버 UI
 
 게임 종료 시 표시되는 UI와 재시작 기능을 관리하는 스크립트입니다.
@@ -394,6 +358,43 @@ UiGameover.prototype.reset = function (event) {
     }
 };
 
+```
+
+
+## 점수 UI
+
+게임 중 점수를 표시하는 UI 스크립트입니다.
+
+```javascript
+var UiScore = pc.createScript('uiScore');
+
+UiScore.prototype.initialize = function() {
+    this.score = this.entity.findByName('Score');
+    this._changeScore = this._changeScore.bind(this);
+
+    this.on('enable', this.onEnable, this);
+    this.on('disable', this.onDisable, this);
+
+    this.onEnable();
+};
+
+UiScore.prototype.onEnable = function() {
+    this.app.on('game:score', this._changeScore, this);
+    this._changeScore(0);
+};
+
+UiScore.prototype.onDisable = function() {
+    this.app.off('game:score', this._changeScore, this);
+};
+
+UiScore.prototype._changeScore = function(newScore) {
+    if (this.score && this.score.element) {
+        this.score.element.text = newScore.toString();
+    }
+};
+
+UiScore.prototype.update = function(dt) {
+};
 ```
 
 ## 게임 매니저
