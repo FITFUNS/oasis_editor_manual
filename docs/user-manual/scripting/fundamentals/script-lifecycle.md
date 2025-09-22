@@ -9,23 +9,7 @@ Every script instance you attach to an Entity in OasisW goes through a well-defi
 
 Think of it like the stages in an actor's performance: preparing backstage (`initialize`), performing on stage (`update`), and taking a final bow (`destroy` event).
 
-```mermaid
-graph TD
-    A["<code>initialize()</code>"] --> B["<code>postInitialize()</code>"]
-    B --> C["<code>update(dt)</code>"]
-    C --> D["<code>postUpdate(dt)</code>"]
-    D --> E["<code>destroy</code> handler"]
-    %% Loop back to update
-    D --> C
-
-    subgraph Script Lifecycle Sequence
-        A
-        B
-        C
-        D
-        E
-    end
-```
+![Script Lifecycle Diagram](/img/user-manual/scripting/script-lifecycle.png)
 
 :::note[Execution Order]
 
