@@ -8,81 +8,62 @@ sidebar_label: 코드 생성
 
 OasisW의 AI 코드 생성 기능을 활용하여 게임 로직과 스크립트를 자동으로 생성하는 방법을 학습합니다.
 
-## 1. 스크립트 생성 후 API Key 발급받기
+## 1. 스크립트 생성 및 기능 설명
 
-1. **에셋 뷰**에서 스크립트 파일을 생성합니다.
+1. **에셋 뷰**에서 스크립트 에셋을 생성합니다.
 
 ![Code](/img/usage-guide/13_1.png)
 
-2. 생성한 js 파일을 더블클릭하여 들어간 후 **API Key 생성**을 위해 Save 옆 아이콘을 클릭합니다.
+2. 생성한 스크립트 에셋을 더블클릭하여 코드 에디터를 엽니다.
 
-<div style={{display: 'flex', gap: '10px'}}>
-  <img src="/img/usage-guide/13_3.png" alt="Image" style={{maxWidth: '25%'}} />
-  <img src="/img/usage-guide/13_4.png" alt="Image" style={{maxWidth: '65%'}} />
-</div>
-<br />
+![Code](/img/usage-guide/13_2.png)
 
-3. **Get API Key**를 클릭하여 [openRouter.ai](https://openrouter.ai/) 페이지로 이동합니다.  
+### 1. Settings
+
+에디터의 테마를 변경할 수 있습니다.
+
+![Code](/img/usage-guide/13_12.png)
+
+### 2. History
+
+AI로 생성한 코드의 히스토리를 확인하고 관리할 수 있습니다.
+
+![Code](/img/usage-guide/13_3.png)
+
+* **Restore** : 적용 전 상태로 되돌립니다.
+![Code](/img/usage-guide/13_10.png)
+
+* **Delete** : 히스토리를 삭제합니다.
+![Code](/img/usage-guide/13_4.png)
+
+### 3. Add File
+
+참조할 스크립트 파일을 추가할 수 있습니다.
 
 ![Code](/img/usage-guide/13_5.png)
 
- 
-4. 로그인 및 회원가입을 위해 **Sign in**을 클릭합니다.
+### 4. Add Entity
+
+참조할 엔티티를 추가할 수 있습니다.
 
 ![Code](/img/usage-guide/13_6.png)
 
-5. 로그인 후 **프로필 → Keys**를 클릭합니다.
+## 2. 코드 생성하기
+
+1. 프롬프트 창에 구현을 원하는 명령어를 입력하고 **Send 버튼**을 클릭합니다.  
+   - 예: `"wasd 키로 움직임 구현"`  
 
 ![Image](/img/usage-guide/13_7.png)
 
-6. **Create API Key**를 클릭합니다.
+2. **Apply Current Code**를 클릭합니다.
 
 ![Image](/img/usage-guide/13_8.png)
 
-7. **키 이름을 입력한 후 Create**를 클릭합니다.
+3. **Accept All/Revert 버튼**을 활용하여 코드를 업데이트합니다.
 
 ![Image](/img/usage-guide/13_9.png)
 
-8. 생성된 API Key를 복사합니다.
-
-![Image](/img/usage-guide/13_10.png)
-
-## 2. 에디터에서 키 등록, 코드 생성하기
-
-1. 에디터로 돌아와 **API Key**를 입력한 후 **Apply 버튼**을 클릭합니다.
-
+* **1. Save** : 히스토리에 저장하지 않고 코드를 적용합니다.
+* **2. Revert** : 생성된 코드가 아닌 기존 코드로 되돌립니다.
 ![Image](/img/usage-guide/13_11.png)
-
-2. 키 적용이 완료되면 **Yes 버튼**을 클릭합니다.
-
-![Image](/img/usage-guide/13_12.png)
-
-3. 프롬프트 창에 구현을 원하는 명령어를 입력합니다.  
-   - 예: `"wasd 방향키로 움직임 구현"`  
-4. **Send 버튼**을 클릭합니다.   
-
-![Image](/img/usage-guide/13_13.png)
-
-만약 화면에 빨간색 **Retry 버튼**이 표시되면, 버튼을 눌러 다시 실행합니다!
-
-![Image](/img/usage-guide/13_14.png)
-
-5. **Apply 버튼**을 눌러서 코드를 적용한 후 저장하고 코드 창을 닫습니다.
-
-![Image](/img/usage-guide/13_15.png)
-
-6. 적용하고자 하는 엔티티에 스크립트를 적용합니다.
-
-7. **뷰포트**의 **Launch**를 눌러서 실행하면 방향키 움직임에 Box가 이동하는 것을 확인할 수 있습니다.
-
-<div style={{display: 'flex', gap: '10px'}}>
-  <img src="/img/usage-guide/13_16_1.png" alt="Image" style={{maxWidth: '45%'}} />
-  <img src="/img/usage-guide/13_16_3.png" alt="Image" style={{maxWidth: '45%'}} />
-</div>
-
-<!-- ## 활용 팁
-
-- 명확하고 구체적인 요구사항 작성
-- 기존 코드와의 호환성 고려
-- 단계적 기능 구현
-- 코드 리뷰 및 테스트 수행  -->
+* **3. Accept All** : 히스토리에 저장하며 생성된 코드를 적용합니다.

@@ -8,66 +8,74 @@ sidebar_label: 이미지 생성
 
 OasisW의 AI 이미지 생성 기능을 활용하여 프로젝트에 필요한 이미지 생성 과정을 단계별로 학습합니다.
 
-## 1. API Key 발급받기
 
-1. **AI Image Generation 버튼** 클릭  
+## 1. 인터페이스
+
+**AI Image Generation 버튼**을 클릭합니다. 
+
+![Image](/img/usage-guide/3_8.png)
 
 ![Image](/img/usage-guide/3_8_1.png)
 
-2. **Get API Key** 클릭 → [imageRouter.io](https://imagerouter.io) 페이지 이동  
- 
+### 1. Generation Mode
 ![Image](/img/usage-guide/3_8_2.png)
+* **Text to Image** : 프롬프트에 텍스트를 입력하여 이미지를 생성합니다.
+* **Image to Image** : 기존 이미지를 기반으로 새로운 이미지를 생성합니다.
+### 2. Prompt
+* **Show Examples** : 여러 예제 프롬프트를 클릭하여 사용할 수 있습니다.
+![Image](/img/usage-guide/3_8_3.png)
+### 3. Advanced Options
+* **Remove Background** : 배경이 없는 이미지를 생성합니다.
+### 4. Generate 
+이미지를 생성합니다.
+### 5. Generation Result
+생성된 이미지를 확인할 수 있습니다.
+### 6. Generated Images
+* **Project** : 해당 프로젝트에서 생성한 이미지를 확인할 수 있습니다.
+* **Org** : 현재 조직에서 생성된 이미지를 확인할 수 있습니다.
+* **All** : 공개설정이 되어 있는 이미지를 확인할 수 있습니다.
 
-3. 로그인
-   - 계정이 없다면 **go to signup** 클릭 → `Create a new account`에서 회원가입
+![Image](/img/usage-guide/3_8_5.png)
+* **1. Edit Asset Properties** : 에셋 설정을 수정할 수 있습니다.
+![Image](/img/usage-guide/3_8_6.png)
+* **2. Add to Assets** : 텍스처 에셋으로 추가합니다.
+
+## 2. Text to Image
+
+1. 프롬프트 창에 원하는 명령어를 입력합니다.
+   - **Show Examples**의 예제에서 선택하여 이미지를 생성할 수 있습니다.
+   - **Remove Background**에 체크하면 배경이 없는 이미지를 생성할 수 있습니다.
+2. **Generate 버튼**을 클릭하여 이미지를 생성합니다.
 
 <div style={{display: 'flex', gap: '10px'}}>
-  <img src="/img/usage-guide/3_8_3.png" alt="Image" style={{borderRadius: '12px', maxWidth: '45%'}} />
-  <img src="/img/usage-guide/3_8_4.png" alt="Image" style={{borderRadius: '12px', maxWidth: '45%'}} />
+  <img src="/img/usage-guide/3_8_4.png" alt="Image" style={{maxWidth: '50%'}} />
+  <img src="/img/usage-guide/3_8_9.png" alt="Image" style={{maxWidth: '50%'}} />
 </div>
 <br />
-
-4. 로그인 후 **프로필 → API Keys** 클릭  
-
-![Image](/img/usage-guide/3_8_9.png)
-
-5. **키 이름 입력 → Generate** 클릭  
+3. **Add to Assets 버튼**을 클릭하여 텍스처 에셋으로 추가합니다.
 
 ![Image](/img/usage-guide/3_8_10.png)
-
-6. 생성된 API Key 복사 후 **Active 상태**인지 확인 (Inactive는 사용 불가)
-
 ![Image](/img/usage-guide/3_8_11.png)
 
-## 2. 에디터에서 키 등록, 이미지 생성하기
+## 3. Image to Image
 
-1. 에디터로 돌아와 **API Key** 입력
-2. 프롬프트 창에 원하는 명령어 입력  
-   - 예: `"귀여운 강아지 캐릭터"`  
-   - 캐릭터 생성 시 **Remove Background** 체크 → 배경 없는 이미지 생성 가능  
-3. **Generate 버튼** 클릭  
-4. 생성된 이미지 확인 가능  
+1. **Inpainting Image**에 원하는 이미지를 추가합니다.
 
 ![Image](/img/usage-guide/3_8_14.png)
 
-## 3. 기능 설명
+2. **+ 아이콘**을 클릭하고, 원본 이미지에 추가할 객체(선글라스, 꽃, 모자 등)의 이미지를 추가합니다.
+<div style={{display: 'flex', gap: '10px'}}>
+  <img src="/img/usage-guide/3_8_17.png" alt="Image" style={{maxWidth: '50%'}} />
+  <img src="/img/usage-guide/3_8_18.png" alt="Image" style={{maxWidth: '50%'}} />
+</div>
+<br />
 
-| 기능        | 설명 |
-|-------------|------|
-| <img src="/img/usage-guide/3_8_17.png" alt="Image" style={{borderRadius: '20px'}} /> | 이미지 미리보기 |
-| <img src="/img/usage-guide/3_8_18.png" alt="Image" style={{borderRadius: '20px'}} /> | 이미지 에셋 다운로드 |
-| <img src="/img/usage-guide/3_8_19.png" alt="Image" style={{borderRadius: '20px'}} /> | 이미지 삭제 |
-
-## 4. 에셋 관리
-
-- 이미지 에셋 다운로드 시 **에셋 뷰**에서 확인 가능  
+* **Image Controls**에서 이미지를 변경하거나 제거할 수 있습니다.
 
 ![Image](/img/usage-guide/3_8_16.png)
 
-<!-- ## 활용 팁
+3. **Drawing Tools**를 사용하여 원본 이미지에 이미지를 수정할 위치를 표시하고 프롬프트를 입력한 후 **Generate 버튼**을 클릭하여 이미지를 생성합니다.
 
-- 구체적이고 상세한 프롬프트 작성
-- 참고 이미지 업로드 활용
-- 다양한 스타일 실험
-- 프로젝트 일관성 유지 -->
+![Image](/img/usage-guide/3_8_19.png)
+
 

@@ -6,20 +6,13 @@ sidebar_label: AI
 
 # AI
 
-Utilize OasisW's AI features to automatically generate code.
-<!-- Utilize OasisW's AI features to automatically generate images and code. -->
+<!-- Utilize OasisW's AI features to automatically generate code. -->
+You can automatically generate images and code using OasisW's AI features.
 
 ## AI Generation Features
 
-<!-- ### [1. Image Generation](./image-generation)
-Use OasisW's AI image generation feature to create image assets needed for your project. -->
+### [1. Image Generation](./image-generation)
+Generate image assets needed for your project using OasisW's AI image generation feature.
 
-### [Code Generation](./code-generation)
-Use OasisW's AI code generation feature to automatically generate game logic and scripts.
-
-<!-- ## AI Feature Usage Tips
-
-- **Write Clear Prompts**: Specifically describe the desired results
-- **Step-by-Step Approach**: Break down complex requirements into smaller units
-- **Iterative Improvement**: Gradually improve based on generated results
-- **Project Consistency**: Maintain style and consistency across the entire project -->
+### [2. Code Generation](./code-generation)
+Automatically generate game logic and scripts using OasisW's AI code generation feature.
