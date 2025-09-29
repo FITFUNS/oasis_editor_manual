@@ -1,51 +1,62 @@
 ---
-title: Particle System
+title: 파티클 시스템 (Particle System)
 ---
 
-The Particle System component specifies a particle emitter in 3D space.
+파티클 시스템 컴포넌트는 3D 공간에서 파티클 에미터를 지정합니다.
 
-The Particle System component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the particle system will be added to the scene and rendered.
+파티클 시스템 컴포넌트는 컴포넌트 패널의 오른쪽 상단에 있는 토글을 사용하여 활성화하거나 비활성화할 수 있습니다. 활성화되면 파티클 시스템이 씬에 추가되고 렌더링됩니다.
 
 ![Particle System component](/img/user-manual/scenes/components/component-particle-system.png)
 
-## Properties
+## 속성
 
 | Property        | Description |
 |-----------------|-------------|
-| Auto Play       | If checked, the particle system will play immediately on creation. If this option is left unchecked, you will need to call the particle system component's play function from script. |
-| Particle Count  | The maximum number of particles managed by this particle system. |
-| Lifetime        | The length of time in seconds between a particle's birth and its death. |
-| Emission Rate   | The lower bound of the time range defining the interval between particle births. The time for the next particle emission will be chosen at random between 'Emission Rate' and 'Emission Rate 2'. |
-| Emission Rate2  | The upper bound of the time range defining the interval between particle births. The time for the next particle emission will be chosen at random between 'Emission Rate' and 'Emission Rate 2'. |
-| Start Angle     | The lower bound of the initial particle rotation specified in degrees. For each particle, this angle is chosen at random between 'Start Angle' and 'Start Angle 2'. |
-| Start Angle2    | The upper bound of the initial particle rotation specified in degrees. For each particle, this angle is chosen at random between 'Start Angle' and 'Start Angle 2'. |
-| Loop            | If checked, the particle system will emit indefinitely. Otherwise, it will emit the number of particles specified by the 'Particle Count' property and then stop. |
-| Pre Warm        | If enabled, the particle system will be initialized as though it had already completed a full cycle. This option is only available for looping particle systems. |
-| Lighting        | If checked, the particle will be lit by the directional and ambient light in the scene. In some circumstances, it may be advisable to set a normal map on the particle system in order to achieve more realistic lighting. |
-| Half-Lambert    | Enabling Half Lambert lighting avoids particles looking too flat when lights appear to be shining towards the back sides of the particles. It is a completely non-physical lighting model but can give more pleasing visual results. This option is only available when Lighting is enabled. |
-| Color Intensity | Scales the color of particles to allow them to have arbitrary brightness. |
-| Depth Test      | If checked, the particles will write depth information to the depth buffer. If unchecked, the depth buffer is left unchanged and particles will be guaranteed to overwrite one another in the order in which they are rendered. |
-| Depth Softening | This variable value determines how much particles fade out as they get closer to another surface. This avoids the situation where particles appear to cut into surfaces. Setting this value to zero effectively disables depth softening. Setting a value greater than zero requires the scene to be rendered to a depth target for depth comparisons to be performed. This can have a significant performance impact by increasing the overall number of draw calls submitted every frame. |
-| Sorting Mode    | Sorting mode gives you control over the order in which particles are rendered. The options are: <ul><li>None: Particles are rendered in arbitrary order. When this option is selected, the particle system is simulated on the GPU (if the underlying hardware supports floating point textures) and it is recommended you use this setting to get the best performance.</li><li>Camera Distance: Particles are sorted on the CPU and rendered in back to front order (in terms of camera z depth).</li><li>Newer First: Particles are sorted on the CPU and rendered in age order, youngest first.</li><li>Older First: Particles are sorted on the CPU and rendered in age order, oldest first.</li></ul> |
-| Blending Mode   | The blending mode determines how particles are composited when they are written to the frame buffer. Let's consider that Prgb is the RGB color of a particle's pixel, Pa is its alpha value, and Drgb is the RGB color already in the frame buffer. The blending options are: <ul><li>Additive: Prgb + Drgb</li><li>Alpha: Prgb x Pa + Drgb x (1 - Pa)</li><li>Multiply: Prgb * Drgb</li></ul> |
-| Stretch         | A value in world units that controls the amount by which particles are stretched based on their velocity. Particles are stretched from their center towards their previous position. |
-| Align To Motion | Orient particle in their direction of motion. |
-| Spawn Bounds    | The half extents of a local space bounding box within which particles are spawned at random positions. |
-| Wrap            | Enables wrap bounds. |
-| Wrap Bounds     | World space AABB volume centered on the owner entity's position. If a particle crosses the boundary of one side of the volume, it teleports to the opposite side. You can use this to make environmental effects like rain by moving a wrapped emitter's owner entity. |
-| Color Map       | The color map texture to apply to all particles in the system. If no texture asset is assigned, a default spot texture is used. |
-| Normal Map      | The normal map texture to apply to all particles in the system. Applying a normal map can make billboard particles appear more consistent with the scenes lighting. |
-| Particle Mesh   | A model asset. The first mesh found in the model is used to represent all particles rather than a flat billboard. |
-| Local Velocity  | A curve defining how each particle's velocity with respect to the particle system's local coordinate system changes over time. If two curves are specified in the curve editor, local velocity will be a random lerp between both curves. |
-| Velocity        | A curve defining how each particle's velocity with respect to the world coordinate system changes over time. If two curves are specified in the curve editor, velocity will be a random lerp between both curves. |
-| Rotation Speed  | A curve defining how each particle's angular velocity changes over time. If two curves are specified in the curve editor, the angular velocity will be a random lerp between both curves. |
-| Scale           | A curve defining how each particle's scale changes over time. By default, a particle is 1 unit in width and height. If two curves are specified in the curve editor, the scale will be a random lerp between both curves. |
-| Color           | A curve defining how each particle's color changes over time. |
-| Lifetime        | A curve defining how each particle's opacity changes over time. If two curves are specified in the curve editor, the opacity will be a random lerp between both curves. |
+| Auto Play       | 체크하면 파티클 시스템이 생성 시 즉시 재생됩니다. 이 옵션을 체크하지 않으면 스크립트에서 파티클 시스템 컴포넌트의 play 함수를 호출해야 합니다. |
+| Particle Count  | 이 파티클 시스템이 관리하는 최대 파티클 수입니다. |
+| Lifetime        | 파티클의 생성과 소멸 사이의 시간(초)입니다. |
+| Emission Rate   | 파티클 생성 간격을 정의하는 시간 범위의 하한값입니다. 다음 파티클 방출 시간은 'Emission Rate'와 'Emission Rate 2' 사이에서 무작위로 선택됩니다. |
+| Emission Rate2  | 파티클 생성 간격을 정의하는 시간 범위의 상한값입니다. 다음 파티클 방출 시간은 'Emission Rate'와 'Emission Rate 2' 사이에서 무작위로 선택됩니다. |
+| Start Angle     | 도 단위로 지정된 초기 파티클 회전의 하한값입니다. 각 파티클에 대해 이 각도는 'Start Angle'과 'Start Angle 2' 사이에서 무작위로 선택됩니다. |
+| Start Angle2    | 도 단위로 지정된 초기 파티클 회전의 상한값입니다. 각 파티클에 대해 이 각도는 'Start Angle'과 'Start Angle 2' 사이에서 무작위로 선택됩니다. |
+| Loop            | 체크하면 파티클 시스템이 무한히 방출됩니다. 그렇지 않으면 'Particle Count' 속성으로 지정된 수의 파티클을 방출한 후 중지됩니다. |
+| Pre Warm        | 활성화하면 파티클 시스템이 전체 주기를 완료한 것처럼 초기화됩니다. 이 옵션은 반복 파티클 시스템에서만 사용할 수 있습니다. |
+| Lighting        | 체크하면 파티클이 씬의 방향성 조명과 환경 조명에 의해 조명됩니다. 경우에 따라 더 사실적인 조명을 위해 파티클 시스템에 노멀 맵을 설정하는 것이 좋을 수 있습니다. |
+| Half-Lambert    | 하프 람버트 조명을 활성화하면 조명이 파티클의 뒷면을 비추는 것처럼 보일 때 파티클이 너무 평평해 보이는 것을 방지합니다. 완전히 비물리적인 조명 모델이지만 더 만족스러운 시각적 결과를 제공할 수 있습니다. 이 옵션은 조명이 활성화된 경우에만 사용할 수 있습니다. |
+| Intensity | 파티클의 색상을 스케일하여 임의의 밝기를 가질 수 있도록 합니다. |
+| Depth Write      | 체크하면 파티클이 깊이 버퍼에 깊이 정보를 씁니다. 체크하지 않으면 깊이 버퍼는 변경되지 않고 파티클은 렌더링 순서에 따라 서로 덮어쓰게 됩니다. |
+| Depth Softening | 이 변수 값은 파티클이 다른 표면에 가까워질수록 얼마나 페이드 아웃되는지를 결정합니다. 이는 파티클이 표면을 자르는 것처럼 보이는 상황을 방지합니다. 이 값을 0으로 설정하면 깊이 소프트닝이 효과적으로 비활성화됩니다. 0보다 큰 값을 설정하려면 깊이 비교를 수행하기 위해 씬을 깊이 타겟에 렌더링해야 하며, 이는 매 프레임마다 제출되는 전체 드로우 콜 수를 증가시켜 상당한 성능 영향을 줄 수 있습니다. |
+| Sorting Mode    | 정렬 모드는 파티클이 렌더링되는 순서를 제어합니다. 옵션은 다음과 같습니다: <ul><li>None: 파티클이 임의 순서로 렌더링됩니다. 이 옵션을 선택하면 파티클 시스템이 GPU에서 시뮬레이션됩니다(기본 하드웨어가 부동소수점 텍스처를 지원하는 경우). 최고 성능을 위해 이 설정을 사용하는 것이 권장됩니다.</li><li>Camera Distance: 파티클이 CPU에서 정렬되고 뒤에서 앞 순서로 렌더링됩니다(카메라 z 깊이 기준).</li><li>Newer First: 파티클이 CPU에서 정렬되고 나이 순서로 렌더링되며, 가장 어린 것부터 시작합니다.</li><li>Older First: 파티클이 CPU에서 정렬되고 나이 순서로 렌더링되며, 가장 오래된 것부터 시작합니다.</li></ul> |
+| Blending Mode   | 블렌딩 모드는 파티클이 프레임 버퍼에 기록될 때 어떻게 합성되는지를 결정합니다. Prgb가 파티클 픽셀의 RGB 색상이고, Pa가 알파 값이며, Drgb가 이미 프레임 버퍼에 있는 RGB 색상이라고 가정해보겠습니다. 블렌딩 옵션은 다음과 같습니다: <ul><li>Additive: Prgb + Drgb</li><li>Alpha: Prgb x Pa + Drgb x (1 - Pa)</li><li>Multiply: Prgb * Drgb</li></ul> |
+| Stretch         | 파티클의 속도에 따라 파티클이 얼마나 늘어나는지를 제어하는 월드 단위 값입니다. 파티클은 중심에서 이전 위치를 향해 늘어납니다. |
+| Align To Motion | 파티클을 움직임 방향으로 정렬합니다. |
+| Emitter Shape   | 방출기의 모양입니다. |
+| Emitter Extents | 파티클이 무작위 위치에서 생성되는 로컬 공간 경계 상자의 절반 범위입니다. |
+| Inner Extents   | 파티클이 생성되지 않는 로컬 공간 경계 상자의 예외 볼륨입니다. |
+| Emitter Radius  | 파티클이 무작위 위치에서 생성되는 반지름입니다. |
+| Inner Radius    | 파티클이 생성되지 않는 내부 구 반지름입니다. |
+| Wrap            | 래핑 경계를 활성화합니다. |
+| Local Space     | 파티클을 방출기 노드 변환에 바인딩합니다. |
+| Screen Space    | 파티클을 2D 스크린 공간에서 렌더링합니다. 파티클 시스템이 루트에 ScreenComponent가 있는 계층 구조의 일부일 때 설정해야 하며, 파티클 시스템이 ElementComponent의 렌더링과 통합할 수 있게 합니다. |
+| Layers          | 이 파티클 시스템이 속한 레이어입니다. 파티클 시스템이 여러 레이어에 속하면 여러 번 렌더링됩니다. |
+| Wrap Bounds     | 소유자 엔티티의 위치를 중심으로 한 월드 공간 AABB 볼륨입니다. 파티클이 볼륨의 한쪽 경계를 넘으면 반대편으로 순간이동합니다. 래핑된 방출기의 소유자 엔티티를 이동하여 비와 같은 환경 효과를 만들 수 있습니다. |
+| Orientation     | 방향 모드는 파티클 평면의 방향을 제어합니다. 옵션은 다음과 같습니다: <ul><li>Screen: 파티클이 카메라를 향합니다. </li><li>World Normal: 사용자가 평면 방향을 설정하기 위해 월드 공간 노멀을 정의합니다. </li><li>Emitter Normal: 이전과 유사하지만 노멀이 방출기(엔티티) 변환의 영향을 받습니다.</li></ul>  |
+| Particle Normal | 파티클 평면 방향을 정의하는 월드 또는 방출기 공간 벡터입니다. |
+| Color Map       | 시스템의 모든 파티클에 적용할 컬러 맵 텍스처입니다. 텍스처 에셋이 할당되지 않으면 기본 스팟 텍스처가 사용됩니다. |
+| Normal Map      | 시스템의 모든 파티클에 적용할 노멀 맵 텍스처입니다. 노멀 맵을 적용하면 빌보드 파티클이 씬의 조명과 더 일관성 있게 보일 수 있습니다. |
+| Model Asset     | 모델 에셋입니다. 모델에서 찾은 첫 번째 메시가 평면 빌보드 대신 모든 파티클을 나타내는 데 사용됩니다. |
+| Render Asset    | 메시 기반 파티클을 렌더링하는 데 모델 에셋 대신 사용할 수 있는 렌더 에셋입니다. |
+| Local Velocity  | 파티클 시스템의 로컬 좌표계에 대한 각 파티클의 속도가 시간에 따라 어떻게 변하는지를 정의하는 곡선입니다. 곡선 편집기에서 두 곡선이 지정되면 로컬 속도는 두 곡선 사이의 무작위 보간이 됩니다. |
+| Velocity        | 월드 좌표계에 대한 각 파티클의 속도가 시간에 따라 어떻게 변하는지를 정의하는 곡선입니다. 곡선 편집기에서 두 곡선이 지정되면 속도는 두 곡선 사이의 무작위 보간이 됩니다. |
+| Radial Speed  | 파티클의 방사 속도가 시간에 따라 어떻게 변하는지를 정의하는 곡선입니다. 개별 파티클 방사 속도는 방출기 원점에서 파티클 현재 위치를 가리킵니다. 곡선 편집기에서 두 곡선이 지정되면 값은 두 곡선 사이의 무작위 값이 됩니다. |
+| Rotation Speed  | 각 파티클의 각속도가 시간에 따라 어떻게 변하는지를 정의하는 곡선입니다. 곡선 편집기에서 두 곡선이 지정되면 각속도는 두 곡선 사이의 무작위 보간이 됩니다. |
+| Scale           | 각 파티클의 스케일이 시간에 따라 어떻게 변하는지를 정의하는 곡선입니다. 기본적으로 파티클은 너비와 높이가 1 단위입니다. 곡선 편집기에서 두 곡선이 지정되면 스케일은 두 곡선 사이의 무작위 보간이 됩니다. |
+| Color           | 각 파티클의 색상이 시간에 따라 어떻게 변하는지를 정의하는 곡선입니다. |
+| Opacity         | 각 파티클의 불투명도가 시간에 따라 어떻게 변하는지를 정의하는 곡선입니다. 곡선 편집기에서 두 곡선이 지정되면 불투명도는 두 곡선 사이의 무작위 보간이 됩니다. |
 
-## Scripting Interface
+## 스크립팅 인터페이스
 
-You can control a Particle System component's properties using a [script component][2]. The Particle System component's scripting interface is [here][3].
+[스크립트 컴포넌트][2]를 사용하여 파티클 시스템 컴포넌트의 속성을 제어할 수 있습니다. 파티클 시스템 컴포넌트의 스크립팅 인터페이스는 [여기][3]에 있습니다.
 
 [2]: /user-manual/scenes/components/script
 [3]: https://manual.oasisserver.link/engine/classes/ParticleSystemComponent.html

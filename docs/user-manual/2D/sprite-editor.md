@@ -1,83 +1,83 @@
 ---
-title: Sprite Editor
+title: 스프라이트 에디터 (Sprite Editor)
 ---
 
-The Sprite Editor is used to edit both Texture Atlas assets and Sprite assets. It is also used to create Sprite Assets.
+스프라이트 에디터는 텍스처 아틀라스 에셋과 스프라이트 에셋을 모두 편집하는 데 사용됩니다. 또한 스프라이트 에셋을 만드는 데도 사용됩니다.
 
-To open the Sprite Editor, double-click on any Texture Atlas or Sprite asset in the Editor asset panel.
+스프라이트 에디터를 열려면 에디터 에셋 패널에서 텍스처 아틀라스나 스프라이트 에셋을 더블클릭하세요.
 
 ![Sprite Editor](/img/user-manual/2D/sprite-editor/sprite-editor-highlights.jpg)
 
-## Viewport
+## 뷰포트
 
 ![Viewport](/img/user-manual/2D/sprite-editor/viewport.jpg)
 
-The viewport in the Sprite Editor shows the currently selected Texture Atlas. Frames are shown as grey boxes on the texture atlas. The currently selected asset is shown with two sets of handles. green and blue. Green handles modify the frame's width and height, blue handles modify the frame's border property.
+스프라이트 에디터의 뷰포트는 현재 선택된 텍스처 아틀라스를 보여줍니다. 프레임은 텍스처 아틀라스에서 회색 상자로 표시됩니다. 현재 선택된 에셋은 두 세트의 핸들로 표시됩니다. 녹색과 파란색입니다. 녹색 핸들은 프레임의 너비와 높이를 수정하고, 파란색 핸들은 프레임의 테두리 속성을 수정합니다.
 
-### Editing Texture Atlases
+### 텍스처 아틀라스 편집
 
-Within the viewport use the mouse to drag the outline of a Frame, then use the green and blue handles to modify the frames extents and borders.
+뷰포트 내에서 마우스를 사용하여 프레임의 윤곽을 드래그한 다음, 녹색과 파란색 핸들을 사용하여 프레임의 범위와 테두리를 수정하세요.
 
-#### Frames
+#### 프레임
 
-Frames are a defined region on a Texture Atlas. A frame has a name, a position and size and a border. The border is used to define the edges of the 9-slicing region. See the [9-slicing documentation][7] for more information.
+프레임은 텍스처 아틀라스에서 정의된 영역입니다. 프레임에는 이름, 위치와 크기, 테두리가 있습니다. 테두리는 9-슬라이싱 영역의 가장자리를 정의하는 데 사용됩니다. 자세한 정보는 [9-슬라이싱 문서][7]를 참조하세요.
 
-## Inspector
+## 인스펙터
 
-The inspector panel shows the properties of the currently selected item. The inspector changes depending on whether the selected item is a Texture Atlas, Frame or Sprite Asset.
+인스펙터 패널은 현재 선택된 항목의 속성을 보여줍니다. 인스펙터는 선택된 항목이 텍스처 아틀라스, 프레임 또는 스프라이트 에셋인지에 따라 변경됩니다.
 
-### Texture Atlas Inspector
+### 텍스처 아틀라스 인스펙터
 
 ![Texture Atlas Inspector](/img/user-manual/2D/sprite-editor/texture-atlas-inspector.jpg)
 
-The Texture Atlas Inspector allows you to automatically slice a texture atlas into a fixed grid.
+텍스처 아틀라스 인스펙터를 사용하면 텍스처 아틀라스를 고정 그리드로 자동 슬라이싱할 수 있습니다.
 
-First choose what to do with existing frames. You can choose to *Delete Existing* frames or do not delete and *Only Append* frames.
+먼저 기존 프레임을 어떻게 처리할지 선택하세요. 기존 프레임을 *삭제*하거나 삭제하지 않고 *추가만* 할 수 있습니다.
 
-Then select the method of specifying the grid cells
+그런 다음 그리드 셀을 지정하는 방법을 선택하세요
 
-- Grid By Frame Count - Specify the number of grid cells horizontally and vertically to divide the texture into
-- Grid By Frame Size - Specify the size in pixels that each grid cell should be
+- 프레임 수로 그리드 - 텍스처를 나눌 가로 및 세로 그리드 셀 수를 지정
+- 프레임 크기로 그리드 - 각 그리드 셀이 가져야 할 픽셀 크기를 지정
 
-Then set the values for Offset and Spacing. Offset is the number of pixels to move in from the top left of the texture before starting the grid. Spacing is the number of pixels between each grid cell.
+그런 다음 오프셋과 간격에 대한 값을 설정하세요. 오프셋은 그리드를 시작하기 전에 텍스처의 왼쪽 위에서 이동할 픽셀 수입니다. 간격은 각 그리드 셀 사이의 픽셀 수입니다.
 
-Finally set the pivot for all newly generated frames, the pivot determines the position and rotation point of the sprite. It is specified as a proportion of the width and height.
+마지막으로 새로 생성된 모든 프레임에 대한 피벗을 설정하세요. 피벗은 스프라이트의 위치와 회전점을 결정합니다. 너비와 높이의 비율로 지정됩니다.
 
-Once all your settings are chose, click the **Generate Frames** button to create your frames.
+모든 설정을 선택한 후 **프레임 생성** 버튼을 클릭하여 프레임을 만드세요.
 
-### Frame Inspector
+### 프레임 인스펙터
 
 ![Frame Inspector](/img/user-manual/2D/sprite-editor/frame-inspector.jpg)
 
-The Frame Inspector lets you set the properties for an individual frame or group of frames. It is visible when you select one or more Frames. The Frame Inspector is also where you create a new Sprite from.
+프레임 인스펙터를 사용하면 개별 프레임 또는 프레임 그룹의 속성을 설정할 수 있습니다. 하나 이상의 프레임을 선택할 때 표시됩니다. 프레임 인스펙터는 새 스프라이트를 만드는 곳이기도 합니다.
 
-The Inspector lets you modify the Position, Size and Border properties of the frame.
+인스펙터를 사용하면 프레임의 위치, 크기 및 테두리 속성을 수정할 수 있습니다.
 
-#### Frame Inspector Actions
+#### 프레임 인스펙터 작업
 
-- **New Sprite From Selection** - Create a new Sprite Asset and assign the frames that you have selected to the Sprite, in the order that they were selected.
-- **New Sliced Sprite From Selection** - Create a new Sprite Asset and set its type to *Sliced*. Assign the frames that you have selected to the Sprite, in the order that they were selected.
-- **Focus on Selection** - Focus the viewport on the selected Frames. [Keyboard Shortcut: F]
-- **Trim Selected Frames** - Reduce the size of the selected frames to remove any excess empty space around an image. [Keyboard Shortcut: T]
-- **Delete Selected Frames** - Delete the selected Frames [Keyboard Shortcut: Delete]
+- **선택에서 새 스프라이트** - 새 스프라이트 에셋을 만들고 선택한 프레임을 선택한 순서대로 스프라이트에 할당합니다.
+- **선택에서 새 슬라이스된 스프라이트** - 새 스프라이트 에셋을 만들고 유형을 *슬라이스됨*으로 설정합니다. 선택한 프레임을 선택한 순서대로 스프라이트에 할당합니다.
+- **선택에 포커스** - 선택된 프레임에 뷰포트를 포커스합니다. [키보드 단축키: F]
+- **선택된 프레임 트림** - 이미지 주변의 여분의 빈 공간을 제거하기 위해 선택된 프레임의 크기를 줄입니다. [키보드 단축키: T]
+- **선택된 프레임 삭제** - 선택된 프레임을 삭제합니다 [키보드 단축키: Delete]
 
-### Sprite Inspector
+### 스프라이트 인스펙터
 
 ![Sprite Inspector](/img/user-manual/2D/sprite-editor/sprite-inspector.jpg)
 
-The Sprite Inspector is visible when a Sprite Asset is selected. This inspector is used to edit the properties of one or more Sprites. See the [Sprite Asset][6] for more details on the properties.
+스프라이트 인스펙터는 스프라이트 에셋이 선택되었을 때 표시됩니다. 이 인스펙터는 하나 이상의 스프라이트 속성을 편집하는 데 사용됩니다. 속성에 대한 자세한 내용은 [스프라이트 에셋][6]을 참조하세요.
 
-Click the **Add Frames to Sprite Asset** button to enter the Sprite Edit Mode. In this mode, you can select multiple frames from the Frame Panel or Viewport and add them to the Sprite. Click the **Add Selected Frames** to add the frames to your Sprite.
+**스프라이트 에셋에 프레임 추가** 버튼을 클릭하여 스프라이트 편집 모드로 들어가세요. 이 모드에서는 프레임 패널이나 뷰포트에서 여러 프레임을 선택하고 스프라이트에 추가할 수 있습니다. **선택된 프레임 추가**를 클릭하여 프레임을 스프라이트에 추가하세요.
 
-Using the Sprite Inspector you can also re-order the Frames in your Sprite, or delete individual Frames.
+스프라이트 인스펙터를 사용하여 스프라이트의 프레임 순서를 재정렬하거나 개별 프레임을 삭제할 수도 있습니다.
 
-## Frames Panel
+## 프레임 패널
 
-The Frames Panel let's you select and delete Frames from the Texture Atlas
+프레임 패널을 사용하면 텍스처 아틀라스에서 프레임을 선택하고 삭제할 수 있습니다.
 
-## Asset Panel
+## 에셋 패널
 
-The Asset Panel shows you all the Sprite Assets that have been created from the current Texture Atlas. You can select Sprite Assets from this panel.
+에셋 패널은 현재 텍스처 아틀라스에서 생성된 모든 스프라이트 에셋을 보여줍니다. 이 패널에서 스프라이트 에셋을 선택할 수 있습니다.
 
 <!-- *Artwork created by [PixelBoy](https://twitter.com/2pblog1)* -->
 

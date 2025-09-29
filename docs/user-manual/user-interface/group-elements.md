@@ -1,5 +1,5 @@
 ---
-title: Group Elements
+title: 그룹 요소 (Group Elements)
 ---
 
-A group Element is an empty Element component that can be used as a parent for other elements. You can set the size and position of this Element and any child Elements can be positioned relative to the group.
+그룹 요소는 다른 요소들의 부모로 사용할 수 있는 빈 요소 컴포넌트입니다. 이 요소의 크기와 위치를 설정할 수 있으며, 모든 자식 요소들은 그룹을 기준으로 위치를 지정할 수 있습니다.

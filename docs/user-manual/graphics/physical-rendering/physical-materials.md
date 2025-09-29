@@ -1,80 +1,80 @@
 ---
-title: Physical Materials
+title: 물리 머티리얼 (Physical Materials)
 ---
 
-To use Physically Based Rendering in OasisW you will need to understand how the Physical Material is configured and what effect altering the various parameters will have.
+OasisW에서 물리 기반 렌더링을 사용하려면 물리 머티리얼이 어떻게 구성되는지와 다양한 매개변수를 변경했을 때 어떤 효과가 있는지 이해해야 합니다.
 
-In this section we'll talk about the most useful properties of the material and you can see in the live demos how altering them affects the appearance of a material.
+이 섹션에서는 머티리얼의 가장 유용한 속성에 대해 이야기하고, 라이브 데모에서 이를 변경했을 때 머티리얼의 외관에 어떤 영향을 미치는지 볼 수 있습니다.
 
-First a note about Cubemaps and Workflows
+먼저 큐브맵과 워크플로우에 대한 참고사항입니다.
 
-## Image Based Lighting
+## 이미지 기반 조명
 
-[First up IBL][6], because inevitably you'll jump into the Editor and create Materials and wonder why your materials don't look the like the samples below. **Physical Materials with an HDR Prefiltered CubeMap look great!**
+[먼저 IBL][6]부터 시작하겠습니다. 왜냐하면 필연적으로 에디터로 들어가서 머티리얼을 만들고 왜 머티리얼이 아래 샘플처럼 보이지 않는지 궁금해할 것이기 때문입니다. **HDR 사전 필터링된 큐브맵이 있는 물리 머티리얼은 훌륭해 보입니다!**
 
-## Metalness and Specular Workflow
+## 메탈니스와 스펙큘러 워크플로우
 
 ![Workflows](/img/user-manual/graphics/physical-rendering/specular-metalness-workflows.png)
 
-PBR is often split into two different methods of building assets or workflows. The two workflows are equivalent and offer the same results. It is really down to your preference as to which you choose. At OasisW we usually choose the "metalness" flow as we find the metalness map simpler to create and is as it is only a single channel it is usually more efficient.
+PBR은 종종 에셋을 구축하거나 워크플로우의 두 가지 다른 방법으로 나뉩니다. 두 워크플로우는 동등하며 같은 결과를 제공합니다. 어떤 것을 선택할지는 정말 선호도에 달려 있습니다. OasisW에서는 메탈니스 맵을 만드는 것이 더 간단하고 단일 채널이므로 보통 더 효율적이기 때문에 "메탈니스" 플로우를 선택합니다.
 
-The **metalness** workflow involves setting a metalness value or creating a metalness map which determines which areas of the material are metal or non-metal. Usually this is a simple binary choice. 1 for metal, 0 for non-metal. It is not often that you have a value between the two.
+**메탈니스** 워크플로우는 메탈니스 값을 설정하거나 머티리얼의 어떤 영역이 금속인지 비금속인지를 결정하는 메탈니스 맵을 만드는 것을 포함합니다. 보통 이것은 간단한 이진 선택입니다. 금속은 1, 비금속은 0입니다. 둘 사이의 값을 가질 필요는 거의 없습니다.
 
-The **specular** workflow involves setting a specular value or creating a specular map which determines the color and intensity of the reflected light for your material.
+**스펙큘러** 워크플로우는 스펙큘러 값을 설정하거나 머티리얼의 반사된 빛의 색상과 강도를 결정하는 스펙큘러 맵을 만드는 것을 포함합니다.
 
-There is a good explanation of the differences on the [Marmoset Toolbag blog][5].
+[Marmoset Toolbag 블로그][5]에서 차이점에 대한 좋은 설명이 있습니다.
 
-On to materials...
+머티리얼로 넘어가겠습니다.
 
-## Material Properties and Maps
+## 머티리얼 속성과 맵
 
-### Diffuse
+### 디퓨즈 (Diffuse)
 
-The Diffuse Color is the base color of the material. This is an RGB color value. For clean pure (metal, plastic) substances this can be a constant value but it can also be supplied as a diffuse map texture. Note, you should usually avoid including lighting detail (shadows or highlights) in your diffuse map as this can be applied in other maps.
+디퓨즈 색상은 머티리얼의 베이스 색상입니다. 이는 RGB 색상 값입니다. 깨끗한 순수한(금속, 플라스틱) 물질의 경우 이는 상수 값일 수 있지만 디퓨즈 맵 텍스처로도 제공할 수 있습니다. 주의할 점은 디퓨즈 맵에 조명 세부사항(그림자나 하이라이트)을 포함하는 것을 피해야 한다는 것입니다. 이는 다른 맵에서 적용할 수 있기 때문입니다.
 
-It can also be known as **albedo** or **base color**.
+이는 **알베도** 또는 **베이스 색상**으로도 알려져 있습니다.
 
 ![Diffuse](/img/user-manual/graphics/physical-rendering/diffuse.png)
 
-You can often find the charts of recorded values for diffuse/albedo values on the internet.
+인터넷에서 디퓨즈/알베도 값에 대한 기록된 값들의 차트를 종종 찾을 수 있습니다.
 
 ![Metals](/img/user-manual/graphics/physical-rendering/metals.jpg)
 
-| Material | RGB                                      |
+| 머티리얼 | RGB                                      |
 |----------|------------------------------------------|
-| Gold     | (1.000, 0.766, 0.336) or [255, 195, 86]  |
-| Silver   | (0.972, 0.960, 0.915) or [248, 245, 233] |
-| Copper   | (0.955, 0.637, 0.538) or [244, 162, 137] |
+| 금       | (1.000, 0.766, 0.336) 또는 [255, 195, 86]  |
+| 은       | (0.972, 0.960, 0.915) 또는 [248, 245, 233] |
+| 구리     | (0.955, 0.637, 0.538) 또는 [244, 162, 137] |
 
-### Metalness
+### 메탈니스 (Metalness)
 
-The metalness value is part of the **metalness** workflow. Metalness is a single value between 0-1 which determines if a material is metal (1) or non-metal (0).
+메탈니스 값은 **메탈니스** 워크플로우의 일부입니다. 메탈니스는 머티리얼이 금속(1)인지 비금속(0)인지를 결정하는 0-1 사이의 단일 값입니다.
 
 :::note
 
-The metalness value should almost always be 0 or 1. It is rare that you will need a value somewhere between these two.
+메탈니스 값은 거의 항상 0 또는 1이어야 합니다. 이 둘 사이의 값을 필요로 하는 경우는 드뭅니다.
 
 :::
 
-You can also supply a metalness map which lets you define specific areas of your material as metal or non-metal.
+머티리얼의 특정 영역을 금속 또는 비금속으로 정의할 수 있는 메탈니스 맵을 제공할 수도 있습니다.
 
 ![Metalness](/img/user-manual/graphics/physical-rendering/metalness.png)
 
-### Glossiness
+### 광택도 (Glossiness)
 
-Glossiness is used in both  **metalness** and **specular** workflows and it defines how smooth your material surface is. The glossiness will affect how blurry or sharp the reflections on the material are, or how broad or narrow the specular highlights are. Glossiness is provided as a single value between 0-100 or a glossiness map.
+광택도는 **메탈니스**와 **스펙큘러** 워크플로우 모두에서 사용되며 머티리얼 표면이 얼마나 매끄러운지를 정의합니다. 광택도는 머티리얼의 반사가 얼마나 흐릿하거나 선명한지, 또는 스펙큘러 하이라이트가 얼마나 넓거나 좁은지에 영향을 미칩니다. 광택도는 0-100 사이의 단일 값 또는 광택도 맵으로 제공됩니다.
 
 ![Glossiness](/img/user-manual/graphics/physical-rendering/glossiness.png)
 
-Some PBR systems use **Roughness** instead of Glossiness. The roughness is the inverse of the glossiness. If you need to convert a roughness map to a glossiness map, simply invert it.
+일부 PBR 시스템은 광택도 대신 **거칠기**를 사용합니다. 거칠기는 광택도의 역수입니다. 거칠기 맵을 광택도 맵으로 변환해야 한다면 단순히 반전시키면 됩니다.
 
-Sometimes glossiness and roughness are referred to as the **microsurface** value.
+때때로 광택도와 거칠기는 **마이크로 서피스** 값으로 언급됩니다.
 
-<!-- ### All together
+<!-- ### 모두 함께
 
-These three properties **diffuse**, **metalness** and **glossiness** are the core of the physical material system. You can try different combinations in the live demo below.
+이 세 가지 속성인 **디퓨즈**, **메탈니스**, **광택도**는 물리 머티리얼 시스템의 핵심입니다. 아래 라이브 데모에서 다양한 조합을 시도해볼 수 있습니다.
 
-There are many other additional properties to investigate that can be used to make great materials such as Ambient Occlusion, Emissive, Opacity, Normal and Height maps.
+앰비언트 오클루전, 이미시브, 불투명도, 노멀, 높이 맵과 같은 훌륭한 머티리얼을 만드는 데 사용할 수 있는 조사할 많은 추가 속성이 있습니다.
 
 <div className="iframe-container">
     <iframe src="https://playcanv.as/p/Q28EwTwQ/" title="Physical Materials - All" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>

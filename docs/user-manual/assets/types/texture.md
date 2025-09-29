@@ -1,18 +1,18 @@
 ---
-title: Texture
+title: 텍스처 (Texture)
 ---
 
-A texture is an image that can be assigned to a [material][1] and then applied to a graphical primitive.
+텍스처는 [재질][1]에 할당한 다음 그래픽 프리미티브에 적용할 수 있는 이미지입니다.
 
-## Importing Textures
+## 텍스처 가져오기
 
-There are 3 ways you can import texture assets into OasisW:
+OasisW에 텍스처 에셋을 가져오는 방법은 3가지입니다:
 
-1. Drag and drop images into the Assets panel.
-2. Select 'Upload' from the context menu in the Assets panel and select an image using the file browser.
-3. Import an FBX file that embeds textures.
+1. 이미지를 에셋 패널로 드래그 앤 드롭합니다.
+2. 에셋 패널의 컨텍스트 메뉴에서 '업로드'를 선택하고 파일 브라우저를 사용하여 이미지를 선택합니다.
+3. 텍스처가 포함된 FBX 파일을 가져옵니다.
 
-Supported image formats are:
+지원되는 이미지 형식:
 
 * JPG
 * PNG
@@ -26,55 +26,55 @@ Supported image formats are:
 * HDR
 * EXR -->
 
-Imported JPG, PNG, AVIF, WebP and GIF files remain in their original format.
+가져온 JPG, PNG, AVIF, WebP 및 GIF 파일은 원본 형식을 유지합니다.
 
-GIF, BMP image types will be converted to JPG or PNG on import. If the imported image has transparency, it will be converted to PNG. Otherwise, it will be converted to JPG.
+GIF, BMP 이미지 유형은 가져올 때 JPG 또는 PNG로 변환됩니다. 가져온 이미지에 투명도가 있으면 PNG로 변환됩니다. 그렇지 않으면 JPG로 변환됩니다.
 
-<!-- HDR and EXR are [high dynamic range formats][2] formats. Images of these types are converted to PNG on import and marked as being stored in RGBM format. RGBM essentially stores a multiplier for RGB values in the PNG's alpha channel, enabling the compression of an HDR format into a low dynamic range format. -->
+<!-- HDR와 EXR은 [높은 동적 범위 형식][2]입니다. 이러한 유형의 이미지는 가져올 때 PNG로 변환되고 RGBM 형식으로 저장된 것으로 표시됩니다. RGBM은 본질적으로 PNG의 알파 채널에 RGB 값의 배수를 저장하여 HDR 형식을 저동적 범위 형식으로 압축할 수 있게 합니다. -->
 
-By default, imported images will be resized to the nearest power of two. For example, an image that is 323x414 will be resized to 256x512 on import. This is done because the graphics engine cannot utilize mipmapping with non-power of two textures. However, this behavior can be overridden by disabling the 'Textures POT' setting in the Asset Tasks panel before importing a non-power of two texture.
+기본적으로 가져온 이미지는 가장 가까운 2의 거듭제곱으로 크기가 조정됩니다. 예를 들어, 323x414 이미지는 가져올 때 256x512로 크기가 조정됩니다. 이는 그래픽 엔진이 2의 거듭제곱이 아닌 텍스처로 밉매핑을 활용할 수 없기 때문입니다. 그러나 2의 거듭제곱이 아닌 텍스처를 가져오기 전에 에셋 작업 패널에서 '텍스처 POT' 설정을 비활성화하여 이 동작을 재정의할 수 있습니다.
 
-## Texture Properties
+## 텍스처 속성
 
-Selecting a texture's thumbnail in the Assets panel will load it into the Inspector panel. Note that you can multi-select textures and edit the whole selection simultaneously in the Inspector.
+에셋 패널에서 텍스처의 썸네일을 선택하면 검사기 패널에 로드됩니다. 여러 텍스처를 선택하고 검사기에서 전체 선택을 동시에 편집할 수 있습니다.
 
-A texture shares the standard set of asset properties (ID, name, tags and so on). But it's also has some texture-specific properties.
+텍스처는 표준 에셋 속성 세트(ID, 이름, 태그 등)를 공유합니다. 하지만 텍스처별 속성도 있습니다.
 
-![Texture Properties](/img/user-manual/assets/textures/texture-properties.png)
+![텍스처 속성](/img/user-manual/assets/textures/texture-properties.png)
 
-### Texture Filtering
+### 텍스처 필터링
 
-Texture filtering gives control over how the color of a texture mapped pixel is calculated. 'Point' applied no filtering whereas 'Linear' will interpolate the color of a texel with those of its neighbors. This produces better visual results, particularly as a texture is minimized (where the texture occupies fewer pixels on the screen than it has texels).
+텍스처 필터링은 텍스처 매핑된 픽셀의 색상이 계산되는 방식을 제어합니다. 'Point'는 필터링을 적용하지 않지만 'Linear'는 텍셀의 색상을 인접한 텍셀들과 보간합니다. 이는 특히 텍스처가 최소화될 때(텍스처가 텍셀보다 화면에서 더 적은 픽셀을 차지할 때) 더 나은 시각적 결과를 생성합니다.
 
-### Anisotropy
+### 이방성
 
-When textures are viewed on surfaces at an oblique angle, quality can suffer and they can appear blurred. To fix this problem, you can set a value for anisotropy. See how different anisotropy values can affect the appearance of a texture:
+텍스처가 비스듬한 각도에서 표면에 표시될 때 품질이 저하되고 흐릿하게 나타날 수 있습니다. 이 문제를 해결하기 위해 이방성 값을 설정할 수 있습니다. 다른 이방성 값이 텍스처의 외관에 어떤 영향을 미치는지 확인하세요:
 
-![Anisotropy](/img/user-manual/assets/textures/anisotropy.png)
+![이방성](/img/user-manual/assets/textures/anisotropy.png)
 
-Note that as anisotropy increases, the cost of sampling the texture on the GPU also increases.
+이방성이 증가할수록 GPU에서 텍스처를 샘플링하는 비용도 증가합니다.
 
-### Texture Addressing
+### 텍스처 어드레싱
 
-The texture addressing properties give you control over how a texture is sampled for texture coordinates outside the range 0 to 1. See how the different modes affect the sprite below:
+텍스처 어드레싱 속성은 0에서 1 범위를 벗어난 텍스처 좌표에 대해 텍스처가 샘플링되는 방식을 제어합니다. 아래 스프라이트에 다른 모드가 어떤 영향을 미치는지 확인하세요:
 
-![Addressing](/img/user-manual/assets/textures/texture-address.png)
+![어드레싱](/img/user-manual/assets/textures/texture-address.png)
 
-## Max Texture Size
+## 최대 텍스처 크기
 
-Different devices can support different texture sizes. Using [WebGL report][7] on the device and browser, we can see the max size supported.
+다른 디바이스는 다른 텍스처 크기를 지원할 수 있습니다. 디바이스와 브라우저에서 [WebGL 보고서][7]를 사용하여 지원되는 최대 크기를 확인할 수 있습니다.
 
-For example, this is from a MacBook Pro 16 inch (2020) laptop with Chrome which shows support up to 16384x16384.
+예를 들어, 이는 최대 16384x16384까지 지원하는 Chrome이 설치된 MacBook Pro 16인치(2020) 노트북에서 나온 것입니다.
 
-<img loading="lazy" src="/img/user-manual/assets/textures/mac-webgl-report.png" alt="Macbook Pro WebGL report" width="600" />
+<img loading="lazy" src="/img/user-manual/assets/textures/mac-webgl-report.png" alt="Macbook Pro WebGL 보고서" width="600" />
 
-Whereas on a Samsung S7 mobile device, only 4096x4096 is supported.
+반면 Samsung S7 모바일 디바이스에서는 4096x4096만 지원됩니다.
 
-<img loading="lazy" src="/img/user-manual/assets/textures/samsung-s7-webgl-report.jpg" alt="Samsung S7 WebGL report" width="600" />
+<img loading="lazy" src="/img/user-manual/assets/textures/samsung-s7-webgl-report.jpg" alt="Samsung S7 WebGL 보고서" width="600" />
 
-If the engine attempts to utilize a texture that exceeds the max texture size reported by WebGL, it will resize it down to this maximum size at runtime. Note that this is only done for texture loaded from images (PNG, JPG, AVIF, WebP, GIF). Compressed textures cannot be resized at runtime and will simply fail to render if they are too large for the device.
+엔진이 WebGL에서 보고한 최대 텍스처 크기를 초과하는 텍스처를 사용하려고 하면 런타임에 이 최대 크기로 크기를 조정합니다. 이는 이미지(PNG, JPG, AVIF, WebP, GIF)에서 로드된 텍스처에 대해서만 수행됩니다. 압축된 텍스처는 런타임에 크기를 조정할 수 없으며 디바이스에 비해 너무 크면 렌더링에 실패합니다.
 
-If you would like to avoid downsizing at runtime, at the time of writing (Fri 23 Oct 2020), 4096x4096 is very widely supported with some developers even opting for 2048x2048 which is guaranteed to work everywhere.
+런타임에 크기 축소를 피하고 싶다면, 작성 시점(2020년 10월 23일 금요일)에 4096x4096이 매우 널리 지원되며 일부 개발자는 어디서나 작동이 보장되는 2048x2048을 선택하기도 합니다.
 
 [1]: /user-manual/assets/types/material
 [2]: https://en.wikipedia.org/wiki/High-dynamic-range_imaging

@@ -1,11 +1,11 @@
 ---
-title: Animation Assets 
+title: 애니메이션 에셋 (Animation Assets)
 ---
 
 ![Animation Assets](/img/user-manual/anim/animation_assets.png)
 
-Animation assets are the animation keyframe data that’s used to drive animations of a model in OasisW. They are linked to an animstategraph asset via an entity's anim component.
+애니메이션 에셋은 OasisW에서 모델의 애니메이션을 구동하는 데 사용되는 애니메이션 키프레임 데이터입니다. 이들은 엔티티의 애님 컴포넌트를 통해 animstategraph 에셋에 연결됩니다.
 
-<!-- The anim component currently supports animation assets that have been imported into a OasisW project from .FBX files using the `Convert to GLB` asset tasks settings option.
+<!-- 애님 컴포넌트는 현재 `Convert to GLB` 에셋 작업 설정 옵션을 사용하여 .FBX 파일에서 OasisW 프로젝트로 가져온 애니메이션 에셋을 지원합니다.
 
 ![Asset Tasks](/img/user-manual/anim/asset_tasks.png) -->

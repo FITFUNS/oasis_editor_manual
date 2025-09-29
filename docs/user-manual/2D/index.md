@@ -2,27 +2,27 @@
 title: 2D
 ---
 
-The OasisW Engine is designed to make creating 3D games and applications fast and simple. However, we also support a number of great features for creating 2D games. With OasisW' 2D features you get all the benefits of a powerful 3D engine but for 2D games.
+OasisW 엔진은 3D 게임과 애플리케이션을 빠르고 간단하게 만드는 것을 목적으로 설계되었습니다. 하지만 2D 게임을 만들기 위한 여러 훌륭한 기능도 지원합니다. OasisW의 2D 기능을 사용하면 강력한 3D 엔진의 모든 이점을 2D 게임에서도 얻을 수 있습니다.
 
-## Basic Features
+## 기본 기능
 
-### Sprites
+### 스프라이트
 
 ![Sprite](/img/user-manual/2D/sprite.jpg)
 
-2D graphics are often known as **Sprites**. In OasisW you can create [Sprite Assets][0] and [Sprite Components][1]. The Sprite Component is attached to Entities in order to display 2D graphics in your scene. Sprite Assets in OasisW store multiple image frames from a Texture Atlas in sequence. So you can use a Sprite Asset to create flip-book style animated graphics in your games.
+2D 그래픽은 종종 **스프라이트**라고 불립니다. OasisW에서는 [스프라이트 에셋][0]과 [스프라이트 컴포넌트][1]를 만들 수 있습니다. 스프라이트 컴포넌트는 씬에서 2D 그래픽을 표시하기 위해 엔티티에 연결됩니다. OasisW의 스프라이트 에셋은 텍스처 아틀라스의 여러 이미지 프레임을 순서대로 저장합니다. 따라서 스프라이트 에셋을 사용하여 게임에서 플립북 스타일의 애니메이션 그래픽을 만들 수 있습니다.
 
-### Texture Atlases
+### 텍스처 아틀라스
 
 ![Texture Atlas](/img/user-manual/2D/texture-atlas.jpg)
 
-A [Texture Atlas][2] is a enhanced version of the standard [Texture][3] asset. In addition to the regular texture features, a Texture Atlas includes the definitions of a set of "Frames". Each frame is a region of the texture which can be referenced in a Sprite Asset.
+[텍스처 아틀라스][2]는 표준 [텍스처][3] 에셋의 향상된 버전입니다. 일반적인 텍스처 기능 외에도 텍스처 아틀라스는 "프레임" 세트의 정의를 포함합니다. 각 프레임은 스프라이트 에셋에서 참조할 수 있는 텍스처의 영역입니다.
 
-### Sprite Editor
+### 스프라이트 에디터
 
 ![Sprite Editor](/img/user-manual/2D/sprite-editor.jpg)
 
-The [Sprite Editor][4] is the tool used to generate Texture Atlas frames and Sprite Assets. You can open the Sprite Editor by double-clicking on any Texture Atlas or Sprite Asset. [Read More][4].
+[스프라이트 에디터][4]는 텍스처 아틀라스 프레임과 스프라이트 에셋을 생성하는 데 사용되는 도구입니다. 텍스처 아틀라스나 스프라이트 에셋을 더블클릭하여 스프라이트 에디터를 열 수 있습니다. [자세히 보기][4].
 
 <!-- *Artwork created by [PixelBoy](https://twitter.com/2pblog1)* -->
 

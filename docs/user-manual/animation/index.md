@@ -1,19 +1,19 @@
 ---
-title: Animation
+title: 애니메이션 (Animation)
 ---
 
-OasisW provides a powerful state-based animation system which can be used to animate character models and other arbitrary scene object models. Users can work with any of their .FBX animation assets. These can be organized using animation state machines to easily control the animated behavior of scene models at runtime.
+OasisW는 캐릭터 모델과 기타 임의의 씬 객체 모델을 애니메이션화하는 데 사용할 수 있는 강력한 상태 기반 애니메이션 시스템을 제공합니다. 사용자는 .FBX 애니메이션 에셋 중 어떤 것이든 작업할 수 있습니다. 이들은 애니메이션 상태 머신을 사용하여 구성되어 런타임에 씬 모델의 애니메이션 동작을 쉽게 제어할 수 있습니다.
 
-## System Overview
+## 시스템 개요
 
-The animation system touches on three main areas of the OasisW platform. This section will walk through how these areas can be used together to create complex animation behavior for your models. The following sections of the animation user manual then will explore each area in more detail.
+애니메이션 시스템은 OasisW 플랫폼의 세 가지 주요 영역에 걸쳐 있습니다. 이 섹션에서는 이러한 영역들이 함께 사용되어 모델의 복잡한 애니메이션 동작을 만드는 방법을 살펴보겠습니다. 애니메이션 사용자 매뉴얼의 다음 섹션에서는 각 영역을 더 자세히 탐구할 것입니다.
 
-### Animating in OasisW
+### OasisW에서 애니메이션
 
-In order to begin animating a OasisW entity, you must have a set of animation assets available and imported into your OasisW project. These animation assets will drive the animation of a given model you wish to animate. For example a humanoid character may have a set of animations; Idle, Walk, Jump.
+OasisW 엔티티의 애니메이션을 시작하려면 사용 가능하고 OasisW 프로젝트로 가져온 애니메이션 에셋 세트가 있어야 합니다. 이러한 애니메이션 에셋은 애니메이션화하려는 주어진 모델의 애니메이션을 구동합니다. 예를 들어 휴머노이드 캐릭터는 Idle, Walk, Jump와 같은 애니메이션 세트를 가질 수 있습니다.
 
 ![Animations](/img/user-manual/anim/animations.gif)
 
-These three animations can be organized into a single animation system to create a simple locomotion system for that character. The way this is achieved in OasisW is through the use of an animstategraph asset. These assets can be thought of as state machines for an entity’s animation behavior. With each state in this asset relating to an animation, the state machine can be set up to define the complex animation behavior of an entity’s model. This includes defining when the system should stop one animation and start another and how the transition between these animations should be blended.
+이 세 가지 애니메이션은 해당 캐릭터의 간단한 이동 시스템을 만들기 위해 단일 애니메이션 시스템으로 구성할 수 있습니다. OasisW에서 이를 달성하는 방법은 animstategraph 에셋을 사용하는 것입니다. 이러한 에셋은 엔티티의 애니메이션 동작을 위한 상태 머신으로 생각할 수 있습니다. 이 에셋의 각 상태가 애니메이션과 관련되어 있으므로, 상태 머신을 설정하여 엔티티 모델의 복잡한 애니메이션 동작을 정의할 수 있습니다. 여기에는 시스템이 하나의 애니메이션을 중지하고 다른 애니메이션을 시작해야 하는 시점과 이러한 애니메이션 간의 전환이 어떻게 블렌딩되어야 하는지 정의하는 것이 포함됩니다.
 
-The anim component is then used to assign an animstategraph asset to a particular entity in your scene. Once an entity has been assigned an animstategraph asset, each state in the graph can have an actual animation asset assigned to it. Once all states have been assigned animations, the anim component will become playable. At this point the animation system is complete and the defined animation behavior will be viewable in the OasisW launcher.
+그런 다음 애님 컴포넌트를 사용하여 animstategraph 에셋을 씬의 특정 엔티티에 할당합니다. 엔티티에 animstategraph 에셋이 할당되면 그래프의 각 상태에 실제 애니메이션 에셋을 할당할 수 있습니다. 모든 상태에 애니메이션이 할당되면 애님 컴포넌트가 재생 가능해집니다. 이 시점에서 애니메이션 시스템이 완성되고 정의된 애니메이션 동작을 OasisW 런처에서 볼 수 있습니다.

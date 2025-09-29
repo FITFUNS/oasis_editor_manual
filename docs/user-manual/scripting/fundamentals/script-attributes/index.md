@@ -1,34 +1,34 @@
 ---
-title: Script Attributes
+title: 스크립트 속성 (Script Attributes)
 ---
 
-Script Attributes are a powerful feature in OasisW that define the public, configurable interface of your scripts. They allow you to expose specific parameters that can be easily tweaked programmatically when instantiating or configuring scripts in code. This means you can write a script once, and then easily adjust its behavior and properties for different instances or by different team members.
+스크립트 속성은 스크립트의 공개적이고 구성 가능한 인터페이스를 정의하는 OasisW의 강력한 기능입니다. 코드에서 스크립트를 인스턴스화하거나 구성할 때 프로그래밍 방식으로 쉽게 조정할 수 있는 특정 매개변수를 노출할 수 있습니다. 이는 스크립트를 한 번 작성한 다음, 다른 인스턴스나 다른 팀 멤버에 의해 동작과 속성을 쉽게 조정할 수 있음을 의미합니다.
 
-## Why Use Script Attributes?
+## 스크립트 속성을 사용하는 이유
 
-* **Clear Public Interface:** Attributes formally define which parts of a script are intended to be customized, improving code clarity and maintainability.
-* **Visual Configuration:** When using visual development tools, attributes can appear as editable fields providing a user-friendly interface for artists, designers, or other developers to configure scripts without needing to delve into code.
-* **Programmatic Configuration:** When creating or managing Entities and Script Components via code, you can directly set the initial values for these attributes, allowing for dynamic and flexible setups.
-* **Reusability:** Create generic scripts (e.g., a "Movement" script) and customize their properties (like speed, direction, target) for various Entities through code configuration.
-* **Collaboration:** Enable team members, including those not primarily focused on coding, to modify gameplay elements, character stats, and visual properties.
-* **Rapid Iteration:** Quickly test different configurations and values by modifying initialization parameters in your code.
+* **명확한 공개 인터페이스:** 속성은 스크립트의 어떤 부분이 사용자 정의를 위해 의도되었는지를 공식적으로 정의하여 코드 명확성과 유지보수성을 향상시킵니다.
+* **시각적 구성:** 시각적 개발 도구를 사용할 때, 속성은 아티스트, 디자이너 또는 다른 개발자가 코드를 깊이 파고들 필요 없이 스크립트를 구성할 수 있는 사용자 친화적인 인터페이스를 제공하는 편집 가능한 필드로 나타날 수 있습니다.
+* **프로그래밍 방식 구성:** 코드를 통해 엔티티와 스크립트 컴포넌트를 생성하거나 관리할 때, 이러한 속성의 초기 값을 직접 설정할 수 있어 동적이고 유연한 설정이 가능합니다.
+* **재사용성:** 일반적인 스크립트(예: "Movement" 스크립트)를 생성하고 코드 구성을 통해 다양한 엔티티에 대한 속성(속도, 방향, 대상 등)을 사용자 정의할 수 있습니다.
+* **협업:** 주로 코딩에 집중하지 않는 팀 멤버들도 게임플레이 요소, 캐릭터 스탯, 시각적 속성을 수정할 수 있게 합니다.
+* **빠른 반복:** 코드의 초기화 매개변수를 수정하여 다양한 구성과 값을 빠르게 테스트할 수 있습니다.
 
-## How They Work
+## 작동 방식
 
-When you declare an attribute in your script, you are essentially defining a property that can be initialized and modified.
+스크립트에서 속성을 선언할 때, 본질적으로 초기화되고 수정될 수 있는 속성을 정의하는 것입니다.
 
-* **In Code:** You can set the values of these attributes when you add a script to a Script Component or at runtime via script instance properties.
-* **Programmatic Access:** You can directly access and modify attribute values through your script instances.
+* **코드에서:** 스크립트 컴포넌트에 스크립트를 추가할 때 또는 런타임에 스크립트 인스턴스 속성을 통해 이러한 속성의 값을 설정할 수 있습니다.
+* **프로그래밍 방식 접근:** 스크립트 인스턴스를 통해 속성 값에 직접 접근하고 수정할 수 있습니다.
 
-For example, a `speed` attribute in a rotation script could be exposed. Programmatically, you could set `this.speed = 5;` in an `initialize` method or `entity.script.myScript.speed = 5;` when setting up an entity. This allows you to set different rotation speeds for different spinning objects, all using the same underlying script logic.
+예를 들어, 회전 스크립트의 `speed` 속성을 노출할 수 있습니다. 프로그래밍 방식으로 `initialize` 메서드에서 `this.speed = 5;`를 설정하거나 엔티티를 설정할 때 `entity.script.myScript.speed = 5;`를 설정할 수 있습니다. 이를 통해 동일한 기본 스크립트 로직을 사용하여 서로 다른 회전 객체에 대해 서로 다른 회전 속도를 설정할 수 있습니다.
 
-## Systems: Classic
+## 시스템: 클래식
 
-OasisW has systems for defining script attributes, corresponding to the types of scripting methodologies:
+OasisW는 스크립팅 방법론의 유형에 해당하는 스크립트 속성을 정의하는 시스템을 가지고 있습니다:
 
 <!-- 1. **[ESM Script Attributes](./esm.md):** Used with modern ES Module (`.mjs`) scripts. Attributes are typically declared using JSDoc comments above class member variables. This is the recommended approach for new projects. -->
-1. **[Classic Script Attributes](./classic.md):** Used with the older "Classic" script (`.js`) files. Attributes are declared using a specific `MyScript.attributes.add(...)` API.
+1. **[클래식 스크립트 속성](./classic.md):** 오래된 "클래식" 스크립트 (`.js`) 파일과 함께 사용됩니다. 속성은 특정 `MyScript.attributes.add(...)` API를 사용하여 선언됩니다.
 
 <!-- While the underlying goal is the same—to define a configurable interface—the syntax and some capabilities differ between the two. Click the links above to learn the specifics for each system. -->
 
-Understanding and utilizing Script Attributes is key to building flexible, maintainable, and collaboratively-friendly projects in OasisW when constructing your scenes through code.
+스크립트 속성을 이해하고 활용하는 것은 코드를 통해 씬을 구성할 때 OasisW에서 유연하고 유지보수 가능하며 협업 친화적인 프로젝트를 구축하는 핵심입니다.

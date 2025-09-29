@@ -1,19 +1,19 @@
 ---
-title: Managing Scenes
+title: 씬 관리하기
 ---
 
-You can manage your scenes by opening the Scenes dialog.
+씬 대화상자를 열어 씬을 관리할 수 있습니다.
 
-You can open the Scenes dialog either by clicking on the 'Scenes' menu option in the menu:
+메뉴에서 'Scenes' 메뉴 옵션을 클릭하여 씬 대화상자를 열 수 있습니다:
 
 ![Scenes Menu](/img/user-manual/scenes/managing-scenes/scenes-menu.jpg)
 
-Or by clicking on the Scenes Menu button on the top left inside the 3D viewport:
+또는 3D 뷰포트 내부 왼쪽 상단의 씬 메뉴 버튼을 클릭할 수 있습니다:
 
 ![Scenes Viewport](/img/user-manual/scenes/managing-scenes/scenes-viewport.jpg)
 
-This will open up the Scenes dialog:
+이렇게 하면 씬 대화상자가 열립니다:
 
 ![Scenes](/img/user-manual/scenes/managing-scenes/scenes.jpg)
 
-You can create a new scene by clicking on "ADD NEW SCENE", you can click on a scene to open it up and you can click on the buttons on the right of each scene to duplicate a scene or delete it. You can also click on the banner icon on the left to make it the first scene loaded when you publish an app or when you export your project. Think of it as the first 'level' in your application.
+"ADD NEW SCENE"을 클릭하여 새 씬을 만들 수 있고, 씬을 클릭하여 열 수 있으며, 각 씬 오른쪽의 버튼을 클릭하여 씬을 복제하거나 삭제할 수 있습니다. 또한 왼쪽의 배너 아이콘을 클릭하여 앱을 게시하거나 프로젝트를 내보낼 때 첫 번째로 로드되는 씬으로 만들 수 있습니다. 이를 애플리케이션의 첫 번째 '레벨'로 생각하세요.

@@ -1,233 +1,279 @@
 ---
-title: Material
+title: 재질 (Material)
 ---
 
-Every surface on a 3D model is rendered using a material. The material defines the properties of that surface, such as its color, shininess, bumpiness.
+3D 모델의 모든 표면은 재질을 사용하여 렌더링됩니다. 재질은 색상, 광택, 거칠기 등 해당 표면의 속성을 정의합니다.
 
-In OasisW, a material is an Asset type which collects all these properties together. By default, it represents a Physical material. This exposes the fundamental properties that can be used to create many different types for visual effects, from smooth plastic, to rough wood, or scratched metal.
+OasisW에서 재질은 이러한 모든 속성을 함께 수집하는 에셋 유형입니다. 기본적으로 Physical 재질을 나타냅니다. 이는 부드러운 플라스틱부터 거친 나무, 또는 긁힌 금속까지 다양한 시각 효과를 만들기 위해 사용할 수 있는 기본 속성을 노출합니다.
 
-We also support our old Phong Material type.
+기존 Phong 재질 유형도 지원합니다.
 
-## Importing Materials {#importing-materials}
+## 재질 가져오기 {#importing-materials}
 
-Materials are imported automatically when you upload a 3D model (e.g. FBX or COLLADA) file into OasisW. Materials will be generated with the same properties as they exist in your 3D modelling tool. If you upload using embedded media (FBX only) all the relevant texture maps will be automatically set up for you.
+3D 모델(예: FBX) 파일을 OasisW에 업로드할 때 재질이 자동으로 가져옵니다. 재질은 3D 모델링 도구에 존재하는 것과 동일한 속성으로 생성됩니다. 임베디드 미디어(FBX만 해당)를 사용하여 업로드하면 모든 관련 텍스처 맵이 자동으로 설정됩니다.
 
-## Creating New Materials {#creating-new-materials}
+## 새 재질 생성 {#creating-new-materials}
 
-You can create new materials directly from the OasisW Editor interface.
+OasisW 에디터 인터페이스에서 직접 새 재질을 만들 수 있습니다.
 
-![Create Material](/img/user-manual/assets/materials/create-asset-menu.jpg)
+![재질 생성](/img/user-manual/assets/materials/create-asset-menu.jpg)
 
-This creates a new material Asset and opens up the material inspector on the right-hand side of the screen.
+이렇게 하면 새 재질 에셋이 생성되고 화면 오른쪽에 재질 검사기가 열립니다.
 
-## Selecting a Material {#selecting-a-material}
+## 재질 선택 {#selecting-a-material}
 
-![Model Inspector](/img/user-manual/assets/materials/model-inspector-simple.jpg)
+![모델 검사기](/img/user-manual/assets/materials/model-inspector-simple.jpg)
 
-In order to edit a material, first you must select it. This will bring up the material inspector.
+재질을 편집하려면 먼저 선택해야 합니다. 이렇게 하면 재질 검사기가 나타납니다.
 
-You can select a material in the asset panel. You can also select materials from the model inspector or from the model component.
+에셋 패널에서 재질을 선택할 수 있습니다. 모델 검사기나 모델 컴포넌트에서도 재질을 선택할 수 있습니다.
 
-Generally, clicking on a material preview icon will take you to the material inspector.
+일반적으로 재질 미리보기 아이콘을 클릭하면 재질 검사기로 이동합니다.
 
-## Assigning Materials {#assigning-materials}
+## 재질 할당 {#assigning-materials}
 
-![Model Component](/img/user-manual/assets/materials/model.png)
+![모델 컴포넌트](/img/user-manual/assets/materials/model.png)
 
-You can modify which materials are assigned to where on a model asset or you can customize the materials of a particular Entity that has a model component.
+모델 에셋에서 어디에 어떤 재질이 할당되는지 수정하거나, 모델 컴포넌트가 있는 특정 엔티티의 재질을 사용자 정의할 수 있습니다.
 
 <!-- When you select an Entity with a model component you will see two buttons - Asset Materials and Entity Materials. -->
 
-![Model Inspector Free Slot](/img/user-manual/assets/materials/model-inspector-free-slot.jpg)
+![모델 검사기 빈 슬롯](/img/user-manual/assets/materials/model-inspector-free-slot.jpg)
 
-Clicking on Asset Materials will select the model asset. You can also select the model asset from the asset panel. The model inspector will show the meshes of model and which material is assigned to each. You can clear a material using the X button, and click the empty slot to assign a new material.
+에셋 재질을 클릭하면 모델 에셋이 선택됩니다. 에셋 패널에서도 모델 에셋을 선택할 수 있습니다. 모델 검사기는 모델의 메시와 각각에 할당된 재질을 보여줍니다. X 버튼을 사용하여 재질을 지우고 빈 슬롯을 클릭하여 새 재질을 할당할 수 있습니다.
 
-You can also drag and drop material Assets from the asset panel onto the material slot.
+에셋 패널에서 재질 에셋을 재질 슬롯으로 드래그 앤 드롭할 수도 있습니다.
 
-Clicking on Entity Materials will first ask you to select the mesh instance for which you want to customize the material:
+엔티티 재질을 클릭하면 먼저 재질을 사용자 정의할 메시 인스턴스를 선택하라고 요청합니다:
 
-![Select Mesh Instance](/img/user-manual/assets/materials/select.png)
+![메시 인스턴스 선택](/img/user-manual/assets/materials/select.png)
 
-After selecting the mesh instance a new material picker will appear in the model component:
+메시 인스턴스를 선택한 후 모델 컴포넌트에 새 재질 선택기가 나타납니다:
 
-![Selected Mesh Instance](/img/user-manual/assets/materials/selected.png)
+![선택된 메시 인스턴스](/img/user-manual/assets/materials/selected.png)
 
-Then you can select a different material for this particular Entity:
+그런 다음 이 특정 엔티티에 대해 다른 재질을 선택할 수 있습니다:
 
-![Select Different Material](/img/user-manual/assets/materials/overridden.png)
+![다른 재질 선택](/img/user-manual/assets/materials/overridden.png)
 
-## Editing a Material {#editing-a-material}
+## 재질 편집 {#editing-a-material}
 
-![Material Inspector](/img/user-manual/assets/materials/material-inspector.jpg)
+![재질 검사기](/img/user-manual/assets/materials/material-inspector.jpg)
 
-Once you have a material selected you can edit its properties.
+재질을 선택하면 속성을 편집할 수 있습니다.
 
-## Material Maps {#material-maps}
+## 재질 맵 {#material-maps}
 
-![Material Map Slot](/img/user-manual/assets/materials/material-map-slot.jpg)
+![재질 맵 슬롯](/img/user-manual/assets/materials/material-map-slot.jpg)
 
-Much of editing a material involves creating and assigning textures maps to the various slots detailed on the pages above.
+재질 편집의 대부분은 위 페이지에서 자세히 설명된 다양한 슬롯에 텍스처 맵을 생성하고 할당하는 것입니다.
 
-There are a few options that are available on most texture map slots for a material.
+재질의 대부분의 텍스처 맵 슬롯에서 사용할 수 있는 몇 가지 옵션이 있습니다.
 
-### Texture Asset {#texture-asset}
+### 텍스처 에셋 {#texture-asset}
 
-First is the texture asset, upload an image to OasisW and we'll create a texture asset for you. you can assign this to a slot on a material.
+첫 번째는 텍스처 에셋으로, 이미지를 OasisW에 업로드하면 텍스처 에셋을 생성해드립니다. 이를 재질의 슬롯에 할당할 수 있습니다.
 
-### Color or Tint Color {#color-or-tint-color}
+### 색상 또는 틴트 색상 {#color-or-tint-color}
 
-Some map slots can be a flat color instead of a texture map. Some slots also support a tint color if a texture is also assigned. If enabled the tint color is multiplied by the color in the texture map slot.
+일부 맵 슬롯은 텍스처 맵 대신 단색일 수 있습니다. 일부 슬롯은 텍스처가 할당된 경우 틴트 색상도 지원합니다. 활성화되면 틴트 색상이 텍스처 맵 슬롯의 색상과 곱해집니다.
 
-### Channel {#channel}
+### 채널 {#channel}
 
-Some maps only require a single grayscale value e.g. 0.0 -> 1.0. In this case it is possible to select which channel of the texture to use. **RGB** means that all three channels are used. **R**, **G** or **B** means that only the red, green or blue channel will be used.
+일부 맵은 0.0 -> 1.0과 같은 단일 그레이스케일 값만 필요합니다. 이 경우 사용할 텍스처의 채널을 선택할 수 있습니다. **RGB**는 세 채널이 모두 사용됨을 의미합니다. **R**, **G** 또는 **B**는 빨간색, 녹색 또는 파란색 채널만 사용됨을 의미합니다.
 
-### Texture Transform
+### 텍스처 변환
 
 <img loading="lazy" src="/img/user-manual/material-inspector/offset-tiling.jpg" />
 
-| Property          | Description |
+| 속성               | 설명 |
 |-------------------|-------------|
-| Apply to all Maps | Uncheck this to apply offset and tiling values to individual maps. |
-| Offset            | The offset in U and V to apply to the first UV channel referenced by maps in this material. |
-| Tiling            | The scale in U and V to apply to the first UV channel referenced by maps in this material. |
-| Rotation          | The rotation in U and V to apply to the first UV channel referenced by maps in this material. |
+| Apply to all Maps | 개별 맵에 오프셋과 타일링 값을 적용하려면 이 옵션을 해제하세요. |
+| Offset            | 이 재질의 맵에서 참조하는 첫 번째 UV 채널에 적용할 U와 V의 오프셋입니다. |
+| Tiling            | 이 재질의 맵에서 참조하는 첫 번째 UV 채널에 적용할 U와 V의 스케일입니다. |
+| Rotation          | 이 재질의 맵에서 참조하는 첫 번째 UV 채널에 적용할 U와 V의 회전입니다. |
 
-### Ambient
+### 앰비언트
 
-Ambient properties determine how the material appears in ambient light.
+앰비언트 속성은 재질이 앰비언트 조명에서 어떻게 나타나는지를 결정합니다.
 
 <img loading="lazy" src="/img/user-manual/material-inspector/ambient.jpg" />
 
-| Property     | Description |
+| 속성     | 설명 |
 |--------------|-------------|
-| AO Texture   | An ambient occlusion map containing pre-baked ambient occlusion. |
-| Vertex Color | Use mesh vertex colors for AO. If aoMap is set, it'll be multiplied by vertex colors. |
-| Color        | The tint color to multiply the scene's global ambient color. |
-| Intensity    | Ambient occlusion intensity. Defaults to 1. |
+| AO Texture   | 사전 베이킹된 앰비언트 오클루전을 포함하는 앰비언트 오클루전 맵입니다. |
+| Vertex Color | AO에 메시 버텍스 색상을 사용합니다. aoMap이 설정된 경우 버텍스 색상과 곱해집니다. |
+| Color        | 씬의 전역 앰비언트 색상과 곱할 틴트 색상입니다. |
+| Intensity    | 앰비언트 오클루전 강도입니다. 기본값은 1입니다. |
 
-### Diffuse
+### 디퓨즈
 
-Diffuse properties define the how a material reflects diffuse light emitted by dynamic light sources in the scene.
+디퓨즈 속성은 재질이 씬의 동적 조명 소스에서 방출되는 디퓨즈 조명을 어떻게 반사하는지를 정의합니다.
 
 <img loading="lazy" src="/img/user-manual/material-inspector/diffuse.jpg" />
 
-| Property   | Description |
+| 속성          | 설명 |
 |------------|-------------|
-| Texture    | The diffuse map that specifies the per-pixel diffuse material color. If no diffuse map is set, the diffuse color is used instead. |
-| Vertex Color | Multiply diffuse by the mesh vertex colors. |
-| Color      | If no diffuse map is set, this is the diffuse color of the material. If a diffuse map is set and tint is enabled, this color modulates the material's diffuse map. |
+| Texture      | 픽셀당 디퓨즈 재질 색상을 지정하는 디퓨즈 맵입니다. 디퓨즈 맵이 설정되지 않은 경우 대신 디퓨즈 색상이 사용됩니다. |
+| Vertex Color | 메시 버텍스 색상으로 디퓨즈를 곱합니다. |
+| Color        | 디퓨즈 맵이 설정되지 않은 경우 이것이 재질의 디퓨즈 색상입니다. 디퓨즈 맵이 설정되고 틴트가 활성화된 경우 이 색상이 재질의 디퓨즈 맵을 변조합니다. |
 
-### Specular
+### 스펙큘러
 
-Specular properties defines the color of the specular highlights. i.e. the shininess
+스펙큘러 속성은 스펙큘러 하이라이트의 색상을 정의합니다. 즉, 광택입니다.
 
 <img loading="lazy" src="/img/user-manual/material-inspector/specular.jpg" />
 
-| Property      | Description |
+| 속성      | 설명 |
 |---------------|-------------|
-| Use Metalness | Toggle between specular and metalness workflow. |
-| Specular Map  | The specular map that specifies the per-pixel specular color. If no specular map is set, the specular color is used instead. |
-| Vertex Color | Use mesh vertex colors for specular. If specularMap or are specularTint are set, they'll be multiplied by vertex colors. |
-| Color         | If no specular map is set, this is the specular color of the material. If a specular map is set and tint is enabled, this color modulates the material's specular map. |
-| Metalness Map | [Only when using metalness] This map specifies per-pixel metalness values. A value of 1 is metal and a value of 0 is non-metal. |
-| Vertex Color | Use mesh vertex colors for metalness. If metalnessMap is set, it'll be multiplied by vertex colors. |
-| Metalness    | Defines how much the surface is metallic. From 0 (dielectric) to 1 (metal). |
-| Metalness Specular Color | When metalness is enabled, use the specular map to apply color tint to specular reflections. at direct angles. |
-| Gloss Map     | The gloss map that specifies a per-pixel shininess value. The gloss map is modulated by the shininess property. |
-| Glossiness    | A value determining the smoothness of a surface. For smaller shininess values, a surface is rougher and specular highlights will be broader. For larger shininess values, a surface is smoother and will exhibit more concentrated specular highlights (as the surface is polished and shiny). |
-| Invert  | Invert the gloss component (default is false). Enabling this flag results in material treating the gloss members as roughness. |
+| Use Metalness | 스펙큘러와 메탈니스 워크플로우 간 전환합니다. |
+| Specular Map  | 픽셀당 스펙큘러 색상을 지정하는 스펙큘러 맵입니다. 스펙큘러 맵이 설정되지 않은 경우 대신 스펙큘러 색상이 사용됩니다. |
+| Vertex Color | 스펙큘러에 메시 버텍스 색상을 사용합니다. specularMap 또는 specularTint가 설정된 경우 버텍스 색상과 곱해집니다. |
+| Color         | 스펙큘러 맵이 설정되지 않은 경우 이것이 재질의 스펙큘러 색상입니다. 스펙큘러 맵이 설정되고 틴트가 활성화된 경우 이 색상이 재질의 스펙큘러 맵을 변조합니다. |
+| Metalness Map | [메탈니스 사용 시에만] 이 맵은 픽셀당 메탈니스 값을 지정합니다. 값 1은 금속이고 값 0은 비금속입니다. |
+| Vertex Color | 메탈니스에 메시 버텍스 색상을 사용합니다. metalnessMap이 설정된 경우 버텍스 색상과 곱해집니다. |
+| Metalness    | 표면이 얼마나 금속적인지를 정의합니다. 0(유전체)에서 1(금속)까지입니다. |
+| Metalness Specular Color | 메탈니스가 활성화된 경우 스펙큘러 맵을 사용하여 스펙큘러 반사에 색상 틴트를 적용합니다. 직접 각도에서. |
+| Gloss Map     | 픽셀당 광택 값을 지정하는 글로스 맵입니다. 글로스 맵은 광택 속성에 의해 변조됩니다. |
+| Glossiness    | 표면의 부드러움을 결정하는 값입니다. 더 작은 광택 값의 경우 표면이 더 거칠고 스펙큘러 하이라이트가 더 넓어집니다. 더 큰 광택 값의 경우 표면이 더 부드럽고 더 집중된 스펙큘러 하이라이트를 보여줍니다(표면이 연마되고 반짝이는 것처럼). |
+| Invert  | 글로스 구성 요소를 반전합니다(기본값은 false). 이 플래그를 활성화하면 재질이 글로스 멤버를 거칠기로 처리합니다. |
 
-### Emissive
+### 이미시브
 
-Emissive properties control how the material emits light (as opposed to reflecting light).
+이미시브 속성은 재질이 빛을 어떻게 방출하는지(반사하는 것과 반대)를 제어합니다.
 
 <img loading="lazy" src="/img/user-manual/material-inspector/emissive.jpg" />
 
-| Property   | Description |
+| 속성   | 설명 |
 |------------|-------------|
-| Texture    | The emissive map that specifies the per-pixel emissive color. If no emissive map is set, the emissive color is used instead. |
-| Vertex Color  | Use mesh vertex colors for emission. If emissiveMap or emissive are set, they'll be multiplied by vertex colors. |
-| Color      | If no emissive map is set, this is the emissive color of the material. If an emissive map is set and tint is enabled, this color modulates the material's emissive map. |
-| Intensity  | A multiplier for emissive color that can achieve overbright effects for exceptionally bright emissive materials. |
+| Texture    | 픽셀당 이미시브 색상을 지정하는 이미시브 맵입니다. 이미시브 맵이 설정되지 않은 경우 대신 이미시브 색상이 사용됩니다. |
+| Vertex Color  | 이미시브에 메시 버텍스 색상을 사용합니다. emissiveMap 또는 emissive가 설정된 경우 버텍스 색상과 곱해집니다. |
+| Color      | 이미시브 맵이 설정되지 않은 경우 이것이 재질의 이미시브 색상입니다. 이미시브 맵이 설정되고 틴트가 활성화된 경우 이 색상이 재질의 이미시브 맵을 변조합니다. |
+| Intensity  | 예외적으로 밝은 이미시브 재질에 대해 과밝기 효과를 달성할 수 있는 이미시브 색상의 배수입니다. |
 
-### Opacity
+### 불투명도
 
-Opacity sets the transparency level.
+불투명도는 투명도 수준을 설정합니다.
 
 <img loading="lazy" src="/img/user-manual/material-inspector/opacity.jpg" />
 
-| Property   | Description |
+| 속성   | 설명 |
 |------------|-------------|
-| Blend Type    | Gets the blend mode for this material. |
-| Texture    | The opacity map that specifies the per-pixel opacity. The opacity map is modulated by the 'Amount' property. |
-| Vertex Color  | Use mesh vertex colors for opacity. If opacityMap is set, it'll be multiplied by vertex colors. |
-| Alpha To Converage  | Enables or disables alpha to coverage (WebGL2 only).  |
-| Opacity Dither  | Used to specify whether opacity is dithered, which allows transparency without alpha blending. |
-| Opacity Shadow Dithger  | Used to specify whether shadow opacity is dithered, which allows shadow transparency without alpha blending. |
-<!-- | Intensity  | The opacity of the material. This is a value between 0 (completely transparent) and 1 (completely opaque. It defaults to 1. | -->
+| Blend Type    | 이 재질의 블렌드 모드를 가져옵니다. |
+| Texture    | 픽셀당 불투명도를 지정하는 불투명도 맵입니다. 불투명도 맵은 'Amount' 속성에 의해 변조됩니다. |
+| Vertex Color  | 불투명도에 메시 버텍스 색상을 사용합니다. opacityMap이 설정된 경우 버텍스 색상과 곱해집니다. |
+| Alpha To Coverage  | 알파 투 커버리지를 활성화하거나 비활성화합니다(WebGL2만 해당).  |
+| Opacity Dither  | 불투명도가 디더링되는지 여부를 지정하는 데 사용되며, 알파 블렌딩 없이 투명도를 허용합니다. |
+| Opacity Shadow Dither  | 섀도우 불투명도가 디더링되는지 여부를 지정하는 데 사용되며, 알파 블렌딩 없이 섀도우 투명도를 허용합니다. |
+<!-- | 강도  | 재질의 불투명도입니다. 이는 0(완전 투명)과 1(완전 불투명) 사이의 값이며 기본값은 1입니다. | -->
 
-### Normals
+### 노멀
 
-Use this to specify normal maps (these determine bumpiness - note you have to use normal maps in OasisW, not height maps).
+노멀 맵을 지정하는 데 사용합니다(이들은 거칠기를 결정합니다 - OasisW에서는 높이 맵이 아닌 노멀 맵을 사용해야 합니다).
 
 <img loading="lazy" src="/img/user-manual/material-inspector/normals.jpg" />
 
-| Property   | Description |
+| 속성   | 설명 |
 |------------|-------------|
-| Texture    | The normal map that specifies the per-pixel surface normals. The normal map is modulated by the 'Bumpiness' property. |
-<!-- | Bumpiness  | The strength of the applied normal map. This is a value between 0 (the normal map has no effect) and 2 (the effect of the normal map is exaggerated). It defaults to 1. | -->
+| Texture    | 픽셀당 표면 노멀을 지정하는 노멀 맵입니다. 노멀 맵은 'Bumpiness' 속성에 의해 변조됩니다. |
+<!-- | 거칠기  | 적용된 노멀 맵의 강도입니다. 이는 0(노멀 맵이 효과 없음)과 2(노멀 맵의 효과가 과장됨) 사이의 값이며 기본값은 1입니다. | -->
 
-### Parallax
+### 패럴랙스
 
-A parallax map gives further realism to a normal map by giving the illusion of depth to a surface. Note that parallax options are only enabled if you have set a normal map on the material.
+패럴랙스 맵은 표면에 깊이의 착시를 주어 노멀 맵에 더욱 사실감을 제공합니다. 재질에 노멀 맵을 설정한 경우에만 패럴랙스 옵션이 활성화됩니다.
 
 <img loading="lazy" src="/img/user-manual/material-inspector/parallax.jpg" />
 
-| Property    | Description |
+| 속성   | 설명 |
 |-------------|-------------|
-| Height Map  | The height map that specifies the per-pixel strength of the parallax effect. White is full height and black is zero height. |
-<!-- | Strength    | The strength of a parallax effect (a value between 0 and 2, defaulting to 1). | -->
+| Height Map  | 패럴랙스 효과의 픽셀당 강도를 지정하는 높이 맵입니다. 흰색은 전체 높이이고 검은색은 제로 높이입니다. |
+<!-- | 강도    | 패럴랙스 효과의 강도(0과 2 사이의 값, 기본값 1)입니다. | -->
 
-### Environment
+### 클리어코트
 
-Environment properties determine how a material reflects the environment.
+클리어코트는 표면 위에 얇은 투명한 코팅층을 시뮬레이션합니다. 자동차 페인트나 플라스틱 표면과 같은 현실적인 재질을 만들 때 사용됩니다.
+
+<img loading="lazy" src="/img/user-manual/material-inspector/clearcoat.png" />
+
+| 속성    | 설명 |
+|-------------|-------------|
+| Clear Coat Factor | 0부터 1까지의 클리어코트 레이어 강도를 정의합니다. |
+
+### 광휘
+
+광휘는 직물이나 벨벳과 같은 섬유 재질에서 볼 수 있는 부드러운 반사 효과를 시뮬레이션합니다. 표면의 미세한 거칠기로 인해 생기는 산란된 반사를 표현합니다.
+
+<img loading="lazy" src="/img/user-manual/material-inspector/sheen.png" />
+
+| 속성         |     설명     |
+|-------------|-------------|
+| Use Sheen   | 광휘 스펙큘러 효과 사용을 활성화합니다. |
+| Invert      | 재질 광휘 광택을 반전시켜 효과적으로 거칠기로 처리합니다. |
+
+### 굴절
+
+굴절은 빛이 투명한 물질을 통과할 때 방향이 바뀌는 현상을 시뮬레이션합니다. 유리, 물, 크리스털과 같은 투명한 재질에서 볼 수 있는 빛의 굴절 효과를 표현합니다.
+
+<img loading="lazy" src="/img/user-manual/material-inspector/refraction.png" />
+
+| 속성         |     설명     |
+|-------------|-------------|
+| Dynamic Refractions | 굴절을 위한 그랩 패스 사용을 활성화합니다. |
+| Refraction Map | 굴절 맵은 픽셀당 굴절 양을 정의합니다. |
+| Vertex Color | 굴절 강도에 버텍스 색상을 사용하거나 굴절 맵과의 배수로 사용합니다. |
+| Refraction | 재질을 통과하는 빛의 부분을 결정하는 요소입니다. |
+| Index Of Refraction | 재질을 통과하는 빛의 왜곡 정도를 결정합니다. 1.0 / 굴절률로 표현됩니다. |
+| Dispersion | 볼륨을 통과하는 색상의 각도 분리(색수차) 강도입니다. 기본값은 0이며, 이는 분산이 없음을 의미합니다. |
+
+### 무지개 빛
+
+무지개 빛은 각도에 따라 색상이 변하는 현상을 시뮬레이션합니다. 비누방울, 기름띠, 나비 날개, 진주와 같은 재질에서 볼 수 있는 무지개색 반사 효과를 표현합니다.
+
+<img loading="lazy" src="/img/user-manual/material-inspector/iridescence.png" />
+
+| 속성         |     설명     |
+|-------------|-------------|
+| Use Iridescence | 무지개 빛 회절 효과를 활성화합니다. |
+
+### 환경
+
+환경 속성은 재질이 환경을 어떻게 반사하는지를 결정합니다.
 
 <img loading="lazy" src="/img/user-manual/material-inspector/environment.jpg" />
 
-| Property            | Description |
+| 속성            | 설명 |
 |---------------------|-------------|
-| Sphere Map          | A sphere map texture asset that approximates environment reflection. If a sphere map is set, the Cube Map property will be hidden (since these properties are mutually exclusive). |
-| Cube Map            | A cube map texture asset that approximates environment reflection (with greater accuracy than is possible with a sphere map). If a cube map is set, the Sphere Map property will be hidden (since these properties are mutually exclusive). |
-| Reflectivity        | A factor to determine what portion of light is reflected from the material. This value defaults to 1 (full reflectivity). |
-<!-- | Refraction          | A factor to determine what portion of light passes through the material. | -->
-<!-- | Index of Refraction | Determines the amount of distortion of light passing through the material. | -->
+| Sphere Map          | 환경 반사를 근사하는 스피어 맵 텍스처 에셋입니다. 스피어 맵이 설정된 경우 큐브 맵 속성이 숨겨집니다(이 속성들이 상호 배타적이기 때문). |
+| Cube Map            | 환경 반사를 근사하는 큐브 맵 텍스처 에셋입니다(스피어 맵보다 더 높은 정확도). 큐브 맵이 설정된 경우 스피어 맵 속성이 숨겨집니다(이 속성들이 상호 배타적이기 때문). |
+| Reflectivity        | 재질에서 얼마나 많은 부분의 빛이 반사되는지를 결정하는 요소입니다. 이 값은 기본값이 1(완전 반사율)입니다. |
+<!-- | 굴절          | 재질을 통과하는 빛의 부분을 결정하는 요소입니다. | -->
+<!-- | 굴절률 | 재질을 통과하는 빛의 왜곡 정도를 결정합니다. | -->
 
-### Light Map
+### 라이트 맵
 
-Light maps contain pre-baked diffuse lighting. Using light maps is considered an optimization in that runtime dynamic lighting calculations can be pre-calculated.
+라이트 맵은 사전 베이킹된 디퓨즈 조명을 포함합니다. 라이트 맵 사용은 런타임 동적 조명 계산을 사전 계산할 수 있다는 점에서 최적화로 간주됩니다.
 
 <img loading="lazy" src="/img/user-manual/material-inspector/lightmap.jpg" />
 
-| Property   | Description |
+| 속성   | 설명 |
 |------------|-------------|
-| Texture    | The lightmap texture that contains pre-baked diffuse lighting. The lightmap requires the material to be applied to a mesh that has two UV sets. The lightmap uses the second set of UVs. |
-| Vertex Color  | Use baked vertex lighting. If lightMap is set, it'll be multiplied by vertex colors. |
+| Texture    | 사전 베이킹된 디퓨즈 조명을 포함하는 라이트맵 텍스처입니다. 라이트맵은 두 개의 UV 세트가 있는 메시에 재질을 적용해야 합니다. 라이트맵은 두 번째 UV 세트를 사용합니다. |
+| Vertex Color  | 베이킹된 버텍스 조명을 사용합니다. lightMap이 설정된 경우 버텍스 색상과 곱해집니다. |
 
-### Other Render States
+### 기타 렌더 상태
 
-Other Render States gives additional controls over how a mesh is rendered with the specified material.
+기타 렌더 상태는 지정된 재질로 메시가 어떻게 렌더링되는지에 대한 추가 제어를 제공합니다.
 
 <img loading="lazy" src="/img/user-manual/material-inspector/other.jpg" />
 
-| Property        | Description |
+| 속성        | 설명 |
 |-----------------|-------------|
-| Depth Test      | If checked, when a mesh with the material is rendered, a per pixel check is performed to determine if the pixel passes the engine's depth test. By default, the test is that the pixel must have a z depth less than or equal to whatever is already in the depth buffer. In other words, the mesh is only visible if nothing is in front of it. If unchecked, the mesh is rendered regardless of what is already in the depth buffer. Defaults to on. |
-| Depth Write     | If checked, when a mesh with the material is rendered, its depth information is written to the depth buffer. This ensures that when subsequent meshes are rendered, they can be successfully depth tested against meshes rendered with this material. Defaults to on. |
-| Cull            | Options are: <ul><li>None: Both front faces and back faces are rendered.</li><li>Front Faces: front faces are rendered and back faces are not.</li><li>Back Faces: back faces are rendered and front faces are not. This is the default.</li></ul> OasisW dictates that a counter-clockwise vertex winding specifies a front face triangle. Note that backface culling is often good for performance because backface pixels are often overwritten (for convex meshes) which can result in redundant filling of pixels. |
-| Use Fog | Apply fogging (as configured in scene settings) |
-| Use Lighting | Apply lighting |
-| Use Skybox | Apply scene skybox as prefiltered environment map |
-| Use Tonemap | Apply tonemapping (as configured in Scene#rendering or CameraComponent.rendering). Defaults to true. |
-<!-- | Blend Type      | Options are: <ul><li>None: The mesh is opaque. This is the default.</li><li>Normal: The mesh is transparent, like stained glass.</li><li>Additive: The mesh color is added to whatever has already been rendered to the frame buffer.</li><li>Pre-multiply: Like 'Normal' blending except it is assumed that the color of the mesh being rendered with this material has already been modulated by its alpha value.</li><li>Multiply: When rendered, the mesh color is multiplied by whatever has already been rendered to the frame buffer.</li></ul> | -->
-<!-- | Shadow Sampling | Options are: <ul><li>Hard</li><li>PCF 3x3</li></ul> | -->
+| Depth Test      | 체크하면 재질이 있는 메시가 렌더링될 때 픽셀이 엔진의 깊이 테스트를 통과하는지 확인하기 위해 픽셀당 검사가 수행됩니다. 기본적으로 테스트는 픽셀이 깊이 버퍼에 이미 있는 것보다 작거나 같은 z 깊이를 가져야 한다는 것입니다. 즉, 앞에 아무것이 없을 때만 메시가 보입니다. 체크하지 않으면 깊이 버퍼에 이미 있는 것과 관계없이 메시가 렌더링됩니다. 기본값은 켜짐입니다. |
+| Depth Write     | 체크하면 재질이 있는 메시가 렌더링될 때 깊이 정보가 깊이 버퍼에 기록됩니다. 이렇게 하면 후속 메시가 렌더링될 때 이 재질로 렌더링된 메시에 대해 성공적으로 깊이 테스트할 수 있습니다. 기본값은 켜짐입니다. |
+| Cull            | 옵션은 다음과 같습니다: <ul><li>None: 앞면과 뒷면이 모두 렌더링됩니다.</li><li>Front Faces: 앞면이 렌더링되고 뒷면은 렌더링되지 않습니다.</li><li>Back Faces: 뒷면이 렌더링되고 앞면은 렌더링되지 않습니다. 이것이 기본값입니다.</li></ul> OasisW는 반시계 방향 버텍스 와인딩이 앞면 삼각형을 지정한다고 규정합니다. 뒷면 컬링은 뒷면 픽셀이 종종 덮어쓰여지기 때문에(볼록 메시의 경우) 성능에 좋으며, 이는 픽셀의 중복 채우기를 초래할 수 있습니다. |
+| Use Fog | 안개를 적용합니다.(씬 설정에서 구성된 대로). |
+| Use Lighting | 조명을 적용합니다. |
+| Use Skybox | 사전 필터링된 환경 맵으로 씬 스카이박스를 적용합니다. |
+| Use Tonemap | 톤매핑을 적용합니다(Scene#rendering 또는 CameraComponent.rendering에서 구성된 대로). 기본값은 true입니다. |
+<!-- | 블렌드 타입      | 옵션은 다음과 같습니다: <ul><li>없음: 메시가 불투명합니다. 이것이 기본값입니다.</li><li>일반: 메시가 투명합니다. 스테인드 글래스처럼.</li><li>가산: 메시 색상이 프레임 버퍼에 이미 렌더링된 것에 추가됩니다.</li><li>사전 곱셈: '일반' 블렌딩과 유사하지만 이 재질로 렌더링되는 메시의 색상이 이미 알파 값에 의해 변조되었다고 가정합니다.</li><li>곱셈: 렌더링될 때 메시 색상이 프레임 버퍼에 이미 렌더링된 것과 곱해집니다.</li></ul> | -->
+<!-- | 섀도우 샘플링 | 옵션은 다음과 같습니다: <ul><li>하드</li><li>PCF 3x3</li></ul> | -->

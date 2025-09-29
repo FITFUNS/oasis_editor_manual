@@ -1,17 +1,17 @@
 ---
-title: Text
+title: 텍스트 (Text)
 ---
 
-The Text Asset type in OasisW is used for storing plain text data. It's versatile and can be used for various purposes such as storing dialogue, configuration data, or any other textual information.
+OasisW의 텍스트 에셋 유형은 일반 텍스트 데이터를 저장하는 데 사용됩니다. 다재다능하며 대화, 설정 데이터 또는 기타 텍스트 정보 저장과 같은 다양한 목적으로 사용할 수 있습니다.
 
-## Accessing Text Data in Scripts
+## 스크립트에서 텍스트 데이터 접근
 
-To access data from a Text Asset in a script:
+스크립트에서 텍스트 에셋의 데이터에 접근하려면:
 
-1. Add the Text Asset to the script as an attribute.
-2. Access the Text asset's resource which is the string parsed from the text file.
+1. 텍스트 에셋을 스크립트에 속성으로 추가합니다.
+2. 텍스트 파일에서 파싱된 문자열인 텍스트 에셋의 리소스에 접근합니다.
 
-Example:
+예시:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

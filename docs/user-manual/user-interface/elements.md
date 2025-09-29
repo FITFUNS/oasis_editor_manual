@@ -1,55 +1,55 @@
 ---
-title: Elements
+title: 요소 (Elements)
 ---
 
-Elements are the individual pieces that make up a user interface screen. A user interface element is added by attaching an Element component to an entity and adding that entity as a child or descendent of the Screen entity. An element that is part of a Screen differs from a regular entity in the way that its transform is calculated and hence the way that it is positioned on screen.
+요소는 사용자 인터페이스 화면을 구성하는 개별 조각입니다. 사용자 인터페이스 요소는 엔티티에 요소 컴포넌트를 연결하고 해당 엔티티를 화면 엔티티의 자식 또는 하위 항목으로 추가하여 생성됩니다. 화면의 일부인 요소는 변환이 계산되는 방식과 따라서 화면에서 위치가 지정되는 방식에서 일반 엔티티와 다릅니다.
 
-In addition to the local position, rotation and scale which are used to calculate an entity's position relative to its parent, Element components also use the anchor, pivot and margin properties to determine, where the local position should be measured against, where the center point of the Element rectangle should be and the distance between the edges of the Element rectangle and the anchors.
+부모에 대한 엔티티의 위치를 계산하는 데 사용되는 로컬 위치, 회전 및 스케일 외에도 요소 컴포넌트는 앵커, 피벗 및 마진 속성을 사용하여 로컬 위치가 측정되어야 하는 위치, 요소 사각형의 중심점이 어디에 있어야 하는지, 그리고 요소 사각형의 가장자리와 앵커 사이의 거리를 결정합니다.
 
-These new properties give you the plenty of control to layout your user interfaces, including align them with other Elements or position them with fixed distances to Elements.
+이러한 새로운 속성은 다른 요소와 정렬하거나 요소와 고정된 거리로 위치를 지정하는 것을 포함하여 사용자 인터페이스를 레이아웃하는 데 충분한 제어를 제공합니다.
 
-## Element Positioning {#element-positioning}
+## 요소 위치 지정 {#element-positioning}
 
 ![Element Guide](/img/user-manual/user-interface/elements/element-guide.png)
 
-## Element Resizing {#element-resizing}
+## 요소 크기 조정 {#element-resizing}
 
-To resize your Element activate the Resize gizmo or press '4':
+요소의 크기를 조정하려면 리사이즈 기즈모를 활성화하거나 '4'를 누르세요:
 
 ![Resize Gizmo Toolbar](/img/user-manual/user-interface/elements/gizmo-resize.png)
 
-Then drag the corners around to adjust the size of the Element:
+그런 다음 모서리를 드래그하여 요소의 크기를 조정하세요:
 
 ![Resize Gizmo Viewport](/img/user-manual/user-interface/elements/gizmo-resize-viewport.png)
 
-## Pivot {#pivot}
+## 피벗 {#pivot}
 
-The pivot property of an Element determines at which point the position, rotation and scale. The pivot is defined by two numbers between 0 and 1 which determine the pivots position in the X and Y direction along the total width and height of the element. For example, `[0,0]` sets the pivot to the bottom left of the element, `[1,1]` sets the pivot to the top right of the element.
+요소의 피벗 속성은 위치, 회전 및 스케일이 적용되는 지점을 결정합니다. 피벗은 요소의 전체 너비와 높이를 따라 X 및 Y 방향에서 피벗의 위치를 결정하는 0과 1 사이의 두 숫자로 정의됩니다. 예를 들어, `[0,0]`은 피벗을 요소의 왼쪽 아래로 설정하고, `[1,1]`은 피벗을 요소의 오른쪽 위로 설정합니다.
 
 ![Pivot](/img/user-manual/user-interface/elements/pivot.png)
 
-## Anchor {#anchor}
+## 앵커 {#anchor}
 
-The anchor property determines where the point or points on the parent that the Element's position is calculated from. The anchor value is specified by two points `[minX, minY]` and `[maxX, maxY]`. In the Editor this is displayed as 4 numbers: [minX, minY, maxX, maxY]
+앵커 속성은 요소의 위치가 계산되는 부모의 지점 또는 지점들을 결정합니다. 앵커 값은 두 지점 `[minX, minY]`와 `[maxX, maxY]`로 지정됩니다. 에디터에서는 4개의 숫자로 표시됩니다: [minX, minY, maxX, maxY]
 
 ![Anchor](/img/user-manual/user-interface/elements/anchor-editor.png)
 
-For example, setting the anchor to `[0,0,0,0]` will anchor the element to the bottom left of its parent. The position of the element will set the offset from the bottom left of the parent
+예를 들어, 앵커를 `[0,0,0,0]`으로 설정하면 요소를 부모의 왼쪽 아래에 앵커링합니다. 요소의 위치는 부모의 왼쪽 아래에서 오프셋을 설정합니다.
 
-## Split Anchors {#split-anchors}
+## 분할 앵커 {#split-anchors}
 
-Sometimes it is useful to anchor different edges of an element to different places. For example, if you wish to make a element that stretches to fill the screen whatever the resolution. You can do this by splitting the anchor's min and max values.
+때로는 요소의 서로 다른 가장자리를 서로 다른 위치에 앵커링하는 것이 유용합니다. 예를 들어, 해상도에 관계없이 화면을 채우도록 늘어나는 요소를 만들고 싶다면 말이죠. 앵커의 최소값과 최대값을 분할하여 이를 수행할 수 있습니다.
 
 ![Split Anchor](/img/user-manual/user-interface/elements/split-anchor.png)
 
-In this image the Anchor is set to `[0,0,1,1]` so we are anchoring the edges of the element to the edges of the parent. Each edge has a margin of 50 pixels so the Element is fixed to fill the parent with 50 pixels from edge.
+이 이미지에서 앵커는 `[0,0,1,1]`로 설정되어 있으므로 요소의 가장자리를 부모의 가장자리에 앵커링하고 있습니다. 각 가장자리는 50픽셀의 마진을 가지므로 요소는 가장자리에서 50픽셀 떨어진 부모를 채우도록 고정됩니다.
 
-## Margin {#margin}
+## 마진 {#margin}
 
-The margin property is only available when the anchor value is split in one axis. The margin sets the number of Screen component pixels from the anchor that the edge of the element will be. Shortcuts to the margin values are available in scripts on the Element component as the properties `left`, `right`, `top` and `bottom`.
+마진 속성은 앵커 값이 한 축에서 분할될 때만 사용할 수 있습니다. 마진은 앵커에서 요소의 가장자리가 될 화면 컴포넌트 픽셀 수를 설정합니다. 마진 값에 대한 단축키는 요소 컴포넌트의 스크립트에서 `left`, `right`, `top`, `bottom` 속성으로 사용할 수 있습니다.
 
-## Loose Elements {#loose-elements}
+## 느슨한 요소 {#loose-elements}
 
-Whilst the primary use-case of Elements is to be part of a User Interface Screen Component. It is valid to have an Element component which is not part of a screen. For example, a single in-world piece of text.
+요소의 주요 사용 사례는 사용자 인터페이스 화면 컴포넌트의 일부가 되는 것입니다. 화면의 일부가 아닌 요소 컴포넌트를 가질 수 있습니다. 예를 들어, 월드 내의 단일 텍스트 조각이 있습니다.
 
-Sizes and positioning for Elements that do not have a Screen behaves slightly differently. Whereas for a screen a 32x32 Element is 32 pixels a Screen-less Element will be 32m by 32m. Adjust your sizes accordingly.
+화면이 없는 요소의 크기와 위치 지정은 약간 다르게 동작합니다. 화면의 경우 32x32 요소가 32픽셀이지만, 화면이 없는 요소는 32m x 32m가 됩니다. 그에 따라 크기를 조정하세요.

@@ -1,95 +1,96 @@
 ---
-title: Shadows
+title: 그림자 (Shadows)
 ---
 
-Shadows are a great way to add realism to your games. However, dynamic (realtime) shadows, can come with a significant runtime performance cost. For a more performant way of adding static shadows to your scene. See [Lightmaps][4].
+그림자는 게임에 사실감을 더하는 훌륭한 방법입니다. 하지만 동적(실시간) 그림자는 상당한 런타임 성능 비용을 수반할 수 있습니다. 
+<!-- 씬에 정적 그림자를 추가하는 더 성능이 좋은 방법은 [라이트맵][4]을 참조하세요. -->
 
 ![Characters with shadow casting](/img/user-manual/graphics/lighting/shadows/doom3_shadows.jpg)
 
-The OasisW engine implements a shadowing algorithm called shadow mapping. It is completely cross-platform and so is guaranteed to work on both mobile and the desktop.
+OasisW 엔진은 그림자 매핑(shadow mapping)이라는 그림자 알고리즘을 구현합니다. 이는 완전히 크로스 플랫폼이므로 모바일과 데스크톱 모두에서 작동이 보장됩니다.
 
-## Enabling Shadows {#enabling-shadows}
+## 그림자 활성화 {#enabling-shadows}
 
 <img loading="lazy" src="/img/user-manual/graphics/lighting/shadows/light-shadow-options.png" width="480" />
 
-By default, shadow casting is disabled in OasisW. You have to explicitly enable it yourself. Fortunately, enabling shadows is easy. First of all, identify which lights in your scene you want to cast shadows. Select the lights in the Hierarchy to edit their properties in the Inspector panel. Every light has a 'Cast Shadows' option. Simply check this option for the light to generate shadows for shadow casting graphical objects in your scene.
+기본적으로 OasisW에서는 그림자 캐스팅이 비활성화되어 있습니다. 직접 명시적으로 활성화해야 합니다. 다행히 그림자를 활성화하는 것은 쉽습니다. 먼저 씬에서 그림자를 캐스팅하고 싶은 조명을 식별하세요. Hierarchy에서 조명을 선택하여 Inspector 패널에서 속성을 편집합니다. 모든 조명에는 'Cast Shadows' 옵션이 있습니다. 씬의 그림자 캐스팅 그래픽 객체에 대한 그림자를 생성하려면 이 옵션을 체크하기만 하면 됩니다.
 
 ![Model Component](/img/user-manual/scenes/components/component-model.png)
 
-Now you need to specify which graphical objects in your scene cast and receive shadows. By default, all render and model components cast and receive shadows. To modify these properties, select the entity in the Hierarchy, locate the render or model component in the Inspector and uncheck the 'Cast Shadows' or 'Receive Shadows' option as required.
+이제 씬의 어떤 그래픽 객체가 그림자를 캐스팅하고 받을지 지정해야 합니다. 기본적으로 모든 렌더 및 모델 컴포넌트는 그림자를 캐스팅하고 받습니다. 이러한 속성을 수정하려면 Hierarchy에서 엔티티를 선택하고, Inspector에서 렌더 또는 모델 컴포넌트를 찾아 필요에 따라 'Cast Shadows' 또는 'Receive Shadows' 옵션을 체크 해제하세요.
 
-## Shadow Cascades {#shadow-cascades}
+## 그림자 캐스케이드 {#shadow-cascades}
 
-When a directional shadow is used over a large area, it often exhibits aliasing, where a shadow near the camera has a low resolution. Capturing the shadow in a single shadow map requires very high and impractical resolution to improve this.
+방향성 그림자가 넓은 영역에 사용될 때, 카메라 근처의 그림자가 낮은 해상도를 가지는 앨리어싱 현상이 자주 발생합니다. 이를 개선하기 위해 단일 그림자 맵에서 그림자를 캡처하려면 매우 높고 비현실적인 해상도가 필요합니다.
 
-Shadow cascades help to fix this problem by splitting the camera view frustum along the viewing direction, and a separate shadow map is used for each split. This gives nearby objects one shadow map, and another shadow map captures everything in the distance, and optionally additional shadow maps in between.
+그림자 캐스케이드는 시야 방향을 따라 카메라 뷰 프러스텀을 분할하고, 각 분할에 대해 별도의 그림자 맵을 사용하여 이 문제를 해결하는 데 도움이 됩니다. 이렇게 하면 근처 객체에 하나의 그림자 맵을 제공하고, 다른 그림자 맵은 거리의 모든 것을 캡처하며, 선택적으로 그 사이에 추가 그림자 맵을 사용할 수 있습니다.
 
-Note that the number of shadow cascades has an effect on performance, as each shadow casting mesh might need to be rendered into more than a single shadow map.
+그림자 캐스케이드의 수는 성능에 영향을 미치므로 주의하세요. 각 그림자 캐스팅 메시가 단일 그림자 맵보다 더 많이 렌더링될 수 있기 때문입니다.
 
-The following properties can be used to set up shadow cascades.
+다음 속성을 사용하여 그림자 캐스케이드를 설정할 수 있습니다.
 
-### Number of cascades {#number-of-cascades}
+### 캐스케이드 수 {#number-of-cascades}
 
-Number of cascades represents the number of view frustum subdivisions, and can be 1, 2, 3 or 4. The default value of 1 represents a single shadow map.
+캐스케이드 수는 뷰 프러스텀 분할의 수를 나타내며, 1, 2, 3 또는 4가 될 수 있습니다. 기본값인 1은 단일 그림자 맵을 나타냅니다.
 
-A screenshot showing a single shadow cascade.
+단일 그림자 캐스케이드를 보여주는 스크린샷입니다.
 
 ![One cascade](/img/user-manual/graphics/lighting/shadows/shadow_cascades_1.jpg)
 
-A screenshot showing four shadow cascades.
+네 개의 그림자 캐스케이드를 보여주는 스크린샷입니다.
 
 ![Four cascades](/img/user-manual/graphics/lighting/shadows/shadow_cascades_4.jpg)
 
-### Distribution of cascades {#distribution-of-cascades}
+### 캐스케이드 분포 {#distribution-of-cascades}
 
-The distribution of subdivision of the camera frustum for individual shadow cascades. A value in the range of 0 to 1 can be specified. A value of 0 represents a linear distribution and a value of 1 represents a logarithmic distribution. Visually, a higher value distributes more shadow map resolution to foreground objects, while a lower value distributes it to more distant objects.
+개별 그림자 캐스케이드에 대한 카메라 프러스텀 분할의 분포입니다. 0에서 1 사이의 값을 지정할 수 있습니다. 값 0은 선형 분포를 나타내고, 값 1은 로그 분포를 나타냅니다. 시각적으로, 더 높은 값은 전경 객체에 더 많은 그림자 맵 해상도를 분배하고, 더 낮은 값은 더 먼 객체에 분배합니다.
 
-## Tuning Shadows {#tuning-shadows}
+## 그림자 조정 {#tuning-shadows}
 
-The shadow mapping technique used by OasisW has only finite resolution. Therefore, you may need to tune some values to make them look as good as possible. The following properties can be found in the [Light Component][2] UI.
+OasisW에서 사용하는 그림자 매핑 기술은 유한한 해상도만 가지고 있습니다. 따라서 가능한 한 좋게 보이도록 일부 값을 조정해야 할 수 있습니다. 다음 속성은 [조명 컴포넌트][2] UI에서 찾을 수 있습니다.
 
-### Shadow Distance {#shadow-distance}
+### 그림자 거리 {#shadow-distance}
 
-The shadow distance is the distance from the viewpoint beyond which directional light shadows are no longer rendered. The smaller this value, the crisper your shadows will be. The problem is that the viewer will be able to see the shadows suddenly appear as the viewpoint moves around the scene. Therefore, you should balance this value based on how far the player can see into the distance and generally what looks good.
+그림자 거리는 시점으로부터 방향성 조명 그림자가 더 이상 렌더링되지 않는 거리입니다. 이 값이 작을수록 그림자가 더 선명해집니다. 문제는 시점이 씬 주위를 이동할 때 뷰어가 그림자가 갑자기 나타나는 것을 볼 수 있다는 것입니다. 따라서 플레이어가 얼마나 멀리 볼 수 있는지와 일반적으로 좋아 보이는 것에 따라 이 값을 균형있게 조정해야 합니다.
 
-### Shadow Intensity {#shadow-intensity}
+### 그림자 강도 {#shadow-intensity}
 
-The intensity of the shadow, where 1 represents full intensity shadow cast by this light, and 0 represents no shadow.
+그림자의 강도로, 1은 이 조명에 의한 전체 강도 그림자를 나타내고, 0은 그림자가 없음을 나타냅니다.
 
 ![Shadow Intensity](/img/user-manual/graphics/lighting/shadows/shadow-intensity.gif)
 
-### Shadow Resolution {#shadow-resolution}
+### 그림자 해상도 {#shadow-resolution}
 
-Every light casts shadows via a shadow map. This shadow map can have a resolution of 256x256, 512x512, 1024x1024 or 2048x2048 and this value is also set in the light component's interface. The higher the resolution, the crisper the shadows. However, higher resolution shadows are more expensive to render so be sure to balance performance against quality.
+모든 조명은 그림자 맵을 통해 그림자를 캐스팅합니다. 이 그림자 맵은 256x256, 512x512, 1024x1024 또는 2048x2048의 해상도를 가질 수 있으며, 이 값은 조명 컴포넌트 인터페이스에서도 설정됩니다. 해상도가 높을수록 그림자가 더 선명해집니다. 하지만 더 높은 해상도의 그림자는 렌더링 비용이 더 높으므로 성능과 품질의 균형을 맞추세요.
 
-### Shadow Bias {#shadow-bias}
+### 그림자 바이어스 {#shadow-bias}
 
-Shadow mapping can be prone to rendering artifacts that can look very ugly. If you notice bands of shadow or speckled patches where you do not expect, you should try tuning the shadow bias to resolve the problem.
+그림자 매핑은 매우 보기 싫은 렌더링 아티팩트가 발생하기 쉽습니다. 예상하지 못한 곳에서 그림자 띠나 반점 패치를 발견한다면, 문제를 해결하기 위해 그림자 바이어스를 조정해 보세요.
 
-### Normal Offset Bias {#normal-offset-bias}
+### 노멀 오프셋 바이어스 {#normal-offset-bias}
 
-'Shadow acne' artifacts are a big problem and the shadow bias can eliminate them quite effectively. Unfortunately, this always introduces some level of 'Peter Panning', the phenomenon where shadows make a object appear to be floating in mid-air.
+'그림자 여드름(Shadow acne)' 아티팩트는 큰 문제이며, 그림자 바이어스가 이를 매우 효과적으로 제거할 수 있습니다. 불행히도, 이것은 항상 어느 정도의 '피터 팬닝(Peter Panning)' 현상을 도입합니다. 이는 그림자가 객체가 공중에 떠 있는 것처럼 보이게 만드는 현상입니다.
 
-The Normal Offset Bias solves this problem. In addition to using the depth bias, we can avoid both shadow acne and Peter Panning by making small tweaks to the UV coordinates used in the shadow map look-up. A fragment's position is offset along its geometric normal. This "Normal Offset" technique yields vastly superior results to a constant shadow bias only approach.
+노멀 오프셋 바이어스가 이 문제를 해결합니다. 깊이 바이어스를 사용하는 것 외에도, 그림자 맵 조회에 사용되는 UV 좌표를 약간 조정하여 그림자 여드름과 피터 팬닝을 모두 피할 수 있습니다. 프래그먼트의 위치는 기하학적 노멀을 따라 오프셋됩니다. 이 "노멀 오프셋" 기법은 상수 그림자 바이어스만 사용하는 접근법보다 훨씬 우수한 결과를 제공합니다.
 
-## Soft Shadows vs Hard Shadows {#soft-shadows-vs-hard-shadows}
+## 소프트 그림자 vs 하드 그림자 {#soft-shadows-vs-hard-shadows}
 
-The outline of a shadow is called the penumbra. This is a transition from dark to light which gives shadows a soft edge. Softening shadow edges is the default in OasisW but you can change this setting if you wish to achieve hard edged shadows. See below for a comparison of soft and hard edged shadows:
+그림자의 윤곽을 반음영(penumbra)이라고 합니다. 이는 어둠에서 밝음으로의 전환으로 그림자에 부드러운 가장자리를 제공합니다. 그림자 가장자리를 부드럽게 하는 것이 OasisW의 기본값이지만, 하드 가장자리 그림자를 원한다면 이 설정을 변경할 수 있습니다. 소프트와 하드 가장자리 그림자의 비교는 아래를 참조하세요:
 
 ![Hard vs soft shadows](/img/user-manual/graphics/lighting/shadows/hard_vs_soft.jpg)
 
-Soft shadows are achieved by performing more samples of the shadow map on the GPU. The algorithm used is called Percentage Closest Filtering or PCF for short. This algorithm reads 9 localized samples (a 3 by 3 matrix) from the shadow map instead of just one as is used for hard shadows.
+소프트 그림자는 GPU에서 그림자 맵의 더 많은 샘플을 수행하여 달성됩니다. 사용되는 알고리즘은 Percentage Closest Filtering 또는 줄여서 PCF라고 합니다. 이 알고리즘은 하드 그림자에 사용되는 단일 샘플 대신 그림자 맵에서 9개의 지역화된 샘플(3x3 행렬)을 읽습니다.
 
-The shadow sampling type is specified per light and so the option can be found in the Light Inspector.
+그림자 샘플링 타입은 조명별로 지정되므로 이 옵션은 조명 Inspector에서 찾을 수 있습니다.
 
-## Performance Considerations {#performance-considerations}
+## 성능 고려사항 {#performance-considerations}
 
-Enabling shadows has performance implications:
+그림자를 활성화하면 성능에 영향을 미칩니다:
 
-* For each shadow casting directional or spot light, the scene must be rendered once into a shadow map every frame. Omni light shadows are far more expensive since the scene is rendered six times per light (the shadow map is stored as a 6-sided cube map). Rendering the scene into shadow maps places load on both the CPU and the GPU.
-* Using a greater shadow map resolution with generate crisper shadows but the GPU must fill more shadow map pixels and therefore this may affect frame rate.
-* Selecting soft shadows (PCF3x3) for the shadow sample type on a shadow receiving material is more expensive on the GPU versus the hard shadows option.
-* If your shadows are from static parts of the environment consider using [lightmaps][4] to bake shadows into textures.
+* 그림자를 캐스팅하는 각 방향성 또는 스팟 조명에 대해, 씬은 매 프레임마다 그림자 맵에 한 번 렌더링되어야 합니다. 전방향 조명 그림자는 조명당 씬이 6번 렌더링되므로 훨씬 더 비용이 높습니다(그림자 맵은 6면 큐브 맵으로 저장됨). 씬을 그림자 맵에 렌더링하는 것은 CPU와 GPU 모두에 부하를 줍니다.
+* 더 높은 그림자 맵 해상도를 사용하면 더 선명한 그림자를 생성하지만, GPU가 더 많은 그림자 맵 픽셀을 채워야 하므로 프레임 레이트에 영향을 줄 수 있습니다.
+* 그림자를 받는 머티리얼에서 그림자 샘플 타입으로 소프트 그림자(PCF3x3)를 선택하는 것은 하드 그림자 옵션보다 GPU에서 더 비용이 높습니다.
+<!-- * 그림자가 환경의 정적 부분에서 온다면 [라이트맵][4]을 사용하여 그림자를 텍스처에 베이크하는 것을 고려하세요. -->
 
 [2]: /user-manual/scenes/components/light
 [4]: /user-manual/graphics/lighting/lightmapping

@@ -1,28 +1,28 @@
 ---
-title: Sprite
+title: 스프라이트 (Sprite)
 ---
 
-A Sprite is a 2D graphic that can be rendered into Scene. A Sprite Asset is a reference to a [Texture Atlas][1] and a sequence of frames from that atlas. In this way a sprite can either represent a single image (taken out of the atlas) or a flip-book style animation (multiple frames from the atlas).
+스프라이트는 씬에 렌더링될 수 있는 2D 그래픽입니다. 스프라이트 에셋은 [텍스처 아틀라스][1]와 해당 아틀라스의 프레임 시퀀스에 대한 참조입니다. 이렇게 하면 스프라이트는 단일 이미지(아틀라스에서 추출) 또는 플립북 스타일 애니메이션(아틀라스의 여러 프레임)을 나타낼 수 있습니다.
 
-## Properties
+## 속성
 
 ![Sprites](/img/user-manual/assets/sprites/sprites.jpg)
 
 ### Pixels Per Unit
 
-The number of pixels in the sprite image that maps to 1 Unit in the OasisW scene. e.g If `pixelsPerUnit` is 1 and the sprite is 32x32. Then it will be 32 units across and high when rendered in the scene. By default a sprite with the *Simple* render mode is created with `pixelsPerUnit` set to 100. This means that a 100x100 sprite will be 1 unit wide/high in the scene.
+OasisW 씬에서 1 유닛에 매핑되는 스프라이트 이미지의 픽셀 수입니다. 예를 들어 `pixelsPerUnit`이 1이고 스프라이트가 32x32인 경우, 씬에서 렌더링될 때 32 유닛 너비와 높이를 가집니다. 기본적으로 *Simple* 렌더 모드의 스프라이트는 `pixelsPerUnit`이 100으로 설정되어 생성됩니다. 이는 100x100 스프라이트가 씬에서 1 유닛 너비/높이를 가진다는 의미입니다.
 
-If you create a *Sliced* sprite, by default it will be created with a `pixelsPerUnit` value of 1. Because these sprites are usually used as part of a Screen Component for building user interfaces, 1 sprite pixel should map to 1 screen pixel.
+*Sliced* 스프라이트를 생성하면 기본적으로 `pixelsPerUnit` 값이 1로 설정됩니다. 이러한 스프라이트는 일반적으로 사용자 인터페이스 구축을 위한 화면 컴포넌트의 일부로 사용되기 때문에, 1 스프라이트 픽셀이 1 화면 픽셀에 매핑되어야 합니다.
 
 ### Render Mode
 
-* Simple - the sprite does not use the border values
-* Sliced - the sprite uses the border values to perform [9-sliced][2] rendering by stretching.
-* Tiled - the sprite uses the border values to perform [9-sliced][2] rendering by tiling.
+* Simple - 스프라이트가 테두리 값을 사용하지 않습니다
+* Sliced - 스프라이트가 테두리 값을 사용하여 [9-슬라이싱][2] 렌더링을 스트레칭으로 수행합니다.
+* Tiled - 스프라이트가 테두리 값을 사용하여 [9-슬라이싱][2] 렌더링을 타일링으로 수행합니다.
 
 ### Texture Atlas
 
-The Texture Atlas asset that the sprite references
+스프라이트가 참조하는 텍스처 아틀라스 에셋
 
 [1]: /user-manual/assets/types/texture-atlas
 [2]: /user-manual/2D/slicing

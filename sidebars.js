@@ -14,12 +14,82 @@
 
  @type {import('@docusaurus/plugin-content-docs').SidebarsConfig}
  */
+
+// Function to get localized labels
+/** @param {string} locale */
+function getLocalizedLabels(locale = 'ko') {
+  const labels = {
+    ko: {
+      introduction: '소개',
+      commonTopics: '공통 주제',
+      gettingStarted: '시작하기',
+      entityComponentSystem: '엔티티 컴포넌트 시스템 (Entity Component System)',
+      scenes: '씬 (Scenes)',
+      components: '컴포넌트 (Components)',
+      assets: '에셋 (Assets)',
+      types: '타입 (Types)',
+      models: '모델 (Models)',
+      scripting: '스크립팅 (Scripting)',
+      scriptingFundamentals: '스크립팅 기초 (Scripting Fundamentals)',
+      scriptAttributes: '스크립트 속성 (Script Attributes)',
+      graphics: '그래픽스 (Graphics)',
+      cameras: '카메라 (Cameras)',
+      lighting: '조명 (Lighting)',
+      physicallyBasedRendering: '물리 기반 렌더링 (Physically Based Rendering)',
+      linearWorkflow: '선형 워크플로우 (Linear Workflow)',
+      animation: '애니메이션 (Animation)',
+      physics: '물리 (Physics)',
+      '2D': '2D',
+      userInterface: '사용자 인터페이스 (User Interface)',
+      oasisStudio: 'OasisW 스튜디오',
+      interface: '인터페이스',
+      ai: 'AI',
+      server: '서버',
+      script: '스크립트'
+    },
+    en: {
+      introduction: 'Introduction',
+      commonTopics: 'Common Topics',
+      gettingStarted: 'Getting Started',
+      entityComponentSystem: 'Entity Component System',
+      scenes: 'Scenes',
+      components: 'Components',
+      assets: 'Assets',
+      types: 'Types',
+      models: 'Models',
+      scripting: 'Scripting',
+      scriptingFundamentals: 'Scripting Fundamentals',
+      scriptAttributes: 'Script Attributes',
+      graphics: 'Graphics',
+      cameras: 'Cameras',
+      lighting: 'Lighting',
+      physicallyBasedRendering: 'Physically Based Rendering',
+      linearWorkflow: 'Linear Workflow',
+      animation: 'Animation',
+      physics: 'Physics',
+      '2D': '2D',
+      userInterface: 'User Interface',
+      oasisStudio: 'OasisW Studio',
+      interface: 'Interface',
+      ai: 'AI',
+      server: 'Server',
+      script: 'Script'
+    }
+  };
+  
+  return labels[locale] || labels.ko;
+}
+
+// Get current locale from environment or default to 'ko'
+const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE || 'ko';
+const labels = getLocalizedLabels(currentLocale);
+
 const sidebars = {
   // 사용법 사이드바
   usageSidebar: [
     {
       type: 'category',
-      label: 'OasisW 스튜디오',
+      label: labels.oasisStudio,
       link: {
         type: 'doc',
         id: 'usage-guide/dashboard',
@@ -37,7 +107,7 @@ const sidebars = {
     'usage-guide/create-a-project',
     {
       type: 'category',
-      label: '인터페이스',
+      label: labels.interface,
       link: {
         type: 'doc',
         id: 'usage-guide/interface',
@@ -53,7 +123,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'AI',
+      label: labels.ai,
       link: {
         type: 'doc',
         id: 'usage-guide/ai-generation',
@@ -65,7 +135,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '서버',
+      label: labels.server,
       link: {
         type: 'doc',
         id: 'usage-guide/server',
@@ -88,7 +158,7 @@ const sidebars = {
     'usage-guide/template',
     {
       type: 'category',
-      label: '스크립트',
+      label: labels.script,
       link: {
         type: 'doc',
         id: 'usage-guide/script',
@@ -108,12 +178,12 @@ const sidebars = {
   userManualSidebar: [
     {
       type: 'html',
-      value: '<div class="sidebar-section-header">Introduction</div>',
+      value: `<div class="sidebar-section-header">${labels.introduction}</div>`,
     },
     'user-manual/index',
     {
       type: 'category',
-      label: 'Getting Started',
+      label: labels.gettingStarted,
       link: {
         type: 'doc',
         id: 'user-manual/getting-started/index',
@@ -146,11 +216,11 @@ const sidebars = {
 
     {
       type: 'html',
-      value: '<div class="sidebar-section-header">Common Topics</div>',
+      value: `<div class="sidebar-section-header">${labels.commonTopics}</div>`,
     },
     {
       type: 'category',
-      label: 'Entity Component System',
+      label: labels.entityComponentSystem,
       link: {
         type: 'doc',
         id: 'user-manual/ecs/index',
@@ -164,7 +234,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Scenes',
+      label: labels.scenes,
       link: {
         type: 'doc',
         id: 'user-manual/scenes/index',
@@ -172,7 +242,7 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Components',
+          label: labels.components,
           link: {
             type: 'doc',
             id: 'user-manual/scenes/components/index',
@@ -207,7 +277,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Assets',
+      label: labels.assets,
       link: {
         type: 'doc',
         id: 'user-manual/assets/index',
@@ -215,7 +285,7 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Types',
+          label: labels.types,
           link: {
             type: 'doc',
             id: 'user-manual/assets/types/index',
@@ -254,7 +324,7 @@ const sidebars = {
         // },
         {
           type: 'category',
-          label: 'Models',
+          label: labels.models,
           link: {
             type: 'doc',
             id: 'user-manual/assets/models/index',
@@ -283,7 +353,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Scripting',
+      label: labels.scripting,
       link: {
         type: 'doc',
         id: 'user-manual/scripting/index',
@@ -291,7 +361,7 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Scripting Fundamentals',
+          label: labels.scriptingFundamentals,
           link: {
             type: 'doc',
             id: 'user-manual/scripting/fundamentals/index',
@@ -303,7 +373,7 @@ const sidebars = {
             'user-manual/scripting/fundamentals/application-lifecycle',
             {
               type: 'category',
-              label: 'Script Attributes',
+              label: labels.scriptAttributes,
               link: {
                 type: 'doc',
                 id: 'user-manual/scripting/fundamentals/script-attributes/index',
@@ -335,7 +405,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Graphics',
+      label: labels.graphics,
       link: {
         type: 'doc',
         id: 'user-manual/graphics/index',
@@ -343,7 +413,7 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Cameras',
+          label: labels.cameras,
           link: {
             type: 'doc',
             id: 'user-manual/graphics/cameras/index',
@@ -354,7 +424,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Lighting',
+          label: labels.lighting,
           link: {
             type: 'doc',
             id: 'user-manual/graphics/lighting/index',
@@ -370,7 +440,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Physically Based Rendering',
+          label: labels.physicallyBasedRendering,
           link: {
             type: 'doc',
             id: 'user-manual/graphics/physical-rendering/index',
@@ -382,7 +452,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Linear Workflow',
+          label: labels.linearWorkflow,
           link: {
             type: 'doc',
             id: 'user-manual/graphics/linear-workflow/index',
@@ -532,7 +602,7 @@ const sidebars = {
     // },
     {
       type: 'category',
-      label: 'Animation',
+      label: labels.animation,
       link: {
         type: 'doc',
         id: 'user-manual/animation/index',
@@ -547,7 +617,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Physics',
+      label: labels.physics,
       link: {
         type: 'doc',
         id: 'user-manual/physics/index',
@@ -559,13 +629,13 @@ const sidebars = {
         'user-manual/physics/compound-shapes',
         'user-manual/physics/ray-casting',
         'user-manual/physics/calling-ammo',
-        'user-manual/physics/physics-migration',
+        // 'user-manual/physics/physics-migration',
         'user-manual/physics/ammo-alternatives',
       ],
     },
     {
       type: 'category',
-      label: '2D',
+      label: labels['2D'],
       link: {
         type: 'doc',
         id: 'user-manual/2D/index',
@@ -578,7 +648,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'User Interface',
+      label: labels.userInterface,
       link: {
         type: 'doc',
         id: 'user-manual/user-interface/index',

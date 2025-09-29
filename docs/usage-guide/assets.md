@@ -34,7 +34,7 @@ OasisW의 프로젝트에서 사용하는 모든 리소스를 관리하는 중�
 
 - 텍스트 기반 에셋(텍스트, json, shader, html, css, script)을 더블 클릭해 열고 편집할 수 있습니다.
 - AI로 코드를 생성하여 적용할 수 있습니다.
-- **AI 상세 가이드**: [코드 제네레이션](../usage-guide/code-generation)을 참조하세요.
+- **AI 상세 가이드**: [코드 제네레이션](/usage-guide/code-generation)을 참조하세요.
 
 ## 에셋 정보 표시
 

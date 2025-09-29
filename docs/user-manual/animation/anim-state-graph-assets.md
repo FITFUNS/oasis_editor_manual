@@ -1,121 +1,121 @@
 ---
-title: Animstategraph Assets
+title: Animstategraph 에셋 (Animstategraph Assets)
 ---
 
-Animstategraph assets are used to organize a set of different animation states, which are all the various ways in which a model might animate. It can be used to define each of these animation states, determine when each state should play and how states transition and therefore blend between one another. Animstategraph assets do not store or link to any real animation assets themselves, but rather act as a template for how animation assets should be organized. Actual animation assets are linked to the animstategraphs animation states through the [Anim Component](/user-manual/scenes/components/anim/).
+Animstategraph 에셋은 모델이 애니메이션화될 수 있는 모든 다양한 방법인 서로 다른 애니메이션 상태 세트를 구성하는 데 사용됩니다. 이러한 각 애니메이션 상태를 정의하고, 각 상태가 언제 재생되어야 하는지, 그리고 상태가 어떻게 전환되고 서로 블렌딩되는지 결정하는 데 사용할 수 있습니다. Animstategraph 에셋은 실제 애니메이션 에셋을 저장하거나 연결하지 않으며, 대신 애니메이션 에셋이 어떻게 구성되어야 하는지에 대한 템플릿 역할을 합니다. 실제 애니메이션 에셋은 [애님 컴포넌트](/user-manual/scenes/components/anim/)를 통해 animstategraph의 애니메이션 상태에 연결됩니다.
 
-The system was designed so that a single animstategraph can be used on many different entities, each with their own set of animation assets. An example being an animstategraph asset which manages the animations of humanoid character locomotion. This single asset could be used on a human entity, an elf entity and a dwarf entity. Each of these entities would be able to link their own character animation assets, all the while maintaining the same animation behavior as each other.
+시스템은 단일 animstategraph가 각각 고유한 애니메이션 에셋 세트를 가진 많은 서로 다른 엔티티에서 사용될 수 있도록 설계되었습니다. 예를 들어 휴머노이드 캐릭터 이동의 애니메이션을 관리하는 animstategraph 에셋이 있습니다. 이 단일 에셋은 인간 엔티티, 엘프 엔티티, 드워프 엔티티에서 사용할 수 있습니다. 이러한 각 엔티티는 서로 동일한 애니메이션 동작을 유지하면서 자신만의 캐릭터 애니메이션 에셋을 연결할 수 있습니다.
 
-These assets are therefore state machines for a model's animation behavior and they control the flow of animation sequences over the lifecycle of an entity. A simple animstategraph asset used to define the behavior of a wheel may define only two animation states; static and spinning. This asset can be defined to control when the wheel starts and stops spinning, for how long it will spin, the speed of the wheel spin and how sharply it starts / stops spinning. More advanced assets can be used to combine a multitude of animation states to create complex humanoid character animation behavior.
+따라서 이러한 에셋은 모델의 애니메이션 동작을 위한 상태 머신이며, 엔티티의 생명주기에 걸쳐 애니메이션 시퀀스의 흐름을 제어합니다. 바퀴의 동작을 정의하는 데 사용되는 간단한 animstategraph 에셋은 정적(static)과 회전(spinning)이라는 두 가지 애니메이션 상태만 정의할 수 있습니다. 이 에셋은 바퀴가 언제 회전을 시작하고 중지하는지, 얼마나 오래 회전할지, 바퀴 회전 속도, 그리고 얼마나 급격하게 시작/중지하는지 제어하도록 정의할 수 있습니다. 더 고급 에셋은 복잡한 휴머노이드 캐릭터 애니메이션 동작을 만들기 위해 다양한 애니메이션 상태를 결합하는 데 사용할 수 있습니다.
 
-When selecting an animstategraph asset in the editors asset panel, you’ll open up the anim state graph editor view:
+에디터의 에셋 패널에서 animstategraph 에셋을 선택하면 애니메이션 상태 그래프 에디터 뷰가 열립니다:
 
 ![Initial Editor](/img/user-manual/anim/state_graph_editor.png)
 
-Within this view you can edit your animation state graph. The following sections will highlight how different elements of the animstategraph asset can be used to define specific animation behavior.
+이 뷰 내에서 애니메이션 상태 그래프를 편집할 수 있습니다. 다음 섹션에서는 animstategraph 에셋의 다양한 요소가 특정 애니메이션 동작을 정의하는 데 어떻게 사용될 수 있는지 강조할 것입니다.
 
-## States {#states}
+## 상태 {#states}
 
-In essence, states are used to specify which animations should play at a given point in time. An anim state graph can only be in one of these states at a given time.
+본질적으로 상태는 주어진 시점에 어떤 애니메이션이 재생되어야 하는지 지정하는 데 사용됩니다. 애니메이션 상태 그래프는 주어진 시간에 이러한 상태 중 하나에만 있을 수 있습니다.
 
-There are four types of states present in state graphs. Animation states, along with the START state, END state and ANY state. Only animation states can be created and deleted by the user and only these will be linked to animation assets. The other states are used to control the flow through the state machine.
+상태 그래프에는 네 가지 유형의 상태가 있습니다. 애니메이션 상태와 함께 START 상태, END 상태, ANY 상태가 있습니다. 애니메이션 상태만 사용자가 생성하고 삭제할 수 있으며, 이들만 애니메이션 에셋에 연결됩니다. 다른 상태는 상태 머신을 통한 흐름을 제어하는 데 사용됩니다.
 
-### Animation States {#animation-states}
+### 애니메이션 상태 {#animation-states}
 
 ![State](/img/user-manual/anim/state.png)
 
-Animation states define a playable animation such as ‘Idle’, ‘Jump’ or ‘Walk’. New animation states can be created by right clicking on the blank canvas behind the state graph and selecting ‘Add new state’ from the menu. The editor will target your newly created state and show its inspector panel on the right hand side. Within this inspector the following state variables can be modified:
+애니메이션 상태는 'Idle', 'Jump', 'Walk'와 같은 재생 가능한 애니메이션을 정의합니다. 새로운 애니메이션 상태는 상태 그래프 뒤의 빈 캔버스를 우클릭하고 메뉴에서 'Add new state'를 선택하여 생성할 수 있습니다. 에디터는 새로 생성된 상태를 대상으로 하고 오른쪽에 인스펙터 패널을 표시합니다. 이 인스펙터 내에서 다음 상태 변수를 수정할 수 있습니다:
 
-| Variable | Description |
-|----------|-------------|
-| Name     | The name that this state should be called by. This is used to find and edit and play states via script. Names must be unique per state graph layer. |
-| Speed    | The playback speed for animations that are linked to this state. |
-| Loop     | Whether animations linked to this state should loop during playback. If set to false the animation will pause on its last keyframe until this state is exited. |
+| 변수 | 설명 |
+|------|------|
+| Name     | 이 상태가 호출될 이름입니다. 스크립트를 통해 상태를 찾고 편집하고 재생하는 데 사용됩니다. 이름은 상태 그래프 레이어당 고유해야 합니다. |
+| Speed    | 이 상태에 연결된 애니메이션의 재생 속도입니다. |
+| Loop     | 이 상태에 연결된 애니메이션이 재생 중에 루프해야 하는지 여부입니다. false로 설정하면 애니메이션이 이 상태가 종료될 때까지 마지막 키프레임에서 일시정지됩니다. |
 
-### START state {#start-state}
+### START 상태 {#start-state}
 
 ![Start State](/img/user-manual/anim/start_state.png)
 
-The START state is the entry point of every state graph. When an anim component begins playing its assigned anim state graph, it will first enter this state and transition directly to the animation state it’s connected to. This animation state is called the default state and it can be selected via the layers panel here:
+START 상태는 모든 상태 그래프의 진입점입니다. 애님 컴포넌트가 할당된 애님 상태 그래프 재생을 시작할 때, 먼저 이 상태에 진입한 다음 연결된 애니메이션 상태로 직접 전환됩니다. 이 애니메이션 상태를 기본 상태라고 하며, 여기 레이어 패널을 통해 선택할 수 있습니다:
 
 ![Layers](/img/user-manual/anim/layers.png)
 
-It is not possible to create any other transitions to or from the START state. It can only be entered again by transitioning to the END state.
+START 상태에서 또는 START 상태로의 다른 전환을 생성할 수 없습니다. END 상태로 전환하여야만 다시 진입할 수 있습니다.
 
-### END state {#end-state}
+### END 상태 {#end-state}
 
 ![End State](/img/user-manual/anim/end_state.png)
 
-The end state marks an exit out of the current state graph. If your animation state is set up to transition to the END state, the system will move directly to the default animation state which is connected to the START state. This is useful to create cyclical flows through the graph while still laying out your graph in a linear fashion. It is not possible to create transitions from the END state to any other state. It will always transition directly to the START state.
+END 상태는 현재 상태 그래프에서의 출구를 표시합니다. 애니메이션 상태가 END 상태로 전환되도록 설정되어 있다면, 시스템은 START 상태에 연결된 기본 애니메이션 상태로 직접 이동합니다. 이는 그래프를 선형 방식으로 배치하면서도 그래프를 통한 순환 흐름을 만드는 데 유용합니다. END 상태에서 다른 상태로의 전환을 생성할 수 없습니다. 항상 START 상태로 직접 전환됩니다.
 
-### ANY state {#any-state}
+### ANY 상태 {#any-state}
 
 ![Any State](/img/user-manual/anim/any_state.png)
 
-This state is used to create transitions which can be activated while the system is currently in any of the other animation states. Any transitions that trigger from this state will blend as if they had been connected directly from the currently active animation state. You can create transitions from the ANY state but not to it.
+이 상태는 시스템이 현재 다른 애니메이션 상태 중 하나에 있는 동안 활성화될 수 있는 전환을 만드는 데 사용됩니다. 이 상태에서 트리거되는 모든 전환은 현재 활성 애니메이션 상태에서 직접 연결된 것처럼 블렌딩됩니다. ANY 상태에서 전환을 생성할 수 있지만 ANY 상태로는 생성할 수 없습니다.
 
-This is useful to set up transitions which you want to activate, no matter which state you’re currently in. For example you could have a jump state which should be reachable from both an idle and walk state. Instead of setting up transitions from both the idle and walk states to the jump state, a transition can be set up between the ANY state and the jump state.
+이는 현재 어떤 상태에 있든 상관없이 활성화하고 싶은 전환을 설정하는 데 유용합니다. 예를 들어, idle 상태와 walk 상태 모두에서 도달할 수 있는 jump 상태가 있을 수 있습니다. idle 상태와 walk 상태 모두에서 jump 상태로의 전환을 설정하는 대신, ANY 상태와 jump 상태 사이에 전환을 설정할 수 있습니다.
 
-### Transitions {#transitions}
+### 전환 {#transitions}
 
-Transitions define how the anim state graph can move from one animation state to another. They can be created by right clicking an animation state and selecting `Add transition` from the context menu.
+전환은 anim 상태 그래프가 하나의 애니메이션 상태에서 다른 상태로 이동할 수 있는 방법을 정의합니다. 애니메이션 상태를 우클릭하고 컨텍스트 메뉴에서 `Add transition`을 선택하여 생성할 수 있습니다.
 
-By setting the variables of a given transition you can also control how the animations of the transitioning states will blend together.
+주어진 전환의 변수를 설정하여 전환하는 상태의 애니메이션이 어떻게 블렌딩될지도 제어할 수 있습니다.
 
-The available transition variables are:
+사용 가능한 전환 변수는 다음과 같습니다:
 
-| Variable            | Description |
-|---------------------|-------------|
-| Duration            | The duration of the transition in seconds. |
-| Exit Time           | The time at which to exit the source state and enter the destination state. Given in normalized time based on the source state's duration. Providing no value allows the source state to exit with this transition at any time. A value of less than 1 will make the transition available for exit at that time during every loop of the source state. |
-| Offset              | If provided, the destination state will begin playing its animation at this time. Given in normalized time based on the destination state's duration. Must be between 0 and 1. |
-| Interruption Source | Defines whether another transition can interrupt this one and which of the current or previous states' transitions can do so. |
+| 변수            | 설명 |
+|-----------------|------|
+| Duration            | 전환의 지속 시간(초)입니다. |
+| Exit Time           | 소스 상태를 종료하고 대상 상태에 진입할 시간입니다. 소스 상태의 지속 시간을 기반으로 한 정규화된 시간으로 제공됩니다. 값을 제공하지 않으면 소스 상태가 이 전환으로 언제든지 종료할 수 있습니다. 1보다 작은 값은 소스 상태의 모든 루프 동안 해당 시간에 전환이 종료 가능하도록 만듭니다. |
+| Offset              | 제공된 경우, 대상 상태가 이 시간에 애니메이션 재생을 시작합니다. 대상 상태의 지속 시간을 기반으로 한 정규화된 시간으로 제공됩니다. 0과 1 사이여야 합니다. |
+| Interruption Source | 다른 전환이 이 전환을 중단할 수 있는지, 그리고 현재 또는 이전 상태의 전환 중 어느 것이 그렇게 할 수 있는지 정의합니다. |
 
-It is possible to create multiple transitions between two animation states, which have different values and conditions set. The priority of these transitions can be reordered in the transition inspector after selecting a transition's arrow in the graph. The priority order determines which transition will be used by the state graph if multiple transitions have their conditions met.
+두 애니메이션 상태 사이에 서로 다른 값과 조건이 설정된 여러 전환을 생성할 수 있습니다. 이러한 전환의 우선순위는 그래프에서 전환의 화살표를 선택한 후 전환 인스펙터에서 재정렬할 수 있습니다. 우선순위 순서는 여러 전환이 조건을 만족할 때 상태 그래프가 어떤 전환을 사용할지 결정합니다.
 
-### Parameters {#parameters}
+### 매개변수 {#parameters}
 
-The parameters of an anim state graph are variables which are used to control the flow of animations during runtime. These variables can be accessed via scripts and set to new values at any time. They are then the way in which users can control the behavior of an entity's animation during its lifecycle.
+애님 상태 그래프의 매개변수는 런타임 중 애니메이션의 흐름을 제어하는 데 사용되는 변수입니다. 이러한 변수는 스크립트를 통해 액세스할 수 있으며 언제든지 새로운 값으로 설정할 수 있습니다. 이는 사용자가 엔티티의 생명주기 동안 애니메이션 동작을 제어할 수 있는 방법입니다.
 
-New parameters can be added to a state graph via the parameters panel on the left inspector:
+왼쪽 인스펙터의 매개변수 패널을 통해 상태 그래프에 새로운 매개변수를 추가할 수 있습니다:
 
 ![Parameters](/img/user-manual/anim/parameters.png)
 
-Each parameter has three variables which can be set:
+각 매개변수는 설정할 수 있는 세 가지 변수를 가집니다:
 
-| Variable      | Description |
-|---------------|-------------|
-| Name          | The name that this parameter should be called by. This is used to find and set the parameter via script. Names must be unique per state graph. |
-| Type          | The type of variable that the parameter contains. One of: Boolean, Float, Integer or Trigger. The Trigger type acts as a Boolean but with the special property that its value is set back to false after it has been used to successfully activate a transition. |
-| Default Value | The value of the parameters variable when the state graph launches. |
+| 변수      | 설명 |
+|-----------|------|
+| Name          | 이 매개변수가 호출될 이름입니다. 스크립트를 통해 매개변수를 찾고 설정하는 데 사용됩니다. 이름은 상태 그래프당 고유해야 합니다. |
+| Type          | 매개변수가 포함하는 변수의 유형입니다. Boolean, Float, Integer 또는 Trigger 중 하나입니다. Trigger 유형은 Boolean처럼 작동하지만 전환을 성공적으로 활성화하는 데 사용된 후 값이 false로 다시 설정되는 특별한 속성을 가집니다. |
+| Default Value | 상태 그래프가 시작될 때 매개변수 변수의 값입니다. |
 
-The way in which they control the state graph is through the use of transition conditions. Each transition in the graph can have a list of conditions which define when a transition is usable by the system. A state will not be able to pass to another state through a given transition unless all of its conditions are met.
+이들이 상태 그래프를 제어하는 방법은 전환 조건을 사용하는 것입니다. 그래프의 각 전환은 시스템에서 전환이 사용 가능한 시기를 정의하는 조건 목록을 가질 수 있습니다. 모든 조건이 충족되지 않는 한 상태는 주어진 전환을 통해 다른 상태로 전달될 수 없습니다.
 
-Each condition consists of a conditional statement which compares the current value of a parameters variable to the given value in the condition using the designated operator. For example, the following condition:
+각 조건은 지정된 연산자를 사용하여 매개변수 변수의 현재 값을 조건의 주어진 값과 비교하는 조건문으로 구성됩니다. 예를 들어, 다음 조건:
 
 ![Condition](/img/user-manual/anim/condition.png)
 
-Can be used in the transition between the Idle and Jump animation states to ensure that a character only jumps when the ‘Jump’ parameter has been set to true via a script.
+Idle과 Jump 애니메이션 상태 간의 전환에서 사용되어 캐릭터가 스크립트를 통해 'Jump' 매개변수가 true로 설정된 경우에만 점프하도록 할 수 있습니다.
 
-### Layers {#layers}
+### 레이어 {#layers}
 
-So far, animstategraph assets have been discussed in the context of editing a single animation state graph. It may sometimes be necessary however to have the animations of a single model driven by multiple separate state graphs, each with their own defined behavior. An example could be animating a main character's movement and locomotion on a single layer, while animating its facial expressions on a separate layer that’s driven by its own state graph and parameters.
+지금까지 animstategraph 에셋은 단일 애니메이션 상태 그래프 편집의 맥락에서 논의되었습니다. 그러나 때로는 단일 모델의 애니메이션이 각각 고유한 정의된 동작을 가진 여러 개의 별도 상태 그래프에 의해 구동되는 것이 필요할 수 있습니다. 예를 들어, 단일 레이어에서 주인공의 움직임과 이동을 애니메이션화하는 동시에, 자체 상태 그래프와 매개변수에 의해 구동되는 별도 레이어에서 표정을 애니메이션화할 수 있습니다.
 
-When an animstategraph is created, it comes with a single base layer. This layer is not deletable and for many scenarios will be the only one necessary. However if you wish to create another layer you can do so by selecting the new layer button on the layers panel to the left of the state graph view:
+animstategraph가 생성될 때 단일 기본 레이어와 함께 제공됩니다. 이 레이어는 삭제할 수 없으며 많은 시나리오에서 필요한 유일한 레이어가 될 것입니다. 그러나 다른 레이어를 생성하고 싶다면 상태 그래프 뷰 왼쪽의 레이어 패널에서 새 레이어 버튼을 선택하여 할 수 있습니다:
 
 ![Layers](/img/user-manual/anim/layers.png)
 
-It is then possible to switch to editing this layer by selecting it from the layer select dropdown which is present at the top right of the graph view:
+그런 다음 그래프 뷰 오른쪽 상단에 있는 레이어 선택 드롭다운에서 선택하여 이 레이어 편집으로 전환할 수 있습니다:
 
 ![Select Layer](/img/user-manual/anim/select_layer.png)
 
-### Layer Blending {#layer-blending}
+### 레이어 블렌딩 {#layer-blending}
 
-By default, layers animate a model in the order that they’re created in the layers panel. Any animation values they set on a model's bones will be overwritten by subsequent layers. If instead you wish to blend the animation values of the layers together, you can set the `blend type` of your layers to `Additive` rather than the default `Override`:
+기본적으로 레이어는 레이어 패널에서 생성된 순서대로 모델을 애니메이션화합니다. 모델의 뼈에 설정한 모든 애니메이션 값은 후속 레이어에 의해 덮어쓰여집니다. 대신 레이어의 애니메이션 값을 함께 블렌딩하고 싶다면, 레이어의 `blend type`을 기본 `Override` 대신 `Additive`로 설정할 수 있습니다:
 
 ![Layer Blend](/img/user-manual/anim/anim_layer_blend.png)
 
-The blend weight value of each layer is used when blending multiple layers to determine how much each layer should contribute to the final animation. These blend weights can be adjusted at runtime in your game scripts to update the blends of your layers in real time:
+각 레이어의 블렌드 가중치 값은 여러 레이어를 블렌딩할 때 각 레이어가 최종 애니메이션에 얼마나 기여해야 하는지 결정하는 데 사용됩니다. 이러한 블렌드 가중치는 게임 스크립트에서 런타임에 조정하여 레이어의 블렌드를 실시간으로 업데이트할 수 있습니다:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -160,8 +160,8 @@ AnimationBlending.prototype.initialize = function() {
 </TabItem>
 </Tabs>
 
-If you [mask your layers][anim-layer-masking], you can set the `blend type` of your layers to `Additive` to blend in an animation which only controls part of your model's bones. Updating the `blend weight` in real time as described above can allow you to create smooth blends between animations on different layers. This is particularly useful when animation characters that need to carry out different actions using their upper and lower body. For example, you could have a `shooting` animation that is blended in and out on a characters upper body, while freeing up the lower body for various locomotion animations such as `walking` and `running`.
+[레이어를 마스킹][anim-layer-masking]하는 경우, 모델의 뼈의 일부만 제어하는 애니메이션을 블렌딩하기 위해 레이어의 `blend type`을 `Additive`로 설정할 수 있습니다. 위에서 설명한 대로 `blend weight`를 실시간으로 업데이트하면 서로 다른 레이어의 애니메이션 간에 부드러운 블렌드를 만들 수 있습니다. 이는 상체와 하체를 사용하여 서로 다른 동작을 수행해야 하는 캐릭터를 애니메이션화할 때 특히 유용합니다. 예를 들어, 캐릭터의 상체에서 블렌딩되고 블렌딩되는 `shooting` 애니메이션이 있을 수 있으며, 동시에 `walking`과 `running`과 같은 다양한 이동 애니메이션을 위해 하체를 자유롭게 할 수 있습니다.
 
-Any layers that are set to `Overwrite` will completely replace the animation values of the model's bones that are animated in that layer. In these instances, previous layers will not be taken into consideration when producing the final animation.
+`Overwrite`로 설정된 모든 레이어는 해당 레이어에서 애니메이션화된 모델의 뼈의 애니메이션 값을 완전히 대체합니다. 이러한 경우, 최종 애니메이션을 생성할 때 이전 레이어는 고려되지 않습니다.
 
 [anim-layer-masking]: /user-manual/animation/anim-layer-masking

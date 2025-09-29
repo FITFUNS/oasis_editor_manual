@@ -1,96 +1,96 @@
 ---
-title: Layout Groups
+title: 레이아웃 그룹 (Layout Groups)
 ---
 
-The Layout Group Component is used to automatically set the position and size of child Elements. A Layout Group Component can be used to align child elements into vertical or horizontal columns or a grid. A Layout Group Component applies the layout rules to all its direct children, you can override the Layout Group rules on a single child using a Layout Child Component.
+레이아웃 그룹 컴포넌트는 자식 요소들의 위치와 크기를 자동으로 설정하는 데 사용됩니다. 레이아웃 그룹 컴포넌트는 자식 요소들을 세로 또는 가로 열 또는 그리드로 정렬하는 데 사용할 수 있습니다. 레이아웃 그룹 컴포넌트는 레이아웃 규칙을 모든 직접 자식에게 적용하며, 레이아웃 자식 컴포넌트를 사용하여 단일 자식에 대한 레이아웃 그룹 규칙을 재정의할 수 있습니다.
 
-The Layout Group Component can be used to generate common layouts, for example, a [grid][10], a fixed width [vertical column][11], or [horizontal row][12].
+레이아웃 그룹 컴포넌트는 일반적인 레이아웃을 생성하는 데 사용할 수 있습니다. 예를 들어, [그리드][10], 고정 너비 [세로 열][11], 또는 [가로 행][12] 등입니다.
 
-## Creating a Layout Group {#creating-a-layout-group}
+## 레이아웃 그룹 생성 {#creating-a-layout-group}
 
-Add a Layout Group by adding the LayoutGroup Component to an existing Element Entity.
+기존 요소 엔티티에 LayoutGroup 컴포넌트를 추가하여 레이아웃 그룹을 추가합니다.
 
 ![Create Layout Group](/img/user-manual/user-interface/layout-groups/create-layout-group.jpg)
 
-## Layout Group Properties {#layout-group-properties}
+## 레이아웃 그룹 속성 {#layout-group-properties}
 
-### Orientation {#orientation}
+### 방향 (Orientation)
 
-Set the `Orientation` to Horizontal to organize your layout from left-to-right or right-to-left. Or Vertical to organize your layout top-to-bottom or bottom-to-top
+레이아웃을 왼쪽에서 오른쪽 또는 오른쪽에서 왼쪽으로 구성하려면 `Orientation`을 `Horizontal`로 설정하세요. 또는 레이아웃을 위에서 아래 또는 아래에서 위로 구성하려면 Vertical로 설정하세요.
 
-### Reverse {#reverse}
+### 반전 (Reverse)
 
-ReverseX and ReverseY properties are used to set the direction the layout group is built out in. The default is left-to-right and bottom-to-top.
+ReverseX 및 ReverseY 속성은 레이아웃 그룹이 구성되는 방향을 설정하는 데 사용됩니다. 기본값은 왼쪽에서 오른쪽, 아래에서 위입니다.
 
-### Alignment {#alignment}
+### 정렬 (Alignment)
 
-Alignment is used to align the child elements to the edges of the Layout Group. `[0,0]` aligns to the bottom left, `[1,1]` aligns to the top right.
+정렬은 자식 요소들을 레이아웃 그룹의 가장자리에 정렬하는 데 사용됩니다. `[0,0]`은 왼쪽 아래에 정렬하고, `[1,1]`은 오른쪽 위에 정렬합니다.
 
-### Padding {#padding}
+### 패딩 (Padding)
 
-Padding adds a space to the inside of the Layout Group before positioning any children.
+패딩은 자식 요소들을 배치하기 전에 레이아웃 그룹 내부에 공간을 추가합니다.
 
-### Spacing {#spacing}
+### 간격 (Spacing)
 
-Spacing determines the gap between each child.
+간격은 각 자식 요소 간의 간격을 결정합니다.
 
-### Fitting {#fitting}
+### 피팅 (Fitting)
 
-The Width Fitting and Height Fitting properties determine how a child element's width or height will be adjusted by the Layout Group.
+너비 피팅 및 높이 피팅 속성은 자식 요소의 너비 또는 높이가 레이아웃 그룹에 의해 어떻게 조정될지를 결정합니다.
 
-A value of **None** will apply no fitting.
+**None** 값은 피팅을 적용하지 않습니다.
 
-A value of **Stretch** will stretch the children to fill the width or height of the container using the following procedure:
+**Stretch** 값은 다음 절차를 사용하여 자식 요소들을 컨테이너의 너비 또는 높이를 채우도록 늘립니다:
 
-- Sum the fitWidthProportion/fitHeightProportion values of each child and normalize so that all values sum to 1.
-- Apply the natural width/height for each child.
-- If there is space remaining in the container, distribute it to each child based on the normalized fitWidthProportion/fitHeightProportion values, but do not exceed the maxWidth/maxHeight of each child.
+- 각 자식의 fitWidthProportion/fitHeightProportion 값을 합산하고 모든 값의 합이 1이 되도록 정규화합니다.
+- 각 자식에 대해 자연스러운 너비/높이를 적용합니다.
+- 컨테이너에 남은 공간이 있으면 정규화된 fitWidthProportion/fitHeightProportion 값을 기반으로 각 자식에게 분배하되, 각 자식의 maxWidth/maxHeight를 초과하지 않습니다.
 
-A value of **Shrink** will shrink the children to fit the container using the following procedure:
+**Shrink** 값은 다음 절차를 사용하여 자식 요소들을 컨테이너에 맞도록 축소합니다:
 
-- Sum the fitWidthProportion/fitHeightProportion values of each child and normalize so that all values sum to 1.
-- Apply the natural width/height for each child.
-- If the new total width/height of all children exceeds the available space of the container, reduce each child's width/height proportionally based on the normalized fitWidthProportion/fitHeightProportion values, but do not exceed the minWidth/minHeight of each child.
+- 각 자식의 fitWidthProportion/fitHeightProportion 값을 합산하고 모든 값의 합이 1이 되도록 정규화합니다.
+- 각 자식에 대해 자연스러운 너비/높이를 적용합니다.
+- 모든 자식의 새로운 총 너비/높이가 컨테이너의 사용 가능한 공간을 초과하면 정규화된 fitWidthProportion/fitHeightProportion 값을 기반으로 각 자식의 너비/높이를 비례적으로 줄이되, 각 자식의 minWidth/minHeight를 초과하지 않습니다.
 
-A value of **Both** will apply both **Stretch** and **Shrink**.
+**Both** 값은 **Stretch**와 **Shrink**를 모두 적용합니다.
 
-### Wrap {#wrap}
+### 래핑 (Wrap)
 
-The wrap property causes children that are outside of the width (for vertical groups) or height (for horizontal groups) to be moved to a new row or column. Using the wrap property you can create grid-based layouts.
+래핑 속성은 너비(세로 그룹의 경우) 또는 높이(가로 그룹의 경우)를 벗어나는 자식 요소들을 새로운 행 또는 열로 이동시킵니다. 래핑 속성을 사용하여 그리드 기반 레이아웃을 만들 수 있습니다.
 
-## Layout Children {#layout-children}
+## 레이아웃 자식 (Layout Children)
 
-A Layout Group applies its rules to all of its direct children. If you want to override these rules for a specific child you can do that by adding a LayoutChild Component to that child.
+레이아웃 그룹은 모든 직접 자식에게 규칙을 적용합니다. 특정 자식에 대해 이러한 규칙을 재정의하려면 해당 자식에 LayoutChild 컴포넌트를 추가하면 됩니다.
 
 ![Layout Child](/img/user-manual/user-interface/layout-groups/layout-child-max-width.jpg)
 
-In this example, the horizontal layout is using the **Stretch** width fitting to stretch each button to fit evenly into the container. The center button has a Layout Child Component with a `maxWidth` value set to 64, so it will not be stretched.
+이 예제에서 가로 레이아웃은 **Stretch** 너비 피팅을 사용하여 각 버튼을 컨테이너에 균등하게 맞도록 늘립니다. 중앙 버튼은 `maxWidth` 값이 64로 설정된 Layout Child 컴포넌트를 가지므로 늘어나지 않습니다.
 
 ![Layout Child Setup](/img/user-manual/user-interface/layout-groups/layout-child-setup.jpg)
 
-## Example Layouts {#example-layouts}
+## 예제 레이아웃 {#example-layouts}
 
-### Vertical Leaderboard {#vertical-leaderboard}
+### 세로 리더보드 {#vertical-leaderboard}
 
 ![Leaderboard](/img/user-manual/user-interface/layout-groups/leaderboard.jpg)
 
-This Leaderboard is setup as vertical column aligned to the top center. We're using the Width Fitting property to stretch each item to be the full width. And using the Padding and Spacing properties to leave clear gaps between the cells.
+이 리더보드는 상단 중앙에 정렬된 세로 열로 설정되어 있습니다. 너비 피팅 속성을 사용하여 각 항목을 전체 너비로 늘리고, 패딩 및 간격 속성을 사용하여 셀 간에 명확한 간격을 남겨둡니다.
 
 ![Leaderboard Setup](/img/user-manual/user-interface/layout-groups/leaderboard-setup.jpg)
 
-### Horizontal Buttons {#horizontal-buttons}
+### 가로 버튼 {#horizontal-buttons}
 
 ![Horizontal Buttons](/img/user-manual/user-interface/layout-groups/horizontal-layout.jpg)
 
-This row of buttons is laid out using a Horizontal Layout Group with some Spacing and Padding settings to make the buttons fit the correct width. No width or height fitting is used.
+이 버튼 행은 일부 간격 및 패딩 설정을 사용하는 가로 레이아웃 그룹을 사용하여 배치됩니다. 버튼이 올바른 너비에 맞도록 하기 위해 너비 또는 높이 피팅은 사용되지 않습니다.
 
 ![Horizontal Setup](/img/user-manual/user-interface/layout-groups/horizontal-setup.jpg)
 
-### Grid {#grid}
+### 그리드 {#grid}
 
 ![Grid](/img/user-manual/user-interface/layout-groups/grid-layout.jpg)
 
-This row of buttons is laid out using a Layout Group with the Wrap setting enabled to set up a grid. The Group Element the Layout Group is attached to is set to the correct width (button width + spacing) to force the wrap to generate a two column grid. The Horizontal layout means that the grid fills in rows not columns and the Alignment property is set to `[0.5, 1]` which means that any "loose" elements (a row with only one element) will be centered in the X axis.
+이 버튼 행은 그리드를 설정하기 위해 래핑 설정이 활성화된 레이아웃 그룹을 사용하여 배치됩니다. 레이아웃 그룹이 연결된 그룹 요소는 올바른 너비(버튼 너비 + 간격)로 설정되어 래핑이 두 열 그리드를 생성하도록 강제합니다. 가로 레이아웃은 그리드가 열이 아닌 행으로 채워진다는 의미이며, 정렬 속성은 `[0.5, 1]`로 설정되어 "느슨한" 요소(하나의 요소만 있는 행)가 X축에서 중앙에 정렬됩니다.
 
 ![Setup](/img/user-manual/user-interface/layout-groups/grid-setup.jpg)
 

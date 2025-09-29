@@ -1,31 +1,34 @@
 ---
-title: Camera
+title: 카메라 (Camera)
 ---
 
-The Camera component enables an entity to render a scene from a certain viewpoint.
+카메라 컴포넌트는 엔티티가 특정 시점에서 씬을 렌더링할 수 있게 합니다.
 
-The Camera component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the camera will render the scene every frame.
+카메라 컴포넌트는 컴포넌트 패널의 오른쪽 상단에 있는 토글을 사용하여 활성화하거나 비활성화할 수 있습니다. 활성화되면 카메라가 매 프레임마다 씬을 렌더링합니다.
 
 ![Camera component](/img/user-manual/scenes/components/component-camera.png)
 
-## Properties
+## 속성
 
-| Property        | Description |
+| 속성        | 설명 |
 |-----------------|-------------|
-| Clear Buffers   | Controls how the camera's render target is cleared before rendering each frame. The camera maintains two types of buffer: the color buffer which stores the visible image and a depth buffer that stores information about the distance of a rendered pixel in relation to the position of the camera. The buffers can be cleared independently: <ul><li>Color: If selected, the camera will explicitly clear its render target to the chosen clear color before rendering the scene.</li><li>Depth: If selected, the camera will explicitly clear the depth buffer of its render target before rendering the scene.</li></ul> |
-| Clear Color     | The color used to clear the camera's render target.  This property is only displayed if 'Clear Color Buffer' is selected. |
-| Projection      | The projection type of the camera. Options are: <ul><li>Perspective</li><li>Orthographic</li></ul> |
-| Frustum Culling | If selected, the camera will only render mesh instances whose axis-aligned bounding boxes intersect with the camera's view frustum. Otherwise, the entire scene will be rendered regardless of visibility. |
-| Field of View   | The angle between top and bottom clip planes of a perspective camera. This property is only displayed if 'Projection' is set to 'Perspective'. |
-| Ortho Height    | The distance in world units between the top and bottom clip planes of an orthographic camera. This property is only displayed if 'Projection' is set to 'Orthographic'. |
-| Near Clip       | The distance in camera space from the camera's eye point to the near clip plane. |
-| Far Clip        | The distance in camera space from the camera's eye point to the far clip plane. |
-| Priority        | A number that defines the order in which camera views are rendered by the engine. Smaller numbers are rendered first. |
-| Viewport        | A rectangle that specifies the viewport onto the camera's attached render target. This allows you to implement features like split-screen or picture-in-picture. It is defined by normalized coordinates (0 to 1) in the following format: <ul><li>x: The lower left x coordinate</li><li>y: The lower left y coordinate</li><li>w: The width of the rectangle</li><li>h: The height of the rectangle</li></ul> |
+| Clear Buffers   | 각 프레임을 렌더링하기 전에 카메라의 렌더 타겟이 어떻게 지워지는지 제어합니다. 카메라는 두 가지 유형의 버퍼를 유지합니다: 가시 이미지를 저장하는 컬러 버퍼와 렌더링된 픽셀의 카메라 위치에 대한 거리 정보를 저장하는 깊이 버퍼입니다. 버퍼는 독립적으로 지울 수 있습니다: <ul><li>Color: 선택하면 카메라가 씬을 렌더링하기 전에 렌더 타겟을 선택된 클리어 색상으로 명시적으로 지웁니다.</li><li>Depth: 선택하면 카메라가 씬을 렌더링하기 전에 렌더 타겟의 깊이 버퍼를 명시적으로 지웁니다.</li></ul> |
+| Clear Color     | 카메라의 렌더 타겟을 지우는 데 사용되는 색상입니다. 이 속성은 'Clear Color Buffer'가 선택된 경우에만 표시됩니다. |
+| Depth Grabpass     | 선택하면, 카메라는 장면의 깊이 맵(Depth Map)을 포함하는 텍스처를 생성하도록 요청합니다. |
+| Color Grabpass     | 선택하면, 카메라는 장면의 컬러 맵(Color Map)을 포함하는 텍스처를 생성하도록 요청합니다. |
+| Projection      | 카메라의 투영 타입입니다. 옵션은 다음과 같습니다: <ul><li>Perspective</li><li>Orthographic</li></ul> |
+| Frustum Culling | 선택하면 카메라는 축 정렬 경계 상자가 카메라의 뷰 프러스텀과 교차하는 메시 인스턴스만 렌더링합니다. 그렇지 않으면 가시성에 관계없이 전체 씬이 렌더링됩니다. |
+| Field of View   | 원근 카메라의 상단 및 하단 클립 평면 사이의 각도입니다. 이 속성은 'Projection'이 'Perspective'로 설정된 경우에만 표시됩니다. |
+| Ortho Height    | 직교 카메라의 상단 및 하단 클립 평면 사이의 월드 단위 거리입니다. 이 속성은 'Projection'이 'Orthographic'으로 설정된 경우에만 표시됩니다. |
+| Near Clip       | 카메라 공간에서 카메라의 시점에서 근거리 클립 평면까지의 거리입니다. |
+| Far Clip        | 카메라 공간에서 카메라의 시점에서 원거리 클립 평면까지의 거리입니다. |
+| Priority        | 엔진이 카메라 뷰를 렌더링하는 순서를 정의하는 숫자입니다. 작은 숫자가 먼저 렌더링됩니다. |
+| Viewport        | 카메라의 연결된 렌더 타겟에 대한 뷰포트를 지정하는 사각형입니다. 이를 통해 분할 화면이나 화면 속 화면과 같은 기능을 구현할 수 있습니다. 다음 형식의 정규화된 좌표(0에서 1)로 정의됩니다: <ul><li>x: 왼쪽 하단 x 좌표</li><li>y: 왼쪽 하단 y 좌표</li><li>w: 사각형의 너비</li><li>h: 사각형의 높이</li></ul> |
+| Layers        | 이 카메라가 렌더링할 레이어들입니다. |
 
-## Scripting Interface
+## 스크립팅 인터페이스
 
-You can control a Camera component's properties using a [script component][2]. The Camera component's scripting interface is [here][3].
+[스크립트 컴포넌트][2]를 사용하여 카메라 컴포넌트의 속성을 제어할 수 있습니다. 카메라 컴포넌트의 스크립팅 인터페이스는 [여기][3]에 있습니다.
 
 [2]: /user-manual/scenes/components/script
 [3]: https://manual.oasisserver.link/engine/classes/CameraComponent.html

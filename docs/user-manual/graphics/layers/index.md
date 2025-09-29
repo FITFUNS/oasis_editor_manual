@@ -1,105 +1,105 @@
 ---
-title: Layers
+title: 레이어 (Layers)
 ---
 
-## Layers Overview {#layers-overview}
+## 레이어 개요 {#layers-overview}
 
-Layers allow you to customize the render loop for your application. Using layers you can implement some advanced rendering features. For example:
+레이어를 사용하면 애플리케이션의 렌더 루프를 사용자 정의할 수 있습니다. 레이어를 사용하여 일부 고급 렌더링 기능을 구현할 수 있습니다. 예를 들어:
 
-* modify the order in which your meshes are rendered
-* set cameras to render only some meshes
-* set which lights affect which meshes
+* 메시가 렌더링되는 순서를 수정
+* 카메라가 일부 메시만 렌더링하도록 설정
+* 어떤 조명이 어떤 메시에 영향을 미치는지 설정
 
-A OasisW application is created with a default set of layers which are always present. You can create your own layers and re-order them to suit your particular requirements.
+OasisW 애플리케이션은 항상 존재하는 기본 레이어 세트로 생성됩니다. 자신만의 레이어를 만들고 특정 요구사항에 맞게 순서를 재정렬할 수 있습니다.
 
-At a fundamental level a layer is list of meshes to render. Each layer is divided into two sub-layers: Opaque and Transparent. When a mesh is added to a layer the layer stores it in one of the two sub-layers, depending on whether the material on the mesh needs to render transparently or not. This is because transparent sub-layers are often sorted differently than opaque sub-layers.
+기본적으로 레이어는 렌더링할 메시의 목록입니다. 각 레이어는 두 개의 서브 레이어로 나뉩니다: 불투명(Opaque)과 투명(Transparent). 메시가 레이어에 추가될 때 레이어는 메시의 머티리얼이 투명하게 렌더링되어야 하는지 여부에 따라 두 서브 레이어 중 하나에 저장합니다. 이는 투명 서브 레이어가 불투명 서브 레이어와 다르게 정렬되는 경우가 많기 때문입니다.
 
-## Rendering Order {#rendering-order}
+## 렌더링 순서 {#rendering-order}
 
-There are three factors that determine the order in which meshes are rendered.
+메시가 렌더링되는 순서를 결정하는 세 가지 요소가 있습니다.
 
-### Camera Priority {#camera-priority}
+### 카메라 우선순위 {#camera-priority}
 
-Priority of the camera is the main factor that controls the order in which the meshes are rendered. Each camera has a priority assigned to it, and cameras with smaller values for priority are rendered first.
+카메라의 우선순위는 메시가 렌더링되는 순서를 제어하는 주요 요소입니다. 각 카메라에는 우선순위가 할당되며, 우선순위 값이 작은 카메라가 먼저 렌더링됩니다.
 
-Each camera also has a list of layers set up on it, which controls which layers the camera renders. Their order is described in the next section.
+각 카메라에는 설정된 레이어 목록도 있으며, 이는 카메라가 렌더링하는 레이어를 제어합니다. 그 순서는 다음 섹션에서 설명합니다.
 
 ![Camera Layers](/img/user-manual/graphics/layers/camera-layers.jpg)
 
-### Layer Composition {#layer-composition}
+### 레이어 구성 {#layer-composition}
 
-Next is order of layers in the application. Each application contains a `pc.LayerComposition` object which is available in your application as `this.app.scene.layers`. The layer composition determines the order of all sub-layers. The ordering is based on the sub-layer not on the layer so that you can, for example, render all the opaque sub-layers first, then all the transparent sub-layers afterwards.
+다음은 애플리케이션의 레이어 순서입니다. 각 애플리케이션에는 `this.app.scene.layers`로 애플리케이션에서 사용할 수 있는 `pc.LayerComposition` 객체가 포함되어 있습니다. 레이어 구성은 모든 서브 레이어의 순서를 결정합니다. 순서는 레이어가 아닌 서브 레이어를 기반으로 하므로, 예를 들어 모든 불투명 서브 레이어를 먼저 렌더링한 다음 모든 투명 서브 레이어를 렌더링할 수 있습니다.
 
-**Note**: Putting a model component inside a layer that is rendered after the world layer **will not** make the model render on top of everything in the world layer! The Standard Material used to render models has a property called `depthTest`. When this is true (the default) before each pixel of the model is rendered the GPU will test to see if there is something else in front if this pixel. Even if that pixel was drawn in an earlier layer depth test ensures that only visible pixels are drawn. If you wish to ignore the distance from the camera when rendering a mesh, disable `depthTest` in your material.
+**참고**: 월드 레이어 이후에 렌더링되는 레이어 내부에 모델 컴포넌트를 배치해도 모델이 월드 레이어의 모든 것 위에 렌더링되지 **않습니다**! 모델을 렌더링하는 데 사용되는 표준 머티리얼에는 `depthTest`라는 속성이 있습니다. 이것이 true(기본값)일 때 모델의 각 픽셀이 렌더링되기 전에 GPU는 이 픽셀 앞에 다른 것이 있는지 테스트합니다. 해당 픽셀이 이전 레이어에서 그려졌더라도 깊이 테스트는 보이는 픽셀만 그려지도록 보장합니다. 메시를 렌더링할 때 카메라로부터의 거리를 무시하려면 머티리얼에서 `depthTest`를 비활성화하세요.
 
-### Sort Modes {#sort-modes}
+### 정렬 모드 {#sort-modes}
 
-Each sub-layer has a sort mode. Every frame the meshes in a sub-layer are sorted according to its sort mode. This determines the order that the meshes are rendered in when the sub-layer is rendered.
+각 서브 레이어에는 정렬 모드가 있습니다. 매 프레임마다 서브 레이어의 메시는 해당 정렬 모드에 따라 정렬됩니다. 이는 서브 레이어가 렌더링될 때 메시가 렌더링되는 순서를 결정합니다.
 
-* **Material / Mesh** (`pc.SORTMODE_MATERIALMESH`) - This is the default mode for opaque sub-layers. Mesh instances are sorted to minimize switching between materials and meshes to improve rendering performance.
-* **Back-to-front** (`pc.SORTMODE_BACK2FRONT`) - This is the default mode for transparent sub-layers. Mesh instances are sorted back to front. This is the way to properly render many semi-transparent objects on different depth, one is blended on top of another.
-* **Front-to-back** (`pc.SORTMODE_FRONT2BACK`) - Mesh instances are sorted front to back. Depending on GPU and the scene, this option may give better performance than `pc.SORTMODE_MATERIALMESH` due to reduced overdraw.
-* **Manual** (`pc.SORTMODE_MANUAL`) - This is the default mode for UI or 2D layers. Mesh instances are sorted based on the `MeshInstance.drawOrder` property. The Element Component and Sprite Component should be placed in layers using this sort mode.
-* **None** (`pc.SORTMODE_NONE`) - No sorting is applied. Mesh instances are rendered in the same order they were added to a layer.
+* **머티리얼 / 메시** (`pc.SORTMODE_MATERIALMESH`) - 이것은 불투명 서브 레이어의 기본 모드입니다. 메시 인스턴스는 머티리얼과 메시 간의 전환을 최소화하여 렌더링 성능을 향상시키도록 정렬됩니다.
+* **뒤에서 앞으로** (`pc.SORTMODE_BACK2FRONT`) - 이것은 투명 서브 레이어의 기본 모드입니다. 메시 인스턴스는 뒤에서 앞으로 정렬됩니다. 이는 서로 다른 깊이에서 많은 반투명 객체를 올바르게 렌더링하는 방법으로, 하나가 다른 것 위에 블렌딩됩니다.
+* **앞에서 뒤로** (`pc.SORTMODE_FRONT2BACK`) - 메시 인스턴스는 앞에서 뒤로 정렬됩니다. GPU와 씬에 따라 이 옵션은 오버드로우 감소로 인해 `pc.SORTMODE_MATERIALMESH`보다 더 나은 성능을 제공할 수 있습니다.
+* **수동** (`pc.SORTMODE_MANUAL`) - 이것은 UI 또는 2D 레이어의 기본 모드입니다. 메시 인스턴스는 `MeshInstance.drawOrder` 속성을 기반으로 정렬됩니다. Element 컴포넌트와 Sprite 컴포넌트는 이 정렬 모드를 사용하는 레이어에 배치되어야 합니다.
+* **없음** (`pc.SORTMODE_NONE`) - 정렬이 적용되지 않습니다. 메시 인스턴스는 레이어에 추가된 순서와 동일한 순서로 렌더링됩니다.
 
-In addition to these sort modes, the `MeshInstance.drawBucket` property provides an additional, coarser level of sorting of `MeshInstances` within a layer. This integer value, ranging from 0 to 255 (default 127), serves as the primary sort key for mesh rendering. Meshes are sorted in ascending order by `drawBucket` (lower values rendered first), and then further sorted within each bucket according to the layer's selected sort mode. Note that the `drawBucket` setting is only effective when mesh instances are added to a sub-layer with its sort mode set to `pc.SORTMODE_BACK2FRONT`, `pc.SORTMODE_FRONT2BACK`, or `pc.SORTMODE_MATERIALMESH`. This allows you to group meshes into distinct rendering buckets, forcing certain groups to render before or after others, regardless of their material or depth, offering fine-grained control over the overall rendering order within those specific sort modes.
+이러한 정렬 모드 외에도 `MeshInstance.drawBucket` 속성은 레이어 내에서 `MeshInstances`의 추가적이고 더 거친 수준의 정렬을 제공합니다. 0부터 255(기본값 127)까지의 이 정수 값은 메시 렌더링의 주요 정렬 키 역할을 합니다. 메시는 `drawBucket`에 따라 오름차순으로 정렬되고(낮은 값이 먼저 렌더링됨), 그 다음 레이어의 선택된 정렬 모드에 따라 각 버킷 내에서 추가로 정렬됩니다. `drawBucket` 설정은 메시 인스턴스가 정렬 모드가 `pc.SORTMODE_BACK2FRONT`, `pc.SORTMODE_FRONT2BACK`, 또는 `pc.SORTMODE_MATERIALMESH`로 설정된 서브 레이어에 추가될 때만 효과적입니다. 이를 통해 머티리얼이나 깊이에 관계없이 특정 그룹이 다른 그룹보다 먼저 또는 나중에 렌더링되도록 강제하여 해당 특정 정렬 모드 내에서 전체 렌더링 순서에 대한 세밀한 제어를 제공합니다.
 
-## Default Layers {#default-layers}
+## 기본 레이어 {#default-layers}
 
-OasisW applications are created with a set of default layers. You should leave these layers in place as some engine features will not function correctly if they are not present. They default order is below:
+OasisW 애플리케이션은 기본 레이어 세트로 생성됩니다. 일부 엔진 기능이 제대로 작동하지 않을 수 있으므로 이러한 레이어를 그대로 두어야 합니다. 기본 순서는 다음과 같습니다:
 
 ![Default Layers](/img/user-manual/graphics/layers/default-layers.jpg)
 
-1. **World (Opaque)** - Used to render components that are not transparent and most opaque component meshes.
-1. **Depth (Opaque)** - Used to capture the color or the depth buffer of the scene, see [Depth Layer][7].
-1. **Skybox (Opaque)** - Used to render the skybox. It is rendered after the World (Opaque) to reduce overdraw.
-1. **World (Transparent)** - Used to render components that are transparent and other transparent component meshes.
-1. **Immediate (Opaque)** - Used to render immediate mode meshes. e.g. `app.renderLine()`.
-1. **Immediate (Transparent)** - Used to render immediate mode meshes. e.g. `app.renderLine()`.
-1. **UI (Transparent)** - Used to render Element components. All Element components are transparent, so the Opaque sub-layer is not used.
+1. **World (Opaque)** - 투명하지 않은 컴포넌트와 대부분의 불투명 컴포넌트 메시를 렌더링하는 데 사용됩니다.
+1. **Depth (Opaque)** - 씬의 색상 또는 깊이 버퍼를 캡처하는 데 사용됩니다. [깊이 레이어][7]를 참조하세요.
+1. **Skybox (Opaque)** - 스카이박스를 렌더링하는 데 사용됩니다. 오버드로우를 줄이기 위해 World (Opaque) 이후에 렌더링됩니다.
+1. **World (Transparent)** - 투명한 컴포넌트와 기타 투명 컴포넌트 메시를 렌더링하는 데 사용됩니다.
+1. **Immediate (Opaque)** - 즉시 모드 메시를 렌더링하는 데 사용됩니다. 예: `app.renderLine()`.
+1. **Immediate (Transparent)** - 즉시 모드 메시를 렌더링하는 데 사용됩니다. 예: `app.renderLine()`.
+1. **UI (Transparent)** - Element 컴포넌트를 렌더링하는 데 사용됩니다. 모든 Element 컴포넌트는 투명하므로 Opaque 서브 레이어는 사용되지 않습니다.
 
-## Using Custom Layers {#using-custom-layers}
+## 사용자 정의 레이어 사용 {#using-custom-layers}
 
-The default layers are great for implementing the existing engine features but the real power comes from creating your own layers to customize the order in which your content is rendered.
+기본 레이어는 기존 엔진 기능을 구현하는 데 훌륭하지만, 진정한 힘은 콘텐츠가 렌더링되는 순서를 사용자 정의하기 위해 자신만의 레이어를 만드는 데서 나옵니다.
 
-### Create a layer {#create-a-layer}
+### 레이어 생성 {#create-a-layer}
 
-Layers are controlled from the **LAYERS** panel in the **Settings** section of the Editor.
+레이어는 에디터의 **Settings** 섹션에 있는 **LAYERS** 패널에서 제어됩니다.
 
 ![Creating a layer](/img/user-manual/graphics/layers/new-layer.jpg)
 
-In the Layers section, type in the name of the layer that you wish to create and click **Add Layer**. Your new layer will appear in the list of available layers below the button.
+레이어 섹션에서 생성하려는 레이어의 이름을 입력하고 **Add Layer**를 클릭하세요. 새 레이어가 버튼 아래의 사용 가능한 레이어 목록에 나타납니다.
 
-### Setting the sort mode {#setting-the-sort-mode}
+### 정렬 모드 설정 {#setting-the-sort-mode}
 
 ![Edit a layer](/img/user-manual/graphics/layers/edit-layer.jpg)
 
-You can choose the sort mode for each sub-layer in the layer list. Expand your layer and choose the sort mode from the dropdown menu.
+레이어 목록에서 각 서브 레이어의 정렬 모드를 선택할 수 있습니다. 레이어를 확장하고 드롭다운 메뉴에서 정렬 모드를 선택하세요.
 
-### Choosing the layer order {#choosing-the-layer-order}
+### 레이어 순서 선택 {#choosing-the-layer-order}
 
 ![Add layer](/img/user-manual/graphics/layers/add-sub-layer.jpg)
 
-Add a sub-layer to the layer composition by selecting **ADD SUBLAYER** and choosing which sub-layer you wish to add. Once your layer is in the Render Order list you can re-arrange the order by dragging each sub-layer up and down.
+**ADD SUBLAYER**를 선택하고 추가하려는 서브 레이어를 선택하여 레이어 구성에 서브 레이어를 추가하세요. 레이어가 렌더 순서 목록에 있으면 각 서브 레이어를 위아래로 드래그하여 순서를 재정렬할 수 있습니다.
 
-### Rendering entities in layers {#rendering-entities-in-layers}
+### 레이어에서 엔티티 렌더링 {#rendering-entities-in-layers}
 
-Components that render meshes all have a `layers` property which is used to determine which layer and sub-layer the mesh should be added to. These components include: Model, Element, Sprite, Particle System. The Camera and Light components also have a `layers` property to determine which layers they render and light respectively.
+메시를 렌더링하는 컴포넌트는 모두 메시가 어떤 레이어와 서브 레이어에 추가되어야 하는지 결정하는 데 사용되는 `layers` 속성을 가집니다. 이러한 컴포넌트에는 Model, Element, Sprite, Particle System이 포함됩니다. Camera와 Light 컴포넌트도 각각 렌더링하고 조명을 비추는 레이어를 결정하는 `layers` 속성을 가집니다.
 
 ![Layer Components](/img/user-manual/graphics/layers/test-layer-components.jpg)
 
-*Note:* The model is assigned to the Test Layer. In order for it to be rendered, the camera must include Test Layer in its layer list. In order for it to be lit, the light must include Test Layer in its layer list too.
+*참고:* 모델이 Test Layer에 할당되었습니다. 렌더링되려면 카메라가 레이어 목록에 Test Layer를 포함해야 합니다. 조명을 받으려면 조명도 레이어 목록에 Test Layer를 포함해야 합니다.
 
-### Recommended setup {#recommended-setup}
+### 권장 설정 {#recommended-setup}
 
-Your scene typically contains many entities, which render meshes. It is recommended for each of these to be on exactly one layer. In most cases, these would be on the World layer, but for more control, you can assign them to layers such as Terrain, Buildings, Characters.
+씬에는 일반적으로 메시를 렌더링하는 많은 엔티티가 포함됩니다. 각각이 정확히 하나의 레이어에 있도록 하는 것이 권장됩니다. 대부분의 경우 이들은 World 레이어에 있지만, 더 많은 제어를 위해 Terrain, Buildings, Characters와 같은 레이어에 할당할 수 있습니다.
 
-A new scene by default contains a single camera, and this is all that is needed in many applications. Additional cameras are useful for cases such as cutting between different cameras in the scene, or when rendering picture in picture or split screen, or when rendering the scene into a texture.
+새 씬은 기본적으로 단일 카메라를 포함하며, 이는 많은 애플리케이션에서 필요한 전부입니다. 추가 카메라는 씬의 서로 다른 카메라 간 전환, PIP(Picture in Picture) 또는 스플릿 스크린 렌더링, 또는 씬을 텍스처로 렌더링하는 경우에 유용합니다.
 
-When you add an additional camera, these are the recommended steps:
+추가 카메라를 추가할 때 다음 단계를 권장합니다:
 
-1. Set the priority of new and existing cameras to control the order in which they render.
-2. Set up the layers of the newly created camera to specify which layers it renders. For example you might render a top down map camera and only want Terrain and Building layers in it, but not Characters.
-3. If your camera renders into a texture, use a script to assign a render target to the `renderTarget` property of the camera.
+1. 렌더링 순서를 제어하기 위해 새 카메라와 기존 카메라의 우선순위를 설정하세요.
+2. 새로 생성된 카메라의 레이어를 설정하여 어떤 레이어를 렌더링하는지 지정하세요. 예를 들어, 위에서 아래로 보는 맵 카메라를 렌더링하고 Terrain과 Building 레이어만 포함하고 Characters는 포함하지 않을 수 있습니다.
+3. 카메라가 텍스처로 렌더링하는 경우 스크립트를 사용하여 카메라의 `renderTarget` 속성에 렌더 타겟을 할당하세요.
 
 [7]: /user-manual/graphics/cameras/depth-layer

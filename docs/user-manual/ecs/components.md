@@ -1,10 +1,10 @@
 ---
-title: Components
+title: 컴포넌트 (Component)
 ---
 
-A **[`Component`](https://manual.oasisserver.link/engine/classes/Component.html)** adds data and behavior to an Entity.
+[**`Component`**](https://manual.oasisserver.link/engine/classes/Component.html)는 엔티티에 데이터와 동작을 추가합니다.
 
-## Examples
+## 예시
 
 - [`CameraComponent`](https://manual.oasisserver.link/engine/classes/CameraComponent.html)
 - [`LightComponent`](https://manual.oasisserver.link/engine/classes/LightComponent.html)
@@ -13,10 +13,10 @@ A **[`Component`](https://manual.oasisserver.link/engine/classes/Component.html)
 - [`ScriptComponent`](https://manual.oasisserver.link/engine/classes/ScriptComponent.html)
 
 :::tip
-Only add components you actually need, and remove unused ones to keep Entities lean.
+실제로 필요한 컴포넌트만 추가하고, 사용하지 않는 것은 제거하여 엔티티를 가볍게 유지하세요.
 :::
 
-## Adding a Component in code
+## 코드에서 컴포넌트 추가
 
 ```javascript
 entity.addComponent('camera', {
@@ -26,30 +26,30 @@ entity.addComponent('camera', {
 });
 ```
 
-See [`addComponent`](https://manual.oasisserver.link/engine/classes/Entity.html#addcomponent).
+[`addComponent`](https://manual.oasisserver.link/engine/classes/Entity.html#addcomponent)를 참조하세요.
 
-## Accessing a Component
+## 컴포넌트 접근
 
 ```javascript
 const camera = entity.camera;
 ```
 
-## Removing a Component
+## 컴포넌트 제거
 
 ```javascript
 entity.removeComponent('camera');
 ```
 
-See [`removeComponent`](https://manual.oasisserver.link/engine/classes/Entity.html#removecomponent).
+[`removeComponent`](https://manual.oasisserver.link/engine/classes/Entity.html#removecomponent)를 참조하세요.
 
-## Enabling / Disabling Components
+## 컴포넌트 활성화 / 비활성화
 
 ```javascript
 entity.model.enabled = false;
 ```
 
-See [`enabled`](https://manual.oasisserver.link/engine/classes/Component.html#enabled).
+[`enabled`](https://manual.oasisserver.link/engine/classes/Component.html#enabled)를 참조하세요.
 
 :::tip
-If a component is temporarily not needed, consider disabling it instead of removing it.
+컴포넌트가 일시적으로 필요하지 않다면, 제거하는 대신 비활성화를 고려하세요.
 :::

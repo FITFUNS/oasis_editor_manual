@@ -1,8 +1,8 @@
 ---
-title: Anim Component
+title: 애님 컴포넌트 (Anim Component)
 ---
 
-Click here to learn how to use the [Anim Component][1].
+[애님 컴포넌트][1] 사용 방법을 알아보려면 여기를 클릭하세요.
 
 ![New Anim Component](/img/user-manual/anim/new_anim_component.png)
 

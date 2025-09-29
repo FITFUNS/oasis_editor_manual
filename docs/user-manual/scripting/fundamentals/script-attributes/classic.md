@@ -1,20 +1,20 @@
 ---
-title: Classic Reference
+title: 클래식 참조 (Classic Reference)
 ---
 
-:::note
+<!-- :::note
 
-This page documents Script Attributes for the deprecated **Classic Scripts** system.
+이 페이지는 더 이상 사용되지 않는 **클래식 스크립트** 시스템의 스크립트 속성을 문서화합니다.
 
-<!-- For **ESM Script Attributes**, click [here](./esm.md). -->
+For **ESM Script Attributes**, click [here](./esm.md).
 
-:::
+::: -->
 
-Script Attributes are a powerful feature that lets you expose values from your script files so that they appear in the OasisW Editor. This means you can write code once, and then tweak values on different instances of an Entity to give them different properties. This is perfect for exposing properties for artists, designers or other non-programmer team members so that they are able to adjust and modify values without writing code.
+스크립트 속성은 스크립트 파일의 값을 노출하여 OasisW 에디터에 표시되게 하는 강력한 기능입니다. 이는 코드를 한 번 작성한 다음, 엔티티의 다른 인스턴스에서 값을 조정하여 다른 속성을 부여할 수 있음을 의미합니다. 이는 아티스트, 디자이너 또는 다른 비프로그래머 팀 멤버가 코드를 작성하지 않고도 값을 조정하고 수정할 수 있도록 속성을 노출하는 데 완벽합니다.
 
-## Declaring Script Attributes
+## 스크립트 속성 선언
 
-Script Attributes are declared at the top of your script file using this format:
+스크립트 속성은 다음 형식을 사용하여 스크립트 파일의 상단에 선언됩니다:
 
 ```javascript
 var MyScript = pc.createScript('myScript');
@@ -25,9 +25,9 @@ MyScript.attributes.add('speed', {
 });
 ```
 
-In this example, we're declaring a property called `speed` which is a `number` and has a default value of `80`:
+이 예제에서 우리는 `number` 타입이고 기본값이 `80`인 `speed`라는 속성을 선언하고 있습니다:
 
-If you need an array of attributes set `array: true` like so:
+속성 배열이 필요하다면 다음과 같이 `array: true`를 설정하세요:
 
 ```javascript
 var MyScript = pc.createScript('myScript');
@@ -38,17 +38,17 @@ MyScript.attributes.add('names', {
 });
 ```
 
-## Getting Attributes into Editor
+## 에디터에서 속성 가져오기
 
 ![Script Attributes](/img/user-manual/scripting/script-attributes.png)
 
-Once you've declared your attributes the Editor needs to parse the code in order to expose the script attributes. If attributes have been changed, you need to manually refresh the attributes you can click the parse button.
+속성을 선언한 후 에디터가 스크립트 속성을 노출하기 위해 코드를 파싱해야 합니다. 속성이 변경된 경우 파싱 버튼을 클릭하여 속성을 수동으로 새로고침해야 합니다.
 
 ![Parse Button](/img/user-manual/scripting/script-parse-button.png)
 
-## Accessing attributes in your code
+## 코드에서 속성 접근
 
-When you declare an attribute in your script it will be available as a member variable on your script instance. For example, the `speed` property declared above is available as `this.speed`.
+스크립트에서 속성을 선언하면 스크립트 인스턴스의 멤버 변수로 사용할 수 있습니다. 예를 들어, 위에서 선언한 `speed` 속성은 `this.speed`로 사용할 수 있습니다.
 
 ```javascript
 MyScript.prototype.update = function (dt) {
@@ -56,45 +56,45 @@ MyScript.prototype.update = function (dt) {
 }
 ```
 
-## Updating attributes
+## 속성 업데이트
 
-When you modify an attribute in the editor the changes are sent to any copies of the application launched from the editor. This means you can live edit your attributes without reloading your application. If you need to apply special behavior when an attribute changes. Use the `attr` and `attr:[name]` events to respond to changes
+에디터에서 속성을 수정하면 변경사항이 에디터에서 실행된 애플리케이션의 모든 복사본에 전송됩니다. 이는 애플리케이션을 다시 로드하지 않고도 속성을 실시간으로 편집할 수 있음을 의미합니다. 속성이 변경될 때 특별한 동작을 적용해야 하는 경우 `attr` 및 `attr:[name]` 이벤트를 사용하여 변경사항에 반응하세요.
 
 ```javascript
 MyScript.prototype.initialize = function () {
-    // fires only for `speed` attribute
+    // `speed` 속성에 대해서만 발생
     this.on('attr:speed', function (value, prev) {
-        // new value for speed
+        // speed의 새로운 값
     });
 
-    // fires for all attribute changes
+    // 모든 속성 변경에 대해 발생
     this.on('attr', function(name, value, prev) {
-        // new attribute value
+        // 새로운 속성 값
     });
 }
 ```
 
-## Attribute types
+## 속성 타입
 
-When you declare an attribute you also declare the type of the attribute. This allows the editor to show the relevant controls for you to edit the attribute. Most types are self-explanatory, for example, 'boolean', 'number' or 'string'. But some require some further explanation in the below examples. See the [full attribute reference][3] for more details.
+속성을 선언할 때 속성의 타입도 선언합니다. 이를 통해 에디터가 속성을 편집하기 위한 관련 컨트롤을 표시할 수 있습니다. 대부분의 타입은 자명합니다. 예를 들어, 'boolean', 'number' 또는 'string'입니다. 하지만 일부는 아래 예제에서 추가 설명이 필요합니다. 자세한 내용은 [전체 속성 참조][3]를 참조하세요.
 
-### Entity attribute
+### Entity 속성
 
 ```javascript
 MyScript.attributes.add('target', { type: 'entity' })
 ```
 
-The Entity type lets your reference another entity in your hierarchy. A great way to link two entities together.
+Entity 타입을 사용하면 계층 구조의 다른 엔티티를 참조할 수 있습니다. 두 엔티티를 연결하는 좋은 방법입니다.
 
-### Asset attribute
+### Asset 속성
 
 ```javascript
 MyScript.attributes.add('textures', { type: 'asset', assetType: 'texture', array: true });
 ```
 
-The Asset attribute let's you reference a project asset in your script. The asset attribute also supports the `assetType` property which limits the attribute to assets of a particular type, e.g. 'texture', 'material', 'model'.
+Asset 속성을 사용하면 스크립트에서 프로젝트 에셋을 참조할 수 있습니다. Asset 속성은 특정 타입의 에셋(예: 'texture', 'material', 'model')으로 속성을 제한하는 `assetType` 속성도 지원합니다.
 
-The runtime type of an Asset attribute is `pc.Asset`. You can reference the resource of an Asset attribute at runtime like so:
+Asset 속성의 런타임 타입은 `pc.Asset`입니다. 런타임에 Asset 속성의 리소스를 다음과 같이 참조할 수 있습니다:
 
 ```javascript
 MyScript.attributes.add('texture', {type: 'asset', assetType: 'texture'});
@@ -105,28 +105,28 @@ MyScript.prototype.initialize = function () {
 };
 ```
 
-### Color attribute
+### Color 속성
 
 ```javascript
 MyScript.attributes.add('color', { type: 'rgba' });
 ```
 
-The color attribute shows a color picker when exposed in the editor. There are two options `rgb` and `rgba` depending on whether you wish to expose the alpha channel as well.
+Color 속성은 에디터에서 노출될 때 색상 선택기를 표시합니다. 알파 채널도 노출할지 여부에 따라 `rgb`와 `rgba` 두 가지 옵션이 있습니다.
 
-### Curve attribute
+### Curve 속성
 
 ```javascript
-MyScript.attributes.add('wave', { type: 'curve' }); // one curve
-MyScript.attributes.add('wave', { type: 'curve', curves: [ 'x', 'y', 'z' ] }); // three curves: x, y, z
-MyScript.attributes.add('wave', { type: 'curve', color: 'r' }); // one curve for red channel
-MyScript.attributes.add('wave', { type: 'curve', color: 'rgba' }); // four curves for full color including alpha
+MyScript.attributes.add('wave', { type: 'curve' }); // 하나의 곡선
+MyScript.attributes.add('wave', { type: 'curve', curves: [ 'x', 'y', 'z' ] }); // 세 개의 곡선: x, y, z
+MyScript.attributes.add('wave', { type: 'curve', color: 'r' }); // 빨간색 채널용 하나의 곡선
+MyScript.attributes.add('wave', { type: 'curve', color: 'rgba' }); // 알파를 포함한 전체 색상용 네 개의 곡선
 ```
 
-The curve attribute is used to express a value that changes over a time period. All curves are defined over the period 0.0 - 1.0. You can define multiple curves, for example if you wish to have a 3D position from a curve defined three curves for x,y,z using the `curves` property. There is also a special curve editor for modifying colors using the `color` property.
+Curve 속성은 시간에 따라 변하는 값을 표현하는 데 사용됩니다. 모든 곡선은 0.0 - 1.0 기간에 걸쳐 정의됩니다. 예를 들어 곡선에서 3D 위치를 원한다면 `curves` 속성을 사용하여 x, y, z에 대한 세 개의 곡선을 정의할 수 있습니다. `color` 속성을 사용하여 색상을 수정하는 특별한 곡선 에디터도 있습니다.
 
-### Enumeration attribute
+### Enumeration 속성
 
-The Enumeration attribute allows you to choose one of the available options:
+Enumeration 속성을 사용하면 사용 가능한 옵션 중 하나를 선택할 수 있습니다:
 
 ```javascript
 MyScript.attributes.add('value', {
@@ -139,11 +139,11 @@ MyScript.attributes.add('value', {
 });
 ```
 
-Use the enum property to declare the list of possible values for your enumeration. Property is an array of objects where each object is an option where `key` is a title of an option and `value` is a value for attribute. This property can be used for various attribute types, e.g. `number`, `string`.
+enum 속성을 사용하여 열거형의 가능한 값 목록을 선언하세요. 속성은 객체 배열이며, 각 객체는 `key`가 옵션의 제목이고 `value`가 속성의 값인 옵션입니다. 이 속성은 `number`, `string` 등 다양한 속성 타입에 사용할 수 있습니다.
 
-### JSON attribute
+### JSON 속성
 
-The JSON attribute allows you to create nested attributes of the other attribute types. For every JSON attribute you must specify a schema to describe its properties. The schema contains other regular script attribute definitions like above. For example:
+JSON 속성을 사용하면 다른 속성 타입의 중첩된 속성을 생성할 수 있습니다. 모든 JSON 속성에 대해 해당 속성을 설명하는 스키마를 지정해야 합니다. 스키마에는 위와 같은 다른 일반 스크립트 속성 정의가 포함됩니다. 예를 들어:
 
 ```javascript
 MyScript.attributes.add('gameConfig', {
@@ -165,9 +165,9 @@ MyScript.attributes.add('gameConfig', {
 });
 ```
 
-You can also declare arrays of JSON attributes so that you can create arrays of editable objects. Just add `array: true` when defining the JSON attribute like you do for other attribute types.
+편집 가능한 객체의 배열을 생성할 수 있도록 JSON 속성의 배열을 선언할 수도 있습니다. 다른 속성 타입에서와 같이 JSON 속성을 정의할 때 `array: true`를 추가하기만 하면 됩니다.
 
-Here's an example of accessing the above attributes in a script:
+다음은 스크립트에서 위의 속성에 접근하는 예제입니다:
 
 ```javascript
 MyScript.prototype.update = function (dt) {
@@ -181,7 +181,7 @@ MyScript.prototype.update = function (dt) {
 
 :::note
 
-We currently do not support defining JSON attributes as children of other JSON attributes. You can only go 1 level deep when defining a JSON attribute.
+현재 다른 JSON 속성의 자식으로 JSON 속성을 정의하는 것은 지원하지 않습니다. JSON 속성을 정의할 때는 1단계 깊이까지만 가능합니다.
 
 :::
 

@@ -2,23 +2,23 @@
 title: JSON
 ---
 
-[JSON](https://en.wikipedia.org/wiki/JSON) (JavaScript Object Notation) is a lightweight data-interchange format that is easy for humans to read and write and easy for machines to parse and generate.
+[JSON](https://en.wikipedia.org/wiki/JSON) (JavaScript Object Notation)은 사람이 읽고 쓰기 쉽고 기계가 파싱하고 생성하기 쉬운 경량 데이터 교환 형식입니다.
 
-In OasisW, JSON assets are used to store various types of structured data. Some example use cases are:
+OasisW에서 JSON 에셋은 다양한 유형의 구조화된 데이터를 저장하는 데 사용됩니다. 일부 사용 사례는 다음과 같습니다:
 
-- Configuration files
-- Data for procedural generation
-- Storing game settings
-- Level design data
+- 설정 파일
+- 절차적 생성을 위한 데이터
+- 게임 설정 저장
+- 레벨 디자인 데이터
 
-## Accessing JSON Data in Scripts
+## 스크립트에서 JSON 데이터 접근
 
-To access data from a JSON asset in a script:
+스크립트에서 JSON 에셋의 데이터에 접근하려면:
 
-1. Add the JSON asset to the script as an attribute.
-2. Access the JSON asset's resource which is the object parsed from the JSON data.
+1. JSON 에셋을 스크립트에 속성으로 추가합니다.
+2. JSON 데이터에서 파싱된 객체인 JSON 에셋의 리소스에 접근합니다.
 
-Example:
+예시:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

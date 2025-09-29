@@ -1,0 +1,102 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.usageSidebar.category.OasisW 스튜디오": {
+    "message": "OasisW 스튜디오",
+    "description": "The label for category OasisW 스튜디오 in sidebar usageSidebar"
+  },
+  "sidebar.usageSidebar.category.인터페이스": {
+    "message": "인터페이스",
+    "description": "The label for category 인터페이스 in sidebar usageSidebar"
+  },
+  "sidebar.usageSidebar.category.AI": {
+    "message": "AI",
+    "description": "The label for category AI in sidebar usageSidebar"
+  },
+  "sidebar.usageSidebar.category.서버": {
+    "message": "서버",
+    "description": "The label for category 서버 in sidebar usageSidebar"
+  },
+  "sidebar.usageSidebar.category.스크립트": {
+    "message": "스크립트",
+    "description": "The label for category 스크립트 in sidebar usageSidebar"
+  },
+  "sidebar.userManualSidebar.category.시작하기": {
+    "message": "시작하기",
+    "description": "The label for category 시작하기 in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.엔티티 컴포넌트 시스템 (Entity Component System)": {
+    "message": "엔티티 컴포넌트 시스템 (Entity Component System)",
+    "description": "The label for category 엔티티 컴포넌트 시스템 (Entity Component System) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.씬 (Scenes)": {
+    "message": "씬 (Scenes)",
+    "description": "The label for category 씬 (Scenes) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.컴포넌트 (Components)": {
+    "message": "컴포넌트 (Components)",
+    "description": "The label for category 컴포넌트 (Components) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.에셋 (Assets)": {
+    "message": "에셋 (Assets)",
+    "description": "The label for category 에셋 (Assets) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.타입 (Types)": {
+    "message": "타입 (Types)",
+    "description": "The label for category 타입 (Types) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.모델 (Models)": {
+    "message": "모델 (Models)",
+    "description": "The label for category 모델 (Models) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.스크립팅 (Scripting)": {
+    "message": "스크립팅 (Scripting)",
+    "description": "The label for category 스크립팅 (Scripting) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.스크립팅 기초 (Scripting Fundamentals)": {
+    "message": "스크립팅 기초 (Scripting Fundamentals)",
+    "description": "The label for category 스크립팅 기초 (Scripting Fundamentals) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.스크립트 속성 (Script Attributes)": {
+    "message": "스크립트 속성 (Script Attributes)",
+    "description": "The label for category 스크립트 속성 (Script Attributes) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.그래픽스 (Graphics)": {
+    "message": "그래픽스 (Graphics)",
+    "description": "The label for category 그래픽스 (Graphics) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.카메라 (Cameras)": {
+    "message": "카메라 (Cameras)",
+    "description": "The label for category 카메라 (Cameras) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.조명 (Lighting)": {
+    "message": "조명 (Lighting)",
+    "description": "The label for category 조명 (Lighting) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.물리 기반 렌더링 (Physically Based Rendering)": {
+    "message": "물리 기반 렌더링 (Physically Based Rendering)",
+    "description": "The label for category 물리 기반 렌더링 (Physically Based Rendering) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.선형 워크플로우 (Linear Workflow)": {
+    "message": "선형 워크플로우 (Linear Workflow)",
+    "description": "The label for category 선형 워크플로우 (Linear Workflow) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.애니메이션 (Animation)": {
+    "message": "애니메이션 (Animation)",
+    "description": "The label for category 애니메이션 (Animation) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.물리 (Physics)": {
+    "message": "물리 (Physics)",
+    "description": "The label for category 물리 (Physics) in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.2D": {
+    "message": "2D",
+    "description": "The label for category 2D in sidebar userManualSidebar"
+  },
+  "sidebar.userManualSidebar.category.사용자 인터페이스 (User Interface)": {
+    "message": "사용자 인터페이스 (User Interface)",
+    "description": "The label for category 사용자 인터페이스 (User Interface) in sidebar userManualSidebar"
+  }
+}

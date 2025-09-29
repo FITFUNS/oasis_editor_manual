@@ -1,24 +1,24 @@
 ---
-title: User Interface
+title: 사용자 인터페이스 (User Interface)
 ---
 
-User Interfaces present a unique challenge for graphical applications. There are several options for building User Interfaces in OasisW.
+사용자 인터페이스는 그래픽 애플리케이션에 고유한 도전을 제시합니다. OasisW에서 사용자 인터페이스를 구축하는 여러 옵션이 있습니다.
 
-## Screen and Element Components (Recommended)
+## 화면 및 요소 컴포넌트 (권장)
 
 ![Intro](/img/user-manual/user-interface/user-interface-intro-sq.png)
 
-OasisW implements two components which can form the building blocks of a user interface system that runs directly inside your WebGL canvas. The [Screen Component][2] is the user interface container, and the [Element Component][3] is used to add user interface elements. The primary advantage is that your user interface exists in the same context as the rest of your game. This allows interactions between the application and the user interface.
+OasisW는 WebGL 캔버스 내부에서 직접 실행되는 사용자 인터페이스 시스템의 구성 요소가 될 수 있는 두 가지 컴포넌트를 구현합니다. [화면 컴포넌트][2]는 사용자 인터페이스 컨테이너이고, [요소 컴포넌트][3]는 사용자 인터페이스 요소를 추가하는 데 사용됩니다. 주요 장점은 사용자 인터페이스가 게임의 나머지 부분과 동일한 컨텍스트에 존재한다는 것입니다. 이를 통해 애플리케이션과 사용자 인터페이스 간의 상호 작용이 가능합니다.
 
-## HTML and CSS
+## HTML과 CSS
 
-Web browsers have spent years building effective and optimized systems for rendering complex interfaces to users. For some use cases using the HTML, CSS and the browser DOM are a good fit for your user interface.
+웹 브라우저는 사용자에게 복잡한 인터페이스를 렌더링하기 위한 효과적이고 최적화된 시스템을 구축하는 데 수년을 보냈습니다. 일부 사용 사례에서는 HTML, CSS 및 브라우저 DOM을 사용하는 것이 사용자 인터페이스에 적합합니다.
 
-The primary downside of using the DOM is performance. The DOM is not designed to be run in a high framerate, real time setting. Page reflows and garbage collection can causes stutters in your application. If you're aiming for a consistent 60fps in your application this is not the best option.
+DOM을 사용하는 주요 단점은 성능입니다. DOM은 높은 프레임레이트의 실시간 설정에서 실행되도록 설계되지 않았습니다. 페이지 리플로우와 가비지 컬렉션은 애플리케이션에서 끊김을 일으킬 수 있습니다. 애플리케이션에서 일관된 60fps를 목표로 한다면 이것이 최선의 옵션은 아닙니다.
 
 ---
 
-The rest of this user guide will focus on the Screen and Element component system and using them to build user interfaces in OasisW.
+이 사용자 가이드의 나머지 부분은 스크린 및 엘리먼트 컴포넌트 시스템에 중점을 두고 OasisW에서 사용자 인터페이스를 구축하는 데 사용하는 방법을 다룹니다.
 
 [2]: /user-manual/scenes/components/screen
 [3]: /user-manual/scenes/components/element

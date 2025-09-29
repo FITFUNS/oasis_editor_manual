@@ -1,35 +1,35 @@
 ---
-title: Updating ammo.js
+title: ammo.js 업데이트 (Updating ammo.js)
 ---
 
-### Introduction
+### 소개
 
-OasisW has added support for the latest version of ammo.js.
+OasisW는 ammo.js의 최신 버전에 대한 지원을 추가했습니다.
 
-The new version has a number of benefits:
+새 버전에는 여러 가지 이점이 있습니다:
 
-- more of the underlying Bullet API has been exposed
-- support for ammo.js wasm module has been added
-- the wasm version is smaller and runs faster
+- 기본 Bullet API의 더 많은 부분이 노출되었습니다
+- ammo.js wasm 모듈에 대한 지원이 추가되었습니다
+- wasm 버전은 더 작고 더 빠르게 실행됩니다
 
-### Existing projects
+### 기존 프로젝트
 
-Projects created before the introduction of wasm modules continue by default to use the legacy version of ammo.js. It is up to project owners to migrate their physics system to the latest version of ammo.js.
+wasm 모듈 도입 이전에 생성된 프로젝트는 기본적으로 ammo.js의 레거시 버전을 계속 사용합니다. 프로젝트 소유자가 물리 시스템을 ammo.js의 최신 버전으로 마이그레이션하는 것은 프로젝트 소유자의 몫입니다.
 
-To check if your project is using the legacy version of ammo.js, navigate to the Scene Settings panel:
+프로젝트가 ammo.js의 레거시 버전을 사용하고 있는지 확인하려면 Scene Settings 패널로 이동하세요:
 
 ![Physics Legacy Settings](/img/user-manual/physics/physics-legacy-settings.png)
 
-If 'Enable Physics' does not appear, then the project is new and doesn't have the option of using the legacy built-in version of ammo.js.
+'Enable Physics'가 나타나지 않으면 프로젝트가 새 것이며 ammo.js의 레거시 내장 버전을 사용할 옵션이 없습니다.
 
-Otherwise, if 'Enable Physics' is checked the legacy version of ammo.js is silently being added to your project at build time.
+그렇지 않고 'Enable Physics'가 체크되어 있으면 ammo.js의 레거시 버전이 빌드 시 프로젝트에 조용히 추가되고 있습니다.
 
-### Migration
+### 마이그레이션
 
-In order to use the latest version of ammo.js, disable 'Enable Physics' and click 'Import Ammo'. This imports the latest version of ammo.js provided by OasisW into the Assets Panel.
+ammo.js의 최신 버전을 사용하려면 'Enable Physics'를 비활성화하고 'Import Ammo'를 클릭하세요. 이렇게 하면 OasisW에서 제공하는 ammo.js의 최신 버전이 Assets 패널로 가져와집니다.
 
-If updating ammo.js causes issues with your project you may need to revert back to the old version. Do this by deleting (or disabling) the project's ammo.js modules and re-enabling the physics checkbox.
+ammo.js 업데이트가 프로젝트에 문제를 일으키는 경우 이전 버전으로 되돌려야 할 수 있습니다. 프로젝트의 ammo.js 모듈을 삭제(또는 비활성화)하고 물리 체크박스를 다시 활성화하여 이를 수행하세요.
 
-### Note
+### 참고
 
-The project should either include legacy physics (using the 'Enable Physics' checkbox) or it should have the ammo.js modules included in the project directly, but it should not include both at the same time!
+프로젝트는 레거시 물리( 'Enable Physics' 체크박스 사용)를 포함하거나 프로젝트에 ammo.js 모듈이 직접 포함되어야 하지만, 동시에 둘 다 포함되어서는 안 됩니다!

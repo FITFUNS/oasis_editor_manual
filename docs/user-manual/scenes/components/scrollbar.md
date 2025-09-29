@@ -1,21 +1,21 @@
 ---
-title: Scrollbar
+title: 스크롤바 (Scrollbar)
 ---
 
-The Scrollbar component defines a scrolling control for a [Scrollview][1] component.
+스크롤바 컴포넌트는 [스크롤뷰][1] 컴포넌트에 대한 스크롤 컨트롤을 정의합니다.
 
-See the [User Interface][2] section for more details.
+자세한 내용은 [사용자 인터페이스][2] 섹션을 참조하세요.
 
 ![Scrollbar Component](/img/user-manual/scenes/components/component-scrollbar.png)
 
-## Component Properties
+## 컴포넌트 속성
 
-| Property    | Description |
+| 속성    | 설명 |
 |-------------|-------------|
-| Orientation | Controls whether the scrollbar moves horizontally or vertically. |
-| Value       | The current position value of the scrollbar, in the range 0 to 1. |
-| Handle      | The entity to be used as the scrollbar handle. This entity must have a Scrollbar component. |
-| Handle Size | The size of the handle relative to the size of the track, in the range 0 to 1. For a vertical scrollbar, a value of 1 means that the handle will take up the full height of the track. |
+| Orientation | 스크롤바가 수평 또는 수직으로 이동하는지 제어합니다. |
+| Value       | 스크롤바의 현재 위치 값으로, 0에서 1 범위입니다. |
+| Handle      | 스크롤바 핸들로 사용될 엔티티입니다. 이 엔티티는 스크롤바 컴포넌트를 가져야 합니다. |
+| Handle Size | 트랙 크기에 대한 핸들의 상대 크기로, 0에서 1 범위입니다. 수직 스크롤바의 경우 값 1은 핸들이 트랙의 전체 높이를 차지함을 의미합니다. |
 
 [1]: /user-manual/scenes/components/scrollview
 [2]: /user-manual/user-interface

@@ -1,54 +1,54 @@
 ---
-title: Physically Based Rendering
+title: 물리 기반 렌더링 (Physically Based Rendering)
 ---
 
 ![Star-Lord](/img/user-manual/graphics/physical-rendering/star-lord.jpg)  
 *Star-Lord Model by [Joachim Coppens][2]*
 
-Physically based rendering (PBR) is a combination of artist workflow, measured physical properties and material shaders that work together to bring order and consistency to graphics rendering. Using the underlying physical principles of how light and surfaces interact we can create predictable visuals which work in all lighting conditions without special cases.
+물리 기반 렌더링(PBR)은 아티스트 워크플로우, 측정된 물리적 속성, 그리고 그래픽 렌더링에 질서와 일관성을 가져오기 위해 함께 작동하는 머티리얼 셰이더의 조합입니다. 빛과 표면이 상호작용하는 기본 물리 원리를 사용하여 특별한 경우 없이 모든 조명 조건에서 작동하는 예측 가능한 시각적 효과를 만들 수 있습니다.
 
-## Fundamental Principles
+## 기본 원리
 
-Below, we'll try and summarize the basic principles behind how physically based shaders calculate the lighting. In the next sections we'll cover in more detail the specifics of how physically based rendering can be used with in OasisW.
+아래에서는 물리 기반 셰이더가 조명을 계산하는 방식의 기본 원리를 요약해보겠습니다. 다음 섹션에서는 OasisW에서 물리 기반 렌더링을 사용하는 방법의 구체적인 내용을 더 자세히 다룰 것입니다.
 
-## Diffuse & Specular
+## 디퓨즈 & 스펙큘러
 
-Diffuse and Specular (or reflected) light are the two terms that describe two main types of interaction between light and a material. Specular light refers to light which has bounced off the surface. On a smooth surface this light will reflect all the in same direction and the surface will appear mirror-like. Diffuse light is light that has been absorbed, scattered in the material and re-emerged. This light tends to be uniform in direction unlike specular light. During this absorbing and re-emerging some light wavelengths will be absorbed. The wavelengths that are not absorbed give the material its color. For example, if all blue and green wavelengths are absorbed, the material will appear red. In rendering terms, diffuse color is sometimes known as "albedo" or "base color".
+디퓨즈와 스펙큘러(또는 반사된) 빛은 빛과 머티리얼 간의 두 가지 주요 상호작용 유형을 설명하는 용어입니다. 스펙큘러 빛은 표면에서 튕겨 나온 빛을 의미합니다. 매끄러운 표면에서 이 빛은 모두 같은 방향으로 반사되어 표면이 거울처럼 보입니다. 디퓨즈 빛은 흡수되어 머티리얼 내에서 산란되고 다시 나타나는 빛입니다. 이 빛은 스펙큘러 빛과 달리 방향이 균일한 경향이 있습니다. 이 흡수와 재출현 과정에서 일부 빛의 파장이 흡수됩니다. 흡수되지 않은 파장이 머티리얼에 색상을 부여합니다. 예를 들어, 모든 파란색과 녹색 파장이 흡수되면 머티리얼이 빨간색으로 보입니다. 렌더링 용어에서 디퓨즈 색상은 때때로 "알베도" 또는 "베이스 색상"으로 알려져 있습니다.
 
-## Energy Conservation
+## 에너지 보존
 
 ![Energy Conservation](/img/user-manual/graphics/physical-rendering/energy-conservation.jpg)
-*Smooth surfaces have small bright patches, rough surfaces have large dim patches*
+*매끄러운 표면은 작고 밝은 패치를, 거친 표면은 크고 어두운 패치를 가집니다*
 
-One of the key features of physically correct rendering is that of Energy Conservation. Derived from the fact that the diffuse light and the reflected light all come from the light hitting the material, the sum of diffuse and reflected light can not be more than the total light hitting the material. In practice this means that if a surface is highly reflective it will show very little diffuse color. And the opposite, if a material has a bright diffuse color, it can not reflect much.
+물리적으로 올바른 렌더링의 핵심 기능 중 하나는 에너지 보존입니다. 디퓨즈 빛과 반사된 빛이 모두 머티리얼에 닿는 빛에서 나온다는 사실에서 파생되어, 디퓨즈 빛과 반사된 빛의 합은 머티리얼에 닿는 총 빛보다 클 수 없습니다. 실제로 이는 표면이 매우 반사적이면 디퓨즈 색상이 거의 보이지 않는다는 의미입니다. 반대로 머티리얼이 밝은 디퓨즈 색상을 가지면 많이 반사할 수 없습니다.
 
-The joy of PBR is that energy conservation is included in the shader, so as an artist you don't have to think about it. It just works!
+PBR의 장점은 에너지 보존이 셰이더에 포함되어 있어서 아티스트로서 이를 생각할 필요가 없다는 것입니다. 그냥 작동합니다!
 
-## Metals & Non-metals
+## 금속 & 비금속
 
 ![Metals & Non-metals](/img/user-manual/graphics/physical-rendering/materials.jpg)
 
-One thing that's new with PBR versus older shading models is thinking about what a material is made of in order to determine its behavior. The main thing we consider here is whether the material is a conductor (usually a metal) or an insulator (a non-metal).
+PBR이 이전 셰이딩 모델과 다른 새로운 점 중 하나는 머티리얼의 동작을 결정하기 위해 머티리얼이 무엇으로 만들어졌는지 생각하는 것입니다. 여기서 고려하는 주요 사항은 머티리얼이 도체(보통 금속)인지 절연체(비금속)인지입니다.
 
-The reason this is important is it determines many factors about how the material responds to light. For example, metals are generally reflective (between 60%-90%) where as non-metals are not (0%-20%). Secondly, reflections on non-metals are usually white where as metals will usually reflect the same color as the diffuse.
+이것이 중요한 이유는 머티리얼이 빛에 어떻게 반응하는지에 대한 많은 요소를 결정하기 때문입니다. 예를 들어, 금속은 일반적으로 반사적(60%-90% 사이)인 반면 비금속은 그렇지 않습니다(0%-20%). 둘째, 비금속의 반사는 보통 흰색인 반면 금속은 보통 디퓨즈와 같은 색상을 반사합니다.
 
-Because of these differences one of the PBR workflows includes a **metalness** property which makes this stuff simple by defining a material as either a metal, or a non-metal. More on metalness workflow in the following sections.
+이러한 차이점 때문에 PBR 워크플로우 중 하나는 **메탈니스** 속성을 포함하여 머티리얼을 금속 또는 비금속으로 정의하여 이를 간단하게 만듭니다. 다음 섹션에서 메탈니스 워크플로우에 대해 더 자세히 다룰 것입니다.
 
-## Fresnel
+## 프레넬
 
-Fresnel is a term that you don't really have to know about to work with PBR in OasisW, but it will give you a better view of how materials behave if you do.
+프레넬은 OasisW에서 PBR로 작업할 때 반드시 알아야 할 용어는 아니지만, 알면 머티리얼이 어떻게 동작하는지 더 잘 이해할 수 있습니다.
 
-All you need to know about Fresnel is it means that the angle at which you are viewing a surface influences how reflective that surface appears. If the surface is almost edge on to your view, it will be almost completely reflective.
+프레넬에 대해 알아야 할 것은 표면을 보는 각도가 그 표면이 얼마나 반사적으로 보이는지에 영향을 미친다는 것입니다. 표면이 시야에 거의 가장자리로 향하고 있다면 거의 완전히 반사적일 것입니다.
 
-## Microsurface
+## 마이크로 서피스
 
-Finally onto microsurface. Generally, 3D artists are familiar with the idea of normal maps. Textures that modify the direction of the surface they are applied to. Microsurface, otherwise known as roughness or glossiness, provides a similar thing, only on a much smaller scale. The microsurface of a material describes how rough or smooth a surface is. Compare glass (high glossiness, low roughness) to sandpaper (high roughness, low glossiness). We're not specifying the exact direction the surface faces, just the general idea of rough or smooth.
+마지막으로 마이크로 서피스입니다. 일반적으로 3D 아티스트들은 노멀 맵의 개념에 익숙합니다. 적용되는 표면의 방향을 수정하는 텍스처입니다. 거칠기 또는 광택도로 알려진 마이크로 서피스는 훨씬 더 작은 규모에서 유사한 것을 제공합니다. 머티리얼의 마이크로 서피스는 표면이 얼마나 거칠거나 매끄러운지를 설명합니다. 유리(높은 광택도, 낮은 거칠기)와 사포(높은 거칠기, 낮은 광택도)를 비교해보세요. 표면이 향하는 정확한 방향을 지정하는 것이 아니라 단순히 거칠거나 매끄러운 일반적인 개념입니다.
 
-Some PBR systems use Roughness, some use Glossiness, they are the same thing. Roughness is the inverse of Glossiness and vice versa. If you want to convert from one to the other, simply invert the texture or value.
+일부 PBR 시스템은 거칠기를 사용하고, 일부는 광택도를 사용하지만 이는 같은 것입니다. 거칠기는 광택도의 역수이고 그 반대도 마찬가지입니다. 하나에서 다른 것으로 변환하려면 텍스처나 값을 단순히 반전시키면 됩니다.
 
-[Next: Physical Materials][6]
+<!-- [다음: 물리 머티리얼][6] -->
 
-*More reading is available in the great Marmoset Toolbag's [PBR Theory][5] article.*
+*Marmoset Toolbag의 훌륭한 [PBR 이론][5] 기사에서 더 많은 읽을거리를 찾을 수 있습니다.*
 
 [2]: https://www.joachimcoppens.com/
 [5]: https://www.marmoset.co/toolbag/learn/pbr-theory

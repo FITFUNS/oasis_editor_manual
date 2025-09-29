@@ -1,16 +1,16 @@
 ---
-title: Calling the ammo.js API
+title: ammo.js API 호출 (Calling the ammo.js API)
 ---
 
-The OasisW integration with ammo.js does not expose the full capability of the ammo.js API. However, it is possible to call the ammo.js API directly from your OasisW scripts.
+OasisW와 ammo.js의 통합은 ammo.js API의 전체 기능을 노출하지 않습니다. 그러나 OasisW 스크립트에서 ammo.js API를 직접 호출하는 것이 가능합니다.
 
-OasisW currently uses [this build][1] of ammo.js. The API exposed by this build can be found [here][2]. Although there is no official documentation for ammo.js, you can refer to the [Bullet Physics User Guide][3] to learn more.
+OasisW는 현재 ammo.js의 [이 빌드][1]를 사용합니다. 이 빌드에서 노출된 API는 [여기][2]에서 찾을 수 있습니다. ammo.js에 대한 공식 문서는 없지만, 더 자세히 알아보려면 [Bullet Physics 사용자 가이드][3]를 참조할 수 있습니다.
 
-## Joint Constraints
+## 조인트 제약 조건
 
-There are currently no OasisW components which implement physics constraints (sometimes known as physics joints). However, it is easy to leverage the ammo.js API to create scripts that implement constraints.
+현재 물리 제약 조건(때로는 물리 조인트라고도 함)을 구현하는 OasisW 컴포넌트는 없습니다. 그러나 ammo.js API를 활용하여 제약 조건을 구현하는 스크립트를 만드는 것은 쉽습니다.
 
-Here is the script for a point-to-point constraint (essentially a ball and socket joint):
+다음은 포인트 투 포인트 제약 조건(본질적으로 볼 앤 소켓 조인트)에 대한 스크립트입니다:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -290,13 +290,13 @@ PointToPointConstraint.prototype.update = function(dt) {
 </TabItem>
 </Tabs>
 
-<!-- You can find a project that implements all of the constraint types from ammo.js [here][4]. -->
+<!-- ammo.js의 모든 제약 조건 유형을 구현하는 프로젝트는 [여기][4]에서 찾을 수 있습니다. -->
 
-## Continuous Collision Detection
+## 연속 충돌 감지
 
-Sometimes, you might find that fast moving rigid bodies in your simulations pass through one another. To overcome this, ammo.js provides a concept called Continuous Collision Detection (or CCD for short). This enables additional checks for collisions by sweeping a sphere volume between the previous and current positions of a rigid body and looking for intersections with the volumes of other bodies.
+때로는 시뮬레이션에서 빠르게 움직이는 강체가 서로 통과하는 것을 발견할 수 있습니다. 이를 극복하기 위해 ammo.js는 연속 충돌 감지(또는 줄여서 CCD)라는 개념을 제공합니다. 이는 강체의 이전 위치와 현재 위치 사이에서 구체 볼륨을 스윕하고 다른 몸체의 볼륨과의 교차점을 찾아 충돌에 대한 추가 검사를 활성화합니다.
 
-You can enable CCD for any OasisW rigid body using the following script:
+다음 스크립트를 사용하여 모든 OasisW 강체에 대해 CCD를 활성화할 수 있습니다:
 
 <Tabs defaultValue="classic" groupId='script-code'>
 <!-- <TabItem  value="esm" label="ESM">
@@ -384,14 +384,14 @@ Ccd.prototype.initialize = function() {
 </TabItem>
 </Tabs>
 
-<!-- You can find a project that implements CCD [here][5]. -->
+<!-- CCD를 구현하는 프로젝트는 [여기][5]에서 찾을 수 있습니다. -->
 
-These are just two examples of using the ammo.js API directly. You can also use it to implement additional things like:
+이것들은 ammo.js API를 직접 사용하는 두 가지 예일 뿐입니다. 다음과 같은 추가적인 것들을 구현하는 데도 사용할 수 있습니다:
 
-- Compound collision shapes
-- Soft body simulation
-- Cloth simulation
-- Vehicles
+- 복합 충돌 모양
+- 소프트 바디 시뮬레이션
+- 천 시뮬레이션
+- 차량
 
 [1]: https://github.com/kripken/ammo.js/commit/dcab07bf0e7f2b4b64c01dc45da846344c8f50be
 [2]: https://github.com/kripken/ammo.js/blob/dcab07bf0e7f2b4b64c01dc45da846344c8f50be/ammo.idl

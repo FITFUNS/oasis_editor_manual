@@ -20,22 +20,22 @@ OasisW의 기본 인터페이스와 도구들을 학습합니다.
 
 ![OasisW 전체 화면](/img/usage-guide/2_full.svg)
 
-### [1. Toolbar](./toolbar)
+### [1. Toolbar](/usage-guide/toolbar)
 툴바의 각 버튼과 단축키, 그리고 추가 도구들을 학습합니다.
 
-### [2. Project Toolbar](./project-toolbar)
+### [2. Project Toolbar](/usage-guide/project-toolbar)
 프로젝트 툴바에서 프로젝트 관리와 관련된 도구들을 학습합니다.
 
-### [3. Hierarchy](./hierarchy)
+### [3. Hierarchy](/usage-guide/hierarchy)
 하이어라키 뷰에서 관리되는 Entity 종류와 계층 구조 관리 방법을 학습합니다.
 
-### [4. Viewport](./viewport)
+### [4. Viewport](/usage-guide/viewport)
 뷰포트의 다양한 모드와 컨트롤 방법, 렌더링 옵션을 학습합니다.
 
-### [5. Inspector](./inspector)
+### [5. Inspector](/usage-guide/inspector)
 인스팩터 뷰의 컴포넌트 목록과 속성 편집 방법, 컴포넌트 관리를 학습합니다.
 
-### [6. Assets](./assets)
+### [6. Assets](/usage-guide/assets)
 에셋 뷰에서 관리되는 에셋 종류와 폴더 정리 팁, 에셋 최적화 방법을 학습합니다.
 
 ## 핵심 단축키

@@ -1,10 +1,10 @@
 ---
-title: Render
+title: 렌더 (Render)
 ---
 
-The Render Asset type in OasisW is a crucial component for defining the appearance of 3D models in the scene. It involves mesh data and materials that dictate how objects are rendered in the 3D environment.
+OasisW의 렌더 에셋 유형은 씬에서 3D 모델의 외관을 정의하는 중요한 구성 요소입니다. 3D 환경에서 객체가 어떻게 렌더링되는지를 결정하는 메시 데이터와 재질을 포함합니다.
 
-Render assets are primarily used for:
+렌더 에셋은 주로 다음 용도로 사용됩니다:
 
-- Defining the shape and structure of 3D models.
-- Applying materials to models.
+- 3D 모델의 모양과 구조를 정의합니다.
+- 모델에 재질을 적용합니다.

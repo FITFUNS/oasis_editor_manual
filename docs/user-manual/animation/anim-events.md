@@ -1,27 +1,27 @@
 ---
-title: Anim Events
+title: 애님 이벤트 (Anim Events)
 ---
 
-Anim events can be used to trigger event listeners during the playback of an animation. Each event is associated with a specified frame of the animation asset it is attached to. When the playback of the animation reaches that frame, the event will fire and the associated event listener is called.
+애님 이벤트는 애니메이션 재생 중에 이벤트 리스너를 트리거하는 데 사용할 수 있습니다. 각 이벤트는 연결된 애니메이션 에셋의 특정 프레임과 연결됩니다. 애니메이션 재생이 해당 프레임에 도달하면 이벤트가 발생하고 연결된 이벤트 리스너가 호출됩니다.
 
-### Creating Events
+### 이벤트 생성
 
-To create a new event, select the animation asset in the asset panel which you'd like to create an event for. You should then see the `+ EVENT` button in the asset inspector as shown below:
+새로운 이벤트를 생성하려면 이벤트를 생성하고 싶은 애니메이션 에셋을 에셋 패널에서 선택하세요. 그러면 아래에 표시된 것처럼 에셋 인스펙터에서 `+ EVENT` 버튼을 볼 수 있습니다:
 
 ![Animation Asset With Event](/img/user-manual/anim/animation_asset_with_events.png)
 
-Each event has the following modifiable properties:
+각 이벤트는 다음과 같은 수정 가능한 속성을 가집니다:
 
-| Variable | Description |
-|----------|-------------|
-| time     | Defines the specific time during the playback of the animation when the event should trigger. Given in seconds. |
-| name     | The name of the event is used to identify the event when attaching an event listener to the anim component. |
-| number   | An additional property which can be set to any number. Used to pass additional details to the event listener. |
-| string   | An additional property which can be set to any string. Used to pass additional details to the event listener. |
+| 변수 | 설명 |
+|------|------|
+| time     | 이벤트가 트리거되어야 하는 애니메이션 재생 중의 특정 시간을 정의합니다. 초 단위로 제공됩니다. |
+| name     | 이벤트의 이름은 애님 컴포넌트에 이벤트 리스너를 연결할 때 이벤트를 식별하는 데 사용됩니다. |
+| number   | 임의의 숫자로 설정할 수 있는 추가 속성입니다. 이벤트 리스너에 추가 세부 정보를 전달하는 데 사용됩니다. |
+| string   | 임의의 문자열로 설정할 수 있는 추가 속성입니다. 이벤트 리스너에 추가 세부 정보를 전달하는 데 사용됩니다. |
 
-### Event Listeners
+### 이벤트 리스너
 
-After creating an event for an animation asset, the event will be fired whenever that asset is played back by an anim component. You can therefore attach listeners to the anim component to handle the event. The following example shows how to attach event listeners to the anim component:
+애니메이션 에셋에 대한 이벤트를 생성한 후, 해당 에셋이 애님 컴포넌트에 의해 재생될 때마다 이벤트가 발생합니다. 따라서 이벤트를 처리하기 위해 애님 컴포넌트에 리스너를 연결할 수 있습니다. 다음 예제는 애님 컴포넌트에 이벤트 리스너를 연결하는 방법을 보여줍니다:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -65,4 +65,4 @@ AnimationEvents.prototype.initialize = function() {
 </TabItem>
 </Tabs>
 
-Any number of animation events can be attached to a single animation asset and used by any number of anim components. Making use of the additional `number` and `string` properties of an event allows you to differentiate between events that are passed to the same event listener.
+임의의 수의 애니메이션 이벤트를 단일 애니메이션 에셋에 연결하고 임의의 수의 애님 컴포넌트에서 사용할 수 있습니다. 이벤트의 추가 `number` 및 `string` 속성을 활용하면 동일한 이벤트 리스너에 전달되는 이벤트를 구분할 수 있습니다.

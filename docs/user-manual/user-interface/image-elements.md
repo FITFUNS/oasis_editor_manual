@@ -1,33 +1,33 @@
 ---
-title: Image Elements
+title: 이미지 요소 (Image Elements)
 ---
 
-The image Element is used to display a texture or a solid color. Image Elements can be used as the basis for other more complex user interface components such as buttons.
+이미지 요소는 텍스처나 단색을 표시하는 데 사용됩니다. 이미지 요소는 버튼과 같은 더 복잡한 사용자 인터페이스 컴포넌트의 기반으로 사용할 수 있습니다.
 
-## Tinting
+## 틴팅 (Tinting)
 
-Each image Element has a color property. If no texture is applied, the image element will simply be a colored rectangle. If a texture is applied, this color will be used to tint the texture. This let's you create color variations using only a single grayscale texture.
+각 이미지 요소는 색상 속성을 가집니다. 텍스처가 적용되지 않은 경우, 이미지 요소는 단순히 색칠된 사각형이 됩니다. 텍스처가 적용된 경우, 이 색상은 텍스처를 틴팅하는 데 사용됩니다. 이를 통해 단일 그레이스케일 텍스처만 사용하여 색상 변형을 만들 수 있습니다.
 
 ![Tinting](/img/user-manual/user-interface/image-element/image-tinted.png)
 
-## Transparency
+## 투명도 (Transparency)
 
-As with the color property, the opacity property can be used to set the transparency level of an Element.
+색상 속성과 마찬가지로, 불투명도 속성을 사용하여 요소의 투명도 수준을 설정할 수 있습니다.
 
 ![Transparent](/img/user-manual/user-interface/image-element/image-transparent.png)
 
-## Advanced Materials
+## 고급 재질 (Advanced Materials)
 
-If you can't achieve the results you are looking for using the texture, color and opacity properties. You can assign your own material to an image element using the material property. For correct rendering you should _disable Depth Write_ on any material added to an image Element.
+텍스처, 색상 및 불투명도 속성을 사용하여 원하는 결과를 얻을 수 없는 경우, 재질 속성을 사용하여 이미지 요소에 자체 재질을 할당할 수 있습니다. 올바른 렌더링을 위해서는 이미지 요소에 추가된 모든 재질에서 _Depth Write를 비활성화_해야 합니다.
 
 :::note
 
-Lighting will not function as expected for Screen Space elements. You will probably want to disable lighting and shadows for any material that is used in screen space.
+화면 공간 요소의 경우 조명이 예상대로 작동하지 않습니다. 화면 공간에서 사용되는 모든 재질에 대해 조명과 그림자를 비활성화하는 것이 좋습니다.
 
 :::
 
-## Masks and Masking
+## 마스크와 마스킹 (Masks and Masking)
 
-Image Elements can be used to mask or hide elements that are descendants. To enable this feature set the `mask` property of an image Element to true.
+이미지 요소는 하위 요소들을 마스크하거나 숨기는 데 사용할 수 있습니다. 이 기능을 활성화하려면 이미지 요소의 `mask` 속성을 true로 설정하세요.
 
-If there is no texture asset assigned to an image Element used for masking the mask will be a rectangle defined by the width and height. If the image Element has a texture assigned the alpha-channel of the texture is used as the mask. Note, an image mask is 1-bit, i.e. there is no fading out of the mask using the alpha-channel of the texture.
+마스킹에 사용되는 이미지 요소에 텍스처 에셋이 할당되지 않은 경우, 마스크는 너비와 높이로 정의된 사각형이 됩니다. 이미지 요소에 텍스처가 할당된 경우, 텍스처의 알파 채널이 마스크로 사용됩니다. 참고로, 이미지 마스크는 1비트입니다. 즉, 텍스처의 알파 채널을 사용한 마스크의 페이드 아웃은 없습니다.

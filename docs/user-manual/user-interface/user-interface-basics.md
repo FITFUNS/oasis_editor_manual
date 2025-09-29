@@ -1,30 +1,30 @@
 ---
-title: User Interface Basics
+title: 사용자 인터페이스 기초 (User Interface Basics)
 ---
 
-User Interfaces are built from two elements in OasisW. A [Screen Component][1] describes the area that contains all the user interfaces elements and then multiple entities with [Element Components][2] are attached below the Screen Entity in the hierarchy. The Screen defines the area of the User Interface and how it is rendered (in 2D space or in the 3D world). The Elements make up the images and text components of the interface.
+사용자 인터페이스는 OasisW에서 두 가지 요소로 구성됩니다. [화면 컴포넌트][1]는 모든 사용자 인터페이스 요소를 포함하는 영역을 설명하고, [요소 컴포넌트][2]가 있는 여러 엔티티가 계층 구조에서 화면 엔티티 아래에 연결됩니다. 화면은 사용자 인터페이스의 영역과 렌더링 방법(2D 공간 또는 3D 세계에서)을 정의합니다. 요소는 인터페이스의 이미지와 텍스트 컴포넌트를 구성합니다.
 
-## Layout and Positioning
+## 레이아웃 및 위치 지정
 
-One big difference between regular Entities and Entities that use an Element Component as part of a Screen is the way in which they are positioned with respect to their parents. Element Components have two properties that alter they way that their final position is calculated. The `anchor` property determines how the child is positioned relative to its parent and the `pivot` property determines where the center point of the element is. Read more on the [Element][3] page.
+일반 엔티티와 화면의 일부로 요소 컴포넌트를 사용하는 엔티티 간의 큰 차이점 중 하나는 부모에 대한 위치 지정 방식입니다. 요소 컴포넌트는 최종 위치가 계산되는 방식을 변경하는 두 가지 속성을 가집니다. `anchor` 속성은 자식이 부모에 대해 어떻게 위치하는지 결정하고, `pivot` 속성은 요소의 중심점이 어디인지 결정합니다. [요소][3] 페이지에서 자세히 알아보세요.
 
-## Draw Order
+## 그리기 순서
 
-The graphical portions of the user interface, Image and Text Elements, are drawn in the order that they appear in the hierarchy, i.e. the first child is drawn first, its child is drawn next. A child that is draw later will appear on top of one that is draw earlier.
+사용자 인터페이스의 그래픽 부분인 이미지와 텍스트 요소는 계층 구조에서 나타나는 순서대로 그려집니다. 즉, 첫 번째 자식이 먼저 그려지고, 그 자식이 다음에 그려집니다. 나중에 그려지는 자식은 먼저 그려진 자식 위에 나타납니다.
 
-To change the draw order you simply re-order the entities in the Editor hierarchy. You can re-order elements programmatically by calling `entity.reparent(...)`. Though, note, that this forces the draw order to be recalculated for the entire Screen component.
+그리기 순서를 변경하려면 에디터 계층 구조에서 엔티티의 순서를 다시 정렬하면 됩니다. `entity.reparent(...)`를 호출하여 프로그래밍 방식으로 요소 순서를 재정렬할 수 있습니다. 하지만 이렇게 하면 전체 화면 컴포넌트에 대해 그리기 순서가 다시 계산됩니다.
 
-## Element 9-slicing
+## 요소 9-슬라이싱
 
-9-slicing (or 9-patch) is a graphical technique for creating scalable user-interface elements from bitmap graphics. You can setup 9-slicing using the Texture Atlas and Sprite Assets. [Read more][5].
+9-슬라이싱(또는 9-patch)은 비트맵 그래픽에서 확장 가능한 사용자 인터페이스 요소를 만드는 그래픽 기법입니다. 텍스처 아틀라스와 스프라이트 에셋을 사용하여 9-슬라이싱을 설정할 수 있습니다. [자세히 보기][5].
 
-## Input
+## 입력
 
-There is an additional way of handling input for UI Elements. An instance of the `pc.ElementInput` is provided on the Application object, usually accessible as `this.app.elementInput`. This allows you to listen for input directly on the element components, e.g. `this.entity.element.on('click', ...)`. Read more on the [Input][4] page.
+UI 요소에 대한 입력을 처리하는 추가 방법이 있습니다. `pc.ElementInput`의 인스턴스가 애플리케이션 객체에서 제공되며, 일반적으로 `this.app.elementInput`으로 액세스할 수 있습니다. 이를 통해 요소 컴포넌트에서 직접 입력을 수신할 수 있습니다. 예: `this.entity.element.on('click', ...)`. [입력][4] 페이지에서 자세히 알아보세요.
 
-## Localization
+<!-- ## 현지화
 
-OasisW has a built-in localization system which supports localized Text Elements. Read more [here][6].
+OasisW는 현지화된 텍스트 요소를 지원하는 내장 현지화 시스템을 가지고 있습니다. [여기][6]에서 자세히 알아보세요. -->
 
 [1]: /user-manual/user-interface/screens
 [2]: /user-manual/user-interface/elements

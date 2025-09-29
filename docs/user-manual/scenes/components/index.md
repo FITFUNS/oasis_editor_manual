@@ -1,42 +1,42 @@
 ---
-title: Components
+title: 컴포넌트 (Components)
 ---
 
-A component encapsulates functionality that can be added to or removed from entities. For example, a component might enable an entity to play sound, render a 3D model or run a script.
+컴포넌트는 엔티티에 추가하거나 제거할 수 있는 기능을 캡슐화합니다. 예를 들어, 컴포넌트는 엔티티가 사운드를 재생하거나, 3D 모델을 렌더링하거나, 스크립트를 실행할 수 있게 할 수 있습니다.
 
-You can add a component to an entity using the OasisW Editor or by using the Engine API. The properties exposed by components are listed in the Inspector when you select an Entity.
+OasisW 에디터나 엔진 API를 사용하여 엔티티에 컴포넌트를 추가할 수 있습니다. 컴포넌트가 노출하는 속성은 엔티티를 선택할 때 인스펙터에 나열됩니다.
 
-## Component Types
+## 컴포넌트 타입
 
-There are many different components defined in the OasisW Engine:
+OasisW 엔진에는 다양한 컴포넌트가 정의되어 있습니다:
 
-| Component                         | Description                                                                   |
+| 컴포넌트                         | 설명                                                                   |
 | --------------------------------- | ----------------------------------------------------------------------------- |
-| [Anim](/user-manual/scenes/components/anim)                      | Specifies the state graph and animations that can run on an entity hierarchy. |
-| [Audio Listener](/user-manual/scenes/components/audiolistener)   | Specifies the location of the listener for 3D audio playback.                 |
-| [Button](/user-manual/scenes/components/button)                  | Creates a user interface button.                                              |
-| [Camera](/user-manual/scenes/components/camera)                  | Renders the scene from the location of the entity.                            |
-| [Collision](/user-manual/scenes/components/collision)            | Assigns a collision volume to the entity.                                     |
-| [Element](/user-manual/scenes/components/element)                | Defines a user interface text or image element.                               |
-| [Layout Child](/user-manual/scenes/components/layout-child)      | Overrides default Layout Group properties for one element.                    |
-| [Layout Group](/user-manual/scenes/components/layout-group)      | Automatically sets position and scale of child user interface elements.       |
-| [Light](/user-manual/scenes/components/light)                    | Attaches a dynamic light source to the Entity.                                |
-| [Particle System](/user-manual/scenes/components/particlesystem) | Attaches a particle system to the Entity.                                     |
-| [Rigid Body](/user-manual/scenes/components/rigidbody)           | Adds the entity to the scene's physical simulation.                           |
-| [Render](/user-manual/scenes/components/render)                  | Renders a graphical primitive or a render asset.                              |
-| [Screen](/user-manual/scenes/components/screen)                  | Defines the area and rendering of a user interface.                           |
-| [Script](/user-manual/scenes/components/script)                  | Allows the entity to run JavaScript fragments to implement custom behavior.   |
-| [Scrollbar](/user-manual/scenes/components/scrollbar)            | Defines a scrolling control for a Scrollview component.                       |
-| [Scroll View](/user-manual/scenes/components/scrollview)         | Defines a scrollable area in a user interface.                                |
-| [Sound](/user-manual/scenes/components/sound)                    | Plays audio assets.                                                           |
-| [Sprite](/user-manual/scenes/components/sprite)                  | Renders 2D graphics at the location of the entity.                            |
+| [Anim](/user-manual/scenes/components/anim)                      | 엔티티 계층 구조에서 실행할 수 있는 상태 그래프와 애니메이션을 지정합니다. |
+| [Audio Listener](/user-manual/scenes/components/audiolistener)   | 3D 오디오 재생을 위한 리스너의 위치를 지정합니다.                 |
+| [Button](/user-manual/scenes/components/button)                  | 사용자 인터페이스 버튼을 생성합니다.                                              |
+| [Camera](/user-manual/scenes/components/camera)                  | 엔티티의 위치에서 씬을 렌더링합니다.                            |
+| [Collision](/user-manual/scenes/components/collision)            | 엔티티에 충돌 볼륨을 할당합니다.                                     |
+| [Element](/user-manual/scenes/components/element)                | 사용자 인터페이스 텍스트 또는 이미지 요소를 정의합니다.                               |
+| [Layout Child](/user-manual/scenes/components/layout-child)      | 하나의 요소에 대해 기본 레이아웃 그룹 속성을 재정의합니다.                    |
+| [Layout Group](/user-manual/scenes/components/layout-group)      | 자식 사용자 인터페이스 요소의 위치와 스케일을 자동으로 설정합니다.       |
+| [Light](/user-manual/scenes/components/light)                    | 엔티티에 동적 광원을 연결합니다.                                |
+| [Particle System](/user-manual/scenes/components/particlesystem) | 엔티티에 파티클 시스템을 연결합니다.                                     |
+| [Rigid Body](/user-manual/scenes/components/rigidbody)           | 엔티티를 씬의 물리 시뮬레이션에 추가합니다.                           |
+| [Render](/user-manual/scenes/components/render)                  | 그래픽 프리미티브 또는 렌더 에셋을 렌더링합니다.                              |
+| [Screen](/user-manual/scenes/components/screen)                  | 사용자 인터페이스의 영역과 렌더링을 정의합니다.                           |
+| [Script](/user-manual/scenes/components/script)                  | 엔티티가 사용자 정의 동작을 구현하기 위해 JavaScript 조각을 실행할 수 있게 합니다.   |
+| [Scrollbar](/user-manual/scenes/components/scrollbar)            | Scrollview 컴포넌트에 대한 스크롤 컨트롤을 정의합니다.                       |
+| [Scroll View](/user-manual/scenes/components/scrollview)         | 사용자 인터페이스에서 스크롤 가능한 영역을 정의합니다.                                |
+| [Sound](/user-manual/scenes/components/sound)                    | 오디오 에셋을 재생합니다.                                                           |
+| [Sprite](/user-manual/scenes/components/sprite)                  | 엔티티의 위치에서 2D 그래픽을 렌더링합니다.                            |
 <!-- | [GSplat](/user-manual/scenes/components/gsplat)                  | Renders a 3D Gaussian Splat at the location of the entity.                    | -->
 
-### Deprecated Components
+### 사용 중단된 컴포넌트
 
-OasisW still provides some deprecated components. Use of these components is not recommended for new projects.
+OasisW는 여전히 일부 사용 중단된 컴포넌트를 제공합니다. 이러한 컴포넌트는 새 프로젝트에서 사용하지 않는 것이 좋습니다.
 
-| Component              | Description                                                                                   |
+| 컴포넌트              | 설명                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------------- |
-| [Animation](/user-manual/scenes/components/animation) | Specifies the animations that can run on the model specified by the entity's model component. |
-| [Model](/user-manual/scenes/components/model)         | Renders a 3D model at the location of the entity.                                             |
+| [Animation](/user-manual/scenes/components/animation) | 엔티티의 모델 컴포넌트로 지정된 모델에서 실행할 수 있는 애니메이션을 지정합니다. |
+| [Model](/user-manual/scenes/components/model)         | 엔티티의 위치에서 3D 모델을 렌더링합니다.                                             |

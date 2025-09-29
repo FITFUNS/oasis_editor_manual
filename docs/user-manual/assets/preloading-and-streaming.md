@@ -1,38 +1,38 @@
 ---
-title: Preloading and Streaming
+title: 사전 로드 및 스트리밍 (Preloading and Streaming)
 ---
 
-On the web, it's critical to get users into your application as soon as possible after they load the page. Presenting a loading bar and asking people to wait will lead to visitors leaving the page before your application has even got started. The OasisW asset system implements a number of features to help you streamline the loading process and get your application running as fast as possible.
+웹에서는 페이지를 로드한 후 가능한 한 빨리 사용자를 애플리케이션으로 가져오는 것이 중요합니다. 로딩 바를 표시하고 사람들에게 기다리라고 요청하면 애플리케이션이 시작되기도 전에 방문자가 페이지를 떠나게 됩니다. OasisW 에셋 시스템은 로딩 프로세스를 간소화하고 애플리케이션을 가능한 한 빨리 실행할 수 있도록 도와주는 여러 기능을 구현합니다.
 
-## Preload {#preload}
+## 사전 로드 {#preload}
 
-![Asset Properties](/img/user-manual/assets/preloading-and-streaming/asset-properties.jpg)
+![에셋 속성](/img/user-manual/assets/preloading-and-streaming/asset-properties.jpg)
 
-Every asset in your project has a property called `preload`. By default this is set to true. If an asset is marked as preload it will be downloaded and created before the initialize phase of your application begins.
+프로젝트의 모든 에셋에는 `preload`라는 속성이 있습니다. 기본적으로 이것은 true로 설정됩니다. 에셋이 사전 로드로 표시되면 애플리케이션의 초기화 단계가 시작되기 전에 다운로드되고 생성됩니다.
 
-You should use preloading to make sure all the assets you need at the start of your application are present. This will prevent any assets from 'popping' in after the application begins.
+애플리케이션 시작 시 필요한 모든 에셋이 있는지 확인하기 위해 사전 로드를 사용해야 합니다. 이렇게 하면 애플리케이션이 시작된 후 에셋이 '팝업'되는 것을 방지할 수 있습니다.
 
-## Streaming {#streaming}
+## 스트리밍 {#streaming}
 
-![Streaming](/img/user-manual/assets/preloading-and-streaming/streaming.gif)
+![스트리밍](/img/user-manual/assets/preloading-and-streaming/streaming.gif)
 
-If an Entity in your scene and references an asset, then a loading request will be initiated when the Entity is enabled. If the Entity is enabled in the scene, then this request is made as soon as the application starts.
+씬의 엔티티가 에셋을 참조하는 경우, 엔티티가 활성화될 때 로딩 요청이 시작됩니다. 엔티티가 씬에서 활성화되어 있으면 애플리케이션이 시작되자마자 이 요청이 이루어집니다.
 
-All components will gracefully handle dynamically loading assets and will start operating as normal, once the asset is loaded. When streaming assets in dynamically like this, you will often see "popup". As a model will appear as soon as it is loaded, even if it doesn't have materials or textures yet.
+모든 컴포넌트는 동적으로 로딩되는 에셋을 우아하게 처리하고 에셋이 로드되면 정상적으로 작동하기 시작합니다. 이렇게 동적으로 에셋을 스트리밍할 때는 종종 "팝업"을 볼 수 있습니다. 모델은 아직 재질이나 텍스처가 없더라도 로드되자마자 나타날 것입니다.
 
-## When are assets loaded? {#when-are-assets-loaded}
+## 에셋은 언제 로드되나요? {#when-are-assets-loaded}
 
-You can determine when a particular asset will be loaded you can follow these rules.
+특정 에셋이 언제 로드될지 결정하려면 다음 규칙을 따를 수 있습니다.
 
-* If `preload = true` the asset will be loaded before the application starts. Otherwise:
-* If the asset is referenced by a component that is enabled on an entity that is enabled and in the scene hierarchy then it will be loaded. The asset is loaded at the time the entity or component is enabled or when the asset is assigned to the component. For entities that are enabled in the Editor, this will occur as soon as the application starts just after preloading has finished. A component is defined as enabled if it is enabled and all entities in the hierarchy above it are enabled.
-* If the asset is referenced by another asset that is loaded then it will be loaded. e.g. If a model is loaded and references a material, the material will be loaded, if the material references a texture the texture will be loaded.
+* `preload = true`인 경우 에셋은 애플리케이션이 시작되기 전에 로드됩니다. 그렇지 않으면:
+* 에셋이 활성화되고 씬 계층 구조에 있는 엔티티에서 활성화된 컴포넌트에 의해 참조되는 경우 로드됩니다. 에셋은 엔티티나 컴포넌트가 활성화되거나 에셋이 컴포넌트에 할당될 때 로드됩니다. 에디터에서 활성화된 엔티티의 경우, 이는 사전 로드가 완료된 직후 애플리케이션이 시작되자마자 발생합니다. 컴포넌트는 활성화되어 있고 그 위의 계층 구조에 있는 모든 엔티티가 활성화되어 있으면 활성화된 것으로 정의됩니다.
+* 에셋이 로드된 다른 에셋에 의해 참조되는 경우 로드됩니다. 예를 들어, 모델이 로드되고 재질을 참조하면 재질이 로드되고, 재질이 텍스처를 참조하면 텍스처가 로드됩니다.
 
-## Asset Tags {#asset-tags}
+## 에셋 태그 {#asset-tags}
 
-In many cases, you don't wish assets to "popup" as they load. It's preferable to load a set of assets and then display them. To do this, you can use Asset Tags to create groups of assets. Then you can load all assets with a particular tag before using them.
+많은 경우, 에셋이 로드될 때 "팝업"되는 것을 원하지 않습니다. 에셋 세트를 로드한 다음 표시하는 것이 선호됩니다. 이를 위해 에셋 태그를 사용하여 에셋 그룹을 만들 수 있습니다. 그런 다음 사용하기 전에 특정 태그가 있는 모든 에셋을 로드할 수 있습니다.
 
-Here is some example javascript which shows you how you might load a set of assets using a tag.
+태그를 사용하여 에셋 세트를 로드하는 방법을 보여주는 JavaScript 예시입니다.
 
 ```javascript
 const assets = this.app.assets.findByTag("level-1");
@@ -42,7 +42,7 @@ for (let i = 0; i < assets.length; i++) {
     assets[i].once("load", function () {
         count++;
         if (count === assets.length) {
-            // asset loading complete
+            // 에셋 로딩 완료
         }
     });
     this.app.assets.load(assets[i]);

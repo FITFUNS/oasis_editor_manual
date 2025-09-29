@@ -1,20 +1,20 @@
 ---
-title: Events
+title: 이벤트 (Events)
 ---
 
-Events are a useful way of communicating between scripts in order to respond to things that happen without checking every frame.
+이벤트는 매 프레임마다 확인하지 않고 발생하는 일에 반응하기 위해 스크립트 간에 통신하는 유용한 방법입니다.
 
-Many OasisW object types (such as script instances) have event handling support built-in, inherited from the Engine's [`EventHandler`][1] class. Event handling objects have the following methods:
+많은 OasisW 객체 타입(스크립트 인스턴스 등)은 엔진의 [`EventHandler`][1] 클래스에서 상속받은 내장 이벤트 처리 지원을 가지고 있습니다. 이벤트 처리 객체는 다음 메서드들을 가집니다:
 
-* `on()` - registers an event listener.
-* `once()` - registers an event listener that unregisters itself after the first time it is called.
-* `off()` - unregisters an event listener.
-* `fire()` - sends an event.
-* `hasEvent()` - queries whether an object is listening on a particular event.
+* `on()` - 이벤트 리스너를 등록합니다.
+* `once()` - 첫 번째 호출 후 자동으로 등록 해제되는 이벤트 리스너를 등록합니다.
+* `off()` - 이벤트 리스너를 등록 해제합니다.
+* `fire()` - 이벤트를 전송합니다.
+* `hasEvent()` - 객체가 특정 이벤트를 수신하고 있는지 쿼리합니다.
 
-## Using Events
+## 이벤트 사용
 
-Trigger an event using `fire()`. In this example, the player script fires a `move` event every frame with the `x` and `y` values passed as arguments.
+`fire()`를 사용하여 이벤트를 발생시킵니다. 이 예제에서 플레이어 스크립트는 매 프레임마다 `x`와 `y` 값을 인수로 전달하여 `move` 이벤트를 발생시킵니다.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -52,7 +52,7 @@ Player.prototype.update = function (dt) {
 </TabItem>
 </Tabs>
 
-Listen for events firing by using `on()` and `off()`. In this example, the display script listens for the `move` event on the player and prints out the x and y values.
+`on()`과 `off()`를 사용하여 발생하는 이벤트를 수신합니다. 이 예제에서 디스플레이 스크립트는 플레이어의 `move` 이벤트를 수신하고 x와 y 값을 출력합니다.
 
 <Tabs defaultValue="classic" groupId='script-code'>
 <!-- <TabItem value="esm" label="ESM">
@@ -98,15 +98,15 @@ var Display = pc.createScript('display');
 Display.attributes.add('playerEntity', { type: 'entity' });
 
 Display.prototype.initialize = function () {
-    // Method to call when player moves
+    // 플레이어가 움직일 때 호출할 메서드
     const onPlayerMove = (x, y) => {
         console.log(x, y);
     };
 
-    // Listen for the player move event
+    // 플레이어 이동 이벤트 수신
     this.playerEntity.script.player.on('move', onPlayerMove);
 
-    // Remove player move event listeners when script destroyed
+    // 스크립트가 파괴될 때 플레이어 이동 이벤트 리스너 제거
     this.playerEntity.script.player.once('destroy', () => {
         this.playerEntity.script.player.off('move', onPlayerMove);
     });
@@ -116,15 +116,15 @@ Display.prototype.initialize = function () {
 </TabItem>
 </Tabs>
 
-## Application Events
+## 애플리케이션 이벤트
 
-There is a very convenient and powerful method of using events to communicate between entities that we call "Application Events". As you can see in the example above, listening for events on specific entities incurs some set up cost. For instance, the listener must have a reference to the specific entity that is firing the event. This works with some cases, but for a more general case we find that it is more appropriate to use the main application (`this.app`) as a central hub for firing events. This means you don't have to keep references of entities around in order to use the events.
+엔티티 간 통신을 위해 이벤트를 사용하는 매우 편리하고 강력한 방법이 있으며, 이를 "애플리케이션 이벤트"라고 합니다. 위의 예제에서 볼 수 있듯이, 특정 엔티티의 이벤트를 수신하는 데는 일부 설정 비용이 발생합니다. 예를 들어, 리스너는 이벤트를 발생시키는 특정 엔티티에 대한 참조를 가져야 합니다. 이는 일부 경우에 작동하지만, 더 일반적인 경우에는 이벤트 발생을 위한 중앙 허브로 메인 애플리케이션(`this.app`)을 사용하는 것이 더 적절하다는 것을 알 수 있습니다. 이는 이벤트를 사용하기 위해 엔티티의 참조를 유지할 필요가 없음을 의미합니다.
 
-This works by firing and listening to all events on `this.app`. By convention, we use namespaces in event names in order to signal event scope and prevent clashes. For example, the `player:move` event is fired on the application instead of firing the `move` event on the player.
+이는 `this.app`에서 모든 이벤트를 발생시키고 수신함으로써 작동합니다. 관례적으로, 이벤트 범위를 신호하고 충돌을 방지하기 위해 이벤트 이름에 네임스페이스를 사용합니다. 예를 들어, 플레이어에서 `move` 이벤트를 발생시키는 대신 애플리케이션에서 `player:move` 이벤트를 발생시킵니다.
 
-Let's try the same example using application events.
+애플리케이션 이벤트를 사용하여 동일한 예제를 시도해보겠습니다.
 
-Firing the `player:move` event:
+`player:move` 이벤트 발생:
 
 <Tabs defaultValue="classic" groupId='script-code'>
 <!-- <TabItem  value="esm" label="ESM">
@@ -175,21 +175,21 @@ Player.prototype.update = function (dt) {
 };
 ```
 
-Listening for the `player:move` event:
+`player:move` 이벤트 수신:
 
 ```javascript
 var Display = pc.createScript('display');
 
 Display.prototype.initialize = function () {
-    // Method to call when player moves
+    // 플레이어가 움직일 때 호출할 메서드
     const onPlayerMove = (x, y) => {
         console.log(x, y);
     };
 
-    // Listen for the player:move event
+    // player:move 이벤트 수신
     this.app.on('player:move', onPlayerMove);
 
-    // Remove player:move event listeners when script destroyed
+    // 스크립트가 파괴될 때 player:move 이벤트 리스너 제거
     this.on('destroy', function() {
         this.app.off('player:move', onPlayerMove);
     });
@@ -199,6 +199,6 @@ Display.prototype.initialize = function () {
 </TabItem>
 </Tabs>
 
-As you can see, this reduces the amount of set up and makes for cleaner code.
+보시다시피, 이는 설정 양을 줄이고 더 깔끔한 코드를 만듭니다.
 
 [1]: https://manual.oasisserver.link/engine/classes/EventHandler.html

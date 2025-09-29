@@ -1,34 +1,34 @@
 ---
-title: WASM Module
+title: WASM 모듈 (WASM Module)
 ---
 
-Wasm Modules (also known was WebAssembly Modules) contain compiled executable code for the web.
+WASM 모듈(WebAssembly 모듈이라고도 함)은 웹을 위한 컴파일된 실행 가능한 코드를 포함합니다.
 
-A Wasm module comprises three parts:
+WASM 모듈은 세 부분으로 구성됩니다:
 
-* the binary executable file
-* the JavaScript glue code file
-* an optional fallback asm.js
+* 바이너리 실행 파일
+* JavaScript 글루 코드 파일
+* 선택적 폴백 asm.js
 
-These files can be added to the project either by dragging and dropping the files into the Assets Panel or by selecting 'Upload' from the Assets Panel context menu.
+이러한 파일들은 Assets 패널로 파일을 드래그 앤 드롭하거나 Assets 패널 컨텍스트 메뉴에서 '업로드'를 선택하여 프로젝트에 추가할 수 있습니다.
 
-Please note that OasisW Editor currently supports [Emscripten][2] compiled Wasm Modules only.
+OasisW 에디터는 현재 [Emscripten][2]으로 컴파일된 WASM 모듈만 지원합니다.
 
-## Wasm Module Properties
+## WASM 모듈 속성
 
-Once the files have been added to the project, select the Wasm Module to display its properties in the Inspector Panel:
+파일이 프로젝트에 추가되면 WASM 모듈을 선택하여 Inspector 패널에서 속성을 표시합니다:
 ![Wasm Module Properties](/img/user-manual/assets/wasm-module.png)
 
 ### Name
 
-Name must match the module name defined in the glue and fallback script. This name is used to instantiate the module at load time.
+이름은 글루 및 폴백 스크립트에 정의된 모듈 이름과 일치해야 합니다. 이 이름은 로드 시 모듈을 인스턴스화하는 데 사용됩니다.
 
 ### Glue script
 
-This is the JavaScript glue code required to execute Wasm code.
+이는 WASM 코드를 실행하는 데 필요한 JavaScript 글루 코드입니다.
 
 ### Fallback script
 
-This is the optional fallback asm.js script to use when WebAssembly is not supported.
+이는 WebAssembly가 지원되지 않을 때 사용할 선택적 폴백 asm.js 스크립트입니다.
 
 [2]: https://emscripten.org/

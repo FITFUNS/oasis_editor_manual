@@ -1,30 +1,30 @@
 ---
-title: Scrollview
+title: 스크롤뷰 (Scrollview)
 ---
 
-The Scrollview component defines a scrollable area in a user interface. A scrollview can be scrolled via [Scrollbar][1] components.
+스크롤뷰 컴포넌트는 사용자 인터페이스에서 스크롤 가능한 영역을 정의합니다. 스크롤뷰는 [스크롤바][1] 컴포넌트를 통해 스크롤할 수 있습니다.
 
-See the [User Interface][2] section for more details.
+자세한 내용은 [사용자 인터페이스][2] 섹션을 참조하세요.
 
 ![Scrollview Component](/img/user-manual/scenes/components/component-scrollview.png)
 
-## Component Properties
+## 컴포넌트 속성
 
-| Property                | Description |
+| 속성                | 설명 |
 |-------------------------|-------------|
-| Scroll Mode             | Specifies how the scroll view should behave when the user scrolls past the end of the content. Modes are defined as follows: <ul><li>Clamp: Content does not scroll any further than its bounds.</li><li>Bounce: Content scrolls past its bounds and then gently bounces back.</li><li>Infinite: Content can scroll forever.</li></ul> |
-| Bounce                  | Controls how far the content should move before bouncing back. |
-| Friction                | Controls how freely the content should move if thrown, i.e. By flicking on a phone or by flinging the scroll wheel on a mouse. A value of 1 means that content will stop immediately; 0 means that content will continue moving forever (or until the bounds of the content are reached, depending on the scroll mode). |
-| Use Mouse Wheel         | Whether to use mouse wheel for scrolling (horizontally and vertically) when mouse is within bounds. |
-| Mouse Wheel Sensitivity | Mouse wheel horizontal and vertical sensitivity. Only used if *Use Mouse Wheel* is set. Setting a direction to 0 will disable mouse wheel scrolling in that direction. 1 is a default sensitivity that is considered to feel good. The values can be set higher or lower than 1 to tune the sensitivity. Defaults to [1, 1]. |
-| Viewport                | The entity to be used as the masked viewport area, within which the content will scroll. This entity must have an ElementGroup component. |
-| Content                 | The entity which contains the scrolling content itself. This entity must have an Element component. |
-| Horizontal              | Whether to enable horizontal scrolling. |
-| Scrollbar (horizontal)  | The entity to be used as the horizontal scrollbar. This entity must have a Scrollbar component. |
-| Visibility (horizontal) | Controls whether the horizontal scrollbar should be visible all the time, or only visible when the content exceeds the size of the viewport. |
-| Vertical                | Whether to enable vertical scrolling. |
-| Scrollbar (vertical)    | The entity to be used as the vertical scrollbar. This entity must have a Scrollbar component. |
-| Visibility (vertical)   | Controls whether the vertical scrollbar should be visible all the time, or only visible when the content exceeds the size of the viewport. |
+| Scroll Mode             | 사용자가 내용의 끝을 지나 스크롤할 때 스크롤 뷰가 어떻게 동작해야 하는지 지정합니다. 모드는 다음과 같이 정의됩니다: <ul><li>Clamp: 내용이 경계를 넘어 스크롤되지 않습니다.</li><li>Bounce: 내용이 경계를 넘어 스크롤된 후 부드럽게 되돌아옵니다.</li><li>Infinite: 내용이 무한히 스크롤될 수 있습니다.</li></ul> |
+| Bounce                  | 내용이 되돌아오기 전에 얼마나 멀리 이동해야 하는지 제어합니다. |
+| Friction                | 내용이 던져졌을 때 얼마나 자유롭게 움직여야 하는지 제어합니다. 즉, 휴대폰에서 플릭하거나 마우스에서 스크롤 휠을 던질 때입니다. 값 1은 내용이 즉시 중지됨을 의미하고, 0은 내용이 영원히 계속 움직임을 의미합니다(또는 스크롤 모드에 따라 내용의 경계에 도달할 때까지). |
+| Use Mouse Wheel         | 마우스가 경계 내에 있을 때 스크롤을 위해 마우스 휠을 사용할지 여부입니다. |
+| Mouse Wheel Sensitivity | 마우스 휠 수평 및 수직 감도입니다. *Use Mouse Wheel*이 설정된 경우에만 사용됩니다. 방향을 0으로 설정하면 해당 방향의 마우스 휠 스크롤이 비활성화됩니다. 1은 좋다고 여겨지는 기본 감도입니다. 감도를 조정하기 위해 값을 1보다 높거나 낮게 설정할 수 있습니다. 기본값은 [1, 1]입니다. |
+| Viewport                | 내용이 스크롤될 마스크된 뷰포트 영역으로 사용될 엔티티입니다. 이 엔티티는 ElementGroup 컴포넌트를 가져야 합니다. |
+| Content                 | 스크롤되는 내용 자체를 포함하는 엔티티입니다. 이 엔티티는 Element 컴포넌트를 가져야 합니다. |
+| Horizontal              | 수평 스크롤을 활성화할지 여부입니다. |
+| Scrollbar (horizontal)  | 수평 스크롤바로 사용될 엔티티입니다. 이 엔티티는 Scrollbar 컴포넌트를 가져야 합니다. |
+| Visibility (horizontal) | 수평 스크롤바가 항상 보이도록 할지, 아니면 내용이 뷰포트 크기를 초과할 때만 보이도록 할지를 제어합니다. |
+| Vertical                | 수직 스크롤을 활성화할지 여부입니다. |
+| Scrollbar (vertical)    | 수직 스크롤바로 사용될 엔티티입니다. 이 엔티티는 Scrollbar 컴포넌트를 가져야 합니다. |
+| Visibility (vertical)   | 수직 스크롤바가 항상 보이도록 할지, 아니면 내용이 뷰포트 크기를 초과할 때만 보이도록 할지를 제어합니다. |
 
 [1]: /user-manual/scenes/components/scrollbar
 [2]: /user-manual/user-interface

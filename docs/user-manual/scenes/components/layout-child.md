@@ -1,28 +1,28 @@
 ---
-title: Layout Child
+title: 레이아웃 자식 (Layout Child)
 ---
 
-The LayoutChild component enables an element that is controlled by a LayoutGroup component to override the default behavior of the Layout Group.
+레이아웃 자식 컴포넌트는 레이아웃 그룹 컴포넌트에 의해 제어되는 요소가 레이아웃 그룹의 기본 동작을 재정의할 수 있게 합니다.
 
-See the [Layout Groups][0] section for more details.
+자세한 내용은 [레이아웃 그룹][0] 섹션을 참조하세요.
 
 ![LayoutChild component](/img/user-manual/scenes/components/component-layoutchild.png)
 
-## Properties
+## 속성
 
-| Property              | Description |
+| 속성              | 설명 |
 |-----------------------|-------------|
-| Min Width             | Set the minimum width that the element can be rendered at. |
-| Min Height            | Set the minimum height that the element can be rendered at. |
-| Max Width             | Set the maximum width that the element can be rendered at. |
-| Max Height            | Set the maximum height that the element can be rendered at. |
-| Fit Width Proportion  | The proportion of additional space that the element will take up if the layout group is set to stretch or shrink. |
-| Fit Height Proportion | The proportion of additional space that the element will take up if the layout group is set to stretch or shrink. |
-| Exclude from Layout   | Completely ignore this element when calculating the layout. |
+| Min Width             | 요소가 렌더링될 수 있는 최소 너비를 설정합니다. |
+| Min Height            | 요소가 렌더링될 수 있는 최소 높이를 설정합니다. |
+| Max Width             | 요소가 렌더링될 수 있는 최대 너비를 설정합니다. |
+| Max Height            | 요소가 렌더링될 수 있는 최대 높이를 설정합니다. |
+| Fit Width Proportion  | 레이아웃 그룹이 늘리기 또는 줄이기로 설정된 경우 요소가 차지할 추가 공간의 비율입니다. |
+| Fit Height Proportion | 레이아웃 그룹이 늘리기 또는 줄이기로 설정된 경우 요소가 차지할 추가 공간의 비율입니다. |
+| Exclude from Layout   | 레이아웃을 계산할 때 이 요소를 완전히 무시합니다. |
 
-## Scripting Interface
+## 스크립팅 인터페이스
 
-You can control an LayoutChild component's properties using a [script component][2]. The LayoutChild component's scripting interface is [here][3].
+[스크립트 컴포넌트][2]를 사용하여 레이아웃 자식 컴포넌트의 속성을 제어할 수 있습니다. 레이아웃 자식 컴포넌트의 스크립팅 인터페이스는 [여기][3]에 있습니다.
 
 [0]: /user-manual/user-interface/layout-groups
 [2]: /user-manual/scenes/components/script

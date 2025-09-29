@@ -1,21 +1,21 @@
 ---
-title: Scripting
+title: 스크립팅 (Scripting)
 ---
 
-Scripts are the heart of interactivity in OasisW. They're reusable pieces of code that you attach to Entities to define behaviors, handle user input, manage game logic, and bring your projects to life.
+스크립트는 OasisW에서 상호작용의 핵심입니다. 엔티티에 연결하여 동작을 정의하고, 사용자 입력을 처리하며, 게임 로직을 관리하고, 프로젝트에 생명을 불어넣는 재사용 가능한 코드 조각입니다.
 
-## Scripting Systems
+## 스크립팅 시스템
 
-OasisW supports scripting approaches:
+OasisW는 다음 스크립팅 접근 방식을 지원합니다:
 
 <!-- * **ESM Scripts** (`.mjs` files) - Modern ES Module-based scripts using class syntax. **Recommended for new projects.** -->
-* **Classic Scripts** (`.js` files) - The original OasisW scripting system using prototype-based syntax.
+* **Classic Scripts** (`.js` files) - 프로토타입 기반 구문을 사용하는 원래 OasisW 스크립팅 시스템.
 
 <!-- Both systems can coexist in the same project, allowing you to migrate gradually or use whichever approach fits your needs. -->
 
-## Quick Example
+## 빠른 예제
 
-Here's a simple script that rotates an entity:
+엔티티를 회전시키는 간단한 스크립트입니다:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -54,28 +54,28 @@ Rotate.prototype.update = function(dt) {
 </TabItem>
 </Tabs>
 
-## What You'll Learn
+## 학습할 내용
 
-### [Fundamentals](./fundamentals/index.md)
+### [기본 사항](/user-manual/scripting/fundamentals/index.md)
 
-Core concepts that apply to all OasisW scripts:
+모든 OasisW 스크립트에 적용되는 핵심 개념들:
 
-<!-- * [ESM Scripts](./fundamentals/esm-scripts.md) - Modern scripting with ES Modules -->
-* [Getting Started](./fundamentals/getting-started.md) - Basic script structure and syntax
-* [Script Lifecycle](./fundamentals/script-lifecycle.md) - When and how script methods are called
-* [Script Attributes](./fundamentals/script-attributes/index.md) - Exposing configurable properties
-* [Calling the Engine API](./fundamentals/engine-api.md) - Key classes and patterns
-* [Events](./fundamentals/events.md) - Communication between scripts
+<!-- * [ESM Scripts](/user-manual/scripting/fundamentals/esm-scripts.md) - Modern scripting with ES Modules -->
+* [시작하기](/user-manual/scripting/fundamentals/getting-started.md) - 기본 스크립트 구조와 구문
+* [스크립트 라이프사이클](/user-manual/scripting/fundamentals/script-lifecycle.md) - 스크립트 메서드가 언제, 어떻게 호출되는지
+* [스크립트 속성](/user-manual/scripting/fundamentals/script-attributes/index.md) - 구성 가능한 속성 노출
+* [엔진 API 호출](/user-manual/scripting/fundamentals/engine-api.md) - 주요 클래스와 패턴
+* [이벤트](/user-manual/scripting/fundamentals/events.md) - 스크립트 간 통신
 
-<!-- ### [Debugging](./debugging/index.md) -->
+<!-- ### [디버깅](/user-manual/scripting/debugging/index.md) -->
 
-<!-- Tools and techniques for troubleshooting your scripts: -->
+<!-- 스크립트 문제 해결을 위한 도구와 기법: -->
 
-<!-- * [Console Logging](./debugging/console-logging.md) - Basic debugging with console output -->
-<!-- * [Browser Dev Tools](./debugging/browser-dev-tools.md) - Advanced debugging techniques -->
+<!-- * [콘솔 로깅](/user-manual/scripting/debugging/console-logging.md) - 콘솔 출력을 통한 기본 디버깅 -->
+<!-- * [브라우저 개발자 도구](/user-manual/scripting/debugging/browser-dev-tools.md) - 고급 디버깅 기법 -->
 
 <!-- :::tip
 
-New to OasisW scripting? Start with [Getting Started](./fundamentals/getting-started.md) to learn the basics, then explore [ESM Scripts](./fundamentals/esm-scripts.md) for the modern approach.
+OasisW 스크립팅이 처음이신가요? 기본을 배우기 위해 [시작하기](/user-manual/scripting/fundamentals/getting-started.md)부터 시작한 다음, 현대적인 접근 방식을 위해 [ESM Scripts](/user-manual/scripting/fundamentals/esm-scripts.md)를 탐색해보세요.
 
 ::: -->

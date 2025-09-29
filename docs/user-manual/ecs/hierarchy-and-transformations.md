@@ -1,36 +1,35 @@
 ---
-title: Hierarchy and Transformations
-sidebar_label: Hierarchy & Transforms
+title: 계층 구조 & 변환 (Hierarchy & Transforms)
 ---
 
-Entities can be arranged in a **parent-child hierarchy**. The `Entity` class inherits its transform capabilities from the [`GraphNode`](https://manual.oasisserver.link/engine/classes/GraphNode.html) superclass.
+엔티티는 **부모-자식 계층 구조**로 배치할 수 있습니다. `Entity` 클래스는 [`GraphNode`](https://manual.oasisserver.link/engine/classes/GraphNode.html) 슈퍼클래스에서 변환 기능을 상속받습니다.
 
-## Key points
+## 주요 포인트
 
-- **Transforms are relative** to the parent.
-- **World transforms** are calculated by combining local transforms through the hierarchy.
-- Moving a parent affects all its children.
+- **변환은 부모를 기준으로** 상대적입니다.
+- **월드 변환**은 계층 구조를 통해 로컬 변환을 결합하여 계산됩니다.
+- 부모를 이동하면 모든 자식에 영향을 줍니다.
 
 :::tip
-Minimize deep hierarchies. Shallower hierarchies are easier to manage and can perform better.
+깊은 계층 구조를 최소화하세요. 얕은 계층 구조가 관리하기 쉽고 성능이 더 좋을 수 있습니다.
 :::
 
-## Example
+## 예시
 
 ```javascript
-childEntity.setLocalPosition(1, 0, 0); // relative to parent
-console.log(childEntity.getWorldPosition()); // global position
+childEntity.setLocalPosition(1, 0, 0); // 부모를 기준으로 상대적
+console.log(childEntity.getWorldPosition()); // 전역 위치
 ```
 
-See [`setLocalPosition`](https://manual.oasisserver.link/engine/classes/GraphNode.html#setlocalposition) and [`getWorldPosition`](https://manual.oasisserver.link/engine/classes/GraphNode.html#getworldposition).
+[`setLocalPosition`](https://manual.oasisserver.link/engine/classes/GraphNode.html#setlocalposition)과 [`getWorldPosition`](https://manual.oasisserver.link/engine/classes/GraphNode.html#getworldposition)을 참조하세요.
 
-## Re-parenting
+## 부모 재설정
 
 ```javascript
 newParent.addChild(childEntity);
 ```
 
-## Scaling considerations
+## 스케일링 고려사항
 
-- Non-uniform scaling can cause visual or physics issues.
-- Avoid scaling physics-enabled entities unless necessary.
+- 비균등 스케일링은 시각적이거나 물리적 문제를 일으킬 수 있습니다.
+- 필요한 경우가 아니면 물리 활성화된 엔티티의 스케일링을 피하세요.

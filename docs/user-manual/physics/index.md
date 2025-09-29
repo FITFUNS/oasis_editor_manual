@@ -1,11 +1,11 @@
 ---
-title: Physics
+title: 물리 (Physics)
 ---
 
-Most video games you have ever played will have some form of physics. The player expects objects to fall under the influence of gravity. For objects to collide instead of pass through each other. For a sound to play if two objects collide. And so on.
+지금까지 플레이한 대부분의 비디오 게임에는 어떤 형태의 물리가 있을 것입니다. 플레이어는 물체가 중력의 영향을 받아 떨어지기를 기대합니다. 물체들이 서로 통과하는 대신 충돌하기를 기대합니다. 두 물체가 충돌하면 소리가 나기를 기대합니다. 그리고 그런 식으로 말이죠.
 
-A physics engine attempts to reproduce our understanding of the natural world in an artificial game world. It attempts to realistically animate objects in an expected and predictable way.
+물리 엔진은 인공적인 게임 세계에서 우리가 자연 세계에 대해 이해하는 것을 재현하려고 시도합니다. 물체를 예상 가능하고 예측 가능한 방식으로 현실적으로 애니메이션화하려고 시도합니다.
 
 ![Physics Constraints](/img/user-manual/physics/physics-constraints.webp)
 
-OasisW provides a very powerful physics engine that can be used to achieve a great many effects. This section introduces the concepts of rigid bodies, collision, forces, impulses, raycasting and more.
+OasisW는 매우 강력한 물리 엔진을 제공하여 많은 효과를 달성하는 데 사용할 수 있습니다. 이 섹션에서는 강체, 충돌, 힘, 임펄스, 레이캐스팅 등의 개념을 소개합니다.

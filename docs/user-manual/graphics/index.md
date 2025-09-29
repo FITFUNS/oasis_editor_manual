@@ -1,77 +1,77 @@
 ---
-title: Graphics
+title: 그래픽스 (Graphics)
 ---
 
-OasisW incorporates an advanced graphics engine that delivers high-performance 3D rendering on the web. The engine provides both [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) and [WebGPU](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API) support, ensuring compatibility across all modern browsers while offering cutting-edge graphics capabilities.
+OasisW는 웹에서 고성능 3D 렌더링을 제공하는 고급 그래픽스 엔진을 통합합니다. 엔진은 [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API)과 [WebGPU](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API) 지원을 모두 제공하여 최첨단 그래픽스 기능을 제공하면서 모든 최신 브라우저에서의 호환성을 보장합니다.
 
-## Graphics Engine Backends
+## 그래픽스 엔진 백엔드
 
-The OasisW engine supports multiple graphics backends:
+OasisW 엔진은 여러 그래픽스 백엔드를 지원합니다:
 
-* **WebGPU (Beta)** - Next-generation graphics API with reduced driver overhead and compute shader support
-* **WebGL 2.0** - Mature and [widely supported](https://caniuse.com/webgl2) across all browsers and devices
-* **Null** - For running the engine in headless environments such as Node.
+* **WebGPU (베타)** - 드라이버 오버헤드 감소와 컴퓨트 셰이더 지원을 제공하는 차세대 그래픽스 API
+* **WebGL 2.0** - 모든 브라우저와 디바이스에서 [광범위하게 지원](https://caniuse.com/webgl2)되는 성숙한 기술
+* **Null** - Node와 같은 헤드리스 환경에서 엔진 실행용
 
-:::note[Automatic fallback]
+:::note[자동 폴백]
 
-The engine will seamlessly fall back from WebGPU to WebGL based on browser support.
+엔진은 브라우저 지원에 따라 WebGPU에서 WebGL로 원활하게 폴백됩니다.
 
 :::
 
-## Key Rendering Features
+## 주요 렌더링 기능
 
-### Physically Based Rendering (PBR)
+### 물리 기반 렌더링 (PBR)
 
-* Comprehensive PBR support via metallic/roughness and specular/glossiness workflows
-* Energy conservation and physically accurate lighting models
-* Support for clearcoat, anisotropy, sheen, and transmission materials
+* metallic/roughness와 specular/glossiness 워크플로우를 통한 포괄적인 PBR 지원
+* 에너지 보존과 물리적으로 정확한 조명 모델
+* 클리어코트, 이방성, 시인, 투과 재질 지원
 
-### Advanced Lighting
+### 고급 조명
 
-* **Clustered lighting system** - Efficient handling of hundreds of dynamic lights
-* **Directional, point, and spot lights** with configurable shadows and cookies
-* **Area lights** - Rectangle, disk, and sphere-shaped light sources for realistic lighting
-* **Image-based lighting (IBL)** with HDR environment maps
-* **Runtime lightmap generation** for static lighting optimization
+* **클러스터 조명 시스템** - 수백 개의 동적 조명을 효율적으로 처리
+* 구성 가능한 그림자와 쿠키를 가진 **방향성, 점, 스팟 조명**
+* **영역 조명** - 사실적인 조명을 위한 직사각형, 디스크, 구형 광원
+* HDR 환경 맵을 사용한 **이미지 기반 조명 (IBL)**
+* 정적 조명 최적화를 위한 **런타임 라이트맵 생성**
 
-### High Dynamic Range (HDR) Rendering
+### 높은 동적 범위 (HDR) 렌더링
 
-* **Linear workflow** with automatic gamma correction
-* **HDR display output** support on compatible devices
-* **Advanced tone mapping** operators including ACES, Neutral, and Linear
-* **CameraFrame system** for comprehensive post-processing pipeline
+* 자동 감마 보정을 통한 **선형 워크플로우**
+* 호환 디바이스에서의 **HDR 디스플레이 출력** 지원
+* ACES, Neutral, Linear을 포함한 **고급 톤 매핑** 연산자
+* 포괄적인 후처리 파이프라인을 위한 **CameraFrame 시스템**
 
-### Modern Rendering Pipeline
+### 현대적 렌더링 파이프라인
 
-* **Render passes architecture** enabling advanced effects
-* **Multiple render targets (MRT)** support
-* **Depth pre-pass** and **temporal anti-aliasing (TAA)**
-* **Hardware instancing** for efficient rendering of repeated geometry
-* **Static and dynamic batching** to reduce draw calls
+* 고급 효과를 가능하게 하는 **렌더 패스 아키텍처**
+* **다중 렌더 타겟 (MRT)** 지원
+* **깊이 사전 패스**와 **시간적 안티앨리어싱 (TAA)**
+* 반복되는 지오메트리의 효율적인 렌더링을 위한 **하드웨어 인스턴싱**
+* 드로우 콜을 줄이기 위한 **정적 및 동적 배칭**
 
-### Post-Processing Effects
+### 후처리 효과
 
-The CameraFrame system provides a full suite of post-processing effects:
+CameraFrame 시스템은 완전한 후처리 효과 세트를 제공합니다:
 
-* **HDR Bloom** with physically accurate light bleeding
-* **Screen Space Ambient Occlusion (SSAO)**
-* **Depth of Field (DoF)** with bokeh effects
-* **Temporal Anti-Aliasing (TAA)** for smooth edges
-* **Vignette, sepia, brightness/contrast** and color grading
+* 물리적으로 정확한 빛 번짐을 가진 **HDR 블룸**
+* **스크린 공간 앰비언트 오클루전 (SSAO)**
+* 보케 효과를 가진 **피사계 심도 (DoF)**
+* 부드러운 가장자리를 위한 **시간적 안티앨리어싱 (TAA)**
+* **비네트, 세피아, 밝기/대비** 및 컬러 그레이딩
 
-### Advanced Rendering Techniques
+### 고급 렌더링 기법
 
-* **3D Gaussian Splatting** for photorealistic scene reconstruction
-* **Hardware-accelerated particles** for special effects
-* **Mesh skinning and morphing** for character animation
-* **Procedural geometry generation** with optimized primitives
-* **Texture compression** courtesy of Basis Universal
+<!-- * 사실적인 장면 재구성을 위한 **3D 가우시안 스플래팅** -->
+* 특수 효과를 위한 **하드웨어 가속 파티클**
+* 캐릭터 애니메이션을 위한 **메시 스키닝 및 모핑**
+* 최적화된 프리미티브를 사용한 **절차적 지오메트리 생성**
+<!-- * Basis Universal의 **텍스처 압축** -->
 
-### Custom Shaders
+### 사용자 정의 셰이더
 
-* **Flexible shader system** supporting both GLSL (WebGL) and WGSL (WebGPU)
-* **Automatic shader generation** with chunk-based composition
-* **Preprocessor support** for shader variants and includes
-* **WebGPU compute shaders** for GPU-accelerated computation
+* GLSL (WebGL)과 WGSL (WebGPU)을 모두 지원하는 **유연한 셰이더 시스템**
+* 청크 기반 구성을 통한 **자동 셰이더 생성**
+* 셰이더 변형과 인클루드를 위한 **전처리기 지원**
+* GPU 가속 계산을 위한 **WebGPU 컴퓨트 셰이더**
 
-The graphics engine is continuously updated to leverage the latest web standards and hardware capabilities, ensuring OasisW applications deliver exceptional visual quality and performance across all platforms.
+그래픽스 엔진은 최신 웹 표준과 하드웨어 기능을 활용하도록 지속적으로 업데이트되어, OasisW 애플리케이션이 모든 플랫폼에서 뛰어난 시각적 품질과 성능을 제공하도록 보장합니다.

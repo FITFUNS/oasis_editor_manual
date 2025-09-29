@@ -1,63 +1,63 @@
 ---
-title: Using Texture Packers
+title: 텍스처 패커 사용 (Using Texture Packers)
 ---
 
-## What is texture packing?
+## 텍스처 패킹이란?
 
-It's common to find sprites or UI images bundled as separate images. Texture packing is combining those separate images into a single [texture atlas][texture-atlas].
+스프라이트나 UI 이미지가 별도의 이미지로 묶여 있는 것을 자주 볼 수 있습니다. 텍스처 패킹은 이러한 별도의 이미지들을 단일 [텍스처 아틀라스][texture-atlas]로 결합하는 것입니다.
 
-This has several advantages including:
+여러 가지 장점이 있습니다:
 
-- Faster loading times as it's a single network request instead of many.
-- As it's a single texture, the sprites can be batched into a single draw call.
+- 많은 네트워크 요청 대신 단일 네트워크 요청이므로 더 빠른 로딩 시간
+- 단일 텍스처이므로 스프라이트를 단일 드로우 콜로 배치할 수 있음
 
-## Tools
+## 도구
 
-Here are some texture packing tools that are compatible with OasisW.
+OasisW와 호환되는 텍스처 패킹 도구들이 있습니다.
 
-### TexturePacker Online (free)
+### TexturePacker Online (무료)
 
-([Website][texture-packer-online])
+([웹사이트][texture-packer-online])
 
-A free browser tool that is able to do the basics of texture packing.
+텍스처 패킹의 기본을 수행할 수 있는 무료 브라우저 도구입니다.
 
 ![](/img/user-manual/2D/texture-packer/texture-packer-online-steps.png)
 
-1. Clear the texture atlas.
-2. Add your sprites/UI images.
-3. Data format should be kept as JSON hash.
-4. Download .png for the texture atlas.
-5. Download .json for the frame data.
+1. 텍스처 아틀라스를 지웁니다.
+2. 스프라이트/UI 이미지를 추가합니다.
+3. 데이터 형식을 JSON 해시로 유지해야 합니다.
+4. 텍스처 아틀라스용 .png를 다운로드합니다.
+5. 프레임 데이터용 .json을 다운로드합니다.
 
-### Texture Packer tool
+### Texture Packer 도구
 
-([Website][texture-packer-tool])
+([웹사이트][texture-packer-tool])
 
-TexturePacker is a paid tool for download that has many more features and options for creating texture atlases. These include more control over the layout of the sprites/UI images and being able to set up [9 slicing][9-slicing].
+TexturePacker는 다운로드용 유료 도구로, 텍스처 아틀라스를 만드는 데 더 많은 기능과 옵션을 가지고 있습니다. 여기에는 스프라이트/UI 이미지의 레이아웃에 대한 더 많은 제어와 [9 슬라이싱][9-slicing] 설정 기능이 포함됩니다.
 
 ![](/img/user-manual/2D/texture-packer/texture-packer-tool-steps.png)
 
-Basic steps:
+기본 단계:
 
-1. Add your sprites/UI images.
-2. Set Output files -> Framework as OasisW.
-3. Click on Publish sprite sheet to create the texture atlas and JSON frame data.
+1. 스프라이트/UI 이미지를 추가합니다.
+2. Output files -> Framework를 OasisW로 설정합니다.
+3. Publish sprite sheet를 클릭하여 텍스처 아틀라스와 JSON 프레임 데이터를 만듭니다.
 
-## Creating frames in Sprite Editor
+## 스프라이트 에디터에서 프레임 생성
 
-Once you have uploaded the texture atlas file into the Editor and created a [texture atlas asset][texture-atlas], open the Sprite Editor.
+텍스처 아틀라스 파일을 에디터에 업로드하고 [텍스처 아틀라스 에셋][texture-atlas]을 만든 후, 스프라이트 에디터를 엽니다.
 
-![](/img/user-manual/2D/texture-packer/playcanvas-sprite-editor.png)
+![](/img/user-manual/2D/texture-packer/oasis-sprite-editor.png)
 
-Click on 'Upload Texture Packer JSON' and select the JSON frame data file to upload.
+'Upload Texture Packer JSON'을 클릭하고 업로드할 JSON 프레임 데이터 파일을 선택합니다.
 
-This will create frames in the texture atlas that you can create sprite assets from.
+이렇게 하면 스프라이트 에셋을 만들 수 있는 텍스처 아틀라스에 프레임이 생성됩니다.
 
-When updating the texture atlas later in development, as long as the sprite filenames and frame names remain the same, the following will happen when uploading the new frame data:
+개발 중에 나중에 텍스처 아틀라스를 업데이트할 때, 스프라이트 파일명과 프레임명이 동일하게 유지되는 한, 새 프레임 데이터를 업로드할 때 다음과 같은 일이 발생합니다:
 
-- Sprites that have been removed on the atlas will have their frames removed.
-- Sprites that have been added on the atlas will have new frames added to the end of the list.
-- Existing sprites will have their frames updated.
+- 아틀라스에서 제거된 스프라이트는 프레임이 제거됩니다.
+- 아틀라스에 추가된 스프라이트는 목록 끝에 새 프레임이 추가됩니다.
+- 기존 스프라이트는 프레임이 업데이트됩니다.
 
 [texture-atlas]: /user-manual/assets/types/texture-atlas/
 [texture-packer-online]: https://www.codeandweb.com/tp-online

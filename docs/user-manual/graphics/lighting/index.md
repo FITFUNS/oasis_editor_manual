@@ -1,25 +1,25 @@
 ---
-title: Lighting
+title: 조명 (Lighting)
 ---
 
-Lighting a scene is the process of calculating the color or shading of a pixel render to the screen based on the material properties of the surface and the light sources that are applied to that material.
+씬을 조명하는 것은 표면의 머티리얼 속성과 해당 머티리얼에 적용된 광원을 기반으로 화면에 렌더링되는 픽셀의 색상이나 음영을 계산하는 과정입니다.
 
-In OasisW, lighting can be broadly divided up into two basic categories: dynamic lights and lightmaps.
+OasisW에서 조명은 크게 두 가지 기본 카테고리로 나눌 수 있습니다: 동적 조명과 라이트맵입니다.
 
-## Dynamic Lights
+## 동적 조명 (Dynamic Lights)
 
-Lighting calculations that are performed at runtime are classed as dynamic. Every frame the engine calculates the amount of light falling on a surface from the type, position and properties of Light Entities and uses this to color the material.
+런타임에 수행되는 조명 계산은 동적으로 분류됩니다. 엔진은 매 프레임마다 Light Entity의 타입, 위치 및 속성으로부터 표면에 떨어지는 빛의 양을 계산하고 이를 사용하여 머티리얼을 색칠합니다.
 
-## Lightmaps
+## 라이트맵 (Lightmaps)
 
-For lights and geometry that does not move, it is often preferable to determine the lighting information in advance. This information is then saved into lightmap textures which are applied to the surface materials. This method has a very low runtime cost at the expense of having static lighting which can not change and pre-computation times.
+움직이지 않는 조명과 지오메트리의 경우, 조명 정보를 미리 결정하는 것이 종종 선호됩니다. 이 정보는 표면 머티리얼에 적용되는 라이트맵 텍스처로 저장됩니다. 이 방법은 변경할 수 없는 정적 조명과 사전 계산 시간의 대가로 매우 낮은 런타임 비용을 가집니다.
 
-There are two methods of creating lightmaps:
+라이트맵을 생성하는 두 가지 방법이 있습니다:
 
-### External Lightmap Generation
+### 외부 라이트맵 생성
 
-Many 3D creation tools have lightmap generation included or available as an add-on, including 3DS Max, Maya and Blender. These tools generally generate lightmap textures which can be uploaded as regular assets and added to the Lightmap slot in the standard Physical Material.
+3DS Max, Maya, Blender를 포함한 많은 3D 제작 도구에는 라이트맵 생성 기능이 포함되어 있거나 애드온으로 사용할 수 있습니다. 이러한 도구들은 일반적으로 일반 에셋으로 업로드하고 표준 Physical Material의 Lightmap 슬롯에 추가할 수 있는 라이트맵 텍스처를 생성합니다.
 
-### OasisW Runtime Lightmap Generation
+### OasisW 런타임 라이트맵 생성
 
-The OasisW Engine has built in lightmap generation. This can be used to generate lightmaps automatically just before your game runs. With this method you can use the standard light components, make changes and preview your scene directly in the Editor.
+OasisW 엔진에는 내장된 라이트맵 생성 기능이 있습니다. 이 기능을 사용하여 게임이 실행되기 직전에 라이트맵을 자동으로 생성할 수 있습니다. 이 방법을 사용하면 표준 조명 컴포넌트를 사용하고, 변경사항을 만들고, 에디터에서 직접 씬을 미리 볼 수 있습니다.

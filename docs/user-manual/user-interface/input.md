@@ -1,12 +1,12 @@
 ---
-title: Input
+title: 입력 (Input)
 ---
 
-The user can interact with [Element][1] components, by enabling the `useInput` field on the Element component:
+사용자는 요소 컴포넌트의 `useInput` 필드를 활성화하여 [Element][1] 컴포넌트와 상호작용할 수 있습니다:
 
 ![Use Input](/img/user-manual/assets/fonts/use-input.png)
 
-Also in order for that to work there must be an initialized instance of `pc.ElementInput` for `pc.Application#elementInput`. This is created automatically for you if you are using the Editor. If you are using the Engine only make sure to create an instance *before* the other input devices like `pc.Mouse` or `pc.TouchDevice` like so:
+이것이 작동하려면 `pc.Application#elementInput`에 대해 초기화된 `pc.ElementInput` 인스턴스가 있어야 합니다. 에디터를 사용하는 경우 이것이 자동으로 생성됩니다. 엔진만 사용하는 경우 `pc.Mouse` 또는 `pc.TouchDevice`와 같은 다른 입력 장치보다 *먼저* 인스턴스를 생성해야 합니다:
 
 ```javascript
 const app = new pc.Application(canvas, {
@@ -19,57 +19,57 @@ const app = new pc.Application(canvas, {
 });
 ```
 
-## Input Events
+## 입력 이벤트 (Input Events)
 
-When you enable input on an Element component the following events will be fired:
+요소 컴포넌트에서 입력을 활성화하면 다음 이벤트가 발생합니다:
 
 ### mousedown
 
-Fired when the mouse is pressed while the mouse cursor is on the component.
+마우스 커서가 컴포넌트 위에 있을 때 마우스가 눌렸을 때 발생합니다.
 
 ### mouseup
 
-Fired when the mouse is released while the mouse cursor is on the component.
+마우스 커서가 컴포넌트 위에 있을 때 마우스가 놓였을 때 발생합니다.
 
 ### mouseenter
 
-Fired when the mouse cursor enters the component.
+마우스 커서가 컴포넌트에 들어갔을 때 발생합니다.
 
 ### mouseleave
 
-Fired when the mouse cursor leaves the component.
+마우스 커서가 컴포넌트를 벗어났을 때 발생합니다.
 
 ### mousemove
 
-Fired when the mouse cursor is moved on the component.
+마우스 커서가 컴포넌트 위에서 이동했을 때 발생합니다.
 
 ### mousewheel
 
-Fired when the mouse wheel is scrolled on the component.
+마우스 휠이 컴포넌트에서 스크롤되었을 때 발생합니다.
 
 ### click
 
-Fired when the mouse is pressed and released on the component or when a touch starts and ends on the component.
+마우스가 컴포넌트에서 눌렸다가 놓였을 때 또는 터치가 컴포넌트에서 시작되고 끝났을 때 발생합니다.
 
 ### touchstart
 
-Fired when a touch starts on the component.
+컴포넌트에서 터치가 시작되었을 때 발생합니다.
 
 ### touchend
 
-Fired when a touch ends on the component.
+컴포넌트에서 터치가 끝났을 때 발생합니다.
 
 ### touchmove
 
-Fired when a touch moves after it started touching the component.
+컴포넌트를 터치한 후 터치가 이동했을 때 발생합니다.
 
 ### touchcancel
 
-Fired when a touch is cancelled on the component.
+컴포넌트에서 터치가 취소되었을 때 발생합니다.
 
-## Event Handling
+## 이벤트 처리 (Event Handling)
 
-To handle an input event you can listen for it on the Element component:
+입력 이벤트를 처리하려면 요소 컴포넌트에서 이를 수신할 수 있습니다:
 
 ```javascript
 this.entity.element.on('click', function (event) {
@@ -77,20 +77,20 @@ this.entity.element.on('click', function (event) {
 }, this);
 ```
 
-## Event bubbling
+## 이벤트 버블링 (Event bubbling)
 
-When an input event is fired on an Element component it bubbles up to its parent Elements unless you call `event.stopPropagation()`. For example:
+요소 컴포넌트에서 입력 이벤트가 발생하면 `event.stopPropagation()`을 호출하지 않는 한 부모 요소로 버블링됩니다. 예를 들어:
 
 ```javascript
 this.entity.element.on('click', function (event) {
-    // stop bubbling
+    // 버블링 중지
     event.stopPropagation();
 
     console.log('The element ' + event.element.entity.name + ' was clicked.');
 }, this);
 ```
 
-Calling `stopPropagation` will also stop the event from being handled by the other input devices like `pc.Mouse` or `pc.TouchDevice`. So if for example you are handling mouse input using `app.mouse.wasPressed`, you can call `stopPropagation` on the `mousedown` event to prevent `app.mouse.wasPressed` from returning true. For example:
+`stopPropagation`을 호출하면 `pc.Mouse` 또는 `pc.TouchDevice`와 같은 다른 입력 장치에서 이벤트가 처리되는 것도 중지됩니다. 예를 들어 `app.mouse.wasPressed`를 사용하여 마우스 입력을 처리하는 경우, `mousedown` 이벤트에서 `stopPropagation`을 호출하여 `app.mouse.wasPressed`가 true를 반환하지 않도록 할 수 있습니다. 예를 들어:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -145,13 +145,13 @@ InputScript.prototype.update = function (dt) {
 </TabItem>
 </Tabs>
 
-## Mouse and Touch event conflict on Google Chrome
+## Google Chrome에서 마우스와 터치 이벤트 충돌
 
-Google Chrome simulates mouse events also on touch devices. By doing so it could cause some unexpected behavior. For example if you hide a button right after the click event, another UI element that lays behind it could also receive an unwanted click event.
+Google Chrome은 터치 장치에서도 마우스 이벤트를 시뮬레이션합니다. 이로 인해 예상치 못한 동작이 발생할 수 있습니다. 예를 들어 클릭 이벤트 직후에 버튼을 숨기면, 그 뒤에 있는 다른 UI 요소도 원하지 않는 클릭 이벤트를 받을 수 있습니다.
 
-To prevent this behavior you can call the ```preventDefault()``` method of the native event object on the ```pc.EVENT_TOUCHEND``` event:
+이 동작을 방지하려면 ```pc.EVENT_TOUCHEND``` 이벤트에서 네이티브 이벤트 객체의 ```preventDefault()``` 메서드를 호출할 수 있습니다:
 
-Here is small script to include once in your scene:
+다음은 씬에 한 번 포함할 작은 스크립트입니다:
 
 <Tabs defaultValue="classic" groupId='script-code'>
 <!-- <TabItem  value="esm" label="ESM">
@@ -163,13 +163,13 @@ export class TouchFix extends Script {
     static scriptname = "touchFix";
 
     initialize () {
-        // Only register touch events if the device supports touch
+        // 터치를 지원하는 장치에서만 터치 이벤트를 등록합니다
         const touch = this.app.touch;
         if (touch) {
-            touch.on(EVENT_TOUCHEND, function(event) {
-                // This prevents that a mouse click event will be executed after a touch event.
-                event.event.preventDefault();
-            });
+        touch.on(EVENT_TOUCHEND, function(event) {
+            // 터치 이벤트 후에 마우스 클릭 이벤트가 실행되는 것을 방지합니다.
+            event.event.preventDefault();
+        });
         }
     }
 }
@@ -181,13 +181,13 @@ export class TouchFix extends Script {
 ```javascript
 var TouchFix = pc.createScript('touchFix');
 
-// initialize code called once per entity
+// 엔티티당 한 번 호출되는 초기화 코드
 TouchFix.prototype.initialize = function() {
-    // Only register touch events if the device supports touch
+    // 터치를 지원하는 장치에서만 터치 이벤트를 등록합니다
     const touch = this.app.touch;
     if (touch) {
         touch.on(pc.EVENT_TOUCHEND, function(event) {
-            // This prevents that a mouse click event will be executed after a touch event.
+            // 터치 이벤트 후에 마우스 클릭 이벤트가 실행되는 것을 방지합니다.
             event.event.preventDefault();
         });
     }

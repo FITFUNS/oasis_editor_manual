@@ -1,18 +1,18 @@
 ---
-title: Animation
+title: 애니메이션 (Animation)
 ---
 
-An Animation asset is used to play a single animation on a 3D model. Animations are imported by uploading 3D scenes (such as FBX files) which contain animation data. The animation data is extracted from the uploaded file by the asset pipeline and a Target Asset is created to use in game.
+애니메이션 에셋은 3D 모델에서 단일 애니메이션을 재생하는 데 사용됩니다. 애니메이션은 애니메이션 데이터를 포함하는 3D 씬(FBX 파일 등)을 업로드하여 가져옵니다. 애니메이션 데이터는 에셋 파이프라인에 의해 업로드된 파일에서 추출되고 게임에서 사용할 Target 에셋이 생성됩니다.
 
-## Animation Preview
+## 애니메이션 미리보기
 
-The inspector has a viewer that can be used to preview the animation with any Template or Model asset. This is useful if you have a single animation that can be applied to different character rigs.
+검사기에는 템플릿 또는 모델 에셋과 함께 애니메이션을 미리볼 수 있는 뷰어가 있습니다. 이는 다른 캐릭터 리그에 적용할 수 있는 단일 애니메이션이 있는 경우 유용합니다.
 
-![Asset Inspector Preview](/img/user-manual/assets/animation/inspector-preview.gif)
+![에셋 검사기 미리보기](/img/user-manual/assets/animation/inspector-preview.gif)
 
-There is also a viewer in the [Anim State Graph Editor][anim-state-graph-editor] when you select a state in the graph. When selected, all Entities in the scene that are using the graph will show in a list and can be selected for preview.
+그래프에서 상태를 선택할 때 [애니메이션 상태 그래프 에디터][anim-state-graph-editor]에도 뷰어가 있습니다. 선택하면 그래프를 사용하는 씬의 모든 엔티티가 목록에 표시되고 미리보기를 위해 선택할 수 있습니다.
 
-![Anim State Graph Preview](/img/user-manual/assets/animation/anim-state-graph-preview.gif)
+![애니메이션 상태 그래프 미리보기](/img/user-manual/assets/animation/anim-state-graph-preview.gif)
 
 <!-- ## Animation Import Settings
 

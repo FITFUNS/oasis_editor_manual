@@ -2,27 +2,27 @@
 title: CSS
 ---
 
-A CSS asset contains CSS code. You can create a new CSS asset in the Editor or by uploading a file with a .css extension.
+CSS 에셋은 CSS 코드를 포함합니다. 에디터에서 새 CSS 에셋을 만들거나 .css 확장자가 있는 파일을 업로드할 수 있습니다.
 
-To edit a CSS asset, right click on it in the Editor and select Edit.
+CSS 에셋을 편집하려면 에디터에서 우클릭하고 편집을 선택하세요.
 
-The loaded CSS asset resource is just a string. You can use the string as you like. A common way to add the loaded CSS string to the document is the following:
+로드된 CSS 에셋 리소스는 단순한 문자열입니다. 원하는 대로 문자열을 사용할 수 있습니다. 로드된 CSS 문자열을 문서에 추가하는 일반적인 방법은 다음과 같습니다:
 
 ```javascript
-// get asset from registry by id
-const asset = app.assets.get(32);
+// ID로 레지스트리에서 에셋 가져오기
+const asset = this.app.assets.get(32);
 
-// create element
+// 요소 생성
 const style = document.createElement('style');
 style.type = "text/css";
 style.textContent = asset.resource || '';
 document.head.appendChild(style);
 
-// update the style when the asset's resource loads/changes
+// 에셋의 리소스가 로드/변경될 때 스타일 업데이트
 asset.on('load', function() {
     style.innerHTML = asset.resource;
 });
 
-// make sure assets loads
-app.assets.load(asset);
+// 에셋이 로드되도록 보장
+this.app.assets.load(asset);
 ```

@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "OasisW",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "OasisW Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.사용법": {
+    "message": "Usage Guide",
+    "description": "Navbar item with label 사용법"
+  },
+  "item.label.메뉴얼": {
+    "message": "Manual",
+    "description": "Navbar item with label 메뉴얼"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
+  }
+}

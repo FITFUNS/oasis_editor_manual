@@ -1,10 +1,10 @@
 ---
-title: Shader
+title: 셰이더 (Shader)
 ---
 
-A shader asset contains GLSL code. You can create a new Shader asset by clicking New Shader in the Asset Panel in the Editor or by uploading a file with an extension of ```.vert```, ```.frag``` or ```.glsl```.
+셰이더 에셋은 GLSL 코드를 포함합니다. 에디터의 에셋 패널에서 "새 셰이더"를 클릭하거나 ```.vert```, ```.frag``` 또는 ```.glsl``` 확장자를 가진 파일을 업로드하여 새로운 셰이더 에셋을 생성할 수 있습니다.
 
-To edit a Shader asset, right click on it in the Editor and select Edit. Here's an example on using Shader assets to create a custom material.
+셰이더 에셋을 편집하려면 에디터에서 우클릭하고 "편집"을 선택하세요. 다음은 셰이더 에셋을 사용하여 사용자 정의 재질을 생성하는 예제입니다.
 
 ```javascript
 const vertexShader = this.app.assets.find('my_vertex_shader');

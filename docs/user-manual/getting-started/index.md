@@ -1,20 +1,20 @@
 ---
-title: Getting Started
+title: 시작하기
 ---
 
-## What is OasisW?
+## OasisW란 무엇인가요?
 
-OasisW is a ✨ **web graphics creation platform** ✨
+OasisW는 ✨ **웹 그래픽 생성 플랫폼** ✨입니다
 
-OasisW provides a powerful open-source JavaScript engine for building interactive, graphical web applications:
+OasisW는 인터랙티브하고 그래픽적인 웹 애플리케이션을 구축하기 위한 강력한 오픈소스 JavaScript 엔진을 제공합니다:
 
-🦾 **OasisW Engine** - Open source JavaScript run-time that powers all OasisW applications
+🦾 **OasisW Studio** - 모든 OasisW 애플리케이션을 구동하는 오픈소스 JavaScript 런타임
 
-## Getting Started with OasisW Engine
+<!-- ## OasisW Studio로 시작하기
 
-The OasisW Engine is perfect for developers who want maximum control over their 3D web applications.
+OasisW Studio는 3D 웹 애플리케이션에 대한 최대한의 제어를 원하는 개발자에게 완벽합니다.
 
-**Best for:** Experienced programmers, performance-critical applications, custom workflows  
-**Choose if you:** Want maximum control, have specific architectural needs, or are building complex systems
+**최적의 대상:** 숙련된 프로그래머, 성능이 중요한 애플리케이션, 커스텀 워크플로우  
+**다음과 같은 경우 선택하세요:** 최대한의 제어를 원하거나, 특정 아키텍처 요구사항이 있거나, 복잡한 시스템을 구축하는 경우 -->
 
-<!-- And if you still have questions, come and chat to us on [Discord](https://discord.gg/RSaMRzg). -->
+<!-- 질문이 있으시면 [Discord](https://discord.gg/RSaMRzg)에서 채팅해 주세요. -->

@@ -1,18 +1,18 @@
 ---
-title: Third-party Asset Sites
+title: 서드파티 에셋 사이트 (Third-party Asset Sites)
 ---
 
-## Where can I get 3D models/Sound FX/Music for OasisW?
+## OasisW용 3D 모델/사운드 FX/음악을 어디서 구할 수 있나요?
 
-Sometimes it's important to make your own unique assets, but sometimes a completely bespoke asset is too expensive or time-consuming to make. So we've gathered together a list of links and resources for places that you can get free or paid-for assets of all types.
+때로는 자신만의 고유한 에셋을 만드는 것이 중요하지만, 때로는 완전히 맞춤형 에셋을 만드는 것이 너무 비싸거나 시간이 많이 걸립니다. 그래서 모든 유형의 무료 또는 유료 에셋을 구할 수 있는 링크와 리소스 목록을 모았습니다.
 
-<!-- If you've got other suggestions for this page. Then let us know on the [forum][1]. -->
+<!-- 이 페이지에 대한 다른 제안이 있다면 [포럼][1]에서 알려주세요. -->
 
-## Asset Marketplaces
+## 에셋 마켓플레이스
 
-Asset marketplaces are online libraries of content that you can download, either for free or for a fee, and add to your OasisW game.
+에셋 마켓플레이스는 무료 또는 유료로 다운로드하여 OasisW 게임에 추가할 수 있는 콘텐츠의 온라인 라이브러리입니다.
 
-| Provider                                                                 | 2D Art   | 3D Art   | Audio    |
+| 제공업체                                                                   | 2D 아트  | 3D 아트  | 오디오   |
 |--------------------------------------------------------------------------|----------|----------|----------|
 | [3D Models Textures](https://www.3dmodels-textures.com/)                 |          | &#x2713; | &#x2713; |
 | [BlendSwap](https://www.blendswap.com/)                                  |          | &#x2713; |          |
@@ -26,13 +26,13 @@ Asset marketplaces are online libraries of content that you can download, either
 | [Sound Bible](https://soundbible.com/)                                   |          |          | &#x2713; |
 | [Turbosquid](https://www.turbosquid.com/)                                | &#x2713; | &#x2713; | &#x2713; |
 
-## Procedural Generation Tools
+## 절차적 생성 도구
 
-There are tools available that can generate game assets procedurally. Here are some good examples:
+게임 에셋을 절차적으로 생성할 수 있는 도구들이 있습니다. 좋은 예시들입니다:
 
-* [Sound FX Generator][2]
-* [Spacescape Skybox Generator][3]
-* [Sloyd 3D Model Generator][4]
+* [사운드 FX 생성기][2]
+* [Spacescape 스카이박스 생성기][3]
+* [Sloyd 3D 모델 생성기][4]
 
 <!-- [1]: https://forum.playcanvas.com/ -->
 [2]: https://www.bfxr.net/

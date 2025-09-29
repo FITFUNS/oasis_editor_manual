@@ -1,29 +1,29 @@
 ---
-title: Linear Workflow
+title: 선형 워크플로우 (Linear Workflow)
 ---
 
-In modern rendering engines, a linear workflow is essential for achieving physically accurate lighting and color representation. This approach ensures that all calculations, from shading to post-processing, occur in a linear color space, preventing errors introduced by gamma-compressed textures or incorrect blending. By working in linear space and applying gamma correction only at the final output stage, we maintain consistency across lighting, textures, and effects, resulting in more realistic and predictable visuals.
+현대 렌더링 엔진에서 선형 워크플로우는 물리적으로 정확한 조명과 색상 표현을 달성하는 데 필수적입니다. 이 접근법은 셰이딩부터 후처리까지 모든 계산이 선형 색상 공간에서 발생하도록 보장하여 감마 압축된 텍스처나 잘못된 블렌딩으로 인한 오류를 방지합니다. 선형 공간에서 작업하고 최종 출력 단계에서만 감마 보정을 적용함으로써 조명, 텍스처, 효과 간의 일관성을 유지하여 더 사실적이고 예측 가능한 시각적 효과를 얻습니다.
 
-In engine v1, linear workflow was limited to `StandardMaterial`, but in engine v2, it is fully integrated across all shaders and rendering stages (including `ShaderMaterial`, UI rendering, particles, and every other element) ensuring consistent, physically accurate color processing throughout.
+<!-- 엔진 v1에서는 선형 워크플로우가 `StandardMaterial`에만 제한되었지만, 엔진 v2에서는 모든 셰이더와 렌더링 단계(`ShaderMaterial`, UI 렌더링, 파티클 및 기타 모든 요소 포함)에 완전히 통합되어 일관되고 물리적으로 정확한 색상 처리를 보장합니다. -->
 
-## Shader Input and Output Handling
+## 셰이더 입력 및 출력 처리
 
-A proper linear workflow ensures that all color calculations in the shader occur in a physically correct manner. This requires careful handling of both inputs and outputs to maintain accuracy throughout the rendering pipeline.  
+적절한 선형 워크플로우는 셰이더의 모든 색상 계산이 물리적으로 올바른 방식으로 발생하도록 보장합니다. 이는 렌더링 파이프라인 전체에서 정확성을 유지하기 위해 입력과 출력 모두를 신중하게 처리해야 합니다.
 
-### **Shader Inputs: Ensuring Linear Data**  
+### **셰이더 입력: 선형 데이터 보장**
 
-Shaders require all input values to be in linear space to avoid incorrect lighting results. This affects both textures and uniform color values:  
+셰이더는 잘못된 조명 결과를 피하기 위해 모든 입력 값이 선형 공간에 있어야 합니다. 이는 텍스처와 유니폼 색상 값 모두에 영향을 미칩니다:
 
-- **Textures** that store color data (such as albedo maps) should be marked as **sRGB**. When a texture is sampled, the GPU automatically converts sRGB-encoded values into linear space, ensuring correct color calculations.  
-- **Color uniforms** are automatically converted from gamma space to linear space for `StandardMaterial`, particle rendering, and other built-in rendering systems. However, when setting uniforms manually using `Material.setParameter` or `MeshInstance.setParameter`, it is the caller's responsibility to ensure the values are provided in linear space. This is especially critical for `ShaderMaterial`, where all parameters must be explicitly defined using `setParameter`. To assist with this, the `Color` class provides the `Color.linear()` function, which converts gamma-space colors to linear space.  
+- 색상 데이터를 저장하는 **텍스처**(알베도 맵과 같은)는 **sRGB**로 표시되어야 합니다. 텍스처가 샘플링될 때 GPU는 sRGB 인코딩된 값을 자동으로 선형 공간으로 변환하여 올바른 색상 계산을 보장합니다.
+- **색상 유니폼**은 `StandardMaterial`, 파티클 렌더링 및 기타 내장 렌더링 시스템에 대해 감마 공간에서 선형 공간으로 자동 변환됩니다. 하지만 `Material.setParameter` 또는 `MeshInstance.setParameter`를 사용하여 수동으로 유니폼을 설정할 때는 호출자가 값이 선형 공간에서 제공되도록 보장할 책임이 있습니다. 이는 모든 매개변수가 `setParameter`를 사용하여 명시적으로 정의되어야 하는 `ShaderMaterial`에 특히 중요합니다. 이를 지원하기 위해 `Color` 클래스는 감마 공간 색상을 선형 공간으로 변환하는 `Color.linear()` 함수를 제공합니다.
 
-Once all inputs are in linear space, the shader performs lighting calculations with physically accurate results.  
+모든 입력이 선형 공간에 있으면 셰이더는 물리적으로 정확한 결과로 조명 계산을 수행합니다.
 
-### **Shader Output: Managing Gamma Correction**  
+### **셰이더 출력: 감마 보정 관리**
 
-When writing the final color output, the handling of gamma correction depends on whether the rendering is LDR (Low Dynamic Range) or HDR (High Dynamic Range):  
+최종 색상 출력을 작성할 때 감마 보정 처리는 렌더링이 LDR(저역동범위)인지 HDR(고역동범위)인지에 따라 달라집니다:
 
-- **LDR Rendering**: Colors are gamma corrected immediately in the shader before being written to the render target, ensuring they are displayed correctly on standard monitors.  
-- **HDR Rendering**: Colors remain in linear space when written to the render target, typically requiring a **floating-point format** (e.g., `RGBA16F` or `RGBA32F`) to preserve precision and avoid banding. Gamma correction is then applied later, usually at the final tone-mapping or post-processing stage, allowing effects such as bloom and color grading to work with high-precision linear HDR colors.  
+- **LDR 렌더링**: 색상은 렌더 타겟에 기록되기 전에 셰이더에서 즉시 감마 보정되어 표준 모니터에서 올바르게 표시되도록 보장됩니다.
+- **HDR 렌더링**: 색상은 렌더 타겟에 기록될 때 선형 공간에 남아 있으며, 일반적으로 정밀도를 보존하고 밴딩을 피하기 위해 **부동소수점 형식**(예: `RGBA16F` 또는 `RGBA32F`)이 필요합니다. 감마 보정은 나중에 적용되며, 보통 최종 톤 매핑 또는 후처리 단계에서 적용되어 블룸과 컬러 그레이딩과 같은 효과가 고정밀 선형 HDR 색상으로 작동할 수 있게 합니다.
 
-This structured approach ensures that lighting, blending, and post-processing operate consistently, leading to more realistic and predictable rendering results.
+이러한 구조화된 접근법은 조명, 블렌딩, 후처리가 일관되게 작동하도록 보장하여 더 사실적이고 예측 가능한 렌더링 결과를 얻습니다.

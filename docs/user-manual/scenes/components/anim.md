@@ -1,17 +1,17 @@
 ---
-title: Anim
+title: 애님 (Anim)
 ---
 
-The anim component is used to connect an animstategraph asset and all of its required animation assets to a single entity.
+애님 컴포넌트는 애님 상태 그래프 에셋과 필요한 모든 애니메이션 에셋을 단일 엔티티에 연결하는 데 사용됩니다.
 
-Below you can see the anim component after it has been added to a component. It shows an available slot for an animstategraph asset to be selected.
+아래에서 컴포넌트에 추가된 후의 애님 컴포넌트를 볼 수 있습니다. 선택할 수 있는 애님 상태 그래프 에셋을 위한 사용 가능한 슬롯을 보여줍니다.
 
 ![New Anim Component](/img/user-manual/anim/new_anim_component.png)
 
-After selecting an animstategraph asset, the anim component will display a list of animation asset slots. There will be one slot for each animation state in every layer of the state graph asset. This is where actual animation data is connected to the previously created state graph. Multiple anim components can use the same animstategraph asset, each with their own set of animation assets.
+애님 상태 그래프 에셋을 선택한 후, 애님 컴포넌트는 애니메이션 에셋 슬롯 목록을 표시합니다. 상태 그래프 에셋의 모든 레이어의 각 애니메이션 상태에 대해 하나의 슬롯이 있습니다. 여기서 실제 애니메이션 데이터가 이전에 생성된 상태 그래프에 연결됩니다. 여러 애님 컴포넌트가 동일한 애님 상태 그래프 에셋을 사용할 수 있으며, 각각 고유한 애니메이션 에셋 세트를 가집니다.
 
 ![Anim Component With Graph](/img/user-manual/anim/anim_component_with_graph.png)
 
-After all animation state slots have been filled, the anim component will become playable. At this point the anim component can either be played via script by calling `entity.anim.playing = true` or if the `Activate` option is selected, it will play automatically upon the launch of the OasisW project.
+모든 애니메이션 상태 슬롯이 채워진 후, 애니메이션 컴포넌트는 재생 가능해집니다. 이 시점에서 애니메이션 컴포넌트는 `entity.anim.playing = true`를 호출하여 스크립트를 통해 재생하거나 `Activate` 옵션이 선택된 경우 OasisW 프로젝트 시작 시 자동으로 재생됩니다.
 
-The anim component also offers the option to alter the speed of the animation playback. This speed will affect every animation within the state graph.
+애님 컴포넌트는 또한 애니메이션 재생 속도를 변경하는 옵션을 제공합니다. 이 속도는 상태 그래프 내의 모든 애니메이션에 영향을 줍니다.

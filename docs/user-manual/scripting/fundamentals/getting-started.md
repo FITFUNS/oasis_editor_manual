@@ -1,20 +1,22 @@
 ---
-title: Getting Started
+title: 시작하기 (Getting Started)
 ---
 
-This guide covers the basic structure and concepts you need to understand when writing OasisW scripts, whether you're using the modern ESM approach or the classic system.
+이 가이드는 OasisW 스크립트를 작성할 때 이해해야 하는 기본 구조와 개념을 다룹니다.
+<!-- 현대적인 ESM 접근 방식을 사용하든 클래식 시스템을 사용하든  -->
 
-## What is a Script?
 
-A script is a piece of JavaScript code that defines behavior for an Entity in your scene. Scripts are:
+## 스크립트란 무엇인가요?
 
-* **Reusable** - The same script can be attached to multiple entities
-* **Configurable** - Use attributes to customize behavior per entity
-* **Event-driven** - Respond to lifecycle events and user interactions
+스크립트는 씬의 엔티티에 대한 동작을 정의하는 JavaScript 코드 조각입니다. 스크립트는 다음과 같습니다:
 
-## Basic Script Structure
+* **재사용 가능** - 동일한 스크립트를 여러 엔티티에 연결할 수 있습니다
+* **구성 가능** - 속성을 사용하여 엔티티별로 동작을 사용자 정의할 수 있습니다
+* **이벤트 기반** - 라이프사이클 이벤트와 사용자 상호작용에 반응합니다
 
-Every OasisW script follows a similar pattern, regardless of which system you use:
+## 기본 스크립트 구조
+
+어떤 시스템을 사용하든 모든 OasisW 스크립트는 유사한 패턴을 따릅니다:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -59,42 +61,42 @@ var MyScript = pc.createScript('myScript');
 MyScript.attributes.add('speed', { type: 'number', default: 10 });
 
 MyScript.prototype.initialize = function() {
-    // Called once when the script starts
+    // 스크립트가 시작될 때 한 번 호출됩니다
     console.log('Script initialized!');
 };
 
 MyScript.prototype.update = function(dt) {
-    // Called every frame
+    // 매 프레임마다 호출됩니다
     this.entity.rotate(0, this.speed * dt, 0);
 };
 ```
 
-**Key points for classic scripts:**
+**클래식 스크립트의 핵심 포인트:**
 
-* Use `pc.createScript()` to declare the script
-* Add attributes using the `.attributes.add()` method
-* Define methods on the prototype
-* File has `.js` extension
+* `pc.createScript()`를 사용하여 스크립트를 선언합니다
+* `.attributes.add()` 메서드를 사용하여 속성을 추가합니다
+* 프로토타입에 메서드를 정의합니다
+* 파일은 `.js` 확장자를 가집니다
 
 </TabItem>
 </Tabs>
 
-## Core Concepts
+## 핵심 개념
 
-### Script Lifecycle
+### 스크립트 라이프사이클
 
-Scripts have several methods that are called automatically at different times:
+스크립트는 다른 시점에 자동으로 호출되는 여러 메서드를 가집니다:
 
-* `initialize()` - Called once when the script starts
-* `update(dt)` - Called every frame with delta time
-* `postUpdate(dt)` - Called after all updates complete
-* Event handlers for `enable`, `disable`, `destroy`
+* `initialize()` - 스크립트가 시작될 때 한 번 호출됩니다
+* `update(dt)` - 델타 시간과 함께 매 프레임 호출됩니다
+* `postUpdate(dt)` - 모든 업데이트가 완료된 후 호출됩니다
+* `enable`, `disable`, `destroy`에 대한 이벤트 핸들러
 
-Learn more about the [Script Lifecycle](./script-lifecycle.md).
+[스크립트 라이프사이클](./script-lifecycle.md)에 대해 더 자세히 알아보세요.
 
-### Attributes
+### 속성
 
-Attributes let you expose script properties to the editor, making scripts configurable without code changes:
+속성을 사용하면 스크립트 속성을 에디터에 노출하여 코드 변경 없이 스크립트를 구성할 수 있습니다:
 
 <Tabs defaultValue="classic" groupId='script-code'>
 <!-- <TabItem value="esm" label="ESM">
@@ -133,34 +135,34 @@ Configurable.attributes.add('target', { type: 'entity' });
 </TabItem>
 </Tabs>
 
-Learn more about [Script Attributes](./script-attributes/index.md).
+[스크립트 속성](./script-attributes/index.md)에 대해 더 자세히 알아보세요.
 
-### Accessing the Entity
+### 엔티티 접근
 
-Every script has access to the entity it's attached to via `this.entity`:
+모든 스크립트는 `this.entity`를 통해 연결된 엔티티에 접근할 수 있습니다:
 
 ```javascript
-// Get the entity's position
+// 엔티티의 위치 가져오기
 const position = this.entity.getPosition();
 
-// Find child entities
+// 자식 엔티티 찾기
 const child = this.entity.findByName('ChildName');
 
-// Access components
+// 컴포넌트 접근
 const camera = this.entity.camera;
 const rigidbody = this.entity.rigidbody;
 ```
 
-## Next Steps
+## 다음 단계
 
-<!-- * **Learn ESM Scripts:** If you're starting fresh, check out [ESM Scripts](./esm-scripts.md) for the modern approach -->
-* **Understand Lifecycle:** Read about [Script Lifecycle](./script-lifecycle.md) to understand when your code runs
-* **Add Interactivity:** Explore [Events](./events.md) to make scripts communicate with each other
+<!-- * **ESM 스크립트 학습:** 새로 시작한다면 현대적인 접근 방식을 위해 [ESM 스크립트](./esm-scripts.md)를 확인하세요 -->
+* **라이프사이클 이해:** 코드가 언제 실행되는지 이해하기 위해 [스크립트 라이프사이클](./script-lifecycle.md)을 읽어보세요
+* **상호작용 추가:** 스크립트가 서로 통신하도록 [이벤트](./events.md)를 탐색해보세요
 
 <!-- :::tip
 
-**Which system should I use?**
+**어떤 시스템을 사용해야 할까요?**
 
-For new projects, we recommend **ESM Scripts** as they offer better tooling, cleaner syntax, and modern JavaScript features. Classic scripts are still fully supported for existing projects.
+새 프로젝트의 경우 더 나은 도구, 깔끔한 구문, 현대적인 JavaScript 기능을 제공하는 **ESM 스크립트**를 권장합니다. 클래식 스크립트는 기존 프로젝트에서 여전히 완전히 지원됩니다.
 
 ::: -->

@@ -1,66 +1,66 @@
 ---
-title: Text Elements
+title: 텍스트 요소 (Text Elements)
 ---
 
-The Text Element is used to display a string of text using a [font asset][1].
+텍스트 요소는 [폰트 에셋][1]을 사용하여 텍스트 문자열을 표시하는 데 사용됩니다.
 
-## Text
+## 텍스트 (Text)
 
-The Text Element contains a string field to enter the text that will be displayed. Use `Shift+Enter` to enter a new line character in the string field.
+텍스트 요소에는 표시될 텍스트를 입력할 수 있는 문자열 필드가 포함되어 있습니다. 문자열 필드에서 새 줄 문자를 입력하려면 `Shift+Enter`를 사용하세요.
 
 :::tip
 
-Text elements are rendered to the screen using a single quad for each character in the string. When you change the text property, we re-generate the mesh for the element. There is a performance implication for this, though there should be no problems changing text content for a reasonable number of Elements every frame.
+텍스트 요소는 문자열의 각 문자에 대해 단일 쿼드를 사용하여 화면에 렌더링됩니다. 텍스트 속성을 변경하면 요소의 메시를 다시 생성합니다. 이에 대한 성능 영향이 있지만, 매 프레임마다 합리적인 수의 요소에 대해 텍스트 내용을 변경하는 데는 문제가 없어야 합니다.
 
 :::
 
-### Text Markup
+### 텍스트 마크업 (Text Markup)
 
-Text elements support a simple markup syntax that allows you to apply different colors to specific parts of the text. Consider this example:
+텍스트 요소는 텍스트의 특정 부분에 다른 색상을 적용할 수 있는 간단한 마크업 구문을 지원합니다. 다음 예제를 살펴보세요:
 
 ```none
 [color="#ff0000"]Red[/color], [color="#00ff00"]green[/color] and [color="#0000ff"]blue[/color].
 ```
 
-Assuming the base color of the text element is white, this will render as follows:
+텍스트 요소의 기본 색상이 흰색이라고 가정하면, 다음과 같이 렌더링됩니다:
 
 ![Text Markup](/img/user-manual/user-interface/text-element/text-markup.png)
 
 :::tip
 
-You must proactively enable support for the markup syntax on a text element. You can do this via the API:
+텍스트 요소에서 마크업 구문 지원을 사전에 활성화해야 합니다. API를 통해 이를 수행할 수 있습니다:
 
 ```javascript
 entity.element.enableMarkup = true;
 ```
 
-Or by enabling it in the Editor:
+또는 에디터에서 활성화할 수 있습니다:
 
 ![Enable Markup](/img/user-manual/user-interface/text-element/enable-markup.png)
 
 :::
 
-## Localization
+<!-- ## 현지화 (Localization)
 
-You can check the 'Localized' checkbox to localize the text of the Text Element. If this is enabled then, instead of the text, you specify the localization key for the Text Element which will be used to get the localized text from the localization assets.
+텍스트 요소의 텍스트를 현지화하려면 'Localized' 체크박스를 선택할 수 있습니다. 이 기능이 활성화되면 텍스트 대신 현지화 에셋에서 현지화된 텍스트를 가져오는 데 사용될 텍스트 요소의 현지화 키를 지정합니다.
 
-Read more about localization [here][11].
+현지화에 대한 자세한 내용은 [여기][11]에서 확인하세요. -->
 
-## Auto-size
+## 자동 크기 조정 (Auto-size)
 
-By default a Text Element is set to automatically adjust its width and height to match the text string. You can disable this and specify the height and width of the element directly in the Editor panel.
+기본적으로 텍스트 요소는 텍스트 문자열에 맞게 너비와 높이를 자동으로 조정하도록 설정되어 있습니다. 이를 비활성화하고 에디터 패널에서 요소의 높이와 너비를 직접 지정할 수 있습니다.
 
 ![Auto Size](/img/user-manual/user-interface/text-element/auto-size.png)
 
 :::note
 
-The height of the character is determined by the largest character present in the font. It is the same for every character so as to avoid the string position changing depending on the contents of the string.
+문자의 높이는 폰트에 있는 가장 큰 문자에 의해 결정됩니다. 문자열의 내용에 따라 문자열 위치가 변경되는 것을 피하기 위해 모든 문자에 대해 동일합니다.
 
 :::
 
-## Alignment
+## 정렬 (Alignment)
 
-Text Elements have an additional tool to help with positioning which is the alignment. You will be used to how this property works from tools like Word Processes. In this case, rather than presets we expose a variable that can be altered. The alignment consists of two values `[X, Y]` each between 0 and 1. `[0,0]` is bottom left alignment, `[0.5,0.5]` is centered and `[1,1]` is top right.
+텍스트 요소에는 위치 지정을 돕는 추가 도구인 정렬이 있습니다. 워드 프로세서와 같은 도구에서 이 속성이 어떻게 작동하는지 알고 계실 것입니다. 이 경우 사전 설정보다는 변경할 수 있는 변수를 노출합니다. 정렬은 0과 1 사이의 두 값 `[X, Y]`로 구성됩니다. `[0,0]`은 왼쪽 아래 정렬, `[0.5,0.5]`는 중앙 정렬, `[1,1]`은 오른쪽 위 정렬입니다.
 
 ![Top Left](/img/user-manual/user-interface/text-element/alignment-bottom-left.png)
 
@@ -68,33 +68,33 @@ Text Elements have an additional tool to help with positioning which is the alig
 
 ![Bottom Right](/img/user-manual/user-interface/text-element/alignment-top-right.png)
 
-## Font Size & Line Height
+## 폰트 크기 및 줄 높이 (Font Size & Line Height)
 
-The font size property sets the rendered size of the font in Screen Component pixels. The line height sets the distance in Screen Component pixels to move down when the text contains a new line character.
+폰트 크기 속성은 화면 컴포넌트 픽셀에서 폰트의 렌더링 크기를 설정합니다. 줄 높이는 텍스트에 새 줄 문자가 포함되어 있을 때 아래로 이동할 화면 컴포넌트 픽셀의 거리를 설정합니다.
 
-Equal Font Size and Line Height is the default:
+폰트 크기와 줄 높이가 동일한 것이 기본값입니다:
 
 ![Font Size Line Equal](/img/user-manual/user-interface/text-element/font-line-equal.png)
 
-Increase Line Height to increase line spacing:
+줄 간격을 늘리려면 줄 높이를 증가시키세요:
 
 ![Font Size Line Spaced](/img/user-manual/user-interface/text-element/font-line-spaced.png)
 
-## Spacing
+## 간격 (Spacing)
 
-The spacing property increase the distance between characters in a string. Fonts define the ideal distance to move the cursor forward for each character. The spacing property is a multiplier to this distance.
+간격 속성은 문자열에서 문자 간의 거리를 증가시킵니다. 폰트는 각 문자에 대해 커서를 앞으로 이동할 이상적인 거리를 정의합니다. 간격 속성은 이 거리의 배수입니다.
 
 ![Spacing](/img/user-manual/user-interface/text-element/spacing.png)
 
-## Tinting
+## 틴팅 (Tinting)
 
-The Color property allows you to tint the string to the color of your choice.
+색상 속성을 사용하면 선택한 색상으로 문자열을 틴팅할 수 있습니다.
 
 ![Tinted](/img/user-manual/user-interface/text-element/tinted.png)
 
-## Tranparency
+## 투명도 (Transparency)
 
-The Opacity property allows you to set the transparency of the string
+불투명도 속성을 사용하면 문자열의 투명도를 설정할 수 있습니다.
 
 ![Transparent](/img/user-manual/user-interface/text-element/transparent.png)
 

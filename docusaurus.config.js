@@ -34,6 +34,25 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
+  i18n: {
+    defaultLocale: 'ko',
+    locales: ['ko', 'en'],
+    localeConfigs: {
+      ko: {
+        label: '한국어',
+        direction: 'ltr',
+        htmlLang: 'ko-KR',
+        calendar: 'gregory',
+      },
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        calendar: 'gregory',
+      },
+    },
+  },
+
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
@@ -92,7 +111,7 @@ const config = {
             sidebarId: 'usageSidebar',
             position: 'left',
             label: '사용법',
-            to: '/docs/usage-guide/dashboard',
+            to: '/usage-guide/dashboard',
           },
           {
             type: 'docSidebar',
@@ -103,6 +122,10 @@ const config = {
           {
             label: 'API',
             href: 'https://manual.oasisserver.link/engine',
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
           },
 
           // {
@@ -150,3 +173,4 @@ const config = {
 };
 
 export default config;
+

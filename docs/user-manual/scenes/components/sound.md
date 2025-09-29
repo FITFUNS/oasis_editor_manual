@@ -1,46 +1,46 @@
 ---
-title: Sound
+title: 사운드 (Sound)
 ---
 
-The Sound component controls playback of audio samples.
+사운드 컴포넌트는 오디오 샘플의 재생을 제어합니다.
 
 ![Sound component](/img/user-manual/scenes/components/component-sound.png)
 
-Each Sound component contains "Slots" that are responsible for playing sounds. Each Slot can be assigned a different audio Asset, and can be played independently from the other Slots.
+각 사운드 컴포넌트는 사운드 재생을 담당하는 "슬롯"을 포함합니다. 각 슬롯에는 다른 오디오 에셋을 할당할 수 있으며, 다른 슬롯과 독립적으로 재생할 수 있습니다.
 
-You can add a new Slot by clicking on the "ADD SLOT" button. You can remove a Slot by clicking on the bin icon in the header of each slot.
+"ADD SLOT" 버튼을 클릭하여 새 슬롯을 추가할 수 있습니다. 각 슬롯의 헤더에 있는 휴지통 아이콘을 클릭하여 슬롯을 제거할 수 있습니다.
 
-The Sound component can be enabled or disabled using the toggle in the top right of the component panel. If enabled, the component will play the Slots that are marked as Auto Play. The rest of the Slots can be played by scripts.
+사운드 컴포넌트는 컴포넌트 패널의 오른쪽 상단에 있는 토글을 사용하여 활성화하거나 비활성화할 수 있습니다. 활성화되면 컴포넌트가 자동 재생으로 표시된 슬롯을 재생합니다. 나머지 슬롯은 스크립트로 재생할 수 있습니다.
 
-## Component Properties
+## 컴포넌트 속성
 
-| Property        | Description |
+| 속성        | 설명 |
 |-----------------|-------------|
-| Positional      | If checked, the component will play back audio assets as if played from the location of the entity in 3D space. |
-| Volume          | The volume that will be multiplied with the volume of each Slot when playing an audio asset. |
-| Pitch           | The pitch that will be multiplied with the pitch of each Slot when playing an audio asset. A value of 1 means the audio is played back at the original pitch. |
-| Ref Distance    | The reference distance for reducing volume as the sound source moves further from the listener. |
-| Max Distance    | The maximum distance from the listener at which audio falloff stops. Note the volume of the audio is not necessarily 0 after this distance, but just doesn't fall off anymore. |
-| Distance Model  | Determines which algorithm to use to reduce the volume of the sound as it moves away from the listener. Can be one of Linear, Inverse or Exponential. |
-| Roll-off Factor | The rate at which volume fall-off occurs. |
+| Positional      | 선택하면 컴포넌트가 3D 공간에서 엔티티의 위치에서 재생되는 것처럼 오디오 에셋을 재생합니다. |
+| Volume          | 오디오 에셋을 재생할 때 각 슬롯의 볼륨과 곱해질 볼륨입니다. |
+| Pitch           | 오디오 에셋을 재생할 때 각 슬롯의 피치와 곱해질 피치입니다. 값 1은 오디오가 원래 피치로 재생됨을 의미합니다. |
+| Ref Distance    | 사운드 소스가 리스너로부터 멀어질 때 볼륨을 줄이기 위한 기준 거리입니다. |
+| Max Distance    | 오디오 감쇠가 중지되는 리스너로부터의 최대 거리입니다. 이 거리 이후에 오디오의 볼륨이 반드시 0이 되는 것은 아니지만 더 이상 감쇠되지 않습니다. |
+| Distance Model  | 사운드가 리스너로부터 멀어질 때 볼륨을 줄이기 위해 사용할 알고리즘을 결정합니다. Linear, Inverse 또는 Exponential 중 하나일 수 있습니다. |
+| Roll-off Factor | 볼륨 감쇠가 발생하는 속도입니다. |
 
-## Slot Properties
+## 슬롯 속성
 
-| Property        | Description |
+| 속성        | 설명 |
 |-----------------|-------------|
-| Name            | The name of the Slot. This is the name that you will use to refer to this Slot in code. |
-| Asset           | The audio asset to play. |
-| Range Start     | The starting point of the sound in the audio asset, in seconds. You can use this if you don't want to play the entire audio asset but just a portion of it instead. |
-| Range Duration  | The duration of the sound to play starting from Range Start, in seconds. E.g. you might have an audio asset with multiple sounds in it. To make this Slot play such a sound you can define its Start time and its Duration. |
-| Auto Play       | If checked, the Slot will be played on load. Otherwise, the Slot will need to be played using script. |
-| Overlap         | If checked, this Slot will play its sound without stopping first. Overlap should be used for one-shot sounds that need to be played repeatedly. Overlapping sounds do not stop when the Entity is destroyed, but only when they finish or when you manually stop them in script. |
-| Loop            | If checked, the Slot will loop continuously. Otherwise, it will be played once to completion. |
-| Volume          | The volume of the audio asset played back by the slot. |
-| Pitch           | The pitch at which the audio is played. A value of 1 means the audio is played back at the original pitch. |
+| Name            | 슬롯의 이름입니다. 코드에서 이 슬롯을 참조하는 데 사용할 이름입니다. |
+| Asset           | 재생할 오디오 에셋입니다. |
+| Start Time      | 사운드가 재생을 시작할 시작 시간입니다. |
+| Duration        | 슬롯이 Start Time부터 재생할 사운드의 지속 시간입니다. |
+| Auto Play       | 선택하면 슬롯이 로드 시 재생됩니다. 그렇지 않으면 스크립트를 사용하여 슬롯을 재생해야 합니다. |
+| Overlap         | 선택하면 이 슬롯은 먼저 중지하지 않고 사운드를 재생합니다. 겹침은 반복적으로 재생해야 하는 원샷 사운드에 사용해야 합니다. 겹치는 사운드는 엔티티가 파괴되어도 중지되지 않고, 완료되거나 스크립트에서 수동으로 중지할 때만 중지됩니다. |
+| Loop            | 선택하면 슬롯이 연속적으로 반복됩니다. 그렇지 않으면 완료까지 한 번 재생됩니다. |
+| Volume          | 슬롯에서 재생되는 오디오 에셋의 볼륨입니다. |
+| Pitch           | 오디오가 재생되는 피치입니다. 값 1은 오디오가 원래 피치로 재생됨을 의미합니다. |
 
-## Scripting Interface
+## 스크립팅 인터페이스
 
-You can control the properties of a Sound component using a [script component][2]. The scripting interface for the Sound component is [here][3].
+[스크립트 컴포넌트][2]를 사용하여 사운드 컴포넌트의 속성을 제어할 수 있습니다. 사운드 컴포넌트의 스크립팅 인터페이스는 [여기][3]에 있습니다.
 
 [2]: /user-manual/scenes/components/script
 [3]: https://manual.oasisserver.link/engine/classes/SoundComponent.html

@@ -1,195 +1,195 @@
 ---
-title: Loading Scenes
+title: 씬 로딩
 ---
 
-This page will take you through loading scenes with code and also some different approaches of using scenes in projects.
+이 페이지에서는 코드로 씬을 로딩하는 방법과 프로젝트에서 씬을 사용하는 다양한 접근 방식을 안내합니다.
 
-There are two main approaches in using scenes: changing scenes completely and additively loading scenes.
+씬을 사용하는 두 가지 주요 접근 방식이 있습니다: 씬을 완전히 변경하는 것과 씬을 추가적으로 로딩하는 것입니다.
 
-## Changing scenes completely
+## 씬을 완전히 변경하기
 
-This is the most common approach that developers take where each scene is a self-contained part of the game. For example, one scene would be the title screen and then one scene per level.
+이는 개발자들이 가장 많이 사용하는 접근 방식으로, 각 씬이 게임의 독립적인 부분이 됩니다. 예를 들어, 하나의 씬은 타이틀 화면이고, 각 레벨마다 하나의 씬이 있습니다.
 
-[Here is an example][switch-scenes-completely-project] where the user can move to and from the title screen to other levels.
+[여기 예시][switch-scenes-completely-project]에서 사용자가 타이틀 화면에서 다른 레벨로 이동할 수 있습니다.
 
 <div className="iframe-container">
     <iframe src="https://playcanv.as/e/p/Q1gKd1ek/"  title="Switching Scenes Completely" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
 </div>
 
-This is done by simply calling [`SceneRegistry.changeScene`][changescene-api] with the name of the scene.
+이는 씬의 이름으로 [`SceneRegistry.changeScene`][changescene-api]을 호출하는 것만으로 수행됩니다.
 
 ```javascript
 this.app.scenes.changeScene('Some Scene Name');
 ```
 
-If the scene data is not already loaded, this function will:
+씬 데이터가 아직 로드되지 않은 경우, 이 함수는 다음을 수행합니다:
 
-- Make the asynchronous network request for the new scene data.
-- When the scene data is loaded, it will delete all child entities from the application root node (destroying the existing scene hierarchy).
-- Call `loadSceneSettings` which is now synchronous as the scene data is loaded.
-- Call `loadSceneHierarchy` which is now synchronous as the scene data is loaded.
+- 새로운 씬 데이터에 대한 비동기 네트워크 요청을 만듭니다.
+- 씬 데이터가 로드되면, 애플리케이션 루트 노드에서 모든 자식 엔티티를 삭제합니다 (기존 씬 계층 구조를 파괴).
+- 씬 데이터가 로드되었으므로 이제 동기적인 `loadSceneSettings`를 호출합니다.
+- 씬 데이터가 로드되었으므로 이제 동기적인 `loadSceneHierarchy`를 호출합니다.
 
-If you want to know when the scene is loaded or if there are errors, you will need to provide a callback:
+씬이 로드되었을 때나 오류가 발생했을 때를 알고 싶다면, 콜백을 제공해야 합니다:
 
 ```javascript
 this.app.scenes.changeScene('Some Scene Name', (err, loadedSceneRootEntity) {
     if (err) {
         console.error(err);
     } else {
-        // Scene hierarchy has successfully been loaded
+        // 씬 계층 구조가 성공적으로 로드되었습니다
     }
 });
 ```
 
-To avoid the asynchronous network request for the new scene data at the point of calling `changeScene`, you can call [`SceneRegistry.loadSceneData`][loadscenedata-api] ahead of time and `changeScene` will become a synchronous call that immediately calls `loadSceneSettings` and `loadSceneHierarchy`.
+`changeScene`을 호출하는 시점에서 새로운 씬 데이터에 대한 비동기 네트워크 요청을 피하려면, 미리 [`SceneRegistry.loadSceneData`][loadscenedata-api]를 호출할 수 있으며, 그러면 `changeScene`이 `loadSceneSettings`와 `loadSceneHierarchy`를 즉시 호출하는 동기 호출이 됩니다.
 
-Common use cases would include knowing that the user would load level 2 when level 1 is completed. In this case, you can load the scene data for level 2 when the user is in level 1. When they complete level 1, they won't have to wait for data to be loaded and immediately enter level 2.
+일반적인 사용 사례는 레벨 1이 완료되었을 때 사용자가 레벨 2를 로드할 것을 아는 것입니다. 이 경우, 사용자가 레벨 1에 있을 때 레벨 2의 씬 데이터를 로드할 수 있습니다. 레벨 1을 완료하면 데이터 로드를 기다릴 필요 없이 즉시 레벨 2에 진입할 수 있습니다.
 
-## Loading scenes additively
+## 씬을 추가적으로 로딩하기 {#loading-scenes-additively}
 
-It is possible to load multiple scene hierarchies in an additive manner rather than completely switching scenes. The common use cases for this are to split up a large world so that it can be loaded over time rather than loading it all at once at the start.
+씬을 완전히 변경하는 대신 추가적인 방식으로 여러 씬 계층 구조를 로드할 수 있습니다. 이의 일반적인 사용 사례는 큰 세계를 분할하여 시작 시 모든 것을 한 번에 로드하는 대신 시간에 걸쳐 로드할 수 있도록 하는 것입니다.
 
-A variant of the above would be for each scene to represent a section of the world that is loaded and destroyed as the player moves around. The system would only load the nearest connected sections of the world and related assets while destroying and unloading assets for any section that is not needed. This would help with managing resources such as memory and VRAM.
+위의 변형으로는 각 씬이 플레이어가 이동할 때 로드되고 파괴되는 세계의 섹션을 나타내는 것입니다. 시스템은 필요한 섹션이 아닌 섹션의 에셋을 파괴하고 언로드하면서 세계의 가장 가까운 연결된 섹션과 관련 에셋만 로드할 것입니다. 이는 메모리와 VRAM과 같은 리소스 관리에 도움이 됩니다.
 
-Sometimes developers use this approach to ensure that certain code and entities are created before the actual game loads and have them globally accessible throughout the game session.
+때로는 개발자들이 실제 게임이 로드되기 전에 특정 코드와 엔티티가 생성되고 게임 세션 전체에서 전역적으로 접근 가능하도록 하기 위해 이 접근 방식을 사용합니다.
 
-[Below is a simplified example][additively-loading-scenes-project] of additively loading scenes where the UI in the top left is the 'main' scene and different scene hierarchies are loaded/destroyed.
+[아래는 추가적으로 씬을 로딩하는 간단한 예시][additively-loading-scenes-project]로, 왼쪽 상단의 UI가 '메인' 씬이고 다른 씬 계층 구조들이 로드/파괴됩니다.
 
 <div className="iframe-container">
     <iframe src="https://playcanv.as/e/p/cjBInud1/" title="Additively Loading Scenes" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
 </div>
 
-Please note that multiple instances of the scene hierarchy cannot be loaded at once. This is due to the entities having their unique GUIDs assigned in the Editor. When multiple instances of the same scene hierarchy are attempted to be loaded at once, there's a clash of GUIDs which are meant to be unique per entity.
+씬 계층 구조의 여러 인스턴스를 한 번에 로드할 수 없다는 점에 유의하세요. 이는 엔티티가 에디터에서 고유한 GUID를 할당받기 때문입니다. 동일한 씬 계층 구조의 여러 인스턴스를 한 번에 로드하려고 시도하면, 엔티티당 고유해야 하는 GUID 충돌이 발생합니다.
 
-If you need multiple instances of an entity hierarchy, please use templates instead as unique GUIDs are given on instantiation of the template instance.
+엔티티 계층 구조의 여러 인스턴스가 필요하다면, 템플릿 인스턴스화 시 고유한 GUID가 부여되므로 템플릿을 사용하세요.
 
-## Understanding how scenes work
+## 씬이 작동하는 방식 이해하기
 
-To use scenes effectively, it is important to understand how they are loaded when used in a project. This section goes into detail about how scenes are structured and loaded.
+씬을 효과적으로 사용하려면 프로젝트에서 사용될 때 어떻게 로드되는지 이해하는 것이 중요합니다. 이 섹션에서는 씬이 어떻게 구조화되고 로드되는지 자세히 설명합니다.
 
-Scenes are separate from [assets][assets] and have different properties and APIs to load them.
+씬은 [에셋][assets]과 분리되어 있으며, 로드하기 위한 다른 속성과 API를 가집니다.
 
-Scenes are represented by [Scene Registry Items][sceneregistryitem-api] that are stored in the [Scene Registry][sceneregistry-api] which can be accessed through [Application][application-sceneregistry-api] object. Through the Scene Registry, you can find the Scene Registry Item by the name of the scene in the Editor and use it to load the scene hierarchy or settings.
+씬은 [애플리케이션][application-sceneregistry-api] 객체를 통해 접근할 수 있는 [씬 레지스트리][sceneregistry-api]에 저장된 [씬 레지스트리 아이템][sceneregistryitem-api]으로 표현됩니다. 씬 레지스트리를 통해 에디터에서 씬의 이름으로 씬 레지스트리 아이템을 찾고, 이를 사용하여 씬 계층 구조나 설정을 로드할 수 있습니다.
 
 :::note
 
-The [application root node](https://manual.oasisserver.link/engine/classes/AppBase.html#root) is not the scene hierarchy root entity that is named 'Root' by default that you see in the scene with the Editor. The scene hierarchy root entity will be a child of the application root node.
+[애플리케이션 루트 노드](https://manual.oasisserver.link/engine/classes/AppBase.html#root)는 에디터에서 씬에 보이는 기본적으로 'Root'라는 이름을 가진 씬 계층 구조 루트 엔티티가 아닙니다. 씬 계층 구조 루트 엔티티는 애플리케이션 루트 노드의 자식이 됩니다.
 
 :::
 
-There are two APIs to load the scene hierarchy and settings:
+씬 계층 구조와 설정을 로드하는 두 가지 API가 있습니다:
 
-- [`SceneRegistry.loadSceneHierarchy`][loadscenehierarchy-api] - Loads a scene hierarchy
-- [`SceneRegistry.loadSceneSettings`][loadscenesettings-api] - Loads settings from a scene
+- [`SceneRegistry.loadSceneHierarchy`][loadscenehierarchy-api] - 씬 계층 구조를 로드합니다
+- [`SceneRegistry.loadSceneSettings`][loadscenesettings-api] - 씬에서 설정을 로드합니다
 
-Here is a code example to load the scene hierarchy or settings:
+씬 계층 구조나 설정을 로드하는 코드 예시입니다:
 
 ```javascript
-// Find the Scene Registry Item by the name of the scene
+// 씬의 이름으로 씬 레지스트리 아이템 찾기
 const sceneItem = this.app.scenes.find('Some Scene Name');
 
-// Load the scene hierarchy with a callback when it has finished
+// 완료되었을 때 콜백과 함께 씬 계층 구조 로드
 this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEntity) {
     if (err) {
         console.error(err);
     } else {
-        // Scene hierarchy has successfully been loaded
+        // 씬 계층 구조가 성공적으로 로드되었습니다
     }
 });
 
-// Load the scene settings with a callback when it has finished
+// 완료되었을 때 콜백과 함께 씬 설정 로드
 this.app.scenes.loadSceneSettings(sceneItem, function (err) {
     if (err) {
         console.error(err);
     } else {
-        // Scene settings has successfully been loaded
+        // 씬 설정이 성공적으로 로드되었습니다
     }
 });
 ```
 
-Both `loadSceneHierarchy` and `loadSceneSettings` have similar behavior in how they get the data needed to load the hierarchy or settings.
+`loadSceneHierarchy`와 `loadSceneSettings` 모두 계층 구조나 설정을 로드하는 데 필요한 데이터를 가져오는 방식에서 유사한 동작을 합니다.
 
-When the function is called, it performs an asynchronous network request to the server for the scene data. This means that there will be a delay (depending on network speed, the network connection and size of the scene) between the request to load the scene and the browser completing the network request where the application is still updating.
+함수가 호출되면 씬 데이터에 대해 서버에 비동기 네트워크 요청을 수행합니다. 이는 씬을 로드하는 요청과 브라우저가 네트워크 요청을 완료하는 사이에 지연이 있을 것임을 의미합니다 (네트워크 속도, 네트워크 연결 및 씬 크기에 따라 다름). 이 동안 애플리케이션은 계속 업데이트됩니다.
 
-Once the network request has been completed, the engine will do the following:
+네트워크 요청이 완료되면 엔진은 다음을 수행합니다:
 
 `loadSceneHierarchy`
 
-- Creates the entities and components from the loaded scene and adds the hierarchy to the [application root node][application-root-api].
-- Calls `initialize` and `postInitialize` functions on the ScriptTypes in the loaded scene.
-- Calls the callback that was passed into the `loadSceneHierarchy` function.
-- (Optional) In the [callback][loadhierarchycallback-api], the entity that represents the loaded scene root is passed as a parameter. This can be modified or reparented depending on your needs. In the [Loading Scenes Additively](#loading-scenes-additively) example, it reparents to scene root to another entity in the current scene to make it easier to manage.
+- 로드된 씬에서 엔티티와 컴포넌트를 생성하고 계층 구조를 [애플리케이션 루트 노드][application-root-api]에 추가합니다.
+- 로드된 씬의 ScriptType에서 `initialize`와 `postInitialize` 함수를 호출합니다.
+- `loadSceneHierarchy` 함수에 전달된 콜백을 호출합니다.
+- (선택사항) [콜백][loadhierarchycallback-api]에서 로드된 씬 루트를 나타내는 엔티티가 매개변수로 전달됩니다. 필요에 따라 이를 수정하거나 부모를 재설정할 수 있습니다. [씬을 추가적으로 로딩하기](#loading-scenes-additively) 예시에서는 관리하기 쉽도록 씬 루트를 현재 씬의 다른 엔티티로 부모를 재설정합니다.
 
 `loadSceneSettings`
 
-- Applies the loaded scene settings to the application.
-- Calls the [callback][loadsettingscallback-api] that was passed into the `loadSceneSettings` function.
+- 로드된 씬 설정을 애플리케이션에 적용합니다.
+- `loadSceneSettings` 함수에 전달된 [콜백][loadsettingscallback-api]을 호출합니다.
 
-By default, `loadSceneHierarchy` will always load additively and it's up to the developer to remove/destroy the existing loaded scene to change scenes completely.
+기본적으로 `loadSceneHierarchy`는 항상 추가적으로 로드되며, 씬을 완전히 변경하려면 기존 로드된 씬을 제거/파괴하는 것은 개발자의 몫입니다.
 
-There are several ways to approach this with pros and cons:
+이에 접근하는 여러 방법이 있으며 각각 장단점이 있습니다:
 
-### Destroying all children under application root node first
+### 애플리케이션 루트 노드 아래의 모든 자식을 먼저 파괴하기
 
-This approach has discrete steps that make it easier to manage where the currently loaded scene is destroyed before loading and creation of the new scene.
+이 접근 방식은 현재 로드된 씬이 새 씬의 로딩과 생성 전에 파괴되는 위치를 관리하기 쉽게 만드는 개별 단계를 가집니다.
 
 ```javascript
-// Find the Scene Registry Item by the name of the scene
+// 씬의 이름으로 씬 레지스트리 아이템 찾기
 const sceneItem = this.app.scenes.find('Some Scene Name');
 
-// Destroy all children under application root to remove the currently loaded scene hierarchy
+// 현재 로드된 씬 계층 구조를 제거하기 위해 애플리케이션 루트 아래의 모든 자식 파괴
 const rootChildren = this.app.root.children;
 while(rootChildren.length > 0) {
     rootChildren[0].destroy();
 }
 
-// Load the scene hierarchy with a callback when it has finished
+// 완료되었을 때 콜백과 함께 씬 계층 구조 로드
 this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEntity) {
     if (err) {
         console.error(err);
     } else {
-        // Scene hierarchy has successfully been loaded
+        // 씬 계층 구조가 성공적으로 로드되었습니다
     }
 });
 ```
 
-However, as mentioned above, there is a delay between calling `loadSceneHierarchy` and the scene data actually being loaded. This means that there will be a few frames where the application will be rendering a blank screen while its waiting for the network request to complete which brings us to the alternative.
+하지만 위에서 언급했듯이 `loadSceneHierarchy`를 호출하는 것과 씬 데이터가 실제로 로드되는 사이에 지연이 있습니다. 이는 네트워크 요청이 완료되기를 기다리는 동안 애플리케이션이 몇 프레임 동안 빈 화면을 렌더링할 것임을 의미하며, 이는 대안으로 이어집니다.
 
-### Destroying the old scene root entity after the new scene is loaded
+### 새 씬이 로드된 후 이전 씬 루트 엔티티 파괴하기
 
-This would mean that the old scene hierarchy will be destroyed in the callback after the new scene hierarchy has been added to hierarchy which ensures that the old scene would be present while the scene data is loaded from network.
+이는 새 씬 계층 구조가 계층 구조에 추가된 후 콜백에서 이전 씬 계층 구조가 파괴됨을 의미하며, 이는 네트워크에서 씬 데이터가 로드되는 동안 이전 씬이 존재하도록 보장합니다.
 
 ```javascript
-// Find the Scene Registry Item by the name of the scene
+// 씬의 이름으로 씬 레지스트리 아이템 찾기
 const sceneItem = this.app.scenes.find('Some Scene Name');
 
-// Assume the old scene hierarchy's root entity is named 'Root' which is the default name
+// 이전 씬 계층 구조의 루트 엔티티가 기본 이름인 'Root'라고 가정
 const oldSceneRootEntity = this.app.root.findByName('Root');
 
-// Load the scene hierarchy with a callback when it has finished
+// 완료되었을 때 콜백과 함께 씬 계층 구조 로드
 this.app.scenes.loadSceneHierarchy(sceneItem, function (err, loadedSceneRootEntity) {
     if (err) {
         console.error(err);
     } else {
-        // Scene hierarchy has successfully been loaded
+        // 씬 계층 구조가 성공적으로 로드되었습니다
         oldSceneRootEntity.destroy();
     }
 });
 ```
 
-However, the old scene will be present in the hierarchy while the new scene's scriptTypes call `initialize` and `postInitialize`. This can cause issues if there is some dependency or assumptions in the scripts that it's the only scene hierarchy that is loaded. Examples would be searching for an entity by name in `initialize` and there is also an entity with the same name in the old scene hierarchy. The script would then have a reference to the old scene hierarchy's entity instead of the new scene's which will cause unexpected behavior once the old scene's hierarchy is destroyed.
+하지만 새 씬의 scriptType이 `initialize`와 `postInitialize`를 호출하는 동안 이전 씬이 계층 구조에 존재할 것입니다. 스크립트에서 로드된 유일한 씬 계층 구조라는 의존성이나 가정이 있다면 문제가 될 수 있습니다. 예를 들어 `initialize`에서 이름으로 엔티티를 검색하는데 이전 씬 계층 구조에도 같은 이름의 엔티티가 있는 경우입니다. 그러면 스크립트는 새 씬의 엔티티 대신 이전 씬 계층 구조의 엔티티에 대한 참조를 가지게 되어, 이전 씬의 계층 구조가 파괴된 후 예상치 못한 동작을 일으킬 수 있습니다.
 
-To help mitigate these potential issues, we have an API that allows the separation of loading the scene data from the creation of the scene hierarchy in the scene, [`SceneRegistry.loadSceneData`][loadscenedata-api].
+이러한 잠재적 문제를 완화하기 위해 씬 데이터 로딩과 씬 계층 구조 생성을 분리할 수 있는 API인 [`SceneRegistry.loadSceneData`][loadscenedata-api]를 제공합니다.
 
-## Managing assets in scenes
+## 씬에서 에셋 관리하기
 
-A common question with scenes is if the assets used in the scene will be loaded as part of the scene load. With OasisW, the assets and scenes are separate and will need to be loaded separately which gives the developer a large degree of flexibility.
+씬에 대한 일반적인 질문은 씬에서 사용되는 에셋이 씬 로드의 일부로 로드되는지 여부입니다. OasisW에서는 에셋과 씬이 분리되어 있으며 별도로 로드해야 하므로 개발자에게 큰 유연성을 제공합니다.
 
-The recommended practice is to tag all the assets with the scene name needed in the scene and when it comes to load the scene, load the assets first and when all the assets are loaded, start loading the scene.
+권장되는 방법은 씬에서 필요한 모든 에셋에 씬 이름으로 태그를 지정하고, 씬을 로드할 때 먼저 에셋을 로드한 다음 모든 에셋이 로드된 후 씬 로딩을 시작하는 것입니다.
 
-More information about asset tags and asset loading can be found on [this page][asset-tags-loading].
+에셋 태그와 에셋 로딩에 대한 자세한 정보는 [이 페이지][asset-tags-loading]에서 찾을 수 있습니다.
 
-The [example project][asset-load-for-scene-project] below loads the assets when loading the scene and unloads when returning the main menu.
+[아래 예시 프로젝트][asset-load-for-scene-project]는 씬을 로드할 때 에셋을 로드하고 메인 메뉴로 돌아갈 때 언로드합니다.
 
 <div className="iframe-container">
     <iframe src="https://playcanv.as/e/p/SBTfOAeM/" title="Loading scenes and assets" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
