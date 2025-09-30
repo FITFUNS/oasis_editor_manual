@@ -8,7 +8,6 @@ sidebar_label: 이미지 생성
 
 OasisW의 AI 이미지 생성 기능을 활용하여 프로젝트에 필요한 이미지 생성 과정을 단계별로 학습합니다.
 
-
 ## 1. 인터페이스
 
 **AI Image Generation 버튼**을 클릭합니다. 
@@ -17,23 +16,20 @@ OasisW의 AI 이미지 생성 기능을 활용하여 프로젝트에 필요한 �
 
 ![Image](/img/usage-guide/3_8_1.png)
 
-### 1. Generation Mode
+### Generation Mode
 ![Image](/img/usage-guide/3_8_2.png)
 * **Text to Image** : 프롬프트에 텍스트를 입력하여 이미지를 생성합니다.
 * **Image to Image** : 기존 이미지를 기반으로 새로운 이미지를 생성합니다.
-### 2. Prompt
+* **Remove Background** : 이미지에서 배경을 제거합니다.
+### Prompt
 * **Show Examples** : 여러 예제 프롬프트를 클릭하여 사용할 수 있습니다.
 ![Image](/img/usage-guide/3_8_3.png)
-### 3. Advanced Options
-* **Remove Background** : 배경이 없는 이미지를 생성합니다.
-### 4. Generate 
-이미지를 생성합니다.
-### 5. Generation Result
+### Generation Result
 생성된 이미지를 확인할 수 있습니다.
-### 6. Generated Images
+### Generated Images
 * **Project** : 해당 프로젝트에서 생성한 이미지를 확인할 수 있습니다.
 * **Org** : 현재 조직에서 생성된 이미지를 확인할 수 있습니다.
-* **All** : 공개설정이 되어 있는 이미지를 확인할 수 있습니다.
+* **Public** : 공개설정이 되어 있는 이미지를 확인할 수 있습니다.
 
 ![Image](/img/usage-guide/3_8_5.png)
 * **1. Edit Asset Properties** : 에셋 설정을 수정할 수 있습니다.
@@ -44,7 +40,6 @@ OasisW의 AI 이미지 생성 기능을 활용하여 프로젝트에 필요한 �
 
 1. 프롬프트 창에 원하는 명령어를 입력합니다.
    - **Show Examples**의 예제에서 선택하여 이미지를 생성할 수 있습니다.
-   - **Remove Background**에 체크하면 배경이 없는 이미지를 생성할 수 있습니다.
 2. **Generate 버튼**을 클릭하여 이미지를 생성합니다.
 
 <div style={{display: 'flex', gap: '10px'}}>
@@ -78,4 +73,20 @@ OasisW의 AI 이미지 생성 기능을 활용하여 프로젝트에 필요한 �
 
 ![Image](/img/usage-guide/3_8_19.png)
 
+## 4. Remove Background
 
+:::tip
+에셋 뷰에서 이미지 더블클릭 시 **Remove Background**로 바로 이동이 가능합니다.
+:::
+
+**Background Removal**에 원하는 이미지를 추가합니다.
+
+<div style={{display: 'flex', gap: '10px'}}>
+  <img src="/img/usage-guide/3_8_20.png" alt="Image" style={{maxWidth: '50%'}} />
+  <img src="/img/usage-guide/3_8_21.png" alt="Image" style={{maxWidth: '50%'}} />
+</div>
+<br />
+
+**Remove Background 버튼**을 클릭하여 이미지를 생성합니다.
+
+![Image](/img/usage-guide/3_8_22.png)
