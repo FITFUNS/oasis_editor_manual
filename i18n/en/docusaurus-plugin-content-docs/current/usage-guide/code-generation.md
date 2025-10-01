@@ -67,3 +67,15 @@ You can add entities to reference.
 * **2. Revert**: Reverts to the existing code instead of the generated code.
 ![Image](/img/usage-guide/13_11.png)
 * **3. Accept All**: Saves to history and applies the generated code.
+
+:::info
+**Additional Files**
+   * **Create**: Newly generated script that creates a script in the **asset view root** when clicked
+   * **Apply**: Modified reference script that updates the reference script when clicked
+:::
+
+<div style={{display: 'flex', gap: '10px'}}>
+  <img src="/img/usage-guide/13_13.png" alt="Image" style={{maxWidth: '50%'}} />
+  <img src="/img/usage-guide/13_14.png" alt="Image" style={{maxWidth: '50%'}} />
+</div>
+<br />
