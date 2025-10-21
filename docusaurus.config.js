@@ -10,7 +10,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'OasisW',
+  title: 'OasisW Studio',
   tagline: '3D 웹 개발을 위한 강력한 도구',
   favicon: '/engine/assets/fitfuns-logo1.svg',
 

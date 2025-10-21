@@ -7,36 +7,36 @@ function getFeatureList(isEnglish) {
   return [
     {
       title: isEnglish ? 'Easy to Use' : '쉬운 사용법',
-      image: '/engine/assets/open-book.png',
+      image: '/engine/assets/1.png',
       description: (
         <>
-          {isEnglish 
-            ? 'OasisW is designed to be easy to use from the start. You can create interesting works right away with just an internet connection, without installing any programs.'
-            : 'OasisW는 처음부터 쉽게 사용할 수 있도록 설계되었습니다. 프로그램을 설치하지 않아도 인터넷만 있으면 바로 재미있는 작품을 만들 수 있어요.'
+          {isEnglish
+            ? 'You can learn step by step, from basics to advanced, easily and clearly, using the manual.'
+            : '메뉴얼을 따라 기초부터 고급까지, 쉽고 명확하게 한 단계씩 배울 수 있습니다.'
           }
         </>
       ),
     },
-    // {
-    //   title: isEnglish ? 'AI-Powered Coding' : '코딩은 AI',
-    //   image: '/engine/assets/fitfuns-logo1.svg',
-    //   description: (
-    //     <>
-    //       {isEnglish 
-    //         ? 'Describe what you want in text and AI will create content for you. Describe the game you want and AI will help with coding, easily creating amazing 3D models and animations!'
-    //         : '글로 설명하면 AI가 콘텐츠를 만들어 줘요. 원하는 게임을 글로 설명하면 AI가 코딩을 도와주고, 멋진 3D 모델과 움직임까지 쉽게 만들어 줘요!'
-    //       }
-    //     </>
-    //   ),
-    // },
     {
-      title: isEnglish ? 'Various 3D Tools' : '다양한 3D 도구',
-      image: '/engine/assets/3d-cube.png',
+      title: isEnglish ? 'Create with AI Tools' : 'AI 도구로 쉽게 만들기',
+      image: '/engine/assets/2.png',
       description: (
         <>
-          {isEnglish 
-            ? 'Provides all the features needed for 3D development including ground writing, material application, physics movement, and scripting.'
-            : '바닥면 작성, 머티리얼 적용, 물리운동, 스크립트 등 3D 개발에 필요한 모든 기능을 제공합니다.'
+          {isEnglish
+            ? 'With AI tools, you can create images and code.'
+            : 'AI 도구를 활용하여 이미지와 코드를 생성할 수 있습니다.'
+          }
+        </>
+      ),
+    },
+    {
+      title: isEnglish ? 'Various Tools' : '다양한 도구',
+      image: '/engine/assets/3.png',
+      description: (
+        <>
+          {isEnglish
+            ? 'Provides useful features needed for 2D and 3D game development.'
+            : '2D 및 3D 게임 개발에 필요한 유용한 기능들을 제공합니다.'
           }
         </>
       ),
@@ -44,9 +44,9 @@ function getFeatureList(isEnglish) {
   ];
 }
 
-function Feature({image, title, description}) {
+function Feature({ image, title, description }) {
   return (
-    <div className={clsx('col col--6')}>
+    <div className={clsx('col col--4')}>
       <div className="text--center">
         <img src={image} className={styles.featureSvg} alt={title} />
       </div>
@@ -59,10 +59,10 @@ function Feature({image, title, description}) {
 }
 
 export default function HomepageFeatures() {
-  const {i18n} = useDocusaurusContext();
+  const { i18n } = useDocusaurusContext();
   const isEnglish = i18n.currentLocale === 'en';
   const FeatureList = getFeatureList(isEnglish);
-  
+
   return (
     <section className={styles.features}>
       <div className="container">

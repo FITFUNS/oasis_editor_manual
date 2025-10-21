@@ -29,8 +29,8 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/usage-guide/dashboard">
             {isEnglish
-              ? 'Get Started with OasisW Manual 🚀'
-              : 'OasisW 메뉴얼 시작하기 🚀'
+              ? 'Get Started with OasisW Studio 🚀'
+              : 'OasisW Studio 알아보기 🚀'
             }
           </Link>
         </div>
