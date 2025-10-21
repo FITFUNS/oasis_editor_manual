@@ -94,7 +94,7 @@ You can test the **deployed** project in a new tab.
 By scanning the **QR code displayed in the top right**, you can also **test on mobile devices**.
 
 :::warning Note
-When clicking the Deploy button, if a **popup blocked icon** appears next to the address bar,  
+When clicking the Publish button, if a **popup blocked icon** appears next to the address bar,  
 you must **allow popups** for the scene to run normally in a new tab.
 :::
 

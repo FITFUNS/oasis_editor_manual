@@ -60,8 +60,6 @@ Learn about project management-related tools in OasisW's project toolbar.
   - Specifies external script URLs to load with `<script>` tags.
 - **Launch Page**  
   - Add essential headers to the start page to enable SharedArrayBuffer.
-  <!-- - Enables inter-thread memory sharing in browser to improve performance of WebAssembly-based physics engines (e.g., Ammo) or large-scale computations
-  - Only works in Cross-Origin Isolation environment for security -->
 - **Input**  
   - Enables/disables input devices (mouse, keyboard, touch, gamepad, etc.) to use in the project.
 - **Network**  
