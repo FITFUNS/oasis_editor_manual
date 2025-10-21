@@ -10,19 +10,6 @@ OasisW의 3D 씬을 시각적으로 편집하고 탐색하는 핵심 인터페�
 
 ![Viewport](/img/usage-guide/5_1_viewport.png)
 
-## Cameras
-
-### Perspective
-- 기본적으로 에디터는 **원근(Perspective) 카메라**를 사용합니다.  
-  → 영화 카메라가 씬 안을 떠다니는 듯한 시야를 제공합니다.
-- **카메라 드롭다운 메뉴**를 통해 다양한 카메라로 전환 가능합니다.
-
-![Viewport](/img/usage-guide/5_2_camera.png)
-
-### Orthographic
-- 종류: **Top, Bottom, Front, Back, Left, Right**  
-- 특징: 원근감이 없는 뷰를 제공합니다 → **정밀한 위치 조정**에 유용합니다.
-
 ## Gizmos (기즈모)
 
 | <img src="/img/usage-guide/5_3_gizmo1.png" alt="기즈모 종류 1" width="250" height="250" /> | <img src="/img/usage-guide/5_3_gizmo2.png" alt="기즈모 종류 2" width="250" height="250" /> | <img src="/img/usage-guide/5_3_gizmo3.png" alt="기즈모 종류 3" width="250" height="250" /> |
@@ -35,6 +22,19 @@ OasisW의 3D 씬을 시각적으로 편집하고 탐색하는 핵심 인터페�
   1. **이동(Translate)** → 축 끝에 화살표 아이콘이 있습니다.
   2. **회전(Rotate)** → 3색 원 링 구조입니다.
   3. **크기 조절(Scale)** → 축 끝에 큐브 아이콘이 있습니다.
+
+## Cameras
+
+### Perspective
+- 기본적으로 에디터는 **원근(Perspective) 카메라**를 사용합니다.  
+  → 영화 카메라가 씬 안을 떠다니는 듯한 시야를 제공합니다.
+- **카메라 드롭다운 메뉴**를 통해 다양한 카메라로 전환 가능합니다.
+
+![Viewport](/img/usage-guide/5_2_camera.png)
+
+### Orthographic
+- 종류: **Top, Bottom, Front, Back, Left, Right**  
+- 특징: 원근감이 없는 뷰를 제공합니다 → **정밀한 위치 조정**에 유용합니다.
 
 ## Render Mode
 
@@ -56,3 +56,26 @@ OasisW의 3D 씬을 시각적으로 편집하고 탐색하는 핵심 인터페�
     - **Emission (발광)**: 발광 속성(광원 없이 스스로 빛나는 부분)을 표시합니다.
     - **Lighting**: 씬 내 조명만 시각화합니다(재질 색상과 텍스처 제외).
     - **UVO**: UV 채널 0의 텍스처 좌표 배치를 시각화합니다.
+
+## JOBS
+
+작업의 **진행상태**를 표시합니다.
+
+![Viewport](/img/usage-guide/5_8.png)
+
+## ONLINE
+
+프로젝트의 씬에 접속 중인 **사용자 목록**을 표시합니다.
+
+![Viewport](/img/usage-guide/5_5.png)
+
+### START EDIT (force)
+
+씬 **편집 권한**을 강제로 가져옵니다.
+
+<div style={{display: 'flex', gap: '10px'}}>
+  <img src="/img/usage-guide/5_7_1.png" alt="Image" style={{maxWidth: '30%'}} />
+  <img src="/img/usage-guide/5_7_2.png" alt="Image" style={{maxWidth: '38%'}} />
+  <img src="/img/usage-guide/5_7_3.png" alt="Image" style={{maxWidth: '30%'}} />
+</div>
+<br />

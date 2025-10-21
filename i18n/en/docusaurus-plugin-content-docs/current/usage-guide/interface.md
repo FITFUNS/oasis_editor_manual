@@ -18,7 +18,7 @@ Once you open a scene, you can start game development work using various tools a
 
 ## Main Interface
 
-![OasisW full screen](/img/usage-guide/2_full.svg)
+![OasisW full screen](/img/usage-guide/2_full.png)
 
 ### [1. Toolbar](/usage-guide/toolbar)
 Learn about each button and shortcut in the toolbar, as well as additional tools.

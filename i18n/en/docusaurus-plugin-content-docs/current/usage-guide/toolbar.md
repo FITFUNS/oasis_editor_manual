@@ -19,10 +19,10 @@ Learn about the shortcuts and functions of each button in OasisW's toolbar.
 | ![World/Local](/img/usage-guide/3_5_world_local.svg) | **World/Local** | L | World / Local coordinate system toggle |
 | ![Snap](/img/usage-guide/3_6_snap.svg) | **Snap** | Shift | Align to grid |
 | ![Focus](/img/usage-guide/3_7_focus.svg) | **Focus** | F | Focus on selected object |
+| ![AI Image Generation](/img/usage-guide/3_8_image_generation.svg) | **AI Image Generation** | I | Generate images with AI |
 | ![Fullscreen](/img/usage-guide/3_9_hide_panels.svg) | **Fullscreen** | Space | Hide/show all panels (viewport maximization) |
 | ![Launch](/img/usage-guide/3_10_launch.svg) | **Launch** | Ctrl+Enter | Run scene in new tab |
-| <img src="/img/usage-guide/3_11_publish.svg" alt="Deploy Test" style={{width: '24px'}} /> | **Deploy Test** |  | Deploy test |
-<!-- | ![AI Image Generation](/img/usage-guide/3_8_image_generation.svg) | **AI Image Generation** | I | Generate images with AI | -->
+| <img src="/img/usage-guide/3_11_publish.svg" alt="Publish" style={{width: '24px'}} /> | **Publish** |  | Deploy test |
 
 ### Translate (Move)
 - **Shortcut**: `1`
@@ -86,7 +86,7 @@ Learn about the shortcuts and functions of each button in OasisW's toolbar.
 - **Shortcut**: `Ctrl+Enter`
 - **Function**: Run scene in new tab.
 
-### Deploy Test
+### Publish
 <!-- - **Shortcut**: ``   -->
 - **Function**: Perform deploy test.  
 - **Usage**:  

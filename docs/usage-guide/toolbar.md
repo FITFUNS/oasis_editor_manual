@@ -19,10 +19,10 @@ OasisW의 툴바에 있는 각 버튼의 단축키와 기능을 학습합니다.
 | ![World/Local](/img/usage-guide/3_5_world_local.svg) | **World/Local** | L | World / Local 좌표계 전환 |
 | ![Snap](/img/usage-guide/3_6_snap.svg) | **Snap** | Shift | 그리드에 맞춰 정렬 |
 | ![Focus](/img/usage-guide/3_7_focus.svg) | **Focus** | F | 선택한 오브젝트에 포커스 |
+| ![AI Image Generation](/img/usage-guide/3_8_image_generation.svg) | **AI Image Generation** | I | AI로 이미지 생성 |
 | ![Fullscreen](/img/usage-guide/3_9_hide_panels.svg) | **Fullscreen** | Space | 모든 패널 숨기기/보이기 (뷰포트 최대화) |
 | ![Launch](/img/usage-guide/3_10_launch.svg) | **Launch** | Ctrl+Enter | 새 탭에서 씬 실행 |
-| <img src="/img/usage-guide/3_11_publish.svg" alt="Deploy Test" style={{width: '24px'}} /> | **Deploy Test** |  | 배포 테스트 |
-<!-- | ![AI Image Generation](/img/usage-guide/3_8_image_generation.svg) | **AI Image Generation** | I | AI로 이미지 생성 | -->
+| <img src="/img/usage-guide/3_11_publish.svg" alt="Publish" style={{width: '24px'}} /> | **Publish** |  | 배포 테스트 |
 
 ### Translate (이동)
 - **단축키**: `1`
@@ -72,11 +72,11 @@ OasisW의 툴바에 있는 각 버튼의 단축키와 기능을 학습합니다.
 - **단축키**: `F`
 - **기능**: 선택된 오브젝트에 카메라를 포커스합니다.
 
-<!-- ### AI Image Generation
+### AI Image Generation
 - **단축키**: `I`
 - **기능**: AI로 이미지를 생성하고 생성한 이미지를 오브젝트에 추가합니다.
 - **사용법**: 툴바에서 Image Generation 아이콘을 클릭하여 이미지를 생성합니다.
-- **상세 가이드**: [이미지 제네레이션](/usage-guide/image-generation)을 참조하세요. -->
+- **상세 가이드**: [이미지 제네레이션](/usage-guide/image-generation)을 참조하세요.
 
 ### Fullscreen
 - **단축키**: `Space`
@@ -86,7 +86,7 @@ OasisW의 툴바에 있는 각 버튼의 단축키와 기능을 학습합니다.
 - **단축키**: `Ctrl+Enter`
 - **기능**: 새 탭에서 씬을 실행합니다.
 
-### Deploy Test
+### Publish
 <!-- - **단축키**: ``   -->
 - **기능**: 배포 테스트를 수행합니다.  
 - **사용법**:  
@@ -94,7 +94,7 @@ OasisW의 툴바에 있는 각 버튼의 단축키와 기능을 학습합니다.
 **오른쪽 상단에 표시되는 QR 코드**를 스캔하면, **모바일 기기에서도 테스트**가 가능합니다.
 
 :::warning 주의사항
-Deploy 버튼을 클릭할 때 **주소창 옆에 팝업 차단됨 아이콘**이 표시되면,  
+Publish 버튼을 클릭할 때 **주소창 옆에 팝업 차단됨 아이콘**이 표시되면,  
 **팝업을 허용**해야 씬이 새 탭에서 정상적으로 실행됩니다.
 :::
 

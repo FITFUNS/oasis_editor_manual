@@ -18,7 +18,7 @@ OasisW의 기본 인터페이스와 도구들을 학습합니다.
 
 ## 메인 인터페이스
 
-![OasisW 전체 화면](/img/usage-guide/2_full.svg)
+![OasisW 전체 화면](/img/usage-guide/2_full.png)
 
 ### [1. Toolbar](/usage-guide/toolbar)
 툴바의 각 버튼과 단축키, 그리고 추가 도구들을 학습합니다.

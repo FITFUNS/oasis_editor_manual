@@ -60,8 +60,7 @@ FBX와 관련 텍스처, 머티리얼, 애니메이션 데이터를 한곳에 �
 - **External Scripts**
   - 외부 스크립트 URL을 지정하여 `<script>` 태그로 로드합니다.
 - **Launch Page**  
-  <!-- - 브라우저에서 스레드 간 메모리 공유를 활성화해, WebAssembly 기반 물리 엔진(예: Ammo)이나 대규모 연산의 성능을 향상시킴
-  - 보안상 Cross-Origin Isolation 환경에서만 동작 -->
+  - 시작 페이지에 필수 헤더를 추가하여 SharedArrayBuffer를 활성화합니다.
 - **Input**  
   - 프로젝트에서 사용할 입력 장치(마우스, 키보드, 터치, 게임패드 등)를 활성화/비활성화합니다.
 - **Network**  
