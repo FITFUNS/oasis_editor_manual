@@ -10,11 +10,15 @@ Learn about OasisW Studio account settings functionality.
 
 ### Name
 
-The display name shown in your profile and collaboration. You can modify this at any time.
+This is the name displayed on your profile and in the editor.
 
 ### Email Address
 
 The primary email address for account notifications and login.
+
+### User ID
+
+A unique identifier assigned to you when you create your account.
 <!-- To change your email address, click "Edit". -->
 
 <!-- ## Account Deletion

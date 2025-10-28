@@ -10,7 +10,7 @@ Learn about OasisW Studio organization settings functionality.
 
 ## Access Method
 
-- Click **Organization** in the top left of the logged-in [OasisW Studio](https://oasisserver.link/).
+- Click **Organization Settings** at the top left of [OasisW Studio](https://oasisserver.link/) after logging in.
 
 ![Organization](/img/usage-guide/14_1.png)
 

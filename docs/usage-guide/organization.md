@@ -10,7 +10,7 @@ OasisW Studio 조직 설정 기능을 학습합니다.
 
 ## 접속 방법
 
-- 로그인되어 있는 [OasisW Studio](https://oasisserver.link/)의 왼쪽 상단 **조직**을 클릭합니다.
+- 로그인되어 있는 [OasisW Studio](https://oasisserver.link/)의 왼쪽 상단 **조직 설정**을 클릭합니다.
 
 ![Organization](/img/usage-guide/14_1.png)
 
