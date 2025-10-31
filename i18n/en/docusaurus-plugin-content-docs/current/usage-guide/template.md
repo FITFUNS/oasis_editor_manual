@@ -63,7 +63,7 @@ Template instances have **Template Instance** at the top of the **Inspector view
 ![template](/img/tutorial/5_7.png)
 
 #### VIEW DIFF
-When you click **VIEW DIFF** → **Apply to Box**, it only applies to that instance.
+When you click **VIEW DIFF** → **Apply to Box**, only the selected changes are applied to the original template and all template instances.
 
 <div style={{display: 'flex', gap: '10px'}}>
   <img src="/img/tutorial/5_8.png" alt="Image" style={{maxWidth: '55%'}} />
@@ -76,7 +76,7 @@ When you click **REVERT ALL**, it cancels the instance's changes and reverts to 
 ![template](/img/tutorial/5_10.png)
 
 #### APPLY ALL
-When you click **APPLY ALL**, the changes are reflected in all other instances created from the original template.
+When you click **APPLY ALL**, all changes are applied to the original template and all template instances.
 
 <div style={{display: 'flex', gap: '10px'}}>
   <img src="/img/tutorial/5_11.png" alt="Image" style={{maxWidth: '45%'}} />

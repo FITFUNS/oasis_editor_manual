@@ -63,7 +63,7 @@ OasisW에서 템플릿을 사용하여 동일한 게임 오브젝트를 재사�
 ![template](/img/tutorial/5_7.png)
 
 #### VIEW DIFF
-**VIEW DIFF** → **Apply to Box** 클릭 시 해당 인스턴스에만 적용됩니다.
+**VIEW DIFF** → **Apply to Box** 클릭 시 **선택한** 변경 사항만 원본 템플릿과 템플릿의 모든 인스턴스에 적용합니다.
 
 <div style={{display: 'flex', gap: '10px'}}>
   <img src="/img/tutorial/5_8.png" alt="Image" style={{maxWidth: '55%'}} />
@@ -76,10 +76,9 @@ OasisW에서 템플릿을 사용하여 동일한 게임 오브젝트를 재사�
 ![template](/img/tutorial/5_10.png)
 
 #### APPLY ALL
-**APPLY ALL** 클릭 시 원본 템플릿으로 만든 다른 인스턴스에도 모두 변경 사항이 반영됩니다.
+**APPLY ALL** 클릭 시 모든 변경 사항을 원본 템플릿과 템플릿의 모든 인스턴스에 적용합니다.
 
 <div style={{display: 'flex', gap: '10px'}}>
   <img src="/img/tutorial/5_11.png" alt="Image" style={{maxWidth: '45%'}} />
   <img src="/img/tutorial/5_12.png" alt="Image" style={{maxWidth: '45%'}} />
 </div>
-
