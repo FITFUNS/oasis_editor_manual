@@ -22,41 +22,42 @@ OasisW provides various templates to help you quickly start your project.
 
 ## 1. Creating a New Project
 
-### Creation Procedure
+### Steps to Create
 
-1. Enter a project name in Project Name.
-2. Set the project path in **Folder Path**.
+1. Enter the project name in the Project Name field.
+2. Set the project path in the **Folder Path** field.
 
 :::danger Note
-Project creation is not supported in **Safari**. Please use **Chrome** or **Edge** browser.  
-You must **allow file modification permissions** in the browser to use the editor.
+Project creation is not supported in **Safari**. Please use the **Chrome** or **Edge** browser.  
+You must **allow file edit permissions** in your browser to use the editor.
 :::
 
 ![Create](/img/usage-guide/0.png)
 
 3. Select a template in the Templates window.
-4. Click the Create Project button.
+4. Click the **Create Project** button.
 
 ### Template Types
 
 #### **Blank Project**
-- Minimal configuration including camera, lighting, sky, and basic shapes.
+- The minimal setup including camera, lights, sky, and basic shapes.
 - Sets up a basic 3D environment.
 - Suitable for projects starting from scratch.
 
-<!-- #### **Sliduck**
-- Sliding game template -->
+#### **Tetris**
+- 2D Tetris puzzle game template.
 
-#### **Hero Survival**
-- Survival game template.
+#### **Shooting**
+- 2D airplane shooting game template.
 
-#### **2048**
-- Number puzzle game template.
-
-#### **Tutorial**
-- Template created in tutorial videos.
+#### **Only Up!**
+- 3D platformer game template.
 
 ## 2. Opening an Existing Project
 
-1. Click the Open Project button.
-2. Select the folder where the OasisW project is saved.
+1. Click **PROJECTS**.
+2. Click **Open** on the desired project.
+
+## 3. Organization Settings
+
+In **ORGANIZATION**, select or browse the organization where you want to view or create projects.
