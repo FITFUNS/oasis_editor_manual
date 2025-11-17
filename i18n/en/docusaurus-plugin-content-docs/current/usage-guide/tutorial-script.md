@@ -145,7 +145,7 @@ GameManager.prototype._onCollected = function () {
   // ✅ Authentication event only on "first" mushroom after game starts
   if (!this._authSent) {
     this._authSent = true;
-    this.app.fire("oasisw:authenticate:guest", new pc.Entity());
+    this.app.fire("oasisw:authenticate:guest");
   }
 
   if (!this._round) this._startRound();

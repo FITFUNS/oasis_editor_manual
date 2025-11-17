@@ -145,7 +145,7 @@ GameManager.prototype._onCollected = function () {
   // ✅ 게임을 켠 뒤 "첫 번째" 버섯에서만 인증 이벤트 발행
   if (!this._authSent) {
     this._authSent = true;
-    this.app.fire("oasisw:authenticate:guest", new pc.Entity());
+    this.app.fire("oasisw:authenticate:guest");
   }
 
   if (!this._round) this._startRound();
