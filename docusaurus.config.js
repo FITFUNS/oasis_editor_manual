@@ -94,6 +94,10 @@ const config = {
     ],
   ],
 
+  clientModules: [
+    require.resolve('./src/clientModules/locale-cookie.js'),
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
