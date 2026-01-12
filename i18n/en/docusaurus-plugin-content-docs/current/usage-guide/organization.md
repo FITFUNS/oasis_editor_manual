@@ -12,7 +12,7 @@ Learn about OasisW Studio organization settings functionality.
 
 - Click **Organization Settings** at the top left of [OasisW Studio](https://oasisserver.link/) after logging in.
 
-![Organization](/img/usage-guide/14_1.png)
+![Organization](/img/usage-guide/14_1_en.png)
 
 ## Detailed Organization Settings Description
 
@@ -23,7 +23,7 @@ Learn about OasisW Studio organization settings functionality.
 - Click the **edit icon** next to organization settings to change the organization name.
 
 <div style={{display: 'flex', gap: '10px'}}>
-  <img src="/img/usage-guide/14_7.png" alt="Image" style={{maxWidth: '35%'}} />
+  <img src="/img/usage-guide/14_7_en.png" alt="Image" style={{maxWidth: '35%'}} />
   <img src="/img/usage-guide/14_6.png" alt="Image" style={{maxWidth: '55%'}} />
 </div>
 <br />
@@ -32,19 +32,19 @@ Learn about OasisW Studio organization settings functionality.
 - Click the `Invite Member` button to invite new users to the organization via email.
 - When inviting, you can set permissions as **Administrator** or **Member**.
 
-![Organization](/img/usage-guide/14_2.png)
+![Organization](/img/usage-guide/14_2_en.png)
 ![Organization](/img/usage-guide/14_3.png)
 
 ### 4. Permissions and Restrictions
 - **Administrator**: Can **export** users with member permissions.  
 - **Member**: **Cannot leave** the organization on their own.
 
-![Organization](/img/usage-guide/14_4.png)
+![Organization](/img/usage-guide/14_4_en.png)
 
 ### 5. Access Permissions
 - Users belonging to the same organization can select the organization to access **server control** and **project access** for that organization.
 
-![Organization](/img/usage-guide/14_5.png)
+![Organization](/img/usage-guide/14_5_en.png)
 
 ---
 

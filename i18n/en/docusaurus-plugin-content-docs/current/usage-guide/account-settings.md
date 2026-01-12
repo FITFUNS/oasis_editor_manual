@@ -4,7 +4,7 @@ title: Account Settings
 
 Learn about OasisW Studio account settings functionality.
 
-![Account Settings](/img/usage-guide/account-settings.png)
+![Account Settings](/img/usage-guide/account-settings_en.png)
 
 ## Account Information
 

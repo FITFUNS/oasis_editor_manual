@@ -24,4 +24,4 @@ Introduces the main features of OasisW Studio.
 
 3. In OasisW Studio, you can learn basic editor usage, tutorial videos, and connect servers.
 
-![Dashboard](/img/usage-guide/15_1.png)
+![Dashboard](/img/usage-guide/15_1_en.png)

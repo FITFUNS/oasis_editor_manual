@@ -285,7 +285,7 @@ UiMenu.prototype.onDisable = function () {
     }
 };
 
-// 시작 이벤트
+// Start event
 UiMenu.prototype.start = function (event) {
     this.app.fire('ui:start');
 
@@ -475,7 +475,7 @@ Game.prototype.start = function () {
     }
 };
 
-// 게임 오버
+// Game over
 Game.prototype.gameOver = function () {
     this._state = Game.STATE_GAMEOVER;
     this.app.fire('game:gameover');
@@ -505,12 +505,12 @@ Game.prototype.reset = function () {
     }
 };
 
-// 점수 가져오기
+// Get score
 Game.prototype.getScore = function () {
     return this._score;
 };
 
-// 점수 추가
+// Add Score
 Game.prototype.addScore = function (v) {
     this._score += v;
     this.app.fire('game:score', this._score);
