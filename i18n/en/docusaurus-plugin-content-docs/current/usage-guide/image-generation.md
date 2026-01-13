@@ -71,7 +71,7 @@ View the generated images.
 
 3. Use **Drawing Tools** to mark the areas where you want to modify the original image, enter a prompt, and click the **Generate button** to create the image.
 
-![Image](/img/usage-guide/3_8_19.png)
+![Image](/img/usage-guide/3_8_19_en.png)
 
 ## 4. Remove Background
 

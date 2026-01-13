@@ -12,7 +12,7 @@ Introduces the main features of OasisW Studio.
 
 1. Visit [OasisW Studio](https://oasisserver.link/).
 
-![Dashboard](/img/usage-guide/9_1.png)
+![Dashboard](/img/usage-guide/9_1_en.png)
 
 2. Click login, and create an account if you don't have one.
 

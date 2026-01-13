@@ -100,8 +100,8 @@ Publish 버튼을 클릭할 때 **주소창 옆에 팝업 차단됨 아이콘**�
 
 <br />
 <div style={{display: 'flex', gap: '10px'}}>
-  <img src="/img/usage-guide/3_12.png" alt="Image" style={{maxWidth: '45%'}} />
-  <img src="/img/usage-guide/3_13.png" alt="Image" style={{maxWidth: '45%'}} />
+  <img src="/img/usage-guide/3_12.png" alt="Image" style={{maxWidth: '50%'}} />
+  <img src="/img/usage-guide/3_13.png" alt="Image" style={{maxWidth: '50%'}} />
 </div>
 
 

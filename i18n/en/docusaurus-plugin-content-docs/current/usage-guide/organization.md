@@ -33,7 +33,7 @@ Learn about OasisW Studio organization settings functionality.
 - When inviting, you can set permissions as **Administrator** or **Member**.
 
 ![Organization](/img/usage-guide/14_2_en.png)
-![Organization](/img/usage-guide/14_3.png)
+![Organization](/img/usage-guide/14_3_en.png)
 
 ### 4. Permissions and Restrictions
 - **Administrator**: Can **export** users with member permissions.  

@@ -18,7 +18,7 @@ To use server features in a project, you must first create a server.
 
 2. Click Server, enter a server name, and click the start button.
 
-![Server](/img/usage-guide/9_4.png)
+![Server](/img/usage-guide/9_4_en.png)
 
 3. After 2-3 minutes, you can check the created server.
 

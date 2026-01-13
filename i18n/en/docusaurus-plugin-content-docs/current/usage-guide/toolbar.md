@@ -99,9 +99,9 @@ you must **allow popups** for the scene to run normally in a new tab.
 :::
 
 <br />
-<div style={{display: 'flex', gap: '10px'}}>
+<div style={{display: 'flex', gap: '30px'}}>
   <img src="/img/usage-guide/3_12.png" alt="Image" style={{maxWidth: '45%'}} />
-  <img src="/img/usage-guide/3_13.png" alt="Image" style={{maxWidth: '45%'}} />
+  <img src="/img/usage-guide/3_13_en.png" alt="Image" style={{maxWidth: '50%'}} />
 </div>
 
 

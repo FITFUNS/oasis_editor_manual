@@ -32,7 +32,7 @@ Project creation is not supported in **Safari**. Please use the **Chrome** or **
 You must **allow file edit permissions** in your browser to use the editor.
 :::
 
-![Create](/img/usage-guide/0.png)
+![Create](/img/usage-guide/0_en.png)
 
 3. Select a template in the Templates window.
 4. Click the **Create Project** button.
