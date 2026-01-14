@@ -133,19 +133,19 @@ const sidebars = {
         'usage-guide/code-generation',
       ],
     },
-    {
-      type: 'category',
-      label: labels.server,
-      link: {
-        type: 'doc',
-        id: 'usage-guide/server',
-      },
-      items: [
-        'usage-guide/authentication',
-        // 'usage-guide/chat',
-        'usage-guide/leaderboard',
-      ],
-    },
+    // {
+    //   type: 'category',
+    //   label: labels.server,
+    //   link: {
+    //     type: 'doc',
+    //     id: 'usage-guide/server',
+    //   },
+    //   items: [
+    //     'usage-guide/authentication',
+    //     // 'usage-guide/chat',
+    //     'usage-guide/leaderboard',
+    //   ],
+    // },
     {
       type: 'html',
       value: '<hr style="margin: 1rem 0; border-top: 1px solid var(--ifm-color-emphasis-300);" />',
