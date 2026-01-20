@@ -12,6 +12,7 @@ Learn about project management-related tools in OasisW's project toolbar.
 | Image | Button | Description |
 |------|------|-------|
 | ![Scenes](/img/usage-guide/8_manage_scenes.svg) | **Manage Scenes** | Opens scene selection screen |
+| <img src="/img/usage-guide/8_home.svg" alt="Settings" width="24" height="24" /> | **Home** |  Go to project selection window |
 | ![Settings](/img/usage-guide/8_settings.svg) | **Settings** |  Project environment settings |
 | ![Toolbar](/img/usage-guide/8_project_toolbar.svg) | **Publish/Download** |  Download built project |
 

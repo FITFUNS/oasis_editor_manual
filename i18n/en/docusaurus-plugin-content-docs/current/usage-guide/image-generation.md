@@ -21,6 +21,11 @@ Click the **AI Image Generation button**.
 * **Text to Image**: Generate images by entering text prompts.
 * **Image to Image**: Generate new images based on existing images.
 * **Remove Background**: Remove the background from images.
+
+### Aspect Ratio & Resolution
+* **Aspect Ratio**: Choose the image ratio.
+* **Resolution**: Choose the image resolution.
+
 ### Prompt
 * **Show Examples**: Click on example prompts to use them.
 ![Image](/img/usage-guide/3_8_3.png)

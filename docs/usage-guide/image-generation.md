@@ -21,6 +21,11 @@ OasisW의 AI 이미지 생성 기능을 활용하여 프로젝트에 필요한 �
 * **Text to Image** : 프롬프트에 텍스트를 입력하여 이미지를 생성합니다.
 * **Image to Image** : 기존 이미지를 기반으로 새로운 이미지를 생성합니다.
 * **Remove Background** : 이미지에서 배경을 제거합니다.
+
+### Aspect Ratio & Resolution
+* **Aspect Ratio** : 이미지의 비율을 선택할 수 있습니다.
+* **Resolution** : 이미지의 해상도를 선택할 수 있습니다.
+
 ### Prompt
 * **Show Examples** : 여러 예제 프롬프트를 클릭하여 사용할 수 있습니다.
 ![Image](/img/usage-guide/3_8_3.png)

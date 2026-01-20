@@ -12,6 +12,7 @@ OasisW의 프로젝트 툴바에 있는 프로젝트 관리와 관련된 도구�
 | 이미지 | 버튼 | 설명 |
 |------|------|-------|
 | ![Scenes](/img/usage-guide/8_manage_scenes.svg) | **Manage Scenes** | 씬 선택 화면 열림 |
+| <img src="/img/usage-guide/8_home.svg" alt="Settings" width="24" height="24" /> | **Home** |  프로젝트 선택창으로 이동 |
 | ![Settings](/img/usage-guide/8_settings.svg) | **Settings** |  프로젝트 환경 설정 |
 | ![Toolbar](/img/usage-guide/8_project_toolbar.svg) | **Publish/Download** |  빌드 된 프로젝트 다운로드 |
 
