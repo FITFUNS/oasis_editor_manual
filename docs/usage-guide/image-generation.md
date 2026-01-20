@@ -43,9 +43,10 @@ OasisW의 AI 이미지 생성 기능을 활용하여 프로젝트에 필요한 �
 
 ## 2. Text to Image
 
-1. 프롬프트 창에 원하는 명령어를 입력합니다.
+1. 원하는 이미지의 비율과 해상도를 선택합니다.
+2. 프롬프트 창에 원하는 명령어를 입력합니다.
    - **Show Examples**의 예제에서 선택하여 이미지를 생성할 수 있습니다.
-2. **Generate 버튼**을 클릭하여 이미지를 생성합니다.
+3. **Generate 버튼**을 클릭하여 이미지를 생성합니다.
 
 <div style={{display: 'flex', gap: '10px'}}>
   <img src="/img/usage-guide/3_8_4.png" alt="Image" style={{maxWidth: '50%'}} />

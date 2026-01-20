@@ -43,9 +43,10 @@ View the generated images.
 
 ## 2. Text to Image
 
-1. Enter your desired command in the prompt field.
+1. Select the desired aspect ratio and resolution.
+2. Enter your desired command in the prompt field.
    - You can select from examples in **Show Examples** to generate images.
-2. Click the **Generate button** to create the image.
+3. Click the **Generate button** to create the image.
 
 <div style={{display: 'flex', gap: '10px'}}>
   <img src="/img/usage-guide/3_8_4.png" alt="Image" style={{maxWidth: '50%'}} />
