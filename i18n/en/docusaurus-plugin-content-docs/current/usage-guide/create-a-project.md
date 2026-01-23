@@ -45,13 +45,34 @@ You must **allow file edit permissions** in your browser to use the editor.
 - Suitable for projects starting from scratch.
 
 #### **Tetris**
-- 2D Tetris puzzle game template.
+- A 2D Tetris puzzle game template where you complete lines by rotating and placing blocks.
 
 #### **Shooting**
-- 2D airplane shooting game template.
+- A 2D airplane shooting game template where you fire missiles to defeat enemies.
 
 #### **Only Up!**
-- 3D platformer game template.
+- A 3D platformer game template where you jump and move upward across objects.
+
+#### **Defense**
+- A defense game template where the player defeats incoming enemies while staying in a fixed position.
+
+#### **Clicker**
+- A 2D clicker game template where you increase your score and resources by clicking items.
+
+#### **Sort Rush**
+- A 2D reaction game template where you quickly sort appearing objects.
+
+#### **Vampire Survival**
+- A 2D survival game template where you defeat enemies, grow stronger, and beat the boss.
+
+#### **Arrow**
+- A 3D shooting action game template where you shoot arrows to defeat enemies.
+
+#### **Fruit Slash**
+- A 3D casual action game template where you slice fruit to score points.
+
+#### **Water Shot**
+- A simple, complete 3D shooting game template where you snipe targets.
 
 ## 2. Opening an Existing Project
 
