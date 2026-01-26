@@ -29,6 +29,8 @@ Learn about project management-related tools in OasisW's project toolbar.
 - **Editor**  
   - Panel for adjusting overall project environment settings.
 - **Asset Tasks**  
+  - **Create Atlases** : If enabled, both Texture and Texture Atlas assets are created when importing 
+  textures.
   - **Create FBX Folder** : When bringing FBX files, automatically creates a dedicated folder for that asset to organize FBX and related texture, material, and animation data in one place.
 - **Physics**  
   - **Physics Library**: Option to set the physics engine to use, clicking Import Ammo button automatically adds Ammo folder to the project.

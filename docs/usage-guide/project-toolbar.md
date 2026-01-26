@@ -29,6 +29,7 @@ OasisW의 프로젝트 툴바에 있는 프로젝트 관리와 관련된 도구�
 - **Editor**  
   - 프로젝트의 전반적인 환경 설정을 조정하는 패널입니다.
 - **Asset Tasks**  
+  - **Create Atlases** : 활성화하면 텍스처를 가져올 때 Texture와 Texture Atlas 두 가지 에셋이 모두 생성됩니다.
   - **Create FBX Folder** : FBX 파일을 가지고 올 때, 해당 에셋 전용 폴더를 자동으로 생성하여
 FBX와 관련 텍스처, 머티리얼, 애니메이션 데이터를 한곳에 모아 정리하는 기능입니다.
 - **Physics**  
