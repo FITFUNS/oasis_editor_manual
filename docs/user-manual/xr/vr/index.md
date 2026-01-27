@@ -4,7 +4,7 @@ title: VR
 
 ![VR View](/img/user-manual/xr/vr-view.png)
 
-PlayCanvas also lets you create Virtual Reality (VR) applications.
+OasisW also lets you create Virtual Reality (VR) applications.
 
 ## Platforms
 
@@ -38,4 +38,4 @@ app.xr.end();
 
 ## Starter Kits
 
-PlayCanvas provides a ‘VR Kit’ project to help you and your VR experience get up and running faster. When creating a new project, simply select ‘VR Kit’ from the New Project dialog.
+OasisW provides a ‘VR Kit’ project to help you and your VR experience get up and running faster. When creating a new project, simply select ‘VR Kit’ from the New Project dialog.

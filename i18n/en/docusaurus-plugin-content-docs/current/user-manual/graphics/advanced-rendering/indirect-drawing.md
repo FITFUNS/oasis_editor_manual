@@ -69,7 +69,7 @@ device.computeDispatch([compute], 'GenerateIndirectDraw');
 
 ## API Reference
 
-For detailed API documentation, refer to these PlayCanvas engine classes and methods:
+For detailed API documentation, refer to these OasisW engine classes and methods:
 
 - [`MeshInstance.setIndirect()`](https://manual.oasisserver.link/engine/classes/MeshInstance.html#setindirect) - Configure a mesh instance for indirect rendering
 - [`GraphicsDevice.getIndirectDrawSlot()`](https://manual.oasisserver.link/engine/classes/GraphicsDevice.html#getindirectdrawslot) - Allocate a slot in the indirect draw buffer

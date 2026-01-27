@@ -1,0 +1,97 @@
+---
+title: Hierarchy
+sidebar_label: 하이어라키
+---
+
+# Hierarchy
+
+OasisW의 씬의 모든 오브젝트를 계층 구조로 관리하는 핵심 도구인 하이어라키 뷰를 학습합니다.
+
+![Hierarchy](/img/usage-guide/4_hierarchy.png)
+
+## 엔티티 생성 및 삭제
+
+- **생성**: 하이어라키 뷰에서 엔티티를 선택한 후, **새 하위 엔티티**를 생성합니다.  
+- **삭제**: 선택한 엔티티를 삭제합니다.  
+- **방법**: 하이어라키 뷰 우측 상단의 버튼을 사용하거나, 엔티티를 **마우스 오른쪽 클릭**하여 나오는 컨텍스트 메뉴를 사용합니다.
+
+## Hierarchy 구성하기
+
+- 씬(Scene)은 계층 구조를 가지며, 엔티티는 **부모-자식 관계**를 가질 수 있습니다.
+- 부모 엔티티의 **변환 행렬(Transform matrix)** 은 자식 엔티티에 모두 적용됩니다.
+  - 부모를 이동/회전하면 자식도 함께 이동/회전합니다.
+  - 많은 엔티티를 한 번에 조작할 때 유용합니다.
+- **드래그 앤 드롭**으로 하이어라키 구조를 변경합니다.
+  - 엔티티를 다른 엔티티의 자식으로 이동(리패런트, Reparent)합니다.
+
+## Hierarchy 검색하기
+
+- 하이어라키 뷰 상단의 **검색 상자(Search Box)** 를 사용해 엔티티 목록을 필터링합니다.
+
+![Hierarchy](/img/usage-guide/4_2_search_box.png)
+
+## 엔티티 복제하기
+
+- **단축키**: Ctrl+D (Mac은 Cmd+D)  
+- **방법**: 엔티티 선택 → 복제 → 원본 바로 옆에 복제본이 생성됩니다.
+- **우클릭 메뉴**: `Duplicate`를 선택합니다.
+
+## 엔티티 복사 / 붙여넣기
+
+- **같은 씬 내**:
+  1. 복사할 엔티티를 선택합니다.
+  2. **Ctrl+C** (Mac은 Cmd+C)를 누릅니다.
+  3. 붙여넣을 부모 엔티티를 선택합니다.
+  4. **Ctrl+V** (Mac은 Cmd+V)를 누릅니다.
+- **다른 씬 또는 프로젝트 간**:
+  1. 복사(Ctrl+C)를 실행합니다.
+  2. 다른 씬/프로젝트로 이동합니다.
+  3. 부모 엔티티를 선택한 후 붙여넣기(Ctrl+V)를 실행합니다.
+
+## 웹 에디터 메뉴 구성
+
+- **Entity**  
+  씬 내에서 오브젝트의 기본 단위입니다. 모든 요소의 부모가 될 수 있는 컨테이너 역할을 합니다.
+- **2D**
+    - **Sprite**: 단일 이미지로 표현되는 2D 그래픽 요소입니다.
+    - **Animated Sprite**: 여러 프레임 이미지를 순차적으로 재생하는 2D 애니메이션 요소입니다.
+- **3D**
+    - **Render**: 3D 메시를 렌더링하는 기본 컴포넌트입니다.
+    - **Box**: 박스 형태의 3D 기본 도형입니다.
+    - **Capsule**: 캡슐 형태의 3D 기본 도형입니다.
+    - **Cone**: 원뿔 형태의 3D 기본 도형입니다.
+    - **Cylinder**: 원기둥 형태의 3D 기본 도형입니다.
+    - **Plane**: 평면 형태의 3D 기본 도형입니다.
+    - **Sphere**: 구 형태의 3D 기본 도형입니다.
+    - **Model (legacy)**: 이전 방식의 3D 모델 로드 및 렌더링 객체입니다.
+    <!-- - **GSplat**: 점 기반 렌더링(gaussian splatting)을 위한 객체입니다. -->
+- **Audio**
+    - **Audio Listener**: 씬 내 사운드를 수신하는 역할로 카메라에 주로 연결됩니다.
+    - **Sound**: 오디오 파일 재생을 위한 컴포넌트입니다.
+- **Camera**
+    - **Perspective**: 원근감을 적용한 3D 카메라 뷰입니다.
+    - **Orthographic**: 원근감 없이 평행하게 렌더링하는 카메라 뷰입니다.
+- **Light**
+    - **Directional Light**: 태양광과 같이 한 방향으로 비추는 조명입니다.
+    - **Spot Light**: 특정 각도 범위로만 빛을 비추는 조명입니다.
+    - **Omni Light**: 한 지점에서 모든 방향으로 빛을 방출하는 조명입니다.
+- **Particle System**  
+    - 입자를 이용한 연출 효과(불꽃, 연기, 눈 등)를 구현하는 시스템입니다.
+- **User Interface**
+    - **2D Screen**: 2D UI 요소를 배치하는 화면입니다.
+    - **3D Screen**: 3D 공간에 배치할 수 있는 UI 화면입니다.
+    - **Button**: 클릭 가능한 UI 버튼 요소입니다.
+    - **Layout Group**: UI 요소를 일정 규칙에 따라 배치하는 그룹입니다.
+    - **Layout Child**: Layout Group 안에서 배치 규칙이 적용되는 개별 요소입니다.
+    - **Group Element**: 여러 UI 요소를 묶는 컨테이너입니다.
+    - **Text Element**: 텍스트를 표시하는 UI 요소입니다.
+    - **Image Element**: 이미지를 표시하는 UI 요소입니다.
+    - **Scrollbar**: 스크롤 가능한 영역의 이동 바입니다.
+    - **Scroll View**: 스크롤 가능한 UI 영역입니다.
+- **Server Side**
+    - **Server**: 서버 기능을 제공하는 엔티티입니다.
+    - **Authentication**: 사용자 인증 처리 기능을 제공하는 컴포넌트입니다.
+    - **Leaderboard**: 순위표 기능을 제공하는 서버 컴포넌트입니다.
+    <!-- - **Chat**: 채팅 기능을 구현하는 서버 컴포넌트입니다. -->
+
+You can also copy and paste Entities between different Scenes or even different Projects. Just follow the same steps to copy Entities and then go to the desired Scene, select the desired parent and paste the Entities. The Editor will try to match any Asset references on the pasted Entities by path in the new Project. For example, if you are copy-pasting an Entity with a Model component that references a Model Asset called `mymodel.fbx` then when you paste the Entity in the other Project, the Editor will try to find an Asset named `mymodel.fbx` in the same folder. If a matching Asset is not found it will be left as missing so that you can fix it manually.

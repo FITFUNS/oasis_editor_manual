@@ -2,7 +2,7 @@
 title: Optimization
 ---
 
-Optimization is a critical part of developing a PlayCanvas application. It can mean the difference between a great user experience and a terrible one.
+Optimization is a critical part of developing a OasisW application. It can mean the difference between a great user experience and a terrible one.
 
 :::tip
 

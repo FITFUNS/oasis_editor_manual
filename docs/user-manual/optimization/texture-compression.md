@@ -24,9 +24,9 @@ Below is a side by side comparison of the brick texture on Mac with Chrome:
 
 <a href="/img/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick.png" target="_blank"><img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/basis-vs-no-compression-brick-thumb.jpg" alt="Brick texture compression comparison" /></a>
 
-Here is another example of the PlayCanvas cube [with Basis (ETC mode)][2] and [without][3] on Mac with Chrome:
+Here is another example of the OasisW cube [with Basis (ETC mode)][2] and [without][3] on Mac with Chrome:
 
-<a href="/img/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="PlayCanvas cube compression comparison" /></a>
+<a href="/img/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube.png" target="_blank"><img loading="lazy" src="/img/user-manual/assets/textures/texture-compression/basis-vs-no-compression-cube-thumb.jpg" alt="OasisW cube compression comparison" /></a>
 
 ## Using Basis Texture Compression {#using-basis-texture-compression}
 
@@ -56,7 +56,7 @@ If you would no longer want to use Basis, remove Basis compression from all text
 
 ## Basis Limitations {#basis-limitations}
 
-There are some limitations of Basis texture compression in PlayCanvas.
+There are some limitations of Basis texture compression in OasisW.
 
 1. The PVR format only supports textures that have dimensions that are both square (same width and height) and power of two (e.g. 256, 512, 1024 and so on). Older iOS devices (with an A6 SoC or lower like the iPhone 5 and 5C) and older iOS versions (13.7 and lower) only support PVR. A Basis texture that is non-square or non-power of two cannot be transcoded to PVR format but will instead use a 16-bit 565 pixel format. It will still display correctly, although may occupy more VRAM.
 2. The maximum texture dimensions supported for Basis compression are 4096x4096. Textures larger than this would take an inordinate amount of time to compress so this is disabled.

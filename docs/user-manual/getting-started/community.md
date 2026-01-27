@@ -1,14 +1,14 @@
 ---
-title: Join the PlayCanvas Community
+title: Join the OasisW Community
 sidebar_label: Join the Community
 ---
 
-To get the most out of PlayCanvas, we recommend that you join our community!
+To get the most out of OasisW, we recommend that you join our community!
 
-🤝 **Make friends** with other community members including the dev team that builds PlayCanvas  
-🎓 **Learn** from other PlayCanvas experts  
+🤝 **Make friends** with other community members including the dev team that builds OasisW  
+🎓 **Learn** from other OasisW experts  
 🎨 **Share your creations** with people who care  
-📰 **Stay informed** about the latest PlayCanvas-related news
+📰 **Stay informed** about the latest OasisW-related news
 
 ## Our Community Platforms
 
@@ -16,7 +16,7 @@ We focus on 5 key community platforms:
 
 ### [Reddit](https://reddit.com/)
 
-Reddit is a great place to share PlayCanvas work, ask questions, and connect with people who've proactively opted into a PlayCanvas-related community.
+Reddit is a great place to share OasisW work, ask questions, and connect with people who've proactively opted into a OasisW-related community.
 
 To join:
 

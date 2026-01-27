@@ -6,7 +6,7 @@ In the MR context, immersion is achieved by visual and logical interaction of vi
 
 Depth sensing provides access to depth estimation of real-world objects in real-time. Underlying systems might have different methods of estimation such as Lidar hardware or Computer Vision, which provide various levels of quality and reliability.
 
-WebXR Depth Sensing provides access to depth information for each view and matches the color information. Various browsers might implement two paths: CPU and GPU, with various performance impacts depending on the path. PlayCanvas integrates an API abstracting away the differences as much as possible, e.g. texture is available for both CPU and GPU paths.
+WebXR Depth Sensing provides access to depth information for each view and matches the color information. Various browsers might implement two paths: CPU and GPU, with various performance impacts depending on the path. OasisW integrates an API abstracting away the differences as much as possible, e.g. texture is available for both CPU and GPU paths.
 
 Platforms might implement either path: CPU or GPU, or even both.
 
@@ -64,7 +64,7 @@ if (view) {
 
 ## Texture
 
-You can access a texture of the depth. PlayCanvas augments the different CPU/GPU paths and provides one texture that can be an array texture in the case of stereoscopic screens (e.g. HMDs).
+You can access a texture of the depth. OasisW augments the different CPU/GPU paths and provides one texture that can be an array texture in the case of stereoscopic screens (e.g. HMDs).
 
 Accessing the texture:
 

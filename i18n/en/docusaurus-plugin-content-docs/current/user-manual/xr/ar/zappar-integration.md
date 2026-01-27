@@ -2,11 +2,11 @@
 title: Zappar Integration
 ---
 
-Zappar offers an [Universal AR SDK with PlayCanvas integration][1], including image, face and instant world tracking features. Their SDK supports Chrome for Android and Safari 11.3+ for iOS, reaching billions of users worldwide.
+Zappar offers an [Universal AR SDK with OasisW integration][1], including image, face and instant world tracking features. Their SDK supports Chrome for Android and Safari 11.3+ for iOS, reaching billions of users worldwide.
 
 ## Getting started with Zappar
 
-Zappar provides a [Getting Started with PlayCanvas][2] page, and they also provide a number of [Starter Projects][3] to help new users get started, as well as template projects to get users up and running faster.
+Zappar provides a [Getting Started with OasisW][2] page, and they also provide a number of [Starter Projects][3] to help new users get started, as well as template projects to get users up and running faster.
 
 To get started with Zappar’s Universal AR SDK, first head to their [Zappar Universal AR Project][4] and fork it.
 
@@ -22,7 +22,7 @@ Drag any of these into your scene, ensure there are no other cameras and you are
 
 ![Zappar AR Camera Settings](/img/user-manual/xr/ar/zappar-camera-settings.png)
 
-After these steps, you should be able to use Zappar's SDK without issues. For further information, refer to their [Getting Started With PlayCanvas][2] docs.
+After these steps, you should be able to use Zappar's SDK without issues. For further information, refer to their [Getting Started With OasisW][2] docs.
 
 [1]: https://zap.works/universal-ar/playcanvas/
 [2]: https://docs.zap.works/universal-ar/playcanvas/getting-started/
