@@ -1,94 +1,94 @@
 ---
-title: Creating Projects
+title: 프로젝트 생성
 ---
 
-You can create Editor projects in two ways:
+에디터 프로젝트를 두 가지 방법으로 생성할 수 있습니다:
 
-1. Create a project based on a number of predefined starter kits.
-2. Fork an existing project, using it as a starting point.
+1. 미리 정의된 여러 스타터 키트 중 하나를 기반으로 프로젝트 생성.
+2. 기존 프로젝트를 포크하여 시작점으로 사용.
 
-## Create a New Project from a Starter Kit
+## 스타터 키트에서 새 프로젝트 생성
 
-To create a new project:
+새 프로젝트를 생성하려면:
 
-1. Log in to your OasisW account and navigate to your User Page
-2. Click the **NEW** button in the top right corner
+1. OasisW 계정에 로그인하고 사용자 페이지로 이동
+2. 오른쪽 상단의 **NEW** 버튼 클릭
 
 ![New Project Button](/img/user-manual/editor/projects/new-project-button.png)
 
-### Selecting a Starter Kit
+### 스타터 키트 선택
 
-All Editor projects are created based on a starter kit.
+모든 에디터 프로젝트는 스타터 키트를 기반으로 생성됩니다.
 
 ![New Project Dialog](/img/user-manual/editor/projects/new-project-dialog.png)
 
-OasisW offers several starter kits to get you started quickly:
+OasisW는 빠르게 시작할 수 있도록 여러 스타터 키트를 제공합니다:
 
-- **Blank Project**: A minimal project with a camera, light, sky and some basic shapes
-- **Model Viewer**: A simple starter kit for viewing 3D models
-- **VR Kit**: A starter kit showing how to enter and exit a WebXR-based VR session
-- **Roll a Ball**: A simple physics-based 3D game
-- **WebXR AR Starter Kit**: A starter kit showing how to initiate a WebXR-based AR session
-- **First Person Shooter**: The basis for an FPS-type game or experience
+- **Blank Project**: 카메라, 조명, 하늘 및 일부 기본 도형이 있는 최소 프로젝트
+- **Model Viewer**: 3D 모델을 보기 위한 간단한 스타터 키트
+- **VR Kit**: WebXR 기반 VR 세션에 진입하고 종료하는 방법을 보여주는 스타터 키트
+- **Roll a Ball**: 간단한 물리 기반 3D 게임
+- **WebXR AR Starter Kit**: WebXR 기반 AR 세션을 시작하는 방법을 보여주는 스타터 키트
+- **First Person Shooter**: FPS 유형 게임이나 경험의 기반
 
-Pick a starter kit, set a name, description and owner, and select whether your project should be public or private. Then hit **CREATE**.
+스타터 키트를 선택하고 이름, 설명 및 소유자를 설정한 다음 프로젝트를 공개 또는 비공개로 선택하세요. 그런 다음 **CREATE**를 클릭하세요.
 
 :::note
 
-You can only create private projects with a Personal or Organization plan.
+개인 또는 조직 플랜이 있는 경우에만 비공개 프로젝트를 생성할 수 있습니다.
 
 :::
 
-## Fork an Existing Project {#fork-an-existing-project}
+## 기존 프로젝트 포크 {#fork-an-existing-project}
 
-Forking allows you to create a new project based on an existing public project (or a private project of which you are a team member). This is useful for:
+포크를 사용하면 기존 공개 프로젝트(또는 팀원인 비공개 프로젝트)를 기반으로 새 프로젝트를 생성할 수 있습니다. 이것은 다음에 유용합니다:
 
-- Using another project as a starting point for your own work
-- Creating backups of your own projects
-- Learning from example projects created by other developers
-- Experimenting with modifications without affecting the original
+- 다른 프로젝트를 자신의 작업을 위한 시작점으로 사용
+- 자신의 프로젝트 백업 생성
+- 다른 개발자가 만든 예제 프로젝트에서 학습
+- 원본에 영향을 주지 않고 수정 사항 실험
 
-### How to Fork a Project
+### 프로젝트 포크 방법
 
-To fork a project:
+프로젝트를 포크하려면:
 
-1. Navigate to the project's dashboard page
-2. Click the **Fork** button in the dashboard header
-3. Enter a name for your new project
-4. Click **FORK**
+1. 프로젝트의 대시보드 페이지로 이동
+2. 대시보드 헤더에서 **Fork** 버튼 클릭
+3. 새 프로젝트의 이름 입력
+4. **FORK** 클릭
 
 ![Fork Project Button](/img/user-manual/editor/projects/fork-project-button.png)
 
-### What Gets Forked
+### 포크되는 항목
 
-When you fork a project, the entire main branch is copied to your new project:
+프로젝트를 포크하면 전체 main 브랜치가 새 프로젝트로 복사됩니다:
 
-- All scenes and their settings
-- All assets (textures, models, scripts, etc.)
-- Project settings
+- 모든 씬 및 설정
+- 모든 에셋(텍스처, 모델, 스크립트 등)
+- 프로젝트 설정
 
-### What Doesn't Get Forked
+### 포크되지 않는 항목
 
-Forking has some limitations:
+포크에는 몇 가지 제한 사항이 있습니다:
 
-- **Version control history** is not preserved
-- **Only the main branch** is copied (other branches are ignored)
-- **Team members** are not copied (you become the sole owner)
-- **Development logs** and project activity are not copied
+- **버전 관리 기록**은 보존되지 않음
+- **main 브랜치만** 복사됨(다른 브랜치는 무시됨)
+- **팀원**은 복사되지 않음(당신이 유일한 소유자가 됨)
+- **개발 로그** 및 프로젝트 활동은 복사되지 않음
 
-### After Forking
+### 포크 후
 
-Once your fork is created:
+포크가 생성되면:
 
-- You have full ownership and control over the new project
-- You can modify, delete, or further develop the project as needed
-- The fork is completely independent from the original project
-- You can add your own team members and configure project settings
+- 새 프로젝트에 대한 완전한 소유권과 제어권을 갖게 됩니다
+- 필요에 따라 프로젝트를 수정, 삭제 또는 추가 개발할 수 있습니다
+- 포크는 원본 프로젝트와 완전히 독립적입니다
+- 자신의 팀원을 추가하고 프로젝트 설정을 구성할 수 있습니다
 
-Forked projects appear in your project list just like any other project you've created.
+포크된 프로젝트는 생성한 다른 프로젝트와 마찬가지로 프로젝트 목록에 표시됩니다.
 
 :::tip
 
-The project dashboard for your fork has a **Forked From** property. Click the link to visit the dashboard of the upstream project that was originally forked.
+포크의 프로젝트 대시보드에는 **Forked From** 속성이 있습니다. 링크를 클릭하여 원래 포크된 업스트림 프로젝트의 대시보드를 방문하세요.
 
 :::

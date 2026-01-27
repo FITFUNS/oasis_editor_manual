@@ -1,62 +1,62 @@
 ---
-title: Project Dashboard
+title: 프로젝트 대시보드
 ---
 
-The Project Dashboard is the control center for your project, providing access to all major project functions and information.
+프로젝트 대시보드는 프로젝트의 제어 센터로, 모든 주요 프로젝트 기능과 정보에 대한 액세스를 제공합니다.
 
 ![Dashboard](/img/user-manual/editor/projects/project-dashboard.png)
 
-## Dashboard Overview
+## 대시보드 개요
 
-From the Project Dashboard you can:
+프로젝트 대시보드에서 다음을 수행할 수 있습니다:
 
-- Access the OasisW Editor
-- Run your project's primary app
-- View the project's development log
-- Monitor project activity
-- Edit project settings
-- Manage team members
+- OasisW 에디터 액세스
+- 프로젝트의 기본 앱 실행
+- 프로젝트의 개발 로그 보기
+- 프로젝트 활동 모니터링
+- 프로젝트 설정 편집
+- 팀원 관리
 
-## Dashboard Header
+## 대시보드 헤더
 
-The Dashboard Header provides quick access to common project actions:
+대시보드 헤더는 일반적인 프로젝트 작업에 대한 빠른 액세스를 제공합니다:
 
 ![Dashboard Header](/img/user-manual/editor/projects/dashboard-header.png)
 
-### EDITOR Button
+### EDITOR 버튼
 
-Click **EDITOR** to open the OasisW Editor in a new tab, where you can:
+**EDITOR**를 클릭하면 새 탭에서 OasisW 에디터가 열리며, 여기서 다음을 수행할 수 있습니다:
 
-- Create and edit scenes and entities
-- Import and manage assets
-- Configure components and settings
-- Publish apps
+- 씬 및 엔티티 생성 및 편집
+- 에셋 가져오기 및 관리
+- 컴포넌트 및 설정 구성
+- 앱 게시
 
-### PLAY Button
+### PLAY 버튼
 
-Click **PLAY** to launch the Primary Build of your project in a new tab. This allows you to:
+**PLAY**를 클릭하면 새 탭에서 프로젝트의 기본 빌드가 실행됩니다. 이를 통해 다음을 수행할 수 있습니다:
 
-- Test your latest changes
-- Experience your project as end users would
-- Debug gameplay and user interface
-- Share a playable version with others
+- 최신 변경 사항 테스트
+- 최종 사용자처럼 프로젝트 경험
+- 게임플레이 및 사용자 인터페이스 디버깅
+- 다른 사람과 플레이 가능한 버전 공유
 
-### Watch Button
+### Watch 버튼
 
-Click **Watch** to show Dev Log updates in the Global Feed when the **Watching** filter is enabled.
+**Watch**를 클릭하면 **Watching** 필터가 활성화된 경우 글로벌 피드에 개발 로그 업데이트가 표시됩니다.
 
-### Star Button
+### Star 버튼
 
-Click **Star** to like or favorite this project. Starring helps:
+**Star**를 클릭하여 이 프로젝트를 좋아요 또는 즐겨찾기로 표시합니다. 스타 표시는 다음에 도움이 됩니다:
 
-- Show appreciation to the developer
-- Contribute to project popularity metrics
+- 개발자에게 감사 표시
+- 프로젝트 인기도 지표에 기여
 
-### Fork Button
+### Fork 버튼
 
-Click **Fork** to create a copy of this project in your account. Forking:
+**Fork**를 클릭하여 계정에 이 프로젝트의 복사본을 만듭니다. 포크는 다음을 수행합니다:
 
-- Creates a new project based on the current main branch
-- Copies all assets and scenes (but not version history)
-- Allows you to experiment without affecting the original
-- Is useful for learning from other projects
+- 현재 main 브랜치를 기반으로 새 프로젝트 생성
+- 모든 에셋과 씬 복사(버전 기록 제외)
+- 원본에 영향을 주지 않고 실험할 수 있도록 허용
+- 다른 프로젝트에서 학습하는 데 유용

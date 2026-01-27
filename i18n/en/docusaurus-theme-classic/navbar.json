@@ -7,9 +7,9 @@
     "message": "OasisW Logo",
     "description": "The alt text of navbar logo"
   },
-  "item.label.사용법": {
-    "message": "Usage Guide",
-    "description": "Navbar item with label 사용법"
+  "item.label.시작하기": {
+    "message": "Getting Started",
+    "description": "Navbar item with label 시작하기"
   },
   "item.label.메뉴얼": {
     "message": "Manual",

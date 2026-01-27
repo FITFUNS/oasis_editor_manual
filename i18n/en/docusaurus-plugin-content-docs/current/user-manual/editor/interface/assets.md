@@ -1,71 +1,71 @@
 ---
 title: Assets
-sidebar_label: 에셋
+sidebar_label: Assets
 ---
 
 # Assets
 
-OasisW의 프로젝트에서 사용하는 모든 리소스를 관리하는 중앙 저장소인 에셋 뷰를 학습합니다.  
-여기에서 에셋을 생성, 업로드, 삭제, 검사, 편집할 수 있습니다.
+Learn about the Assets view, a central repository for managing all resources used in OasisW projects.  
+Here you can create, upload, delete, inspect, and edit assets.
 
 ![Assets](/img/usage-guide/6_assets.png)
 
-## 폴더 계층 구조
+## Folder Hierarchy
 
-- 폴더 뷰에서 에셋을 폴더 트리 형태로 정리합니다.
-- 새 폴더 생성  
-  - **Add Asset(+)** 버튼 클릭 → **Folder**를 선택합니다.  
-  - 또는 원하는 폴더에서 우클릭 → **New Asset → Folder**를 선택합니다.
-- 폴더 이름 변경  
-  - 폴더 뷰에서 폴더를 클릭 후 **인스팩터**에서 이름을 수정합니다.
-- 폴더 삭제  
-  - 폴더 뷰에서 폴더 클릭 → **Delete**를 클릭합니다.  
-  - 또는 폴더 우클릭 → **Delete**를 클릭합니다.
-- 폴더 간 드래그 앤 드롭으로 구조를 재배치할 수 있습니다.
+- Organize assets in a folder tree structure in the folder view.
+- **Create New Folder**  
+  - Click the **Add Asset(+)** button → Select **Folder**.  
+  - Or right-click on the desired folder → Select **New Asset → Folder**.
+- **Rename Folder**  
+  - Click the folder in the folder view, then modify the name in the **Inspector**.
+- **Delete Folder**  
+  - Click the folder in the folder view → Click **Delete**.  
+  - Or right-click the folder → Click **Delete**.
+- You can reorganize the structure by dragging and dropping between folders.
 
-## 에셋 생성 및 업로드
+## Asset Creation and Upload
 
-- 컴퓨터 파일을 에셋 뷰로 드래그 앤 드롭하면 자동 업로드 및 임포트됩니다.
-- 특정 에셋은 **Add Asset(+)** 아이콘으로 직접 생성할 수 있습니다.
-- 에셋 삭제는 우클릭 → **Delete**를 클릭합니다.
+- Drag and drop files from your computer into the Assets view to automatically upload and import them.
+- Certain assets can be created directly using the **Add Asset(+)** icon.
+- To delete an asset, right-click → Click **Delete**.
 
-## 에셋 편집
+## Asset Editing
 
-- 텍스트 기반 에셋(텍스트, json, shader, html, css, script)을 더블 클릭해 열고 편집할 수 있습니다.
-- AI로 코드를 생성하여 적용할 수 있습니다.
-- **AI 상세 가이드**: [코드 제네레이션](/usage-guide/code-generation)을 참조하세요.
+- Text-based assets (text, json, shader, html, css, script) can be opened and edited by double-clicking.
+- You can generate code using AI and apply it.
+- **AI Detailed Guide**: See [Code Generation](/usage-guide/code-generation).
 
-## 에셋 정보 표시
+## Asset Information Display
 
-- 에셋 썸네일 선택 시 인스팩터에 세부 정보를 표시합니다.
+- When you select an asset thumbnail, detailed information is displayed in the Inspector.
 
-## 필터링
+## Filtering
 
-- 필터 드롭다운 메뉴로 보고 싶은 에셋 유형을 선택할 수 있습니다.
+- Use the filter dropdown menu to select the asset types you want to view.
 
 ![Assets](/img/usage-guide/6_1_filtering.png)
 
-## 검색
+## Search
 
-- 검색창에 입력 시 프로젝트 내 에셋을 실시간으로 필터링합니다.
+- Enter text in the search box to filter assets in the project in real-time.
 
 ![Assets](/img/usage-guide/6_2_searching.png)
 
-- 검색 유형
-  - **ID**: 고유 ID 입력 시 정확히 일치하는 에셋만 표시합니다.
-  - **RegExp**: 검색어 앞에 `*`를 붙이고 정규표현식을 사용할 수 있습니다.  
-    예) `*.*`는 모든 에셋을 검색합니다.
+- **Search Types**
+  - **ID**: Enter a unique ID to display only exactly matching assets.
+  - **RegExp**: Add `*` before the search term to use regular expressions.  
+    Example: `*.*` searches for all assets.
 
-## 드래그 앤 드롭
+## Drag and Drop
 
-- 에셋을 폴더 계층 내로 드래그 앤 드롭하여 이동할 수 있습니다.  
-- 다중 선택을 지원합니다 (Ctrl+A로 현재 폴더 내 모든 에셋을 선택).  
-- 인스팩터 내 에셋 슬롯으로 드래그 앤 드롭할 수 있습니다 (컴포넌트 속성이나 스크립트 속성).  
-- 모델, 재질, 큐브맵 에셋은 뷰포트에 직접 드래그 앤 드롭할 수 있습니다.
+- Drag and drop assets within the folder hierarchy to move them.  
+- Multi-selection is supported (Ctrl+A to select all assets in the current folder).  
+- You can drag and drop into asset slots in the Inspector (component properties or script attributes).  
+- Model, material, and cubemap assets can be dragged and dropped directly into the viewport.
 
-## 프로젝트 간 복사 & 붙여넣기
+## Copy & Paste Between Projects
 
-- 에셋 또는 여러 에셋 선택 후 우클릭 → **Copy**를 클릭합니다.
-- 붙여넣을 프로젝트 에셋 뷰 우클릭 → **Paste**를 클릭합니다.
-- 복사 시 에셋 의존성(예: 모델이 참조하는 재질, 텍스처 등)도 함께 복사됩니다.  
-- 같은 이름의 기존 에셋이 있어도 덮어쓰기하지 않고 새 에셋을 생성합니다.
+- Select an asset or multiple assets, then right-click → Click **Copy**.
+- Right-click in the Assets view of the target project → Click **Paste**.
+- When copying, asset dependencies (e.g., materials and textures referenced by models) are also copied.  
+- If an asset with the same name already exists, a new asset is created instead of overwriting.

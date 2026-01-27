@@ -9,7 +9,7 @@ OasisW의 3D 씬을 시각적으로 편집하고 탐색하는 핵심 인터페�
 
 ![Viewport](/img/usage-guide/5_1_viewport.png)
 
-## Gizmos (기즈모)
+## Gizmos (기즈모) {#gizmos}
 
 | <img src="/img/usage-guide/5_3_gizmo1.png" alt="기즈모 종류 1" width="250" height="250" /> | <img src="/img/usage-guide/5_3_gizmo2.png" alt="기즈모 종류 2" width="250" height="250" /> | <img src="/img/usage-guide/5_3_gizmo3.png" alt="기즈모 종류 3" width="250" height="250" /> |
 |:---:|:---:|:---:|

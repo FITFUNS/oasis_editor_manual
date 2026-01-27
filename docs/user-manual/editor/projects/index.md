@@ -1,34 +1,34 @@
 ---
-title: Projects
+title: 프로젝트
 ---
 
-## Overview
+## 개요
 
-Projects are the foundation for everything you create in the OasisW Editor. A project contains all the assets, scenes, scripts, and settings needed to build your application or game. This section covers all aspects of project management, from creation to configuration.
+프로젝트는 OasisW Editor에서 생성하는 모든 것의 기반입니다. 프로젝트에는 애플리케이션이나 게임을 구축하는 데 필요한 모든 에셋, 씬, 스크립트 및 설정이 포함됩니다. 이 섹션에서는 생성부터 구성까지 프로젝트 관리의 모든 측면을 다룹니다.
 
-## Project Management Topics
+## 프로젝트 관리 주제
 
-### Getting Started
+### 시작하기
 
-- **[Creating Projects](creating)** - How to create new projects.
+- **[프로젝트 생성](/usage-guide/create-a-project)** - 새 프로젝트를 만드는 방법.
 
-### Working with Projects
+### 프로젝트 작업
 
-- **[Project Dashboard](dashboard)** - Understanding and navigating the project dashboard interface.
-- **[Project Settings](settings)** - Configure your project's name, description, privacy, and branding.
-- **[Team Management](team-management)** - Adding collaborators and managing permissions.
-- **[Development Logs](dev-logs)** - Using dev logs for project updates and team communication.
+- **[프로젝트 대시보드](/user-manual/editor/projects/dashboard)** - 프로젝트 대시보드 인터페이스 이해 및 탐색.
+- **[프로젝트 설정](/user-manual/editor/projects/settings)** - 프로젝트의 이름, 설명, 개인정보 보호 및 브랜딩 구성.
+- **[팀 관리](/user-manual/editor/projects/team-management)** - 협업자 추가 및 권한 관리.
+- **[개발 로그](/user-manual/editor/projects/dev-logs)** - 프로젝트 업데이트 및 팀 커뮤니케이션을 위한 개발 로그 사용.
 
-### Advanced Management
+### 고급 관리
 
-- **[Backup and Archiving](backup-archiving)** - Protecting your projects with backups and archives.
-- **[Ownership and Transfers](ownership-transfers)** - Transferring projects between users and organizations.
+- **[백업 및 아카이빙](/user-manual/editor/projects/backup-archiving)** - 백업 및 아카이브로 프로젝트 보호.
+- **[소유권 및 전송](/user-manual/editor/projects/ownership-transfers)** - 사용자 및 조직 간 프로젝트 전송.
 
-## Quick Actions
+## 빠른 작업
 
-Once you understand the basics of project management, you can:
+프로젝트 관리의 기본 사항을 이해한 후 다음을 수행할 수 있습니다:
 
-- Access the [Editor](../interface) to build your project.
-- Test your project using the [Launch Page](../interface/launch-page).
-- Use [Real-time Collaboration](../realtime-collaboration) to build with others.
-- Use [Version Control](../version-control) to manage your development workflow.
+- [에디터](/user-manual/editor/interface)에 액세스하여 프로젝트를 구축합니다.
+- [런치 페이지](/user-manual/editor/interface/launch-page)를 사용하여 프로젝트를 테스트합니다.
+- [실시간 협업](/user-manual/editor/realtime-collaboration)을 사용하여 다른 사람과 함께 구축합니다.
+- [버전 관리](/user-manual/editor/version-control)를 사용하여 개발 워크플로를 관리합니다.

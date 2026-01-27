@@ -23,6 +23,7 @@ function getLocalizedLabels(locale = 'ko') {
       introduction: '소개',
       commonTopics: '공통 주제',
       gettingStarted: '시작하기',
+      editorGettingStarted: '에디터 알아보기',
       entityComponentSystem: '엔티티 컴포넌트 시스템 (Entity Component System)',
       scenes: '씬 (Scenes)',
       components: '컴포넌트 (Components)',
@@ -42,15 +43,19 @@ function getLocalizedLabels(locale = 'ko') {
       '2D': '2D',
       userInterface: '사용자 인터페이스 (User Interface)',
       oasisStudio: 'OasisW 스튜디오',
+      oasisEditorHeader: 'OasisW 에디터',
       interface: '인터페이스',
+      editorInterface: '에디터 인터페이스',
       ai: 'AI',
       server: '서버',
-      script: '스크립트'
+      script: '스크립트',
+      keyboardShortcuts: '조작법 및 키보드 단축키'
     },
     en: {
       introduction: 'Introduction',
       commonTopics: 'Common Topics',
       gettingStarted: 'Getting Started',
+      editorGettingStarted: 'Exploring the Editor',
       entityComponentSystem: 'Entity Component System',
       scenes: 'Scenes',
       components: 'Components',
@@ -70,10 +75,13 @@ function getLocalizedLabels(locale = 'ko') {
       '2D': '2D',
       userInterface: 'User Interface',
       oasisStudio: 'OasisW Studio',
+      oasisEditorHeader: 'OasisW Editor',
       interface: 'Interface',
+      editorInterface: 'Editor Interface',
       ai: 'AI',
       server: 'Server',
-      script: 'Script'
+      script: 'Script',
+      keyboardShortcuts: 'Controls and Keyboard Shortcuts'
     }
   };
   
@@ -105,22 +113,7 @@ const sidebars = {
       className: 'sidebar-divider',
     },
     'usage-guide/create-a-project',
-    {
-      type: 'category',
-      label: labels.interface,
-      link: {
-        type: 'doc',
-        id: 'usage-guide/interface',
-      },
-      items: [
-        'usage-guide/toolbar',
-        'usage-guide/project-toolbar',
-        'usage-guide/hierarchy',
-        'usage-guide/viewport',
-        'usage-guide/inspector',
-        'usage-guide/assets',
-      ],
-    },
+    'usage-guide/interface',
     {
       type: 'category',
       label: labels.ai,
@@ -147,15 +140,9 @@ const sidebars = {
     //   ],
     // },
     {
-      type: 'category',
-      label: '조작법 및 키보드 단축키',
-      link: {
-        type: 'doc',
-        id: 'usage-guide/keyboard-shortcuts',
-      },
-      items: [
-        'usage-guide/keyboard-shortcuts',
-      ],
+      type: 'doc',
+      id: 'usage-guide/keyboard-shortcuts',
+      label: labels.keyboardShortcuts,
     },
 
     
@@ -194,7 +181,6 @@ const sidebars = {
       value: `<div class="sidebar-section-header">${labels.introduction}</div>`,
     },
     'user-manual/index',
-    'user-manual/interface',
     {
       type: 'category',
       label: labels.gettingStarted,
@@ -229,181 +215,175 @@ const sidebars = {
     // },
     
     {
+      type: 'html',
+      value: `<div class="sidebar-section-header">${labels.oasisEditorHeader}</div>`,
+    },
+    {
       type: 'category',
-      label: 'OasisW Editor',
+      label: labels.editorGettingStarted,
       link: {
         type: 'doc',
-        id: 'user-manual/editor/index',
+        id: 'user-manual/editor/getting-started/index',
       },
       items: [
-        {
-          type: 'category',
-          label: 'Getting Started',
-          link: {
-            type: 'doc',
-            id: 'user-manual/editor/getting-started/index',
-          },
-          items: [
-            // 'user-manual/editor/getting-started/workflow',
-            'user-manual/editor/getting-started/your-first-app',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Projects',
-          link: {
-            type: 'doc',
-            id: 'user-manual/editor/projects/index',
-          },
-          items: [
-            'user-manual/editor/projects/creating',
-            'user-manual/editor/projects/dashboard',
-            'user-manual/editor/projects/settings',
-            'user-manual/editor/projects/team-management',
-            'user-manual/editor/projects/dev-logs',
-            'user-manual/editor/projects/backup-archiving',
-            'user-manual/editor/projects/ownership-transfers',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Editor Interface',
-          link: {
-            type: 'doc',
-            id: 'user-manual/editor/interface/index',
-          },
-          items: [
-            'user-manual/editor/interface/toolbar',
-            'user-manual/editor/interface/project-toolbar',
-            'user-manual/editor/interface/hierarchy',
-            'user-manual/editor/interface/inspector',
-            'user-manual/editor/interface/assets',
-            'user-manual/editor/interface/viewport',
-            {
-              type: 'category',
-              label: 'Launch Page',
-              link: {
-                type: 'doc',
-                id: 'user-manual/editor/interface/launch-page/index',
-              },
-              items: [
-                'user-manual/editor/interface/launch-page/custom-engine',
-                'user-manual/editor/interface/launch-page/loading-screen',
-              ],
-            },
-            'user-manual/editor/interface/keyboard-shortcuts',
-            {
-              type: 'category',
-              label: 'Project Settings',
-              link: {
-                type: 'doc',
-                id: 'user-manual/editor/interface/settings/index',
-              },
-              items: [
-                'user-manual/editor/interface/settings/engine',
-                'user-manual/editor/interface/settings/editor',
-                'user-manual/editor/interface/settings/asset-import',
-                'user-manual/editor/interface/settings/physics',
-                'user-manual/editor/interface/settings/rendering',
-                'user-manual/editor/interface/settings/layers',
-                'user-manual/editor/interface/settings/lightmapping',
-                'user-manual/editor/interface/settings/batch-groups',
-                'user-manual/editor/interface/settings/launch-page',
-                'user-manual/editor/interface/settings/input',
-                'user-manual/editor/interface/settings/localization',
-                'user-manual/editor/interface/settings/network',
-              ],
-            },
-          ],
-        },
-        'user-manual/editor/realtime-collaboration',
-        {
-          type: 'category',
-          label: 'Templates',
-          link: {
-            type: 'doc',
-            id: 'user-manual/editor/templates/index',
-          },
-          items: [
-            'user-manual/editor/templates/diff',
-            'user-manual/editor/templates/nested',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Version Control',
-          link: {
-            type: 'doc',
-            id: 'user-manual/editor/version-control/index',
-          },
-          items: [
-            'user-manual/editor/version-control/checkpoints',
-            'user-manual/editor/version-control/branches',
-            'user-manual/editor/version-control/merging',
-            'user-manual/editor/version-control/changes',
-            'user-manual/editor/version-control/branch-workflows',
-            'user-manual/editor/version-control/graph-view',
-            'user-manual/editor/version-control/item-history',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Publishing',
-          link: {
-            type: 'doc',
-            id: 'user-manual/editor/publishing/index',
-          },
-          items: [
-            {
-              type: 'category',
-              label: 'Web',
-              link: {
-                type: 'doc',
-                id: 'user-manual/editor/publishing/web/index',
-              },
-              items: [
-                'user-manual/editor/publishing/web/playcanvas-hosting',
-                'user-manual/editor/publishing/web/self-hosting',
-                'user-manual/editor/publishing/web/self-hosting-for-beginners',
-                'user-manual/editor/publishing/web/communicating-webpage',
-                'user-manual/editor/publishing/web/hosting-cdn',
-                'user-manual/editor/publishing/web/facebook',
-                'user-manual/editor/publishing/web/hosting-heyvr',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Mobile',
-              link: {
-                type: 'doc',
-                id: 'user-manual/editor/publishing/mobile/index',
-              },
-              items: [
-                'user-manual/editor/publishing/mobile/cordova',
-                'user-manual/editor/publishing/mobile/gonative',
-              ],
-            },
-            'user-manual/editor/publishing/desktop/index',
-            {
-              type: 'category',
-              label: 'Playable Ads',
-              link: {
-                type: 'doc',
-                id: 'user-manual/editor/publishing/playable-ads/index',
-              },
-              items: [
-                'user-manual/editor/publishing/playable-ads/fb-playable-ads',
-                'user-manual/editor/publishing/playable-ads/snapchat-playable-ads',
-              ],
-            },
-          ],
-        },
-        'user-manual/editor/editor-api',
-        'user-manual/editor/engine-compatibility',
-        'user-manual/editor/faq',
-        'user-manual/editor/troubleshooting',
+        // 'user-manual/editor/getting-started/workflow',
+        // 'user-manual/editor/getting-started/your-first-app',
       ],
     },
+    // {
+    //   type: 'category',
+    //   label: 'Projects',
+    //   link: {
+    //     type: 'doc',
+    //     id: 'user-manual/editor/projects/index',
+    //   },
+    //   items: [
+    //     'user-manual/editor/projects/creating',
+    //     'user-manual/editor/projects/dashboard',
+    //     'user-manual/editor/projects/settings',
+    //     'user-manual/editor/projects/team-management',
+    //     'user-manual/editor/projects/dev-logs',
+    //     'user-manual/editor/projects/backup-archiving',
+    //     'user-manual/editor/projects/ownership-transfers',
+    //   ],
+    // },
+    {
+      type: 'category',
+      label: labels.editorInterface,
+      link: {
+        type: 'doc',
+        id: 'user-manual/editor/interface/index',
+      },
+      items: [
+        'user-manual/editor/interface/toolbar',
+        'user-manual/editor/interface/project-toolbar',
+        'user-manual/editor/interface/hierarchy',
+        'user-manual/editor/interface/viewport',
+        'user-manual/editor/interface/inspector',
+        'user-manual/editor/interface/assets',
+        // {
+        //   type: 'category',
+        //   label: 'Launch Page',
+        //   link: {
+        //     type: 'doc',
+        //     id: 'user-manual/editor/interface/launch-page/index',
+        //   },
+        //   items: [
+        //     'user-manual/editor/interface/launch-page/custom-engine',
+        //     'user-manual/editor/interface/launch-page/loading-screen',
+        //   ],
+        // },
+        // 'user-manual/editor/interface/keyboard-shortcuts',
+        // {
+        //   type: 'category',
+        //   label: 'Project Settings',
+        //   link: {
+        //     type: 'doc',
+        //     id: 'user-manual/editor/interface/settings/index',
+        //   },
+        //   items: [
+        //     'user-manual/editor/interface/settings/engine',
+        //     'user-manual/editor/interface/settings/editor',
+        //     'user-manual/editor/interface/settings/asset-import',
+        //     'user-manual/editor/interface/settings/physics',
+        //     'user-manual/editor/interface/settings/rendering',
+        //     'user-manual/editor/interface/settings/layers',
+        //     'user-manual/editor/interface/settings/lightmapping',
+        //     'user-manual/editor/interface/settings/batch-groups',
+        //     'user-manual/editor/interface/settings/launch-page',
+        //     'user-manual/editor/interface/settings/input',
+        //     'user-manual/editor/interface/settings/localization',
+        //     'user-manual/editor/interface/settings/network',
+        //   ],
+        // },
+      ],
+    },
+    // 'user-manual/editor/realtime-collaboration',
+    // {
+    //   type: 'category',
+    //   label: 'Templates',
+    //   link: {
+    //     type: 'doc',
+    //     id: 'user-manual/editor/templates/index',
+    //   },
+    //   items: [
+    //     'user-manual/editor/templates/diff',
+    //     'user-manual/editor/templates/nested',
+    //   ],
+    // },
+    // {
+    //   type: 'category',
+    //   label: 'Version Control',
+    //   link: {
+    //     type: 'doc',
+    //     id: 'user-manual/editor/version-control/index',
+    //   },
+    //   items: [
+    //     'user-manual/editor/version-control/checkpoints',
+    //     'user-manual/editor/version-control/branches',
+    //     'user-manual/editor/version-control/merging',
+    //     'user-manual/editor/version-control/changes',
+    //     'user-manual/editor/version-control/branch-workflows',
+    //     'user-manual/editor/version-control/graph-view',
+    //     'user-manual/editor/version-control/item-history',
+    //   ],
+    // },
+    // {
+    //   type: 'category',
+    //   label: 'Publishing',
+    //   link: {
+    //     type: 'doc',
+    //     id: 'user-manual/editor/publishing/index',
+    //   },
+    //   items: [
+    //     {
+    //       type: 'category',
+    //       label: 'Web',
+    //       link: {
+    //         type: 'doc',
+    //         id: 'user-manual/editor/publishing/web/index',
+    //       },
+    //       items: [
+    //         'user-manual/editor/publishing/web/playcanvas-hosting',
+    //         'user-manual/editor/publishing/web/self-hosting',
+    //         'user-manual/editor/publishing/web/self-hosting-for-beginners',
+    //         'user-manual/editor/publishing/web/communicating-webpage',
+    //         'user-manual/editor/publishing/web/hosting-cdn',
+    //         'user-manual/editor/publishing/web/facebook',
+    //         'user-manual/editor/publishing/web/hosting-heyvr',
+    //       ],
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Mobile',
+    //       link: {
+    //         type: 'doc',
+    //         id: 'user-manual/editor/publishing/mobile/index',
+    //       },
+    //       items: [
+    //         'user-manual/editor/publishing/mobile/cordova',
+    //         'user-manual/editor/publishing/mobile/gonative',
+    //       ],
+    //     },
+    //     'user-manual/editor/publishing/desktop/index',
+    //     {
+    //       type: 'category',
+    //       label: 'Playable Ads',
+    //       link: {
+    //         type: 'doc',
+    //         id: 'user-manual/editor/publishing/playable-ads/index',
+    //       },
+    //       items: [
+    //         'user-manual/editor/publishing/playable-ads/fb-playable-ads',
+    //         'user-manual/editor/publishing/playable-ads/snapchat-playable-ads',
+    //       ],
+    //     },
+    //   ],
+    // },
+    // 'user-manual/editor/editor-api',
+    // 'user-manual/editor/engine-compatibility',
+    // 'user-manual/editor/faq',
+    // 'user-manual/editor/troubleshooting',
     {
       type: 'html',
       value: `<div class="sidebar-section-header">${labels.commonTopics}</div>`,
@@ -418,8 +398,8 @@ const sidebars = {
       items: [
         'user-manual/ecs/entities',
         'user-manual/ecs/components',
-        'user-manual/ecs/hierarchy-and-transformations',
-        'user-manual/ecs/searching-the-hierarchy',
+        // 'user-manual/ecs/hierarchy-and-transformations',
+        // 'user-manual/ecs/searching-the-hierarchy',
       ],
     },
     {

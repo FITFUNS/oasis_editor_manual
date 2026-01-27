@@ -1,70 +1,70 @@
 ---
-title: Backup and Archiving
+title: 백업 및 아카이빙
 ---
 
-Protecting your OasisW projects with regular backups is essential for safeguarding against accidental deletion, malicious actions, or data loss. This section covers all the methods available for backing up and restoring your projects.
+정기적인 백업으로 OasisW 프로젝트를 보호하는 것은 실수로 인한 삭제, 악의적인 행동 또는 데이터 손실로부터 보호하기 위해 필수적입니다. 이 섹션에서는 프로젝트를 백업하고 복원하는 데 사용할 수 있는 모든 방법을 다룹니다.
 
-## Why Backup Your Projects?
+## 프로젝트를 백업해야 하는 이유
 
-Regular backups protect against:
+정기적인 백업은 다음으로부터 보호합니다:
 
-- Accidental deletion of assets or scenes
-- Malicious team member actions
-- Account security issues
-- Data corruption or technical problems
-- Development mistakes that break your project
+- 에셋이나 씬의 실수로 인한 삭제
+- 악의적인 팀원의 행동
+- 계정 보안 문제
+- 데이터 손상 또는 기술적 문제
+- 프로젝트를 손상시키는 개발 실수
 
-## Backup Methods
+## 백업 방법
 
-### 1. Forking
+### 1. 포크(Forking)
 
-The simplest way to create a backup is to fork your own project. Forking is [covered comprehensively](creating.md#fork-an-existing-project) earlier in this section.
+백업을 만드는 가장 간단한 방법은 자신의 프로젝트를 포크하는 것입니다. 포크는 이 섹션의 앞부분에서 [포괄적으로 다룹니다](creating.md#fork-an-existing-project).
 
-### 2. Archiving (via playcanvas.com)
+### 2. 아카이빙 (playcanvas.com을 통해)
 
-Archive files provide complete project backups that can be stored offline and imported later.
+아카이브 파일은 오프라인으로 저장하고 나중에 가져올 수 있는 완전한 프로젝트 백업을 제공합니다.
 
-#### From the Projects List
+#### 프로젝트 목록에서
 
 ![Export Archive](/img/user-manual/editor/projects/export-project.png)
 
-To export a project archive:
+프로젝트 아카이브를 내보내려면:
 
-1. Ensure you are logged in
-2. Visit the User Page that owns the project you wish to export
-3. Locate the project in the project list
-4. Click the down arrow next to the right of the project name
-5. Select **"Export Project"**
-6. Wait for the archive to be generated
-7. Click **DOWNLOAD** to download the zip file
+1. 로그인되어 있는지 확인
+2. 내보낼 프로젝트를 소유한 사용자 페이지 방문
+3. 프로젝트 목록에서 프로젝트 찾기
+4. 프로젝트 이름 오른쪽 옆의 아래쪽 화살표 클릭
+5. **"Export Project"** 선택
+6. 아카이브가 생성될 때까지 대기
+7. **DOWNLOAD**를 클릭하여 zip 파일 다운로드
 
 :::danger
 
-Exported projects **do not** include:
+내보낸 프로젝트에는 다음이 **포함되지 않습니다**:
 
-- Version control history
-- Any branches other than `main`
-- The project's [Dev Log](dev-logs.md)
+- 버전 관리 기록
+- `main` 이외의 모든 브랜치
+- 프로젝트의 [개발 로그](dev-logs.md)
 
 :::
 
-### 3. Archiving (via REST API)
+### 3. 아카이빙 (REST API를 통해)
 
-For automated and advanced backup scenarios, use the PlayCanvas REST API.
+자동화되고 고급 백업 시나리오의 경우 PlayCanvas REST API를 사용하세요.
 
-#### API Advantages
+#### API 장점
 
-- **Automated Backups**: Set up scheduled backup scripts
-- **Branch Selection**: Choose which branch to export
-- **CI Integration**: Include in continuous integration workflows
-- **Bulk Operations**: Backup multiple projects programmatically
+- **자동 백업**: 예약된 백업 스크립트 설정
+- **브랜치 선택**: 내보낼 브랜치 선택
+- **CI 통합**: 지속적인 통합 워크플로에 포함
+- **대량 작업**: 프로그래밍 방식으로 여러 프로젝트 백업
 
-#### Using the API
+#### API 사용
 
-The [Project Archive API](/user-manual/api/project-archive/) allows you to:
+프로젝트 아카이브 API를 사용하면 다음을 수행할 수 있습니다:
 
 ```bash
-# Export a project via REST API
+# REST API를 통해 프로젝트 내보내기
 curl -H "Authorization: Bearer {accessToken}" \
      -H "Content-Type: application/json" \
      -X POST \
@@ -72,147 +72,147 @@ curl -H "Authorization: Bearer {accessToken}" \
      "https://playcanvas.com/api/projects/{projectId}/export"
 ```
 
-#### Automation Tools
+#### 자동화 도구
 
-PlayCanvas provides an [open-source Node.js tool](https://github.com/playcanvas/playcanvas-rest-api-tools#archiving-a-project) to simplify automated backups:
+PlayCanvas는 자동 백업을 간소화하기 위한 [오픈 소스 Node.js 도구](https://github.com/playcanvas/playcanvas-rest-api-tools#archiving-a-project)를 제공합니다:
 
-- Command-line interface for easy scripting
-- Support for multiple projects
-- Configurable backup schedules
-- Integration with cloud storage services
+- 쉬운 스크립팅을 위한 명령줄 인터페이스
+- 여러 프로젝트 지원
+- 구성 가능한 백업 일정
+- 클라우드 스토리지 서비스 통합
 
-## Restoring Projects {#restoring-projects}
+## 프로젝트 복원 {#restoring-projects}
 
-### From Archive Files
+### 아카이브 파일에서
 
 ![Import Archive](/img/user-manual/editor/projects/import-project.png)
 
-To restore a project from an archive:
+아카이브에서 프로젝트를 복원하려면:
 
-1. Go to your [Projects Dashboard](https://playcanvas.com/projects)
-2. Click **"Import Project"** on the left side
-3. Select your archive ZIP file
-4. Choose a name for the restored project
-5. Wait for the import to complete
+1. [프로젝트 대시보드](https://playcanvas.com/projects)로 이동
+2. 왼쪽에서 **"Import Project"** 클릭
+3. 아카이브 ZIP 파일 선택
+4. 복원된 프로젝트의 이름 선택
+5. 가져오기가 완료될 때까지 대기
 
-#### Restore Considerations
+#### 복원 고려 사항
 
-- Creates a completely new project
-- Original project remains unchanged
-- All team members must be re-added
-- Project settings may need reconfiguration
-- Version control history is not restored
+- 완전히 새로운 프로젝트 생성
+- 원본 프로젝트는 변경되지 않음
+- 모든 팀원을 다시 추가해야 함
+- 프로젝트 설정을 다시 구성해야 할 수 있음
+- 버전 관리 기록은 복원되지 않음
 
-### From Forks
+### 포크에서
 
-Since forks are independent projects, "restoring" from a fork involves:
+포크는 독립적인 프로젝트이므로 포크에서 "복원"하는 것은 다음을 포함합니다:
 
-1. Accessing your forked backup project
-2. Manually copying changed assets back to the original
-3. Or using the forked project as your new main project
-4. Updating team access and settings as needed
+1. 포크된 백업 프로젝트에 액세스
+2. 변경된 에셋을 원본으로 수동 복사
+3. 또는 포크된 프로젝트를 새로운 메인 프로젝트로 사용
+4. 필요에 따라 팀 액세스 및 설정 업데이트
 
-## Backup Strategies
+## 백업 전략
 
-### Regular Backup Schedule
+### 정기 백업 일정
 
-Establish a consistent backup routine:
+일관된 백업 루틴을 설정하세요:
 
-📅 **Daily Backups** (for active development):
+📅 **일일 백업** (활발한 개발용):
 
-- Fork projects before major changes
-- Export archives for critical milestones
+- 주요 변경 전에 프로젝트 포크
+- 중요한 마일스톤에 대한 아카이브 내보내기
 
-📅 **Weekly Backups** (for ongoing projects):
+📅 **주간 백업** (진행 중인 프로젝트용):
 
-- Create comprehensive archive exports
-- Test restore procedures periodically
+- 포괄적인 아카이브 내보내기 생성
+- 주기적으로 복원 절차 테스트
 
-📆 **Monthly Backups** (for stable projects):
+📆 **월간 백업** (안정적인 프로젝트용):
 
-- Full project archives with documentation
-- Long-term storage planning
+- 문서가 포함된 전체 프로젝트 아카이브
+- 장기 저장 계획
 
-### Backup Storage
+### 백업 저장소
 
-Store your backups securely:
+백업을 안전하게 저장하세요:
 
-**Local Storage:**
+**로컬 저장소:**
 
-- External hard drives or NAS devices
-- Encrypted backup drives
-- Regular verification of backup integrity
+- 외장 하드 드라이브 또는 NAS 장치
+- 암호화된 백업 드라이브
+- 백업 무결성의 정기적인 검증
 
-**Cloud Storage:**
+**클라우드 저장소:**
 
-- Google Drive, Dropbox, or OneDrive
-- AWS S3 or similar cloud storage services
-- Version-controlled backup repositories
+- Google Drive, Dropbox 또는 OneDrive
+- AWS S3 또는 유사한 클라우드 저장소 서비스
+- 버전 관리된 백업 저장소
 
-**Distributed Storage:**
+**분산 저장소:**
 
-- Multiple backup locations
-- Team member backup sharing
-- Geographic distribution for disaster recovery
+- 여러 백업 위치
+- 팀원 백업 공유
+- 재해 복구를 위한 지리적 분산
 
-## Advanced Backup Techniques
+## 고급 백업 기법
 
-### Version Control Integration
+### 버전 관리 통합
 
-Coordinate backups with your [version control workflow](../version-control/index.md):
+[버전 관리 워크플로](../version-control/index.md)와 백업을 조정하세요:
 
-- **Branch-specific Backups**: Export different branches separately
-- **Release Backups**: Archive every stable release
-- **Feature Backups**: Backup before merging major features
+- **브랜치별 백업**: 다른 브랜치를 별도로 내보내기
+- **릴리스 백업**: 모든 안정적인 릴리스 아카이빙
+- **기능 백업**: 주요 기능 병합 전 백업
 
-### Automated Workflows
+### 자동화된 워크플로
 
-Set up automated backup systems:
+자동 백업 시스템 설정:
 
-**Continuous Integration:**
+**지속적인 통합:**
 
-- Trigger backups on specific events
-- Integrate with GitHub Actions or similar services
-- Automatic backup validation and testing
+- 특정 이벤트에서 백업 트리거
+- GitHub Actions 또는 유사한 서비스와 통합
+- 자동 백업 검증 및 테스트
 
-**Scheduled Scripts:**
+**예약된 스크립트:**
 
-- Daily/weekly backup scripts using the REST API
-- Cloud storage integration
-- Backup rotation and cleanup
+- REST API를 사용한 일일/주간 백업 스크립트
+- 클라우드 저장소 통합
+- 백업 순환 및 정리
 
-### Team Backup Coordination
+### 팀 백업 조정
 
-For team projects:
+팀 프로젝트의 경우:
 
-- **Designated Backup Manager**: Assign backup responsibilities
-- **Shared Backup Storage**: Team-accessible backup locations
-- **Backup Verification**: Regular restore testing
-- **Documentation**: Clear backup and restore procedures
+- **지정된 백업 관리자**: 백업 책임 할당
+- **공유 백업 저장소**: 팀이 액세스할 수 있는 백업 위치
+- **백업 검증**: 정기적인 복원 테스트
+- **문서화**: 명확한 백업 및 복원 절차
 
-## Recovery Planning
+## 복구 계획
 
-### Disaster Recovery
+### 재해 복구
 
-Prepare for worst-case scenarios:
+최악의 시나리오에 대비하세요:
 
-1. **Identify Critical Assets**: Determine what must be preserved
-2. **Recovery Time Objectives**: How quickly you need to restore
-3. **Recovery Point Objectives**: How much data loss is acceptable
-4. **Communication Plan**: How to notify team members
-5. **Alternative Workflows**: Temporary development procedures
+1. **중요 에셋 식별**: 보존해야 할 항목 결정
+2. **복구 시간 목표**: 복원이 얼마나 빨리 필요한지
+3. **복구 지점 목표**: 허용 가능한 데이터 손실량
+4. **커뮤니케이션 계획**: 팀원에게 알리는 방법
+5. **대체 워크플로**: 임시 개발 절차
 
-### Testing Restores
+### 복원 테스트
 
-Regularly test your backup system:
+백업 시스템을 정기적으로 테스트하세요:
 
-- **Partial Restores**: Test individual asset recovery
-- **Full Restores**: Complete project restoration
-- **Team Training**: Ensure team members understand procedures
-- **Documentation Updates**: Keep recovery procedures current
+- **부분 복원**: 개별 에셋 복구 테스트
+- **전체 복원**: 완전한 프로젝트 복원
+- **팀 교육**: 팀원이 절차를 이해하도록 보장
+- **문서 업데이트**: 복구 절차를 최신 상태로 유지
 
 :::warning
 
-Untested backups are unreliable backups. Regular testing ensures your backup strategy works when you need it most.
+테스트되지 않은 백업은 신뢰할 수 없는 백업입니다. 정기적인 테스트는 백업 전략이 가장 필요할 때 작동하도록 보장합니다.
 
 :::

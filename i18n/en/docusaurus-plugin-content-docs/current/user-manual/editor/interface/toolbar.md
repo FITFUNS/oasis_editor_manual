@@ -1,100 +1,100 @@
 ---
 title: Toolbar
-sidebar_label: 툴바
+sidebar_label: Toolbar
 ---
 
 # Toolbar
 
-OasisW의 툴바에 있는 각 버튼의 단축키와 기능을 학습합니다.
+Learn about the keyboard shortcuts and functions of each button in OasisW's toolbar.
 
-## 단축키 및 기능
+## Shortcuts and Functions
 
-| 이미지 | 버튼 | 단축키 | 설명 |
+| Image | Button | Shortcut | Description |
 |------|------|--------|------|
-| ![Translate](/img/usage-guide/3_1_translate.svg) | **Translate** | 1 | 오브젝트 이동 모드 |
-| ![Rotate](/img/usage-guide/3_2_rotate.svg) | **Rotate** | 2 | 오브젝트 회전 모드 |
-| ![Scale](/img/usage-guide/3_3_scale.svg) | **Scale** | 3 | 오브젝트 크기 조정 모드 |
-| ![Resize Element Component](/img/usage-guide/3_4_resize_element_component.svg) | **Resize Element Component** | 4 | 엘리먼트 컴포넌트 크기 조정 |
-| ![World/Local](/img/usage-guide/3_5_world_local.svg) | **World/Local** | L | World / Local 좌표계 전환 |
-| ![Snap](/img/usage-guide/3_6_snap.svg) | **Snap** | Shift | 그리드에 맞춰 정렬 |
-| ![Focus](/img/usage-guide/3_7_focus.svg) | **Focus** | F | 선택한 오브젝트에 포커스 |
-| ![AI Image Generation](/img/usage-guide/3_8_image_generation.svg) | **AI Image Generation** | I | AI로 이미지 생성 |
-| ![Fullscreen](/img/usage-guide/3_9_hide_panels.svg) | **Fullscreen** | Space | 모든 패널 숨기기/보이기 (뷰포트 최대화) |
-| ![Launch](/img/usage-guide/3_10_launch.svg) | **Launch** | Ctrl+Enter | 새 탭에서 씬 실행 |
-| <img src="/img/usage-guide/3_11_publish.svg" alt="Publish" style={{width: '24px'}} /> | **Publish** |  | 배포 테스트 |
+| ![Translate](/img/usage-guide/3_1_translate.svg) | **Translate** | 1 | Object move mode |
+| ![Rotate](/img/usage-guide/3_2_rotate.svg) | **Rotate** | 2 | Object rotate mode |
+| ![Scale](/img/usage-guide/3_3_scale.svg) | **Scale** | 3 | Object scale mode |
+| ![Resize Element Component](/img/usage-guide/3_4_resize_element_component.svg) | **Resize Element Component** | 4 | Resize element component |
+| ![World/Local](/img/usage-guide/3_5_world_local.svg) | **World/Local** | L | Switch between World / Local coordinate system |
+| ![Snap](/img/usage-guide/3_6_snap.svg) | **Snap** | Shift | Align to grid |
+| ![Focus](/img/usage-guide/3_7_focus.svg) | **Focus** | F | Focus on selected object |
+| ![AI Image Generation](/img/usage-guide/3_8_image_generation.svg) | **AI Image Generation** | I | Generate image with AI |
+| ![Fullscreen](/img/usage-guide/3_9_hide_panels.svg) | **Fullscreen** | Space | Hide/show all panels (maximize viewport) |
+| ![Launch](/img/usage-guide/3_10_launch.svg) | **Launch** | Ctrl+Enter | Run scene in new tab |
+| <img src="/img/usage-guide/3_11_publish.svg" alt="Publish" style={{width: '24px'}} /> | **Publish** |  | Test deployment |
 
-### Translate (이동)
-- **단축키**: `1`
-- **기능**: 오브젝트 이동 모드입니다.
-- **사용법**: 
-  - X축 (빨간색): 좌우로 이동합니다.
-  - Y축 (녹색): 상하로 이동합니다.
-  - Z축 (파란색): 앞뒤로 이동합니다.
-- **특징**: 드래그하여 정밀한 위치 조정이 가능합니다.
+### Translate (Move)
+- **Shortcut**: `1`
+- **Function**: Object move mode.
+- **Usage**: 
+  - X-axis (red): Move left and right.
+  - Y-axis (green): Move up and down.
+  - Z-axis (blue): Move forward and backward.
+- **Features**: Drag to make precise position adjustments.
 
-### Rotate (회전)
-- **단축키**: `2`
-- **기능**: 오브젝트 회전 모드입니다.
-- **사용법**:
-  - X축 (빨간색): X축 기준으로 회전합니다.
-  - Y축 (녹색): Y축 기준으로 회전합니다.
-  - Z축 (파란색): Z축 기준으로 회전합니다.
-- **특징**: 각 축별로 독립적인 회전 조작이 가능합니다.
+### Rotate
+- **Shortcut**: `2`
+- **Function**: Object rotate mode.
+- **Usage**:
+  - X-axis (red): Rotate around X-axis.
+  - Y-axis (green): Rotate around Y-axis.
+  - Z-axis (blue): Rotate around Z-axis.
+- **Features**: Independent rotation manipulation for each axis.
 
-### Scale (크기 조정)
-- **단축키**: `3`
-- **기능**: 오브젝트 크기 조정 모드입니다.
-- **사용법**:
-  - 각 축별로 크기를 조정합니다.
-  - 중앙 핸들을 드래그하여 균등하게 크기를 조정합니다.
+### Scale
+- **Shortcut**: `3`
+- **Function**: Object scale mode.
+- **Usage**:
+  - Adjust size for each axis.
+  - Drag the center handle to scale uniformly.
 
-### Resize Element Component (크기 조정)
-- **단축키**: `4`  
-- **기능**: 엘리먼트 컴포넌트 크기 조정 모드입니다.  
-- **사용법**:  
-  - 마우스로 모서리를 드래그하여 크기를 조정합니다.
-- **특징**:  
-  - 가로·세로 독립 조정이 가능합니다. 
+### Resize Element Component
+- **Shortcut**: `4`  
+- **Function**: Element component resize mode.  
+- **Usage**:  
+  - Drag corners with the mouse to resize.
+- **Features**:  
+  - Independent horizontal and vertical adjustment. 
 
 ### World/Local
-- **단축키**: `L`
-- **기능**: 로컬/글로벌 좌표계를 전환합니다.
-- **World**: 월드 기준 좌표계를 사용합니다.
-- **Local**: 오브젝트 기준 좌표계를 사용합니다.
+- **Shortcut**: `L`
+- **Function**: Switches between local/global coordinate systems.
+- **World**: Uses world-based coordinate system.
+- **Local**: Uses object-based coordinate system.
 
-### Snap (스냅)
-- **단축키**: `Shift`
-- **기능**: 그리드에 맞춰 정렬합니다.
-- **사용법**: 오브젝트를 이동할 때 그리드 단위로 정확히 배치합니다.
+### Snap
+- **Shortcut**: `Shift`
+- **Function**: Aligns to grid.
+- **Usage**: When moving objects, places them precisely in grid units.
 
 ### Focus
-- **단축키**: `F`
-- **기능**: 선택된 오브젝트에 카메라를 포커스합니다.
+- **Shortcut**: `F`
+- **Function**: Focuses the camera on the selected object.
 
 ### AI Image Generation
-- **단축키**: `I`
-- **기능**: AI로 이미지를 생성하고 생성한 이미지를 오브젝트에 추가합니다.
-- **사용법**: 툴바에서 Image Generation 아이콘을 클릭하여 이미지를 생성합니다.
-- **상세 가이드**: [이미지 제네레이션](/usage-guide/image-generation)을 참조하세요.
+- **Shortcut**: `I`
+- **Function**: Generates images using AI and adds the generated image to the object.
+- **Usage**: Click the Image Generation icon in the toolbar to generate an image.
+- **Detailed Guide**: See [Image Generation](/usage-guide/image-generation).
 
 ### Fullscreen
-- **단축키**: `Space`
-- **기능**: 모든 패널을 숨기기/보이기합니다. (뷰포트 최대화)
+- **Shortcut**: `Space`
+- **Function**: Hides/shows all panels. (Maximizes viewport)
 
 ### Launch
-- **단축키**: `Ctrl+Enter`
-- **기능**: 새 탭에서 씬을 실행합니다.
+- **Shortcut**: `Ctrl+Enter`
+- **Function**: Runs the scene in a new tab.
 
 ### Publish
-<!-- - **단축키**: ``   -->
-- **기능**: 배포 테스트를 수행합니다.  
-- **사용법**:  
-새 탭에서 **배포**된 프로젝트를 테스트할 수 있습니다.  
-**오른쪽 상단에 표시되는 QR 코드**를 스캔하면, **모바일 기기에서도 테스트**가 가능합니다.
+<!-- - **Shortcut**: ``   -->
+- **Function**: Performs deployment testing.  
+- **Usage**:  
+You can test the **deployed** project in a new tab.  
+Scan the **QR code displayed in the top right** to **test on mobile devices** as well.
 
-::::warning 주의사항
-Publish 버튼을 클릭할 때 **주소창 옆에 팝업 차단됨 아이콘**이 표시되면,  
-**팝업을 허용**해야 씬이 새 탭에서 정상적으로 실행됩니다.
+::::warning Important
+When clicking the Publish button, if a **popup blocked icon** appears next to the address bar,  
+you must **allow popups** for the scene to run properly in a new tab.
 ::::
 
 <br />

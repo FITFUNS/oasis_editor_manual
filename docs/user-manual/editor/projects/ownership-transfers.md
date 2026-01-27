@@ -1,80 +1,80 @@
 ---
-title: Ownership and Transfers
+title: 소유권 및 전송
 ---
 
-Project ownership determines who has ultimate control over a OasisW project, including the ability to delete it, transfer ownership and control access. This section covers transferring ownership between users and organizations.
+프로젝트 소유권은 OasisW 프로젝트에 대한 최종 제어권을 결정하며, 삭제, 소유권 전송 및 액세스 제어 기능을 포함합니다. 이 섹션에서는 사용자와 조직 간의 소유권 전송을 다룹니다.
 
-## Owner Responsibilities
+## 소유자 책임
 
-Project owners have the following abilities (over and above what Admins are able to do):
+프로젝트 소유자는 다음 기능을 갖습니다(관리자가 할 수 있는 것 외에도):
 
-- **Project Deletion**: Can permanently delete the project
-- **Team Management**: Can add/remove any team member (including Admins)
-- **Transfer Rights**: Can transfer ownership to others
+- **프로젝트 삭제**: 프로젝트를 영구적으로 삭제할 수 있음
+- **팀 관리**: 모든 팀원(관리자 포함) 추가/제거 가능
+- **전송 권한**: 다른 사람에게 소유권 전송 가능
 
-## Initiating Ownership Transfers {#initiating-ownership-transfers}
+## 소유권 전송 시작 {#initiating-ownership-transfers}
 
-### From the Projects List
+### 프로젝트 목록에서
 
 ![Transfer Ownership Menu](/img/user-manual/editor/projects/transfer-ownership.png)
 
-To transfer ownership of a project:
+프로젝트 소유권을 전송하려면:
 
-1. When logged in, go to your User Page
-2. Find the project you want to transfer
-3. Click the arrow next to the project name
-4. Select **"Transfer Ownership"** from the dropdown menu
+1. 로그인한 상태에서 사용자 페이지로 이동
+2. 전송하려는 프로젝트 찾기
+3. 프로젝트 이름 옆의 화살표 클릭
+4. 드롭다운 메뉴에서 **"Transfer Ownership"** 선택
 
-### Transfer Dialog
+### 전송 대화 상자
 
 ![Transfer Ownership Dialog](/img/user-manual/editor/projects/transfer-ownership-dialog.png)
 
-In the transfer dialog:
+전송 대화 상자에서:
 
-1. **Enter the recipient's username** or organization name
-2. Click **FIND** or press Enter to verify the recipient
-3. Review the transfer details carefully
-4. Click **TRANSFER** to send the transfer request
+1. **수신자의 사용자 이름** 또는 조직 이름 입력
+2. **FIND**를 클릭하거나 Enter를 눌러 수신자 확인
+3. 전송 세부 사항을 주의 깊게 검토
+4. **TRANSFER**를 클릭하여 전송 요청 전송
 
-### Supported Recipients
+### 지원되는 수신자
 
-You can transfer ownership to:
+다음으로 소유권을 전송할 수 있습니다:
 
-- **Individual Users**: Any OasisW user account
-- **Organizations**: OasisW organization accounts
+- **개별 사용자**: 모든 OasisW 사용자 계정
+- **조직**: OasisW 조직 계정
 
-## The Transfer Process
+## 전송 프로세스
 
-### 1. Transfer Request
+### 1. 전송 요청
 
-When you initiate a transfer:
+전송을 시작하면:
 
-- A transfer request is sent to the recipient
-- The original owner retains control until accepted
-- The request appears in the recipient's project list
-- No changes occur until the transfer is accepted
+- 전송 요청이 수신자에게 전송됨
+- 원본 소유자는 수락될 때까지 제어권 유지
+- 요청이 수신자의 프로젝트 목록에 표시됨
+- 전송이 수락될 때까지 변경 사항 없음
 
-### 2. Recipient Acceptance
+### 2. 수신자 수락
 
 ![Transfer Ownership Accept](/img/user-manual/editor/projects/accept-transfer.png)
 
-The recipient will see:
+수신자는 다음을 볼 수 있습니다:
 
-- Transfer request at the top of their project list
-- Details about the project being transferred
-- Options to **Accept** or **Decline** the transfer
+- 프로젝트 목록 상단의 전송 요청
+- 전송되는 프로젝트에 대한 세부 사항
+- 전송을 **수락**하거나 **거부**하는 옵션
 
-### 3. Transfer Completion
+### 3. 전송 완료
 
-Once accepted:
+수락되면:
 
-- **Ownership transfers immediately** to the new owner
-- **All team members are removed** except the new owner
-- **Original owner loses all access** unless re-added by new owner
-- **Transfer cannot be reversed** without initiating a new transfer
+- **소유권이 즉시** 새 소유자에게 전송됨
+- **모든 팀원이 제거됨**(새 소유자 제외)
+- **원본 소유자는 모든 액세스 권한을 잃음**(새 소유자가 다시 추가하지 않는 한)
+- **전송은 되돌릴 수 없음**(새 전송을 시작하지 않는 한)
 
 :::warning
 
-Transfer completion removes all existing team members from the project. The new owner must manually re-add team members if needed.
+전송 완료 시 프로젝트에서 모든 기존 팀원이 제거됩니다. 새 소유자는 필요에 따라 팀원을 수동으로 다시 추가해야 합니다.
 
 :::

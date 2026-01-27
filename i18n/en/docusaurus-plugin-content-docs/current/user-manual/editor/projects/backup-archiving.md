@@ -61,7 +61,7 @@ For automated and advanced backup scenarios, use the PlayCanvas REST API.
 
 #### Using the API
 
-The [Project Archive API](/user-manual/api/project-archive/) allows you to:
+The Project Archive API allows you to:
 
 ```bash
 # Export a project via REST API

@@ -1,61 +1,55 @@
 ---
 id: keyboard-shortcuts
-title: Keyboard Shortcuts
-sidebar_label: 단축키
+title: 조작법 및 키보드 단축키
+sidebar_label: 조작법 및 키보드 단축키
 ---
 
-# Keyboard Shortcuts
+# 조작법 및 키보드 단축키
 
 OasisW 에디터에서 자주 사용하는 단축키를 한눈에 확인합니다.
 
-## Camera Controls
+---
 
-The Editor's camera is controlled with the mouse and keyboard.
+## 카메라 조작
 
-| Operation    | Controls                                                         |
-| ------------ | ---------------------------------------------------------------- |
-| Orbit        | Left Mouse Button + Drag                                         |
-| Pan          | Middle Mouse Button + Drag<br />SHIFT + Left Mouse Button + Drag |
-| Look Around  | Right Mouse Button + Drag                                        |
-| Zoom / Dolly | Mouse Wheel                                                      |
-| Move         | W-A-S-D                                                          |
-| Move (fast)  | SHIFT + W-A-S-D                                                  |
+에디터 카메라는 마우스와 키보드로 조작합니다.
 
-## General Mouse Controls
+| 동작         | 조작법                                                               |
+| ------------ | -------------------------------------------------------------------- |
+| 궤도 회전    | 왼쪽 마우스 버튼 + 드래그                                            |
+| 이동(패닝)   | 휠(중간) 마우스 버튼 + 드래그<br />SHIFT + 왼쪽 마우스 버튼 + 드래그 |
+| 둘러보기     | 오른쪽 마우스 버튼 + 드래그                                          |
+| 줌/이동      | 마우스 휠                                                            |
+| 카메라 이동  | W-A-S-D 키                                                           |
+| 빠른 이동    | SHIFT + W-A-S-D 키                                                   |
 
-| Operation                                              | Controls                  |
-| ------------------------------------------------------ | ------------------------- |
-| Select Entity                                          | Left Mouse Button         |
-| Translate / Rotate / Scale Entity (according to gizmo) | Left Mouse Button + Drag  |
+## 일반 마우스 조작
 
-## General Modifier Keys
+| 동작                                              | 조작법                   |
+| ------------------------------------------------- | ------------------------ |
+| 엔티티 선택                                      | 왼쪽 마우스 버튼         |
+| 엔티티 이동/회전/크기 조절 (기즈모 선택에 따라)   | 왼쪽 마우스 버튼 + 드래그 |
 
-| Operation                                               | Controls                               |
-| ------------------------------------------------------- | -------------------------------------- |
-| Toggle Editor's Snap setting while operating gizmo      | Hold SHIFT while dragging the Entity   |
-| Do not preserve the Entity's transform when reparenting | Hold CTRL when you reparent the Entity |
+## 키보드 단축키
 
+참고: macOS에서는 CTRL 대신 CMD를 사용하세요.
 
-## Keyboard Shortcuts
-
-Note that on a Mac, CMD should be used instead of CTRL.
-
-| Operation             | Description                                                          | Keyboard Shortcut              |
-| --------------------- | -------------------------------------------------------------------- | ------------------------------ |
-| 새 자식 엔티티 생성      | 현재 선택 엔티티의 자식으로 새 엔티티 생성             | Ctrl + E                       |
-| 엔티티/자식 복제         | 선택한 엔티티와 모든 자식 복제                         | Ctrl + D                       |
-| Rename Entity / Asset	| Focuses on name field of the selected entity or asset	| F2
-| 엔티티/에셋 복사         | 현재 선택된 엔티티/에셋 복사                           | Ctrl + C                       |
-| 선택 항목 삭제           | 현재 선택 항목 삭제                                    | Delete 또는 Ctrl + Backspace   |
-| 포커스                     | 선택된 엔티티로 카메라 포커스 이동                     | F                              |
-| 이동 도구                  | 이동(Translate) 도구 활성화                            | 1                              |
-| 회전 도구                  | 회전(Rotate) 도구 활성화                               | 2                              |
-| 크기 조정 도구             | 크기 조정(Scale) 도구 활성화                           | 3                              |
-| 좌표계 전환                | 로컬/월드 좌표계 전환                                  | L                              |
-| 모든 뷰 숨기기/보이기      | 모든 뷰 숨기기/보이기 (뷰포트 최대화)                  | Space                          |
-| 이전 선택 재선택            | 이전에 선택한 항목 다시 선택                           | Shift + Z                      |
-| 실행 취소                   | 마지막 작업 실행 취소                                  | Ctrl + Z                       |
-| 다시 실행                  | 마지막 작업 다시 실행                                  | Ctrl + Y 또는 Ctrl + Shift + Z |
+| Operation                  | Description                                                | Keyboard Shortcut            |
+| -------------------------- | ---------------------------------------------------------- | ---------------------------- |
+| 새 엔티티 생성             | 현재 선택의 자식으로 새 엔티티 생성                       | Ctrl + E                     |
+| 엔티티 복제                | 선택한 엔티티와 모든 자식 복제                             | Ctrl + D                     |
+| 이름 변경 (엔티티/에셋)    | 선택한 엔티티/에셋의 이름 필드에 포커스                    | F2                           |
+| 복사 (엔티티/에셋)         | 선택한 엔티티/에셋 복사                                    | Ctrl + C                     |
+| 삭제                       | 현재 선택 항목 삭제                                        | Delete 또는 Ctrl + Backspace |
+| 포커스 이동                | 선택한 엔티티로 카메라 포커스 이동                         | F                            |
+| 이동 도구                  | 3D 뷰에서 Translate 기즈모 활성화                          | 1                            |
+| 회전 도구                  | 3D 뷰에서 Rotate 기즈모 활성화                             | 2                            |
+| 크기 조정 도구             | 3D 뷰에서 Scale 기즈모 활성화                              | 3                            |
+| 좌표계 전환                | 로컬/월드 좌표계 전환                                      | L                            |
+| 모든 뷰 숨기기/보이기      | 모든 뷰 토글 (뷰포트 최대화)                              | Space                        |
+| 이전 선택 다시 선택        | 이전에 선택한 항목 다시 선택                              | Shift + Z                    |
+| 실행 취소                  | 마지막 작업 실행 취소                                       | Ctrl + Z                     |
+| 다시 실행                  | 마지막 작업 다시 실행                                       | Ctrl + Y 또는 Ctrl + Shift + Z |
 
 
 <!-- - **Ctrl + Enter** : 새 탭에서 씬 실행 -->

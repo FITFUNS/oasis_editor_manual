@@ -1,64 +1,64 @@
 ---
-title: Dev Logs
+title: 개발 로그
 ---
 
-Development Logs (or Dev Logs for short) are a powerful feature for communicating project updates, milestones, and news with your team and community. They help track progress and keep stakeholders informed about your project's development.
+개발 로그(또는 줄여서 Dev Logs)는 팀 및 커뮤니티와 프로젝트 업데이트, 마일스톤 및 뉴스를 소통하는 강력한 기능입니다. 진행 상황을 추적하고 이해관계자에게 프로젝트 개발에 대해 알리는 데 도움이 됩니다.
 
 ![Dev Log](/img/user-manual/editor/projects/dev-log.png)
 
-## Understanding Dev Logs
+## 개발 로그 이해
 
-### What are Dev Logs?
+### 개발 로그란 무엇인가요?
 
-Development logs are project-specific news posts that allow you to:
+개발 로그는 프로젝트별 뉴스 게시물로 다음을 수행할 수 있습니다:
 
-- Share project updates and milestones
-- Communicate with team members and followers
-- Document development progress
-- Build community around your project
-- Showcase new features and improvements
+- 프로젝트 업데이트 및 마일스톤 공유
+- 팀원 및 팔로워와 소통
+- 개발 진행 상황 문서화
+- 프로젝트 주변 커뮤니티 구축
+- 새로운 기능 및 개선 사항 선보이기
 
-### Where Dev Logs Appear
+### 개발 로그가 표시되는 위치
 
-Dev logs are displayed in two locations:
+개발 로그는 두 곳에 표시됩니다:
 
-- **Project Dashboard Overview**: Chronological list of posts related to your project
-- [**The Global Feed**](https://playcanvas.com/feed): Chronological list of all posts published by the entire community
+- **프로젝트 대시보드 개요**: 프로젝트와 관련된 게시물의 시간순 목록
+- [**글로벌 피드**](https://playcanvas.com/feed): 전체 커뮤니티가 게시한 모든 게시물의 시간순 목록
 
-## Writing Your First Dev Log
+## 첫 번째 개발 로그 작성
 
-To create a development log post:
+개발 로그 게시물을 생성하려면:
 
-1. Navigate to your Project Dashboard
-2. Go to the **OVERVIEW** section
-3. In the center of the page, you will see the **DEV LOG FEED** section
-4. Click in the text box showing the text **What changes have you made today?**
-5. Add your title and content
-6. Click **PREVIEW** to see how your post will appear when it is published
-7. Click **POST** to finally share your update
+1. 프로젝트 대시보드로 이동
+2. **OVERVIEW** 섹션으로 이동
+3. 페이지 중앙에 **DEV LOG FEED** 섹션이 표시됩니다
+4. **What changes have you made today?** 텍스트가 표시된 텍스트 상자 클릭
+5. 제목과 내용 추가
+6. **PREVIEW**를 클릭하여 게시될 때 게시물이 어떻게 표시되는지 확인
+7. **POST**를 클릭하여 최종적으로 업데이트 공유
 
 :::important
 
-When you create a new project, you are initially blocked from posting to your Dev Log. You must first publish a build of your application before you can post.
+새 프로젝트를 생성하면 처음에는 개발 로그에 게시할 수 없습니다. 게시하기 전에 먼저 애플리케이션의 빌드를 게시해야 합니다.
 
 :::
 
 :::tip
 
-Dev Log posts support both [Markdown](https://daringfireball.net/projects/markdown/syntax) and [Emoji](https://www.webfx.com/tools/emoji-cheat-sheet/). Consider leveraging both to make your posts more engaging!
+개발 로그 게시물은 [Markdown](https://daringfireball.net/projects/markdown/syntax)과 [Emoji](https://www.webfx.com/tools/emoji-cheat-sheet/)를 모두 지원합니다. 게시물을 더 매력적으로 만들기 위해 둘 다 활용하는 것을 고려해보세요!
 
 :::
 
-### Content Ideas
+### 콘텐츠 아이디어
 
-Effective Dev Log posts might include:
+효과적인 개발 로그 게시물에는 다음이 포함될 수 있습니다:
 
-- **Milestone Announcements**: Completed features or phases
-- **Behind-the-Scenes**: Development process insights
-- **Feature Showcases**: New gameplay mechanics or systems
-- **Art and Asset Updates**: Visual progress and artwork
-- **Technical Deep-dives**: Implementation details and solutions
-- **Team Updates**: New members or role changes
-- **Release Announcements**: Version updates or launch news
+- **마일스톤 발표**: 완료된 기능 또는 단계
+- **비하인드 스토리**: 개발 프로세스 인사이트
+- **기능 쇼케이스**: 새로운 게임플레이 메커니즘 또는 시스템
+- **아트 및 에셋 업데이트**: 시각적 진행 상황 및 아트워크
+- **기술 심화**: 구현 세부 사항 및 솔루션
+- **팀 업데이트**: 새 멤버 또는 역할 변경
+- **릴리스 발표**: 버전 업데이트 또는 출시 뉴스
 
-Dev Logs are great tool to keep your community informed about your projects - so be sure to use them!
+개발 로그는 커뮤니티에 프로젝트에 대해 알리는 훌륭한 도구입니다. 반드시 사용하세요!

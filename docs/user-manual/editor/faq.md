@@ -16,8 +16,6 @@ To add a **component** to an Entity, select the Entity and then click **Add Comp
 
 You can use JavaScript to control the behavior of entities. Select any entity, add a script component and create a new script asset.
 
-[Learn more](/user-manual/scripting/editor-users/managing-scripts/)
-
 ## How do I change the background color?
 
 To change the background color of your scene, you should update the Clear Color property of the camera in your scene.
@@ -114,8 +112,6 @@ To play sounds you need to add a [Sound component](/user-manual/scenes/component
 
 You can create Audio assets by dragging audio files from your computer into the Assets panel.
 
-[View tutorial](/tutorials/basic-audio/)
-
 ## How do I remove a component?
 
 <img src="https://playcanvas.com/static-assets/instructions/remove_component.jpg" />
@@ -149,8 +145,6 @@ To upload Assets simply drag and drop files from your computer into the Assets p
 To give physical properties to an Entity you need to add a [Collision component](/user-manual/scenes/components/collision/) to it and a [RigidBody component](/user-manual/scenes/components/rigidbody/). The Collision component gives a physical shape to the Entity and the RigidBody component makes the Entity be simulated by the physics engine.
 
 You can change the default [gravity](/user-manual/editor/interface/settings/physics/) in the Scene Settings.
-
-[View tutorial](/tutorials/collision-and-triggers/)
 
 ## How do I use real-time shadows?
 

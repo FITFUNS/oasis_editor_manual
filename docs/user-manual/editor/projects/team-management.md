@@ -1,85 +1,85 @@
 ---
-title: Team Management
+title: 팀 관리
 ---
 
-Effective team management is crucial for collaborative development in PlayCanvas. This section covers how to add team members, manage permissions, and coordinate with your development team.
+효과적인 팀 관리는 PlayCanvas에서 협업 개발에 중요합니다. 이 섹션에서는 팀원 추가, 권한 관리 및 개발 팀과의 조정 방법을 다룹니다.
 
-## Adding Team Members
+## 팀원 추가
 
-To add team members to your project:
+프로젝트에 팀원을 추가하려면:
 
-1. Navigate to your Project Dashboard
-2. Go to the **SETTINGS** section
-3. Scroll to the **TEAM** section
-4. In the edit box, enter the username or email of the person you want to add and click **SEND**
+1. 프로젝트 대시보드로 이동
+2. **SETTINGS** 섹션으로 이동
+3. **TEAM** 섹션으로 스크롤
+4. 편집 상자에 추가하려는 사람의 사용자 이름 또는 이메일을 입력하고 **SEND** 클릭
 
-## User Permissions
+## 사용자 권한
 
-PlayCanvas projects support three permission levels: **Read**, **Write** and **Admin**.
+PlayCanvas 프로젝트는 세 가지 권한 수준을 지원합니다: **읽기**, **쓰기** 및 **관리자**.
 
-| Capability | Read Access | Write Access | Admin Access |
+| 기능 | 읽기 액세스 | 쓰기 액세스 | 관리자 액세스 |
 |------------| :---------: | :----------: | :----------: |
-| **View scenes and assets** | ✅ | ✅ | ✅ |
-| **View project settings** | ✅ | ✅ | ✅ |
-| **Edit scenes and assets** | ❌ | ✅ | ✅ |
-| **Publish builds** | ❌ | ✅ | ✅ |
-| **Edit project settings** | ❌ | ❌ | ✅ |
-| **Manage team members** | ❌ | ❌ | ✅ |
-| **Delete project** | ❌ | ❌ | ✅ |
-| **Transfer project ownership** | ❌ | ❌ | ✅ |
-| **Best suited for** | Stakeholders, testers, observers | Developers, content creators | Project leads, owners |
+| **씬 및 에셋 보기** | ✅ | ✅ | ✅ |
+| **프로젝트 설정 보기** | ✅ | ✅ | ✅ |
+| **씬 및 에셋 편집** | ❌ | ✅ | ✅ |
+| **빌드 게시** | ❌ | ✅ | ✅ |
+| **프로젝트 설정 편집** | ❌ | ❌ | ✅ |
+| **팀원 관리** | ❌ | ❌ | ✅ |
+| **프로젝트 삭제** | ❌ | ❌ | ✅ |
+| **프로젝트 소유권 전송** | ❌ | ❌ | ✅ |
+| **최적 용도** | 이해관계자, 테스터, 관찰자 | 개발자, 콘텐츠 제작자 | 프로젝트 리더, 소유자 |
 
-### Changing Permissions
+### 권한 변경
 
-To modify a team member's permissions:
+팀원의 권한을 수정하려면:
 
-1. Go to Project **SETTINGS** > **Team**
-2. Find the user in the team list
-3. Click on their current permission level
-4. Select the new permission level
-5. Confirm the change by clicking **SAVE**
+1. 프로젝트 **SETTINGS** > **Team**으로 이동
+2. 팀 목록에서 사용자 찾기
+3. 현재 권한 수준 클릭
+4. 새 권한 수준 선택
+5. **SAVE**를 클릭하여 변경 사항 확인
 
-## Removing Team Members
+## 팀원 제거
 
-To remove someone from your project:
+프로젝트에서 누군가를 제거하려면:
 
-1. Go to Project **SETTINGS** > **Team**
-2. Find the user you want to remove
-3. Mouse over the tick icon and it will switch to an **X** - click it
-4. Confirm the removal by clicking **OK**
+1. 프로젝트 **SETTINGS** > **Team**으로 이동
+2. 제거하려는 사용자 찾기
+3. 체크 아이콘 위에 마우스를 올리면 **X**로 바뀜 - 클릭
+4. **OK**를 클릭하여 제거 확인
 
 :::warning
 
-When you remove a team member, they will lose all access to the project immediately. Make sure this is intentional before confirming.
+팀원을 제거하면 즉시 프로젝트에 대한 모든 액세스 권한을 잃게 됩니다. 확인하기 전에 이것이 의도적인 것인지 확인하세요.
 
 :::
 
-## Organization Team Management
+## 조직 팀 관리
 
-### Organization Projects
+### 조직 프로젝트
 
-If your project belongs to an organization, team management works slightly differently:
+프로젝트가 조직에 속한 경우 팀 관리가 약간 다르게 작동합니다:
 
-#### Organization Administrators
+#### 조직 관리자
 
-- Can add themselves to any organization project
-- Can manage project teams across the organization
-- Can access billing and seat management
+- 모든 조직 프로젝트에 자신을 추가할 수 있음
+- 조직 전체에서 프로젝트 팀을 관리할 수 있음
+- 청구 및 좌석 관리에 액세스할 수 있음
 
-#### Seat Management
+#### 좌석 관리
 
-For organization accounts with seat limits:
+좌석 제한이 있는 조직 계정의 경우:
 
-- Each team member on a private project occupies a seat
-- Public projects don't require seats
-- Organization owners can manage seat allocation
-- Removing users from projects frees up seats
+- 비공개 프로젝트의 각 팀원이 좌석을 차지함
+- 공개 프로젝트는 좌석이 필요하지 않음
+- 조직 소유자는 좌석 할당을 관리할 수 있음
+- 프로젝트에서 사용자를 제거하면 좌석이 해제됨
 
-### Adding Organization Members
+### 조직 멤버 추가
 
-Organization administrators can add themselves to projects:
+조직 관리자는 프로젝트에 자신을 추가할 수 있습니다:
 
-1. Go to the organization account page
-2. Find the project in the projects list
-3. Click the dropdown arrow
-4. Select "Add me as admin"
+1. 조직 계정 페이지로 이동
+2. 프로젝트 목록에서 프로젝트 찾기
+3. 드롭다운 화살표 클릭
+4. "Add me as admin" 선택

@@ -1,76 +1,76 @@
 ---
-title: Project Settings
+title: 프로젝트 설정
 ---
 
-The Project Settings allow you to configure various aspects of your project including basic information, privacy settings, and branding options.
+프로젝트 설정을 통해 기본 정보, 개인정보 보호 설정 및 브랜딩 옵션을 포함한 프로젝트의 다양한 측면을 구성할 수 있습니다.
 
 ![Project Settings](/img/user-manual/editor/projects/project-settings.png)
 
-## Accessing Project Settings
+## 프로젝트 설정 액세스
 
-To access your project settings:
+프로젝트 설정에 액세스하려면:
 
-1. Open your project dashboard
-2. Navigate to the **SETTINGS** tab
+1. 프로젝트 대시보드 열기
+2. **SETTINGS** 탭으로 이동
 
-## Project Information
+## 프로젝트 정보
 
-### Game Artwork
+### 게임 아트워크
 
 <!--
 ![Project Image Setting](/img/user-manual/dashboard/project-image.png)
 -->
 
-Assign a square 720x720 pixel image to represent your project. This image is used for:
+프로젝트를 나타내는 정사각형 720x720 픽셀 이미지를 할당하세요. 이 이미지는 다음에 사용됩니다:
 
-- Project thumbnails in the dashboard
-- Published game representations
-- Social media sharing (Twitter, Facebook, etc.)
+- 대시보드의 프로젝트 썸네일
+- 게시된 게임 표현
+- 소셜 미디어 공유(Twitter, Facebook 등)
 
-**Requirements:**
+**요구 사항:**
 
-- Square aspect ratio (720x720 recommended)
-- High quality and visually appealing
-- Represents your project accurately
-- Clear and readable at small sizes
+- 정사각형 비율(720x720 권장)
+- 고품질 및 시각적으로 매력적
+- 프로젝트를 정확하게 표현
+- 작은 크기에서도 명확하고 읽기 쉬움
 
-### Project Name
+### 프로젝트 이름
 
-Currently, it is not possible to change the project name after creation. Choose your project name carefully when creating a new project.
+현재는 생성 후 프로젝트 이름을 변경할 수 없습니다. 새 프로젝트를 생성할 때 프로젝트 이름을 신중하게 선택하세요.
 
-### Project Description
+### 프로젝트 설명
 
-You can update your project description at any time. A good description should:
+언제든지 프로젝트 설명을 업데이트할 수 있습니다. 좋은 설명은 다음을 포함해야 합니다:
 
-- Clearly explain what your project is about
-- Include relevant keywords for discoverability
-- Mention the target audience or platform
-- Highlight unique features or selling points
+- 프로젝트가 무엇인지 명확하게 설명
+- 검색 가능성을 위한 관련 키워드 포함
+- 대상 고객 또는 플랫폼 언급
+- 고유한 기능이나 판매 포인트 강조
 
-## Project Visibility
+## 프로젝트 가시성
 
-OasisW Editor projects can either be public or private.
+OasisW Editor 프로젝트는 공개 또는 비공개일 수 있습니다.
 
 :::info
 
-Only users with premium accounts can create and access private projects.
+프리미엄 계정이 있는 사용자만 비공개 프로젝트를 생성하고 액세스할 수 있습니다.
 
 :::
 
-### Public vs Private Projects
+### 공개 vs 비공개 프로젝트
 
-| Feature | Public Projects | Private Projects |
+| 기능 | 공개 프로젝트 | 비공개 프로젝트 |
 |---------|-----------------|------------------|
-| **Visibility** | Visible to all OasisW users | Only visible to project team members |
-| **Discovery** | Can be discovered and forked by others | Cannot be discovered or forked |
-| **Listings** | Appear in [public project listings](https://playcanvas.com/explore/featured) | Excluded from public listings |
-| **Cost** | Free for all users | Require [premium account subscription](https://playcanvas.com/plans) |
-| **Best For** | Portfolio pieces and open-source projects | Commercial projects and confidential work |
+| **가시성** | 모든 OasisW 사용자에게 표시 | 프로젝트 팀원에게만 표시 |
+| **검색** | 다른 사람이 발견하고 포크할 수 있음 | 발견하거나 포크할 수 없음 |
+| **목록** | [공개 프로젝트 목록](https://playcanvas.com/explore/featured)에 표시 | 공개 목록에서 제외 |
+| **비용** | 모든 사용자에게 무료 | [프리미엄 계정 구독](https://playcanvas.com/plans) 필요 |
+| **최적 용도** | 포트폴리오 작품 및 오픈 소스 프로젝트 | 상업 프로젝트 및 기밀 작업 |
 
-### Changing Project Visibility
+### 프로젝트 가시성 변경
 
-To change your project's privacy:
+프로젝트의 개인정보 보호를 변경하려면:
 
-1. Go to Project Settings
-2. Toggle the "Private" setting
-3. Confirm the change by hitting **SAVE**
+1. 프로젝트 설정으로 이동
+2. "Private" 설정 토글
+3. **SAVE**를 클릭하여 변경 사항 확인
