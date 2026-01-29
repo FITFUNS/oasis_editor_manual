@@ -7,7 +7,7 @@ Controls the global physics simulation settings.
 
 :::note
 
-These settings affect all users on the currently active [branch](../../version-control/branches.md) of the project.
+These settings affect all users on the currently active branch of the project.
 
 :::
 

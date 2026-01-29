@@ -49,7 +49,9 @@ function getLocalizedLabels(locale = 'ko') {
       ai: 'AI',
       server: '서버',
       script: '스크립트',
-      keyboardShortcuts: '조작법 및 키보드 단축키'
+      keyboardShortcuts: '조작법 및 키보드 단축키',
+      launchPage: '실행 페이지',
+      projectSettings: '프로젝트 설정'
     },
     en: {
       introduction: 'Introduction',
@@ -81,7 +83,9 @@ function getLocalizedLabels(locale = 'ko') {
       ai: 'AI',
       server: 'Server',
       script: 'Script',
-      keyboardShortcuts: 'Controls and Keyboard Shortcuts'
+      keyboardShortcuts: 'Controls and Keyboard Shortcuts',
+      launchPage: 'Launch Page',
+      projectSettings: 'Project Settings'
     }
   };
   
@@ -261,41 +265,44 @@ const sidebars = {
         'user-manual/editor/interface/viewport',
         'user-manual/editor/interface/inspector',
         'user-manual/editor/interface/assets',
-        // {
-        //   type: 'category',
-        //   label: 'Launch Page',
-        //   link: {
-        //     type: 'doc',
-        //     id: 'user-manual/editor/interface/launch-page/index',
-        //   },
-        //   items: [
-        //     'user-manual/editor/interface/launch-page/custom-engine',
-        //     'user-manual/editor/interface/launch-page/loading-screen',
-        //   ],
-        // },
+        {
+          type: 'category',
+          label: labels.launchPage,
+          link: {
+            type: 'doc',
+            id: 'user-manual/editor/interface/launch-page/index',
+          },
+          items: [
+            // 'user-manual/editor/interface/launch-page/custom-engine',
+            // 'user-manual/editor/interface/launch-page/loading-screen',
+          ],
+        },
         // 'user-manual/editor/interface/keyboard-shortcuts',
-        // {
-        //   type: 'category',
-        //   label: 'Project Settings',
-        //   link: {
-        //     type: 'doc',
-        //     id: 'user-manual/editor/interface/settings/index',
-        //   },
-        //   items: [
-        //     'user-manual/editor/interface/settings/engine',
-        //     'user-manual/editor/interface/settings/editor',
-        //     'user-manual/editor/interface/settings/asset-import',
-        //     'user-manual/editor/interface/settings/physics',
-        //     'user-manual/editor/interface/settings/rendering',
-        //     'user-manual/editor/interface/settings/layers',
-        //     'user-manual/editor/interface/settings/lightmapping',
-        //     'user-manual/editor/interface/settings/batch-groups',
-        //     'user-manual/editor/interface/settings/launch-page',
-        //     'user-manual/editor/interface/settings/input',
-        //     'user-manual/editor/interface/settings/localization',
-        //     'user-manual/editor/interface/settings/network',
-        //   ],
-        // },
+        {
+          type: 'category',
+          label: labels.projectSettings,
+          link: {
+            type: 'doc',
+            id: 'user-manual/editor/interface/settings/index',
+          },
+          items: [
+            // 'user-manual/editor/interface/settings/engine',
+            'user-manual/editor/interface/settings/editor',
+            'user-manual/editor/interface/settings/asset-import',
+            'user-manual/editor/interface/settings/physics',
+            'user-manual/editor/interface/settings/rendering',
+            'user-manual/editor/interface/settings/layers',
+            'user-manual/editor/interface/settings/lightmapping',
+            'user-manual/editor/interface/settings/batch-groups',
+            'user-manual/editor/interface/settings/loading-screen',
+            'user-manual/editor/interface/settings/external-scripts',
+            'user-manual/editor/interface/settings/launch-page',
+            'user-manual/editor/interface/settings/input',
+            // 'user-manual/editor/interface/settings/localization',
+            'user-manual/editor/interface/settings/network',
+            'user-manual/editor/interface/settings/scripts-loading-order',
+          ],
+        },
       ],
     },
     // 'user-manual/editor/realtime-collaboration',

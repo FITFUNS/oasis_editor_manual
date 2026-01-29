@@ -7,7 +7,7 @@ Layers determine which objects are rendered together and in what order.
 
 :::note
 
-These settings affect all users on the currently active [branch](../../version-control/branches.md) of the project.
+These settings affect all users on the currently active branch of the project.
 
 :::
 

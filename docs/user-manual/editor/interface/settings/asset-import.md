@@ -1,37 +1,37 @@
 ---
-title: Asset Import Settings
-sidebar_label: Asset Import
+title: 에셋 작업 설정
+sidebar_label: 에셋 작업
 ---
 
-Controls default behavior for imported assets.
+가져온 에셋의 기본 동작 방식을 제어합니다.
 
 :::note
 
-These settings affect only you and global for the whole project.
+이 설정들은 본인에게만 적용되며, 프로젝트 전체에 대해 전역적으로 사용됩니다.
 
 :::
 
-Navigate to the `ASSET IMPORT` section and expand the panel:
+`ASSET TASKS` 섹션으로 이동한 뒤 패널을 확장하세요:
 
 ![Asset Import Settings](/img/user-manual/editor/interface/settings/asset-import.webp)
 
-Here is a breakdown of the available settings:
+아래는 사용 가능한 설정 항목에 대한 설명입니다.
 
-## General
+<!-- ## General
 
 | Setting | Description |
 | --- | --- |
 | **Search related assets** | If enabled, importing a source asset updates related target assets wherever they are located. If disabled, assets are updated only when in the same folder; otherwise, new assets are created. |
-| **Assets default to preload** | Creates new assets with the preload option enabled. Script assets are always created with preload enabled. |
+| **Assets default to preload** | Creates new assets with the preload option enabled. Script assets are always created with preload enabled. | -->
 
-## Texture Import
+## 에셋 작업
 
-| Setting | Description |
+| 설정 | 설명 |
 | --- | --- |
-| **Textures POT** | When a texture is imported, it will be resized to the nearest power-of-two resolution. |
-| **Create Atlases** | If enabled, imported textures are converted to Texture Atlas assets instead of Texture assets. |
+| **Create Atlases** | 활성화하면 텍스처를 가져올 때 Texture와 Texture Atlas 두 가지 에셋이 모두 생성됩니다. |
+| **Create FBX Folder** | FBX 파일을 가지고 올 때, 가져온 FBX 콘텐츠를 저장하기 위해 현재 디렉터리에 새 폴더를 생성합니다. |
 
-## Model Import
+<!-- ## Model Import
 
 | Setting | Description |
 | --- | --- |
@@ -46,7 +46,6 @@ Here is a breakdown of the available settings:
 | **Unwrap UV** | Generates a set of unwrapped UV coordinates. |
 | **Texels Per Meter** | Specifies the number of texels per meter when UV unwrapping is enabled. Default: 16. |
 | **Import Morph Normals** | Imports morph target normals when importing a model. Disable this if morph target normals look incorrect. |
-| **Create FBX Folder** | Creates a new folder in the current directory when importing an FBX file to store the imported FBX contents. |
 
 ## Animation Import
 
@@ -55,4 +54,4 @@ Here is a breakdown of the available settings:
 | **Naming Strategy** | Choose the naming strategy for imported animations:<ul><li><strong>Use Take Name</strong>: Name the animation after the take name assigned in the FBX file</li><li><strong>Use FBX Filename</strong>: Name the animation after the FBX filename</li></ul> |
 | **Sample Rate** | The rate at which to sample animation curves (samples per second). Specify 0 to disable sampling and use input keys instead. |
 | **Curve Tolerance** | The tolerance used when optimizing linear animation curve segments. Specify 0 to disable curve optimization. |
-| **Cubic Curves** | Output cubic curves when they are encountered. Disable to convert all curves to linear segments. |
+| **Cubic Curves** | Output cubic curves when they are encountered. Disable to convert all curves to linear segments. | -->

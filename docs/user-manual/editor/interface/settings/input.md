@@ -1,31 +1,31 @@
 ---
-title: Input Settings
-sidebar_label: Input
+title: 입력 설정
+sidebar_label: 입력
 ---
 
-Enables or disables input device handling for the application.
+애플리케이션에서 사용할 입력 장치 처리를 활성화하거나 비활성화합니다.
 
 :::note
 
-These settings affect all users on the currently active [branch](../../version-control/branches.md) of the project.
+이 설정은 현재 활성화된 프로젝트 브랜치의 모든 사용자에게 적용됩니다.
 
 :::
 
-Navigate to the `INPUT` section and expand the panel:
+`INPUT` 섹션으로 이동한 뒤 패널을 펼치세요:
 
 ![Input Settings](/img/user-manual/editor/interface/settings/input.webp)
 
-Here is a breakdown of the available settings:
+사용 가능한 설정은 다음과 같습니다:
 
-## Settings
+## 설정
 
-| Setting | Description |
+| 설정 | 설명 |
 | --- | --- |
-| **Keyboard** | Enable keyboard input. Disable to ignore keyboard input in your application. |
-| **Mouse** | Enable mouse input. Disable to ignore mouse input in your application. |
-| **Touch** | Enable touch input. Disable to ignore touch input in your application. |
-| **Gamepads** | Enable gamepad input. Disable to ignore gamepad input in your application. |
+| **Keyboard** | 키보드 입력을 활성화합니다. 비활성화하면 애플리케이션에서 키보드 입력을 무시합니다. |
+| **Mouse** | 마우스 입력을 활성화합니다. 비활성화하면 마우스 입력을 무시합니다. |
+| **Touch** | 터치 입력을 활성화합니다. 비활성화하면 터치 입력을 무시합니다. |
+| **Gamepads** | 게임패드 입력을 활성화합니다. 비활성화하면 게임패드 입력을 무시합니다. |
 
-### Notes
+### 참고 사항
 
-- Disabling unused input methods can reduce event handling overhead.
+- 사용하지 않는 입력 방식을 비활성화하면 이벤트 처리 오버헤드를 줄이는 데 도움이 됩니다.

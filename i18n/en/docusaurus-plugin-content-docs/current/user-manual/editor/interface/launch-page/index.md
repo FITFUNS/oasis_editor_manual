@@ -22,7 +22,7 @@ A key feature of the Launch Page is that it maintains a real-time connection (or
 
 And if any other users (with write permission) are present in the Editor with you, their edits can update your Launch Page as well.
 
-## Running on Other Devices
+<!-- ## Running on Other Devices
 
 Sometimes it can be useful to run the Launch Page on another device. For example, you might wish to test your application on a mobile device. To do this, ensure you are logged in to your OasisW account on that device. Then, simply visit the Launch Page URL in your device's browser.
 
@@ -30,4 +30,4 @@ Sometimes it can be useful to run the Launch Page on another device. For example
 
 Chrome can dynamically generate a QR code for any page. From the Launch Page on your desktop, open Chrome's main menu and select `Save and share` > `Create QR Code`. Then, scan the QR code on your mobile device to instantly visit the Launch Page.
 
-:::
+::: -->

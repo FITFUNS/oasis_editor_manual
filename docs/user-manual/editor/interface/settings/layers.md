@@ -1,28 +1,28 @@
 ---
-title: Layers Settings
-sidebar_label: Layers
+title: 레이어 설정
+sidebar_label: 레이어
 ---
 
-Layers determine which objects are rendered together and in what order.
+레이어는 어떤 오브젝트가 함께 렌더링되는지와 어떤 순서로 렌더링되는지를 결정합니다.
 
 :::note
 
-These settings affect all users on the currently active [branch](../../version-control/branches.md) of the project.
+이 설정은 현재 활성화된 프로젝트 브랜치의 모든 사용자에게 영향을 줍니다.
 
 :::
 
-Navigate to the `LAYERS` section and expand the panel:
+`LAYERS` 섹션으로 이동한 뒤 패널을 펼치세요:
 
-![Layers Settings](/img/user-manual/editor/interface/settings/layers.webp)
+![레이어 설정](/img/user-manual/editor/interface/settings/layers.webp)
 
-Here is a breakdown of the available settings:
+아래는 사용 가능한 설정에 대한 설명입니다:
 
-## Layers
+## 레이어
 
-- **Add Layer**: Creates a new layer for organizing scene objects.
-- Each layer can be renamed and removed as needed.
+- **Add Layer**: 씬 오브젝트를 정리하기 위한 새 레이어를 생성합니다.
+- 각 레이어는 필요에 따라 이름을 변경하거나 삭제할 수 있습니다.
 
-Default layers:
+기본 레이어:
 
 - **World**
 - **Depth**
@@ -30,17 +30,17 @@ Default layers:
 - **Immediate**
 - **UI**
 
-## Render Order
+## 렌더 순서
 
-Defines the sequence in which layers are drawn, and separates opaque and transparent rendering passes.
+레이어가 그려지는 순서를 정의하며, 불투명 렌더링과 투명 렌더링 패스를 구분합니다.
 
-| Setting | Description |
+| 설정 | 설명 |
 | --- | --- |
-| **Layer** | The name of the render layer. |
-| **Pass** | Either:<ul><li><strong>Opaque</strong>: Renders opaque mesh instances</li><li><strong>Transparent</strong>: Renders semi‑transparent mesh instances</li></ul> |
-| **Enabled** | Enables or disables this part of the layer. When a part is disabled, the mesh instances of that part will not be rendered. |
+| **Layer** | 렌더 레이어의 이름입니다. |
+| **Pass** | 다음 중 하나입니다:<ul><li><strong>불투명(Opaque)</strong>: 불투명한 메쉬 인스턴스를 렌더링합니다</li><li><strong>투명(Transparent)</strong>: 반투명 메쉬 인스턴스를 렌더링합니다</li></ul> |
+| **Enabled** | 해당 레이어의 이 부분을 활성화 또는 비활성화합니다. 비활성화된 경우, 해당 부분의 메쉬 인스턴스는 렌더링되지 않습니다. |
 
-### Notes
+### 참고
 
-- Transparent objects must be rendered after opaque objects to display correctly.
-- Layers can be reordered by dragging in the **Render Order** list.
+- 투명 오브젝트는 올바르게 표시되기 위해 불투명 오브젝트 이후에 렌더링되어야 합니다.
+- **Render Order** 목록에서 드래그하여 레이어 순서를 변경할 수 있습니다.

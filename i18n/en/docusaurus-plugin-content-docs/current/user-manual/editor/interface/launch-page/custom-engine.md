@@ -2,7 +2,7 @@
 title: Using a Custom Engine
 ---
 
-By default, when you launch your PlayCanvas app from the Editor, it will use the latest stable build of the engine. Sometimes, there may be a reason why you may want to run your app with a different build of the engine. For example:
+By default, when you launch your OasisW app from the Editor, it will use the latest stable build of the engine. Sometimes, there may be a reason why you may want to run your app with a different build of the engine. For example:
 
 * To test your project against the latest dev build of the engine to test a new feature or bug fix, or detect any potential regressions before an upcoming engine release.
 * To temporarily step back to a previous stable engine version to mitigate a regression in the current stable build.

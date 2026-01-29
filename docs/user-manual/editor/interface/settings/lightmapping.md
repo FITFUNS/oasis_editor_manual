@@ -1,44 +1,44 @@
 ---
-title: Lightmapping Settings
-sidebar_label: Lightmapping
+title: 라이트매핑 설정
+sidebar_label: 라이트매핑
 ---
 
-Controls baked lighting resolution, filtering, and ambient occlusion.
+베이크된 조명의 해상도, 필터링, 앰비언트 오클루전을 제어합니다.
 
 :::note
 
-These settings affect all users on the currently active [branch](../../version-control/branches.md) of the project.
+이 설정은 현재 활성화된 프로젝트 브랜치의 모든 사용자에게 영향을 줍니다.
 
 :::
 
-Navigate to the `LIGHTMAPPING` section and expand the panel:
+`LIGHTMAPPING` 섹션으로 이동한 뒤 패널을 펼치세요:
 
-![Lightmapping Settings](/img/user-manual/editor/interface/settings/lightmapping.webp)
+![라이트매핑 설정](/img/user-manual/editor/interface/settings/lightmapping.webp)
 
-Here is a breakdown of the available settings:
+아래는 사용 가능한 설정에 대한 설명입니다:
 
-## General
+## 일반
 
-| Setting | Description |
+| 설정 | 설명 |
 | --- | --- |
-| **Size Multiplier** | The resolution of auto-generated lightmap textures is based on the area of geometry in world space and the size multipliers of the model and scene. Changing this value affects lightmap resolution across the whole scene. |
-| **Max Resolution** | Maximum resolution for auto-generated lightmap textures. |
-| **Mode** | The lightmap baking mode:<ul><li><strong>Color Only</strong>: A single color lightmap</li><li><strong>Color and Direction</strong>: A color lightmap plus dominant light direction (used for bump/specular)</li></ul> |
+| **Size Multiplier** | 자동 생성되는 라이트맵 텍스처의 해상도는 월드 공간에서의 지오메트리 면적과 모델 및 씬의 크기 배율을 기준으로 결정됩니다. 이 값을 변경하면 씬 전체의 라이트맵 해상도에 영향을 줍니다. |
+| **Max Resolution** | 자동 생성되는 라이트맵 텍스처의 최대 해상도입니다. |
+| **Mode** | 라이트맵 베이킹 모드입니다:<ul><li><strong>Color Only</strong>: 단일 색상 라이트맵</li><li><strong>Color and Direction</strong>: 색상 라이트맵과 주요 광원 방향 정보(범프/스페큘러에 사용)</li></ul> |
 
-## Filtering
+## 필터링
 
-| Setting | Description |
+| 설정 | 설명 |
 | --- | --- |
-| **Filter** | Enable a bilateral filter on runtime-baked lightmaps. |
-| **Range** | The range parameter of the bilateral filter. |
-| **Smoothness** | The spatial parameter of the bilateral filter. |
+| **Filter** | 런타임에서 베이크된 라이트맵에 양방향(bilateral) 필터를 적용합니다. |
+| **Range** | 양방향 필터의 범위 파라미터입니다. |
+| **Smoothness** | 양방향 필터의 공간 파라미터입니다. |
 
-## Ambient Bake
+## 앰비언트 베이크
 
-| Setting | Description |
+| 설정 | 설명 |
 | --- | --- |
-| **Ambient Bake** | Bake ambient light into lightmaps. |
-| **Samples** | Number of samples to use when baking ambient light. |
-| **Sphere Part** | The portion of the sphere to include when baking ambient light. |
-| **Occlusion Brightness** | Brightness of the baked ambient occlusion. |
-| **Occlusion Contrast** | Contrast of the baked ambient occlusion. |
+| **Ambient Bake** | 앰비언트 라이트를 라이트맵에 베이크합니다. |
+| **Samples** | 앰비언트 라이트 베이킹 시 사용할 샘플 수입니다. |
+| **Sphere Part** | 앰비언트 라이트를 베이크할 때 포함할 구체 영역의 비율입니다. |
+| **Occlusion Brightness** | 베이크된 앰비언트 오클루전의 밝기입니다. |
+| **Occlusion Contrast** | 베이크된 앰비언트 오클루전의 대비입니다. |

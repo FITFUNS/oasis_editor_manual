@@ -1,36 +1,36 @@
 ---
-title: Batch Group Settings
-sidebar_label: Batch Groups
+title: 배치 그룹 설정
+sidebar_label: 배치 그룹
 ---
 
-Batch Groups combine multiple meshes into a single draw call to reduce CPU overhead and improve rendering performance.
+배치 그룹은 여러 메쉬를 하나의 드로우 콜로 결합하여 CPU 오버헤드를 줄이고 렌더링 성능을 향상시킵니다.
 
 :::note
 
-These settings affect all users on the currently active [branch](../../version-control/branches.md) of the project.
+이 설정은 현재 활성화된 프로젝트 브랜치의 모든 사용자에게 영향을 줍니다.
 
 :::
 
-Navigate to the `BATCH GROUPS` section and expand the panel:
+`BATCH GROUPS` 섹션으로 이동한 뒤 패널을 펼치세요:
 
-![Batch Groups Settings](/img/user-manual/editor/interface/settings/batch-groups.webp)
+![배치 그룹 설정](/img/user-manual/editor/interface/settings/batch-groups.webp)
 
-Here is a breakdown of the available settings:
+아래는 사용 가능한 설정에 대한 설명입니다:
 
-## Adding a Batch Group
+## 배치 그룹 추가
 
-- Click **Add Group** to create a new batch group.
-- Configure the properties:
+- **Add Group** 버튼을 클릭하여 새로운 배치 그룹을 생성합니다.
+- 아래 속성들을 설정합니다:
 
-| Setting | Description |
+| 설정 | 설명 |
 | --- | --- |
-| **Name** | The name of the batch group. |
-| **Dynamic** | Enable to allow objects in this batch group to move, rotate, or scale after being batched. If your objects are completely static, disable this setting. |
-| **Max AABB** | The maximum size of any dimension of a bounding box around batched objects. Larger values batch more objects (fewer draw calls) but create bigger batched objects that are harder to cull. Smaller values create more draw calls but smaller, easier-to-cull batches. |
-| **Layers** | The layers that this batch group belongs to. |
+| **Name** | 배치 그룹의 이름입니다. |
+| **Dynamic** | 활성화하면 배치된 이후에도 이 배치 그룹에 속한 오브젝트가 이동, 회전, 스케일 변경이 가능해집니다. 오브젝트가 완전히 정적(static)이라면 이 옵션을 비활성화하는 것이 좋습니다. |
+| **Max AABB** | 배치된 오브젝트들을 감싸는 바운딩 박스의 각 축 기준 최대 크기입니다. 값이 클수록 더 많은 오브젝트를 하나로 배치할 수 있어 드로우 콜 수는 줄어들지만, 배치된 오브젝트가 커져 컬링 효율이 떨어질 수 있습니다. 값이 작을수록 드로우 콜은 늘어나지만 컬링하기 쉬운 작은 배치가 생성됩니다. |
+| **Layers** | 이 배치 그룹이 속할 레이어를 지정합니다. |
 
-### Notes
+### 참고 사항
 
-- Use **static batching** whenever possible for optimal performance.
-- Keep **Max AABB** reasonable to avoid large batches that reduce culling efficiency.
-- Assign batch groups only to relevant layers to avoid unnecessary batching.
+- 가능하다면 항상 **정적 배치(static batching)** 를 사용하여 최적의 성능을 확보하세요.
+- **Max AABB** 값은 너무 크지 않게 설정하여 컬링 효율이 떨어지는 것을 방지하는 것이 좋습니다.
+- 불필요한 배치를 피하기 위해, 관련된 레이어에만 배치 그룹을 할당하세요.

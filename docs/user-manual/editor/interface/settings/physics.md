@@ -1,30 +1,30 @@
 ---
-title: Physics Settings
-sidebar_label: Physics
+title: 물리 설정
+sidebar_label: 물리
 ---
 
-Controls the global physics simulation settings.
+전역 물리 시뮬레이션 설정을 제어합니다.
 
 :::note
 
-These settings affect all users on the currently active [branch](../../version-control/branches.md) of the project.
+이 설정들은 프로젝트에서 현재 활성화된 브랜치의 모든 사용자에게 적용됩니다.
 
 :::
 
-Navigate to the `PHYSICS` section and expand the panel:
+`PHYSICS` 섹션으로 이동한 뒤 패널을 확장하세요:
 
 ![Physics Settings](/img/user-manual/editor/interface/settings/physics.webp)
 
-Here is a breakdown of the available settings:
+아래는 사용 가능한 설정 항목에 대한 설명입니다:
 
-## Settings
+## 설정
 
-| Setting | Description |
-| --- | --- |
-| **Physics Library** | Add the Ammo asm.js and WebAssembly modules to this project. |
-| **Gravity** | Gravity is the acceleration applied every frame to all rigid bodies in your scene. By default, it is set to -9.8 meters per second per second, which essentially approximates Earth's gravity. If you are making a game in space, you might want to set this to 0, 0, 0 (zero g). |
+| 설정                  | 설명                |
+| -------------------- | ------------------ |
+| **Physics Library** | 이 프로젝트에 Ammo asm.js 및 WebAssembly 모듈을 추가합니다.                |
+| **Gravity**         | 중력은 씬에 존재하는 모든 리지드 바디에 매 프레임 적용되는 가속도입니다. 기본값은 초당 제곱미터 -9.8로, 지구의 중력을 근사합니다. 우주 공간을 배경으로 한 게임을 만든다면 0, 0, 0(무중력)으로 설정할 수 있습니다. |
 
-### Notes
+### 참고 사항
 
-- Without Ammo.js imported, physics features will not function.
-- Gravity can be adjusted to simulate different worlds.
+- Ammo.js를 가져오지 않으면 물리 기능이 동작하지 않습니다.
+- 중력 값을 조정하여 서로 다른 환경을 시뮬레이션할 수 있습니다.

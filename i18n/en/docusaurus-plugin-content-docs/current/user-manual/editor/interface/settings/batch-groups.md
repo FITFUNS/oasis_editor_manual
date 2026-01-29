@@ -7,7 +7,7 @@ Batch Groups combine multiple meshes into a single draw call to reduce CPU overh
 
 :::note
 
-These settings affect all users on the currently active [branch](../../version-control/branches.md) of the project.
+These settings affect all users on the currently active branch of the project.
 
 :::
 

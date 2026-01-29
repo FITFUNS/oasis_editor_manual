@@ -21,9 +21,11 @@ Learn about the project management tools available in OasisW's project toolbar.
 ![Scenes](/img/usage-guide/8_manage_scenes.png)
 
 ### Settings
+- Project Settings control how your project runs and how the Editor behaves for your team. 
+
 ![Settings](/img/usage-guide/8_settings.png)
 
-- **Scene Name**  
+<!-- - **Scene Name**  
   - Change the scene name to make it identifiable in the project.
 - **Editor**  
   - A panel for adjusting overall project environment settings.
@@ -85,7 +87,7 @@ Learn about the project management tools available in OasisW's project toolbar.
 - **Network**  
   - **Asset Retries**: Sets the maximum number of retries when asset loading fails. If an asset request fails, it will retry multiple times with exponentially increasing wait times.
 - **Scripts Loading Order**  
-  - Sets script loading order to prevent dependency issues.
+  - Sets script loading order to prevent dependency issues. -->
 
 ### Publish/Download
 ![Toolbar](/img/usage-guide/8_publish_download.png)
