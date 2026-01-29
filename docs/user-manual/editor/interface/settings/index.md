@@ -32,19 +32,7 @@ title: 프로젝트 설정
 | [External Scripts](/user-manual/editor/interface/settings/external-scripts) | 외부 스크립트 URL을 지정하여 `<script>` 태그로 로드합니다.     |
 | [Launch Page](/user-manual/editor/interface/settings/launch-page) | 실행 페이지 관련 설정입니다. |
 | [Input](/user-manual/editor/interface/settings/input) | 입력 장치(마우스, 키보드 등)를 활성화하거나 비활성화합니다. |
-| [Network](/user-manual/editor/interface/settings/network) | 프로젝트의 네트워크 관련 설정입니다. |
 | [Scripts Loading Order](/user-manual/editor/interface/settings/scripts-loading-order) | 스크립트 로딩 순서를 설정하여 의존성 문제를 방지합니다.        |
 <!-- | [Engine](/user-manual/editor/interface/settings/engine) | Engine settings, including the engine version. | -->
 <!-- | [Localization](/user-manual/editor/interface/settings/localization) | 로컬라이제이션 에셋을 추가하기 위한 설정입니다. | -->
-
-
-<!-- - **Scene Name**  
-  - 씬 이름을 변경하여 프로젝트에서 식별 가능하게 합니다.
-
-
-- **Loading Screen**  
-  - 애플리케이션 로딩 화면을 표시하는 스크립트를 지정합니다.
-- **External Scripts**
-  - 외부 스크립트 URL을 지정하여 `<script>` 태그로 로드합니다.
-- **Scripts Loading Order**  
-  - 스크립트 로딩 순서를 설정하여 의존성 문제를 방지합니다. -->
+<!-- | [Network](/user-manual/editor/interface/settings/network) | 프로젝트의 네트워크 관련 설정입니다. | -->

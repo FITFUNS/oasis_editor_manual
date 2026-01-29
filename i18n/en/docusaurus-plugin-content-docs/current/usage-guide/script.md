@@ -184,3 +184,22 @@ Click the created script to apply it.
 Click **Launch** in the **Viewport** to check the Box object's movement.
 
 ![script](/img/tutorial/6_9.png)
+
+## Organizing Scripts
+
+As your project grows, so will your number of scripts. Good organization is crucial:
+
+* **Folders**: Use folders within the Asset Panel to categorize and group your scripts. You can drag-and-drop scripts between folders as necessary.
+* **Naming Conventions**: Stick to consistent and descriptive naming for your script files. This makes them easier to find and understand.
+
+## Deleting Scripts
+
+To delete a Script Asset:
+
+1. Select the Script Asset in the Asset Panel.
+2. Press **the Delete key**, or right-click and select **Delete**.
+3. A confirmation dialog will appear. Click **DELETE** to confirm.
+
+:::note
+If the Script Asset is currently assigned to any Script Components on Entities in your scenes, deleting the asset will remove it from those components. You may want to delete those components if they are no longer required.
+:::

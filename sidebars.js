@@ -25,7 +25,7 @@ function getLocalizedLabels(locale = 'ko') {
       gettingStarted: '시작하기',
       editorGettingStarted: '에디터 알아보기',
       entityComponentSystem: '엔티티 컴포넌트 시스템 (Entity Component System)',
-      scenes: '씬 (Scenes)',
+      scenes: '장면 (Scenes)',
       components: '컴포넌트 (Components)',
       assets: '에셋 (Assets)',
       types: '타입 (Types)',
@@ -299,7 +299,7 @@ const sidebars = {
             'user-manual/editor/interface/settings/launch-page',
             'user-manual/editor/interface/settings/input',
             // 'user-manual/editor/interface/settings/localization',
-            'user-manual/editor/interface/settings/network',
+            // 'user-manual/editor/interface/settings/network',
             'user-manual/editor/interface/settings/scripts-loading-order',
           ],
         },
@@ -417,6 +417,7 @@ const sidebars = {
         id: 'user-manual/scenes/index',
       },
       items: [
+        'user-manual/scenes/managing-scenes',
         {
           type: 'category',
           label: labels.components,
@@ -449,7 +450,6 @@ const sidebars = {
           ],
         },
         // 'user-manual/scenes/loading-scenes',
-        // 'user-manual/scenes/managing-scenes',
       ],
     },
     {

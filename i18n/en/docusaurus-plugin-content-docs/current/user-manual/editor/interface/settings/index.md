@@ -29,7 +29,7 @@ Settings are grouped into categories, where each category is shown as a collapsi
 | [External Scripts](/user-manual/editor/interface/settings/external-scripts) | Specifies external script URLs to be loaded via `<script>` tags. |
 | [Launch Page](/user-manual/editor/interface/settings/launch-page) | Settings for the launch page. |
 | [Input](/user-manual/editor/interface/settings/input) | Enable or disable input devices (mouse, keyboard, etc.). |
-| [Network](/user-manual/editor/interface/settings/network) | Network-related settings for the project. |
 | [Scripts Loading Order](/user-manual/editor/interface/settings/scripts-loading-order) | Configures the script loading order to prevent dependency issues. |
 <!-- | [Engine](/user-manual/editor/interface/settings/engine) | Engine settings, including the engine version. | -->
 <!-- | [Localization](/user-manual/editor/interface/settings/localization) | Settings for adding localization assets. | -->
+<!-- | [Network](/user-manual/editor/interface/settings/network) | Network-related settings for the project. | -->
