@@ -335,6 +335,7 @@ const sidebars = {
     //     'user-manual/editor/version-control/item-history',
     //   ],
     // },
+    'user-manual/editor/publishing/index',
     // {
     //   type: 'category',
     //   label: 'Publishing',
