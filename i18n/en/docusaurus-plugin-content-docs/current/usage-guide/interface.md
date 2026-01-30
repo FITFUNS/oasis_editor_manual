@@ -37,34 +37,3 @@ Learn about the component list in the inspector view, property editing methods, 
 
 ### [6. Assets](/user-manual/editor/interface/assets)
 Learn about asset types managed in the asset view, folder organization tips, and asset optimization methods.
-
-## Essential Shortcuts
-
-#### **Scene Execution and Management**
-<!-- - **Ctrl + Enter** : Run scene in new tab -->
-- `Ctrl + E` : Create a new entity as a child of the currently selected entity.
-- `Ctrl + D` : Duplicate the selected entity and all its children.
-- `Ctrl + C` : Copy the currently selected entity/asset.
-- `Delete or Ctrl + Backspace` : Delete the currently selected item.
-
-#### **3D View Manipulation**
-- `F` : Move focus to the currently selected entity.
-- `1` : Activate move tool in 3D view.
-- `2` : Activate rotate tool in 3D view.
-- `3` : Activate scale tool in 3D view.
-- `L` : Toggle local/world coordinate system gizmo.
-- `Space` : Hide/show all views (viewport maximization).
-
-#### **Editing and Execution**
-<!-- - **Ctrl + B** : Rebuild lighting using runtime lightmapper -->
-- `Shift + Z` : Select the previously selected item.
-- `Ctrl + Z` : Undo the last action.
-- `Ctrl + Y or Ctrl + Shift + Z` : Redo the last action.
-<!-- - **Ctrl + Space** : Toggle mini manual search tool collection -->
-<!-- - **Shift + ?** : Show editor controls -->
-
-<!-- ### Tips for Efficient Work
-- Familiarize yourself with each view's functions for faster work
-- Use shortcuts to minimize mouse operations
-- Use consistent folder structure and naming conventions
-- Regular project backup and version control -->
