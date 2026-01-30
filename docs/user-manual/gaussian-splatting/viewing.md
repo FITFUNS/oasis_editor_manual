@@ -2,11 +2,11 @@
 title: Viewing Splats
 ---
 
-Once you've created a Gaussian splat, you'll want to preview and evaluate it before proceeding to editing or integration into your projects. The **PlayCanvas Model Viewer** provides a convenient way to quickly view and inspect your splat files without needing to set up a full PlayCanvas project.
+Once you've created a Gaussian splat, you'll want to preview and evaluate it before proceeding to editing or integration into your projects. The **OasisW Model Viewer** provides a convenient way to quickly view and inspect your splat files without needing to set up a full OasisW project.
 
-## PlayCanvas Model Viewer
+## OasisW Model Viewer
 
-The [PlayCanvas Model Viewer](https://playcanvas.com/viewer) is a web-based tool that allows you to instantly preview 3D content, including Gaussian splats, directly in your browser.
+The [OasisW Model Viewer](https://playcanvas.com/viewer) is a web-based tool that allows you to instantly preview 3D content, including Gaussian splats, directly in your browser.
 
 <video autoPlay muted loop controls src='/video/playcanvas-splat-viewer.mp4' style={{width: '100%', height: 'auto'}} />
 

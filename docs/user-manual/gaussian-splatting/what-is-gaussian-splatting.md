@@ -46,4 +46,4 @@ Gaussian Splatting is less suitable for:
 - **Procedural geometry** - Traditional meshes are more flexible for generated content
 - **Interactive objects** - Editing and deformation are challenging
 
-Understanding these fundamentals will help you make informed decisions about when and how to use Gaussian Splatting in your PlayCanvas projects. Next, let's explore how to [create your own splat data](creating/index.md).
+Understanding these fundamentals will help you make informed decisions about when and how to use Gaussian Splatting in your OasisW projects. Next, let's explore how to [create your own splat data](creating/index.md).

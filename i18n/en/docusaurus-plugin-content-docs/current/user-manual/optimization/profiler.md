@@ -2,7 +2,7 @@
 title: Profiler
 ---
 
-PlayCanvas provides an real-time profiler to assist in diagnosing performance problems.
+OasisW provides an real-time profiler to assist in diagnosing performance problems.
 
 ![Profiler](/img/user-manual/optimization/profiler/profiler.png)
 
@@ -25,7 +25,7 @@ The left-hand panel of the Profiler displays statistics related to the currently
 The right-hand panel is the Profiler Timeline. It displays a number of key events in your app’s life from launch:
 
 * **dom** (DOM interactive): event when the browser finishes parsing html document, and is able to render first frame of a page to a screen.
-* **preload**: event when PlayCanvas initiates preloading of all assets that are required before the app can start.
-* **start**: event when PlayCanvas begins the main application loop and rendering begins.
+* **preload**: event when OasisW initiates preloading of all assets that are required before the app can start.
+* **start**: event when OasisW begins the main application loop and rendering begins.
 
 Green bars represent individual asynchronous asset loads. Orange bars are blocking shader compilations.

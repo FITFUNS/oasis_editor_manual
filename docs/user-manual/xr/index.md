@@ -4,11 +4,11 @@ title: XR
 
 ![VR View](/img/user-manual/xr/vr-view.png)
 
-PlayCanvas lets you create [AR](/user-manual/xr/ar/) (Augmented Reality) and [VR](/user-manual/xr/vr/) (Virtual Reality) applications for a variety of devices based on the new WebXR API, as well as through external integrations.
+OasisW lets you create [AR](/user-manual/xr/ar/) (Augmented Reality) and [VR](/user-manual/xr/vr/) (Virtual Reality) applications for a variety of devices based on the new WebXR API, as well as through external integrations.
 
 ## Capabilities
 
-Through extensions, WebXR is ever growing and various platforms are constantly implementing new and existing WebXR Modules. The PlayCanvas Engine provides access to these modules in the form of integrations, so they are easier to work with and work nicely with PlayCanvas' systems.
+Through extensions, WebXR is ever growing and various platforms are constantly implementing new and existing WebXR Modules. The OasisW Engine provides access to these modules in the form of integrations, so they are easier to work with and work nicely with OasisW' systems.
 
 You can check a [list of currently supported modules](/user-manual/xr/capabilities/).
 
@@ -30,7 +30,7 @@ You do not need to have XR hardware to start developing with WebXR. You can inst
 
 :::danger
 
-Do not use the [WebXR API Emulator](https://chromewebstore.google.com/detail/webxr-api-emulator/mjddjgeghkdijejnciaefnkjmkafnnje) Chrome extension. It is not compatible with PlayCanvas. PlayCanvas applications will throw an exception if it is active.
+Do not use the [WebXR API Emulator](https://chromewebstore.google.com/detail/webxr-api-emulator/mjddjgeghkdijejnciaefnkjmkafnnje) Chrome extension. It is not compatible with OasisW. OasisW applications will throw an exception if it is active.
 
 :::
 

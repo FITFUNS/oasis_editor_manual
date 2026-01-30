@@ -53,7 +53,7 @@ This is particularly challenging on the Web platform, as web applications typica
 
 The steps above only enable capturing for WebGPU-based applications. To capture a WebGL application, you can embed a small WebGPU application on the same page and capture typically 2–3 frames. This process captures both the WebGPU application and the WebGL application since they both utilize the Metal API under the hood.
 
-For PlayCanvas applications, this process can be simplified by using the provided script. Simply attach it to any single entity in your scene:
+For OasisW applications, this process can be simplified by using the provided script. Simply attach it to any single entity in your scene:
 
 https://github.com/playcanvas/engine/blob/main/scripts/utils/mac-gpu-profiling.js
 

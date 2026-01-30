@@ -4,11 +4,11 @@ title: Platforms
 
 WebXR has specific hardware and software requirements. It utilizes device features such as camera sensors, gyroscope, accelerometer, CPU/GPU, CV techniques, as well as OS-level and browser support.
 
-While the market is constantly evolving with platform vendors forever improving their software, we try to ensure that PlayCanvas' WebXR support is up to date, supporting the widest range of platforms.
+While the market is constantly evolving with platform vendors forever improving their software, we try to ensure that OasisW' WebXR support is up to date, supporting the widest range of platforms.
 
 ## Platforms and Capabilities
 
-Below is a list of platforms that PlayCanvas has been tested on:
+Below is a list of platforms that OasisW has been tested on:
 
 | Platform         | VR | AR  | Capabilities                                                                                                      |
 | ---------------- | -- | --- | ----------------------------------------------------------------------------------------------------------------- |

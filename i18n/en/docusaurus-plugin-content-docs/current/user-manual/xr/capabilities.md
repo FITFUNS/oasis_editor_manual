@@ -2,7 +2,7 @@
 title: Capabilities
 ---
 
-WebXR exposes various capabilities and new APIs through Modules, which are integrated into the PlayCanvas Engine for ease of use.
+WebXR exposes various capabilities and new APIs through Modules, which are integrated into the OasisW Engine for ease of use.
 
 Some of the capabilities can be used either in [VR][1] or [AR][2], and some are generic for any immersive experience.
 

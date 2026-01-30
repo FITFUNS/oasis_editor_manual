@@ -2,7 +2,7 @@
 title: Editing Splats
 ---
 
-Raw Gaussian Splat files often need editing and optimization before they're ready for production use. This process involves removing unwanted elements, compressing file sizes, and optimizing performance for real-time rendering in PlayCanvas.
+Raw Gaussian Splat files often need editing and optimization before they're ready for production use. This process involves removing unwanted elements, compressing file sizes, and optimizing performance for real-time rendering in OasisW.
 
 ## Why Edit Gaussian Splats?
 
@@ -16,7 +16,7 @@ Generated splat files typically have several issues that need addressing:
 
 ## Editing Tools Overview
 
-PlayCanvas provides both visual and command-line tools for editing Gaussian Splats:
+OasisW provides both visual and command-line tools for editing Gaussian Splats:
 
 ### SuperSplat Editor
 

@@ -2,7 +2,7 @@
 title: AR
 ---
 
-PlayCanvas lets you create Augmented Reality (AR) applications for mobile and HMD devices through the WebXR API, as well as through integrations with popular AR frameworks.
+OasisW lets you create Augmented Reality (AR) applications for mobile and HMD devices through the WebXR API, as well as through integrations with popular AR frameworks.
 
 ## Platforms
 
@@ -16,7 +16,7 @@ The aforementioned frameworks are external and have separate licensing, availabl
 
 ## Getting started with WebXR AR
 
-When using PlayCanvas’ built-in AR support, the scene’s primary camera’s clear color must be transparent, as so:
+When using OasisW’ built-in AR support, the scene’s primary camera’s clear color must be transparent, as so:
 
 ![Transparent Clear Color](/img/user-manual/xr/ar/transparent-clear-color.png)
 
@@ -44,7 +44,7 @@ Suitable reference space: `pc.XRSPACE_LOCALFLOOR`.
 
 ## Starter Kits
 
-PlayCanvas provides several ‘Starter Kit’ projects to help you and your AR experiences get up and running faster. When creating a new project, simply select from the dialog the template that suits you best.
+OasisW provides several ‘Starter Kit’ projects to help you and your AR experiences get up and running faster. When creating a new project, simply select from the dialog the template that suits you best.
 
 [3]: /user-manual/xr/ar/8th-wall-integration/
 [4]: /user-manual/xr/ar/zappar-integration/

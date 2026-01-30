@@ -8,13 +8,13 @@ A high and consistent frame rate is critical for making an enjoyable XR experien
 
 For AR experiences, frame rates must be managed carefully as world tracking sometimes incurs significant performance costs. This is in addition to the typically performance-constrained mobile hardware most users have access to.
 
-For VR experiences, rendering is especially expensive due to the fact that the scene must be rendered once for each view (eye). While PlayCanvas is highly optimized to ensure VR rendering doesn't fully duplicate effort, stereo rendering remains more expensive than mono rendering.
+For VR experiences, rendering is especially expensive due to the fact that the scene must be rendered once for each view (eye). While OasisW is highly optimized to ensure VR rendering doesn't fully duplicate effort, stereo rendering remains more expensive than mono rendering.
 
 For pass-through experiences, AR and VR requirements are combined, and the underlying system has to perform a lot of computation for positioning, image processing, and overlaying rendered images, in addition to other APIs that can be used: depth sensing, color access, image tracking, and more. And duplicate rendering for each eye.
 
 In addition, modern HMD devices demand high frame rates, like 75Hz or 90Hz and higher, further increasing the need for highly efficient rendering.
 
-PlayCanvas, however, includes several features specifically designed to let your application do more in less time.
+OasisW, however, includes several features specifically designed to let your application do more in less time.
 
 ### Draw Calls and Batching
 
@@ -22,7 +22,7 @@ Draw Calls are operations when the engine provides the necessary information to 
 
 ### Runtime lightmap generation
 
-Each dynamic light has a per-frame runtime cost. The more lights you have, the higher the cost and the slower your scene will render. By baking lights into lightmaps you can hugely reduce the cost of static lights to that of simply rendering a texture. Lightmaps can be generated offline using your favorite 3D modeling tool or you can use PlayCanvas' built-in [Runtime Lightmapper](/user-manual/graphics/lighting/runtime-lightmaps/).
+Each dynamic light has a per-frame runtime cost. The more lights you have, the higher the cost and the slower your scene will render. By baking lights into lightmaps you can hugely reduce the cost of static lights to that of simply rendering a texture. Lightmaps can be generated offline using your favorite 3D modeling tool or you can use OasisW' built-in [Runtime Lightmapper](/user-manual/graphics/lighting/runtime-lightmaps/).
 
 ### Cautious use of real-time shadows
 
@@ -42,11 +42,11 @@ Using an extension like [WebGL Insight](https://github.com/3Dparallax/insight) c
 
 ### Garbage collection stalls
 
-Web browsers feature automatic garbage collection of unused JavaScript objects. The PlayCanvas engine is designed to minimize runtime allocations and you should try to do the same in your code. Pre-allocate vectors and other objects and re-use them so that there are not lots of objects created and discarded every frame.
+Web browsers feature automatic garbage collection of unused JavaScript objects. The OasisW engine is designed to minimize runtime allocations and you should try to do the same in your code. Pre-allocate vectors and other objects and re-use them so that there are not lots of objects created and discarded every frame.
 
 ### Profiling Tools
 
-PlayCanvas comes with a built-in [profiler tool](/user-manual/optimization/profiler/). In the Editor, enable the Profiler option in the Launch menu to run your application with profiling active.
+OasisW comes with a built-in [profiler tool](/user-manual/optimization/profiler/). In the Editor, enable the Profiler option in the Launch menu to run your application with profiling active.
 
 ### General optimization tips
 

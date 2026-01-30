@@ -114,7 +114,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'usageSidebar',
             position: 'left',
-            label: '사용법',
+            label: '시작하기',
             to: '/usage-guide/dashboard',
           },
           {
@@ -148,7 +148,7 @@ const config = {
             title: '문서',
             items: [
               {
-                label: '사용법',
+                label: '시작하기',
                 to: '/usage-guide/dashboard',
               },
               {

@@ -184,7 +184,7 @@ splat-transform raw_capture.ply \
 ### Format Migration
 
 ```bash
-# Convert existing KSPLAT assets to PlayCanvas SOGS
+# Convert existing KSPLAT assets to OasisW SOGS
 for file in *.ksplat; do
   splat-transform "$file" "${file%.ksplat}_meta.json"
 done

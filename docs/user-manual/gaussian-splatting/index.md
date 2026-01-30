@@ -17,11 +17,11 @@ Gaussian Splatting excels at capturing real-world environments through photogram
 - **Volumetric representation** - Handle translucent materials, fine details, and complex lighting naturally
 - **Real-time rendering** - Optimized for interactive frame rates in web browsers
 
-## PlayCanvas Gaussian Splatting Workflow
+## OasisW Gaussian Splatting Workflow
 
-PlayCanvas provides a complete ecosystem for working with Gaussian Splats:
+OasisW provides a complete ecosystem for working with Gaussian Splats:
 
 1. **Creating Splats** - Methods for creating your own splat data
-2. **Viewing Splats** - Preview and evaluate splats using the PlayCanvas Model Viewer
+2. **Viewing Splats** - Preview and evaluate splats using the OasisW Model Viewer
 3. **Editing Splats** - Clean up and prepare splats for optimal rendering
-4. **Building Splat-based Apps** - Integrate splats into your PlayCanvas projects
+4. **Building Splat-based Apps** - Integrate splats into your OasisW projects

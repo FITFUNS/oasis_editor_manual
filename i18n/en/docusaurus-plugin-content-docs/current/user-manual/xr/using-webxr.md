@@ -1,5 +1,5 @@
 ---
-title: Using WebXR in PlayCanvas
+title: Using WebXR in OasisW
 ---
 
 ## Support

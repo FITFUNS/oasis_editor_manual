@@ -86,6 +86,6 @@ void addAmbient(vec3 worldNormal) {
 
 ## Reflections
 
-WebXR Light Estimation provides an estimation of the environment reflection in form of a cube map, but [at the moment][1] it is not integrated into PlayCanvas Engine.
+WebXR Light Estimation provides an estimation of the environment reflection in form of a cube map, but [at the moment][1] it is not integrated into OasisW Engine.
 
 [1]: https://github.com/playcanvas/engine/issues/6070
