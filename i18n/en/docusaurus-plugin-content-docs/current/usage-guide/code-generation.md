@@ -52,6 +52,13 @@ Add entities to reference.
 
 ![Code](/img/usage-guide/13_6.png)
 
+### 6. Model
+
+Press the shortcut **Command + M** (macOS) or **Alt + M** (Windows) to open or close the model selection window.  
+Here, you can change the AI model.
+
+![Code](/img/usage-guide/13_15.png)
+
 ## 2. Generating Code
 
 1. Enter the command you want to implement into the prompt window and click the **Send button**.  
