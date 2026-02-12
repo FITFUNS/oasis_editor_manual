@@ -44,17 +44,17 @@ You can drag and drop template assets from **Asset view** into **Hierarchy view*
 
 ### Step 2: Check Results
 
-Click **Launch** in the **Viewport** to check the results.
+Change the position of the placed object, then click **Launch** in the **Viewport** to check the results.
 
 ![template](/img/tutorial/5_5.png)
 
 ## Template Instance Management
 
-### Individual Instance Modification
+<!-- ### Individual Instance Modification
 
 Even if you change property values (Position, Rotation) of one template instance among multiple instances, it doesn't affect other instances.
 
-![template](/img/tutorial/5_6.png)
+![template](/img/tutorial/5_6.png) -->
 
 ### Template Instance Options
 
@@ -63,7 +63,8 @@ Template instances have **Template Instance** at the top of the **Inspector view
 ![template](/img/tutorial/5_7.png)
 
 #### VIEW DIFF
-When you click **VIEW DIFF** → **Apply to Box**, only the selected changes are applied to the original template and all template instances.
+When you click **VIEW DIFF** → **Apply to Box**, only the selected changes are applied to the original template.
+ <!-- and all template instances. -->
 
 <div style={{display: 'flex', gap: '10px'}}>
   <img src="/img/tutorial/5_8.png" alt="Image" style={{maxWidth: '55%'}} />

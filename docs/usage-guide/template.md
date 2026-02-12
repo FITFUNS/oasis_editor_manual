@@ -44,17 +44,17 @@ OasisW에서 템플릿을 사용하여 동일한 게임 오브젝트를 재사�
 
 ### 2단계: 결과 확인
 
-**뷰포트**의 **Launch**를 클릭하여 결과를 확인합니다.
+배치된 오브젝트의 위치를 변경하고, **뷰포트**의 **Launch**를 클릭하여 결과를 확인합니다.
 
 ![template](/img/tutorial/5_5.png)
 
 ## 템플릿 인스턴스 관리
 
-### 개별 인스턴스 수정
+<!-- ### 개별 인스턴스 수정
 
 여러 개의 템플릿 인스턴스 중 하나를 골라 속성값(Position, Rotation)을 변경하더라도 다른 인스턴스에는 영향을 주지 않습니다.
 
-![template](/img/tutorial/5_6.png)
+![template](/img/tutorial/5_6.png) -->
 
 ### 템플릿 인스턴스 옵션
 
@@ -63,7 +63,8 @@ OasisW에서 템플릿을 사용하여 동일한 게임 오브젝트를 재사�
 ![template](/img/tutorial/5_7.png)
 
 #### VIEW DIFF
-**VIEW DIFF** → **Apply to Box** 클릭 시 **선택한** 변경 사항만 원본 템플릿과 템플릿의 모든 인스턴스에 적용합니다.
+**VIEW DIFF** → **Apply to Box** 클릭 시 **선택한** 변경 사항만 원본 템플릿에 적용됩니다.
+<!-- 과 템플릿의 모든 인스턴스에 적용합니다. -->
 
 <div style={{display: 'flex', gap: '10px'}}>
   <img src="/img/tutorial/5_8.png" alt="Image" style={{maxWidth: '55%'}} />

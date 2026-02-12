@@ -87,8 +87,8 @@ Learn OasisW's basic features step by step.
 
 ### Step 3: Modify Instance
 1. Select one instance.
-2. Change **Position** or **Rotation**.
-3. Verify that other instances are not affected.
+2. Change **Scale**.
+3. Check the changes to the instance in the **Inspector view**.
 
 ## Adding Scripts
 
