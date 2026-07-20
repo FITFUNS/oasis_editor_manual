@@ -5,33 +5,35 @@ sidebar_label: 인스팩터
 
 # Inspector
 
-OasisW의 선택된 오브젝트의 모든 속성과 컴포넌트를 편집하는 핵심 도구인 인스팩터 뷰를 학습합니다.
+인스팩터 뷰는 지금 고른 오브젝트의 속성과 컴포넌트를 살펴보고 바꾸는 곳입니다.
 
 ![Inspector](/img/usage-guide/7_1_inspector.png)
 
 ## 선택 항목에 따른 Inspector 뷰 종류
 
-- **Entity/Component Inspector**: 엔티티 및 컴포넌트 속성을 편집합니다.
-- **Texture Inspector**: 텍스처 관련 속성을 편집합니다.
-- **Material Inspector**: 재질 속성을 편집합니다.
-- **Cubemap Inspector**: 큐브맵 속성을 편집합니다.
+무엇을 골랐는지에 따라 인스팩터가 알맞은 형태로 바뀝니다.
+
+- **Entity/Component Inspector**: 엔티티와 컴포넌트의 속성을 바꿉니다.
+- **Texture Inspector**: 텍스처 관련 속성을 바꿉니다.
+- **Material Inspector**: 재질 속성을 바꿉니다.
+- **Cubemap Inspector**: 큐브맵 속성을 바꿉니다.
 
 ## 속성 값 변경
 
-- 속성 값 변경을 통해 엔티티가 어떻게 동작할지 지정합니다.  
-  예) Model 컴포넌트의 렌더링할 모델 선택, 조명의 색상 설정 등을 지정합니다.
+- 속성 값을 바꿔서 엔티티가 어떻게 움직일지 정합니다.  
+  예) Model 컴포넌트에서 보여줄 모델을 고르거나, 조명의 색을 정할 수 있습니다.
 
-- 단순 텍스트나 숫자 속성은 텍스트 필드 또는 슬라이더로 조절 가능합니다.  
-- 특수한 입력 방식이 필요한 경우도 있습니다.  
-  예) 에셋 선택 시 Asset 뷰에서 사용 가능한 에셋을 강조 표시합니다.
+- 글자나 숫자처럼 간단한 속성은 텍스트 필드나 슬라이더로 조절합니다.  
+- 조금 특별한 방식으로 입력해야 하는 속성도 있습니다.  
+  예) 에셋을 고를 때는 Asset 뷰에서 쓸 수 있는 에셋을 밝게 표시해 줍니다.
 
-- 뷰포트에서 직접 조작 가능한 값도 있습니다.  
-  예) Translate, Rotate, Scale 값은 기즈모를 드래그하여 변경 가능합니다.
+- 뷰포트에서 바로 만질 수 있는 값도 있습니다.  
+  예) Translate, Rotate, Scale 값은 기즈모를 끌어서 바꿀 수 있습니다.
 
 ## 컴포넌트 추가
 
 ![Inspector](/img/usage-guide/7_2_component.png)
 
-- 인스팩터 뷰 하단의 **Add Component** 버튼을 통해 2D, 3D, Audio, Physics, Script 등 다양한 컴포넌트를 엔티티에 추가할 수 있습니다.
-- 추가된 컴포넌트는 즉시 씬에 반영되며, 설정 값 변경 시 실시간으로 결과를 확인할 수 있습니다.
-- 각 컴포넌트의 세부 기능 및 사용 방법은 [**컴포넌트**](/user-manual/scenes/components) 에서 확인할 수 있습니다.
+- 인스팩터 뷰 아래쪽의 **Add Component** 버튼으로 2D, 3D, Audio, Physics, Script 등 여러 컴포넌트를 엔티티에 붙일 수 있습니다.
+- 붙인 컴포넌트는 곧바로 씬에 나타나고, 설정을 바꾸면 그 결과를 실시간으로 확인할 수 있습니다.
+- 각 컴포넌트의 자세한 기능과 쓰는 방법은 [**컴포넌트**](/user-manual/scenes/components) 에서 볼 수 있습니다.
