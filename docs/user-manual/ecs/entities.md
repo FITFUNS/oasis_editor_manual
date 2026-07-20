@@ -2,41 +2,49 @@
 title: 엔티티 (Entity)
 ---
 
-**엔티티**는 OasisW 씬의 기본 구성 요소입니다 ([`Entity`](https://manual.oasisserver.link/engine/classes/Entity.html)).
+**엔티티**는 OasisW 씬을 이루는 **가장 기본 단위**입니다 ([`Entity`](https://manual.oasisserver.link/engine/classes/Entity.html)). 앞서 말한 "빈 상자"가 바로 엔티티예요. 여기에 컴포넌트(부품)를 끼워 캐릭터도, 카메라도, 조명도 만듭니다.
 
-## 주요 특징
+## 이런 특징이 있어요
 
-- 엔티티는 **0개 이상의 컴포넌트**를 가질 수 있습니다.
-- 엔티티는 계층 구조를 형성하기 위해 **부모-자식 관계**를 가질 수 있습니다 ([`addChild`](https://manual.oasisserver.link/engine/classes/GraphNode.html#addchild), [`removeChild`](https://manual.oasisserver.link/engine/classes/GraphNode.html#removechild)).
-- 엔티티는 **활성화**되거나 **비활성화**될 수 있습니다 ([`enabled`](https://manual.oasisserver.link/engine/classes/GraphNode.html#enabled)).
+- 엔티티는 **부품(컴포넌트)을 0개 이상** 가질 수 있습니다. 아무것도 안 끼운 빈 엔티티도 그 자체로 존재할 수 있습니다.
+- 엔티티끼리 **부모-자식 관계**로 묶어 계층 구조를 만들 수 있습니다 ([`addChild`](https://manual.oasisserver.link/engine/classes/GraphNode.html#addchild), [`removeChild`](https://manual.oasisserver.link/engine/classes/GraphNode.html#removechild)). 예를 들어 자동차(부모) 아래에 바퀴 네 개(자식)를 두는 식입니다.
+- 엔티티는 **켜거나 끌 수** 있습니다 ([`enabled`](https://manual.oasisserver.link/engine/classes/GraphNode.html#enabled)). 끄면 화면에서 사라지고 동작도 멈춥니다.
 
 :::tip
-엔티티를 가볍게 유지하세요 — 불필요한 컴포넌트 추가를 피하세요.
+
+엔티티는 **가볍게** 유지하세요. 당장 필요 없는 부품은 끼우지 않는 편이 좋습니다.
+
 :::
 
-## 코드에서 엔티티 생성
+## 코드로 엔티티 만들기
 
 ```javascript
 const entity = new pc.Entity("MyEntity");
 app.root.addChild(entity);
 ```
 
-## 엔티티 활성화 / 비활성화
+새 엔티티를 만들고 씬의 최상단(`app.root`)에 붙이는 코드입니다. 붙여야 씬에 실제로 등장합니다.
+
+## 엔티티 켜기 / 끄기
 
 ```javascript
-entity.enabled = false; // 엔티티와 모든 컴포넌트를 비활성화
+entity.enabled = false; // 엔티티와 그 안의 모든 부품을 끕니다
 ```
 
 :::tip
-사용하지 않을 때는 엔티티를 비활성화하여 처리량을 줄이고 성능을 향상시키세요.
+
+당장 안 쓰는 엔티티는 **꺼 두면** 처리량이 줄어 성능에 도움이 됩니다.
+
 :::
 
-## 생명주기
+## 엔티티의 일생(생명주기)
 
-- **생성** — [`Entity constructor`](https://manual.oasisserver.link/engine/classes/Entity.html#constructor).
-- **부모 설정** — [`addChild`](https://manual.oasisserver.link/engine/classes/GraphNode.html#addchild) / [`removeChild`](https://manual.oasisserver.link/engine/classes/GraphNode.html#removechild).
-- **파괴** — [`destroy`](https://manual.oasisserver.link/engine/classes/GraphNode.html#destroy).
+- **생성** — [`Entity constructor`](https://manual.oasisserver.link/engine/classes/Entity.html#constructor)로 만듭니다.
+- **부모 붙이기 / 떼기** — [`addChild`](https://manual.oasisserver.link/engine/classes/GraphNode.html#addchild) / [`removeChild`](https://manual.oasisserver.link/engine/classes/GraphNode.html#removechild).
+- **없애기** — [`destroy`](https://manual.oasisserver.link/engine/classes/GraphNode.html#destroy)로 완전히 삭제합니다.
 
 :::tip
-엔티티가 더 이상 필요하지 않을 때는 `destroy`를 호출하여 리소스를 해제하고 계층 구조에서 분리하세요.
+
+엔티티가 더 이상 필요 없으면 `destroy`를 불러 **자원을 정리**하고 계층 구조에서 떼어 내세요.
+
 :::
