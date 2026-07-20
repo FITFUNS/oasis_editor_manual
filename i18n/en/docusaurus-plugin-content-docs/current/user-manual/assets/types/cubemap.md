@@ -2,10 +2,10 @@
 title: Cubemap
 ---
 
-A cubemap is a special type of texture asset. It consists of 6 texture assets where each texture represents a face of a cube. It typically has two uses:
+A cubemap is a **special type of texture asset**. It is made up of **six texture assets**, each responsible for one face of a cube. It is typically used in two ways.
 
-1. A cubemap can define the skybox of a scene. The skybox contains the distant visual imagery of the scene such as hills, mountains, sky, etc.
-2. A cubemap can add reflections to any material. Imagine a shiny chrome ball bearing in your scene. The ball reflects the surrounding scene. For open environments, it's common to set the scene's skybox cubemap as the cubemap on reflective objects' materials.
+1. **Skybox** — the distant scenery that forms the background of a scene. It holds far-off imagery such as hills, mountains, and sky.
+2. **Reflection** — you can add reflections to any material. Picture a shiny chrome ball bearing placed in your scene: the ball reflects the surrounding scenery. In an open environment, you usually assign the scene's skybox cubemap as the reflection cubemap.
 
 <div className="iframe-container">
     <iframe src="https://playcanv.as/b/xp7v1oFB/" title="Cubemap" allow="camera; microphone; xr-spatial-tracking; fullscreen" allowfullscreen></iframe>
@@ -13,110 +13,96 @@ A cubemap is a special type of texture asset. It consists of 6 texture assets wh
 
 ## Importing Cubemap Textures
 
-A cubemap is an asset that requires 6 texture assets as input. So to fully configure a new cubemap asset, you first need to import 6 images into your project. To do this, drag 6 images from your file system to the Assets Panel (or select the upload option in the Assets Panel). Once uploaded and processed, the images will appear in the Assets Panel and are now ready to be assigned to the cubemap asset.
+A cubemap is an asset that **requires six texture assets as input**. So to fully configure a cubemap, you first need to import six images into your project. Drag six images from your file browser into the Assets Panel, or use the upload option in the Assets Panel. Once uploaded and processed, they appear in the Assets Panel and are ready to be assigned to the cubemap.
 
 ## Creating a Cubemap
 
-You can create a new cubemap asset directly from the OasisW editor interface. Use the Create Asset menu in the Assets Panel.
+You can create a new cubemap asset directly in the editor. Press the **+** button in the Assets Panel and choose **CubeMap**.
 
-![Create Cubemap](/img/user-manual/assets/cubemaps/cubemap-create.png)
+![Create cubemap](/img/user-manual/assets/cubemaps/cubemap-create.png)
 
-This will create a new cubemap asset and open the cubemap editor on the right side of the screen.
+This creates a new cubemap asset and opens the cubemap editor on the right side of the screen.
 
 ## Selecting a Cubemap
 
-To select a cubemap for editing, select it in the Assets Panel. The easiest way is to select the cubemap filter to narrow down the selection options. Cubemaps are identified by cross-shaped thumbnails:
+To choose a cubemap for editing, select it in the Assets Panel. The easiest way is to pick `Cubemap` in the type filter to narrow down the selection. Cubemaps can be recognized by their **cross-shaped thumbnails**.
 
-![Cubemap Thumbnails](/img/user-manual/assets/cubemaps/cubemap-thumbnails.png)
+![Cubemap thumbnails](/img/user-manual/assets/cubemaps/cubemap-thumbnails.png)
 
-When a cubemap is selected, it loads in the Inspector panel on the right side of the editor.
+When you select a cubemap, it loads into the Inspector panel on the right.
 
 ## Cubemap Properties
 
-When a cubemap is selected, you can edit its properties.
-
-![Cubemap Properties](/img/user-manual/assets/cubemaps/cubemap-properties.png)
+![Cubemap properties](/img/user-manual/assets/cubemaps/cubemap-properties.png)
 
 ### Filtering
 
-This setting determines how pixels of the cubemap are interpolated when magnified. Magnification is when the texel to screen pixel ratio is less than 1. Linear provides the best visual results.
+Determines how the pixels of the cubemap are interpolated **when magnified**. Magnification is when the texel-to-screen-pixel ratio is less than 1. `Linear` produces the best visual results.
 
 ### Anisotropy
 
-Anisotropy is a value between 1 and 16 that can control the quality of texture sampling when the camera's view vector is more closely aligned with the plane of the textured surface.
+Anisotropy is **a value between 1 and 16** that controls the sampling quality, which drops as the camera's view direction becomes more parallel to the plane of the textured surface.
 
-## Assigning Textures to Cubemap
+## Assigning Textures to a Cubemap
 
-![Cubemap Preview](/img/user-manual/assets/cubemaps/cubemap-preview.png)
+![Cubemap preview](/img/user-manual/assets/cubemaps/cubemap-preview.png)
 
-The cubemap preview panel displays the 6 faces of the cubemap flattened in a cross shape. Imagine an unfolded cardboard box laid flat. To configure the cubemap, simply drag texture assets from the Assets Panel to the face slots in the preview panel. You can also select a cubemap face slot and then select a texture asset from the Assets Panel.
+The cubemap preview panel shows the six faces **unfolded in a cross shape**. It helps to picture a cardboard box unfolded and laid flat. To configure the cubemap, simply drag texture assets from the Assets Panel onto the face slots in the preview panel. You can also select a face slot first and then choose a texture in the Assets Panel.
 
-Cubemap faces must meet the following requirements:
+Cubemap faces must meet the following requirements.
 
-- Square (resolution where width and height are equal)
-- Power of two dimensions (1x1, 2x2, 4x4, 8x8, 16x16, 32x32, etc.)
-- All faces must have the same resolution
+- **Square** — width and height must be equal.
+- **Power-of-two size** — 1×1, 2×2, 4×4, 8×8, 16×16, 32×32 …
+- **All six faces must have the same resolution.**
 
-To help with this, the editor tries to intelligently auto-assign textures to faces. It does this by trying to match commonly used naming conventions for cubemap faces when you drag the first face to a slot:
+The editor **tries to place textures on the faces automatically**. The moment you drag the first face onto a slot, it matches against the naming conventions commonly used for cubemap faces.
 
-- negx, posx, negy, posy, negz, posz
-- left, right, top|up, bottom|down, front|forward, back|backward
-- 0-5|1-6
+- `negx`, `posx`, `negy`, `posy`, `negz`, `posz`
+- `left`, `right`, `top`|`up`, `bottom`|`down`, `front`|`forward`, `back`|`backward`
+- `0-5` | `1-6`
 
-Example of a matching texture set:
+An example of a texture set whose names line up.
 
-- face_posx.jpg
-- face_negx.jpg
-- face_posy.jpg
-- face_negy.jpg
-- face_posz.jpg
-- face_negz.jpg
+- `face_posx.jpg`
+- `face_negx.jpg`
+- `face_posy.jpg`
+- `face_negy.jpg`
+- `face_posz.jpg`
+- `face_negz.jpg`
 
-## Image-based Lighting
+:::tip Tip
 
-This technique allows you to use environment maps like cubemaps to simulate physically-based ambient lighting and material reflections. See [Learn More][6] for how it works and how to create cubemaps for IBL.
-
-## Assigning Cubemap to Materials
-
-Both the basic Phong and Physical material types have reflection properties. When you expand the Environment properties section, you can see:
-
-![Cubemap Material](/img/user-manual/assets/cubemaps/cubemap-material.png)
-
-You can click on an empty slot to select a cubemap or drag and drop a cubemap asset from the Assets Panel to the cubemap slot.
-
-:::note
-
-Physical materials use the scene's skybox as the default environment map when assigned and pre-filtered.
+If a downloaded skybox's image names differ from this convention, it is much faster to **rename the files before uploading**. Drag just one image in and the remaining five fill themselves in.
 
 :::
 
-## Converting Equirectangular or Octahedral HDRI to Cubemap
+## Image-based Lighting
 
-Environment textures are often in equirectangular or Octahedral format (example from [Poly Haven][7]) and need to be converted to cubemaps before use in OasisW.
+This technique uses environment maps such as cubemaps to simulate **physically-based ambient lighting and material reflections**. See [Learn More](/user-manual/graphics/physical-rendering/image-based-lighting) for how it works and how to create cubemaps for IBL.
 
-<!-- This can be done via [OasisW Texture Tool][8], available in the browser.
+## Assigning a Cubemap to Materials
 
-1. Download the HDR version of environment texture and press 'Add Files' button in OasisW Texture Tool to load the file.
-2. Select the loaded texture on the left.
-3. Under 'Reproject' section, change the 'source' to the format of texture.
-4. Change 'target' to 'cube'.
-5. Change 'encoding' to the desired format:
-    - 'rgbe' for exporting to 'HDR'
-    - 'rgbm' for exporting to 'PNG'
-6. Set the width to the desired size per face texture. 512 is a good balance between quality and file size.
-7. Press 'Reproject' button to do the conversion to a cubemap.
-8. Press 'Export to PNG' or 'Export to HDR' to download the 6 individual cubemap face textures that are ready to be uploaded to OasisW.
+Both the basic Phong material and the Physical material have reflection properties. Expand the **Environment** properties section to reveal the cubemap slot.
 
-![OasisW Texture Tool](/img/user-manual/assets/cubemaps/playcanvas-texture-tool-convert.png) -->
+![Cubemap slot on a material](/img/user-manual/assets/cubemaps/cubemap-material.png)
 
-Other tools that can perform this conversion:
+Click the empty slot to choose a cubemap, or drag a cubemap asset from the Assets Panel onto the slot.
 
-- Mateusz Wisniowski's [HDRI-to-CubeMap tool][9] (browser)
-- [cmftStudio][10] (desktop) and [guide][11]
+:::note Note
 
-[6]: /user-manual/graphics/physical-rendering/image-based-lighting/
-[7]: https://polyhaven.com/hdris
-<!-- [8]: https://playcanvas.com/texture-tool -->
-[9]: https://matheowis.github.io/HDRI-to-CubeMap/
-[10]: https://github.com/dariomanesku/cmftStudio
-[11]: https://jamie-white.com/webgl/equirectangular-hdr-image-to-face-list/
+A Physical material **uses the scene's skybox as the default environment map** when a skybox is assigned and pre-filtered.
+
+:::
+
+## Converting Equirectangular or Octahedral HDRI to a Cubemap
+
+Environment textures are commonly distributed in equirectangular or Octahedral format from sites such as [Poly Haven](https://polyhaven.com/hdris). To use them in OasisW, you **must first convert them to a cubemap.**
+
+- Mateusz Wisniowski's [HDRI-to-CubeMap tool](https://matheowis.github.io/HDRI-to-CubeMap/) (runs right in the browser)
+- [cmftStudio](https://github.com/dariomanesku/cmftStudio) (desktop) and its [guide](https://jamie-white.com/webgl/equirectangular-hdr-image-to-face-list/)
+
+## Related Pages
+
+- [Texture](/user-manual/assets/types/texture) — the assets that make up the six faces of a cubemap.
+- [Material](/user-manual/assets/types/material) — uses cubemaps for reflections.
+- [Procedural generation tools](/user-manual/assets/finding) — create skyboxes yourself.

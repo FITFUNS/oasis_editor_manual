@@ -2,25 +2,68 @@
 title: 3D 모델 가져오기
 ---
 
-3D 모델과 애니메이션은 [Blender][2], 3D Studio Max 또는 Maya와 같은 [3D 모델링 애플리케이션][1]에서 씬 파일을 업로드하여 OasisW로 가져옵니다.
+3D 모델과 애니메이션은 [Blender](https://www.blender.org/), 3D Studio Max, Maya 같은 [3D 모델링 애플리케이션](/user-manual/assets/models/building)에서 만든 씬 파일을 업로드해 OasisW로 가져옵니다.
 
-OasisW는 glTF 바이너리(GLB), FBX 등 다양한 형식을 지원합니다. 최상의 결과를 위해 GLB 형식 사용을 권장합니다.
+OasisW는 glTF 바이너리(`.glb`), FBX(`.fbx`) 등 여러 형식을 지원합니다. **가장 좋은 결과를 얻으려면 GLB 형식을 쓰시기 바랍니다.** GLB는 메시·재질·텍스처·애니메이션이 한 파일에 모두 들어 있어 텍스처가 빠지는 사고가 적습니다.
 
-이러한 파일 중 하나를 업로드하면 'Model' 유형의 소스 에셋이 생성되고, 모델 계층 구조가 포함된 '[템플릿][7]'과 '렌더' 에셋을 포함한 여러 타겟 에셋이 생성됩니다. 게임에서 '템플릿'의 인스턴스를 추가할 수 있습니다.
+## 모델 올리기
 
-<!-- 자세한 내용:
+1. 에셋 패널의 **+** 버튼을 누르고 **Upload Files**를 선택합니다.
+2. 모델 파일(`.glb` 또는 `.fbx`)을 고릅니다. 파일 탐색기에서 에셋 패널로 **끌어다 놓아도** 됩니다.
+3. 업로드가 끝나면 변환 작업이 시작됩니다. 화면 위쪽의 **Jobs** 표시로 진행 상황을 확인할 수 있습니다.
 
-* [모델 구축][5]
-* [모델 내보내기][6]
-* [모델 가져오기][8] -->
-<!-- * [템플릿 사용][9] -->
+## 파일 하나가 여러 에셋으로
 
-[1]: /user-manual/assets/models/building
-[2]: https://www.blender.org/
-<!-- [3]: /user-manual/glossary#source-asset -->
-<!-- [4]: /user-manual/glossary#target-asset -->
-[5]: /user-manual/assets/models/building
-[6]: /user-manual/assets/models/exporting
-[7]: /user-manual/assets/types/template/
-[8]: /user-manual/assets/import-pipeline/import-hierarchy/
-<!-- [9]: /user-manual/editor/templates/ -->
+모델 파일을 하나 올리면 에셋도 하나만 생길 것 같지만, 실제로는 **여러 개가 한꺼번에** 만들어집니다.
+
+- **Model (source)** — 내가 올린 원본 파일입니다. [Source 에셋](/user-manual/assets)에 해당합니다.
+- **[Template](/user-manual/assets/types/template)** — 모델의 엔티티 계층 구조가 담긴 에셋입니다. 씬에 실제로 배치할 때 쓰는 것이 바로 이것입니다.
+- **[Render](/user-manual/assets/types/render)** — 3D 메시 데이터입니다.
+- **[Material](/user-manual/assets/types/material)** — 표면의 색과 질감을 정의합니다.
+- **[Texture](/user-manual/assets/types/texture)** — 모델에 입힐 이미지입니다.
+- **[Animation](/user-manual/assets/types/animation)** — 모델에 애니메이션이 들어 있으면 함께 만들어집니다.
+
+:::note 에디터에서 확인하기
+
+에셋 패널의 **TYPE** 줄을 보면 방금 올린 모델 때문에 `Template · 1`, `Texture · 1`, `Material · 1` 처럼 여러 유형의 개수가 함께 늘어난 것을 볼 수 있습니다. 파일 하나를 올렸는데 목록이 여러 줄 늘어나는 것은 정상입니다.
+
+:::
+
+## 변환 방식 정하기
+
+모델이 어떻게 쪼개질지는 프로젝트 설정에서 조절합니다. 오른쪽 위 **톱니바퀴**를 눌러 **SETTINGS › ASSET TASKS**를 펼치십시오.
+
+| 설정 | 기본값 | 모델을 올릴 때의 의미 |
+|---|---|---|
+| `Create FBX Folder` | 켜짐 | FBX를 올리면 결과 에셋들을 담을 폴더를 자동으로 만들어 정리해 줍니다. 꺼 두면 여러 에셋이 최상위에 흩어집니다. |
+| `Server-side GLB Decompose` | 켜짐 | GLB를 서버에서 분해해 템플릿·렌더·재질·텍스처로 나눕니다. 끄면 통짜 컨테이너 에셋 하나로 들어옵니다. |
+| `Create Atlases` | 꺼짐 | 이미지들을 텍스처 아틀라스로 묶습니다. 2D 스프라이트를 많이 쓸 때 유용합니다. |
+
+:::warning 주의하시기 바랍니다
+
+이 설정은 **앞으로 올릴 파일**에만 적용됩니다. 이미 올린 모델에는 반영되지 않으므로, 설정을 바꿨다면 파일을 다시 업로드해야 합니다.
+
+:::
+
+## 씬에 배치하기
+
+모델을 화면에 올릴 때는 **Template 에셋**을 사용합니다.
+
+1. 에셋 패널에서 `Template` 유형의 에셋을 찾습니다.
+2. 그것을 **뷰포트**나 **하이어라키**로 끌어다 놓습니다.
+3. 모델의 계층 구조가 그대로 엔티티로 만들어집니다.
+
+이렇게 놓인 것은 템플릿의 **인스턴스**입니다. 원본 템플릿을 고치면 인스턴스에도 반영되고, 인스턴스만 고치면 인스팩터 위쪽에 `Override` 표시가 나타납니다.
+
+## 잘 안 될 때 확인할 것
+
+- **모델이 너무 크거나 작게 보입니다.** — 모델링 툴과 OasisW의 단위가 다를 수 있습니다. [단위 (Units)](/user-manual/assets/models/units) 문서를 참고해 내보내기 설정을 맞추십시오.
+- **텍스처가 안 보이고 회색으로 나옵니다.** — FBX는 텍스처를 파일에 포함하지 않는 경우가 많습니다. GLB로 다시 내보내거나, 텍스처 이미지를 따로 올려 재질에 연결하십시오.
+- **모델이 뒤집혀 있거나 옆으로 누워 있습니다.** — 모델링 툴마다 위쪽 축(Y-up / Z-up)이 다릅니다. 내보낼 때 Y-up으로 맞추는 편이 안전합니다.
+- **업로드가 오래 걸립니다.** — 폴리곤 수와 텍스처 해상도가 큰 모델은 변환에 시간이 걸립니다. **Jobs** 표시가 끝날 때까지 기다리십시오.
+
+## 다음으로
+
+- [모델 구축 (Building Models)](/user-manual/assets/models/building) — 모델링 툴에서 내보낼 때의 권장 사항입니다.
+- [단위 (Units)](/user-manual/assets/models/units) — 크기 기준을 맞춥니다.
+- [서드파티 에셋 사이트](/user-manual/assets/finding) — 완성된 모델을 구할 곳입니다.

@@ -2,48 +2,49 @@
 title: 폰트 (Font)
 ---
 
-폰트 에셋은 사용자가 포함하기로 선택한 폰트의 모든 문자를 포함하는 이미지와 각 문자가 어떻게 표시되어야 하는지에 대한 관련 데이터를 포함합니다. 폰트 에셋은 Text 유형의 [요소][1] 컴포넌트를 사용하여 텍스트를 렌더링하는 데 사용됩니다. 텍스트를 렌더링하려면 엔티티에 요소 컴포넌트를 추가하고 유형을 Text로 설정한 다음 폰트 에셋을 요소 컴포넌트의 폰트 슬롯으로 드래그 앤 드롭하세요.
+폰트 에셋은 **포함하기로 선택한 모든 문자가 들어 있는 이미지**와, 각 문자를 어떻게 표시할지에 대한 데이터를 함께 담고 있습니다. 폰트 에셋은 `Text` 유형의 [요소(Element) 컴포넌트](/user-manual/scenes/components/element)로 텍스트를 그릴 때 사용됩니다.
 
-<!-- You can create a Font asset by uploading a font file ending in `.ttf`, `.ttc`, `.otf` or `.dfont`. We convert the uploaded font to a multi-channel signed distance field. This makes a font keep its details at various sizes so you only need to upload one font and use the same one for every size you want to display. The technique might work better for some fonts than others. -->
+텍스트를 화면에 그리려면 엔티티에 요소 컴포넌트를 추가하고, 유형을 `Text`로 설정한 다음, 폰트 에셋을 요소 컴포넌트의 폰트 슬롯으로 **끌어다 놓으십시오**.
+
+:::note 왜 이미지인가요
+
+3D 엔진은 글자를 직접 그리지 않고 **글자 모양이 그려진 이미지를 잘라 붙이는 방식**으로 텍스트를 표시합니다. 그래서 폰트 에셋은 이미지와 좌표 데이터의 묶음입니다. 이 방식 때문에 *미리 포함시킨 문자만* 표시할 수 있다는 점에 유의하십시오.
+
+:::
 
 ## 폰트 생성
 
-OasisW 에디터 인터페이스에서 직접 새 폰트 에셋을 만들 수 있습니다. 에셋 패널의 에셋 생성 메뉴를 사용하세요.
+에디터에서 직접 새 폰트 에셋을 만들 수 있습니다. 에셋 패널의 **+** 버튼을 누르고 **Font**를 선택하십시오.
 
 :::warning 참고
 
-폰트 업로드 기능은 추후 지원 예정입니다.
+폰트 **업로드** 기능은 추후 지원 예정입니다. 현재는 에디터에서 만드는 방식만 사용할 수 있습니다.
 
 :::
 
 ![폰트 추가](/img/user-manual/assets/fonts/add-font.png)
 
-에디터에서 폰트 에셋에 대해 편집할 수 있는 속성들입니다:
+에디터에서 폰트 에셋에 대해 편집할 수 있는 속성들입니다.
 
-![폰트 에셋](/img/user-manual/assets/fonts/font.png)
+![폰트 에셋 속성](/img/user-manual/assets/fonts/font.png)
 
 ## 속성
 
-### 강도
+### 강도 (Intensity)
 
-강도는 부호 거리 필드에서 읽은 값을 부스트하는 데 사용되며, 0은 부스트 없음, 1은 최대 부스트입니다. 폰트가 기본 강도로 깨끗하고 부드러운 가장자리로 렌더링되지 않거나 작은 폰트 크기에서 폰트를 렌더링하는 경우 유용할 수 있습니다.
+강도는 **부호 거리 필드(signed distance field)에서 읽은 값을 끌어올리는 데** 사용됩니다. `0`은 부스트 없음, `1`은 최대 부스트입니다.
 
-<!-- ## Character Presets
+기본 강도에서 폰트의 가장자리가 깨끗하고 부드럽게 나오지 않거나, **작은 폰트 크기로 글자를 그릴 때** 조정하면 도움이 될 수 있습니다.
 
-Click on a preset to include its characters to the Font asset. Clicking on a preset will add the characters to the existing selection.
+## 한글을 쓸 때
 
-## Custom Character Range
+:::tip 알아 두십시오
 
-If you want to include a specific range of characters to the Font asset, enter the range in Hex and click the Plus icon to add the range to the character selection.
+폰트 에셋은 **포함시킨 문자만** 그릴 수 있습니다. 알파벳은 52자뿐이지만 한글은 조합 가능한 글자가 1만 자를 넘습니다. 실제로 쓰는 문구에 등장하는 글자만 골라 포함시키면 에셋 크기를 크게 줄일 수 있습니다. 포함되지 않은 글자는 화면에 빈칸이나 네모로 나타납니다.
 
-## Font
+:::
 
-### Characters
+## 관련 문서
 
-The characters that should be included in the Font asset. If you only need numbers for example, there is no need to include all the other characters of the Font. This is useful to keep Font assets small. Please note that some characters may not exist in the uploaded font.
-
-## Process Font
-
-Click on the Process Font button after you make changes to the Font asset in order to generate a new version. -->
-
-[1]: /user-manual/scenes/components/element/
+- [요소 (Element) 컴포넌트](/user-manual/scenes/components/element) — 폰트를 사용해 텍스트를 그립니다.
+- [사용자 인터페이스](/user-manual/user-interface) — 화면 UI를 구성합니다.

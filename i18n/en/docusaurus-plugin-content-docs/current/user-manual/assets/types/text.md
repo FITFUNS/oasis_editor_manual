@@ -2,51 +2,22 @@
 title: Text
 ---
 
-The Text asset type in OasisW is used to store general text data. It's versatile and can be used for various purposes such as storing dialogue, configuration data, or other text information.
+The Text asset type in OasisW is used to store **plain text data**. It is versatile and can be used for many purposes, such as storing dialogue, configuration data, or any other textual information.
 
-## Accessing Text Data in Scripts
+:::note How is it different from JSON
 
-To access data from a text asset in a script:
+A [JSON asset](/user-manual/assets/types/json) is **parsed into an object** the moment it loads, whereas a Text asset comes in **as a raw string**. Use JSON for structured data, and Text for long passages or free-form notes.
 
-1. Add the text asset as an attribute to your script.
-2. Access the resource of the text asset, which is the parsed string from the text file.
+:::
 
-Example:
+## Accessing text data from a script
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+To access the data of a Text asset from a script:
 
-<Tabs defaultValue="classic" groupId='script-code'>
-<!-- <TabItem  value="esm" label="ESM">
+1. Add the Text asset to the script as an **attribute**.
+2. Access the **asset's resource**, which is the string read from the text file.
 
-```javascript
-import { Script } from 'playcanvas';
-
-export class TextScript extends Script {
-    static scriptName = "textScript";
-
-    /**
-     * @attribute
-     * @title Text Asset
-     * @type {Asset}
-     * @resource text
-     */
-    textAsset = null;
-
-    initialize() {
-        if (this.textAsset) {
-            // Get the Text asset's resource (a string)
-            var textData = this.textAsset.resource;
-            
-            // Output the content of the text asset
-            console.log('Content of text asset: ', textData);
-        }
-    }
-}
-```
-
-</TabItem> -->
-<TabItem value="classic" label="Classic">
+For example:
 
 ```javascript
 var TextScript = pc.createScript('textScript');
@@ -58,12 +29,21 @@ TextScript.prototype.initialize = function() {
     if (this.textAsset) {
         // Get the Text asset's resource (a string)
         const textData = this.textAsset.resource;
-        
+
         // Output the content of the text asset
         console.log('Content of text asset: ', textData);
     }
 };
 ```
 
-</TabItem>
-</Tabs>
+When you attach this script to an entity, a `textAsset` slot appears in the Inspector. Drag your Text asset onto it.
+
+## Creating and editing
+
+1. Click the **+** button in the Assets panel and choose **Text**. Alternatively, upload a `.txt` file.
+2. Right-click and choose **Edit** to change the contents.
+
+## Related
+
+- [JSON](/user-manual/assets/types/json) — stores structured data.
+- [Adding a script](/user-manual/scripting/fundamentals/getting-started)

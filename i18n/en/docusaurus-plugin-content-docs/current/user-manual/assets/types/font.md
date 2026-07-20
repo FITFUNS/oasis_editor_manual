@@ -2,48 +2,49 @@
 title: Font
 ---
 
-Font assets contain an image with all the characters of a font that the user has chosen to include, along with related data about how each character should be displayed. Font assets are used to render text using the [Element][1] component of type Text. To render text, add an Element component to an entity, set the type to Text, and then drag and drop a font asset to the font slot of the Element component.
+A font asset holds **an image containing every character you chose to include**, along with data describing how each character should be displayed. Font assets are used to draw text with an [Element component](/user-manual/scenes/components/element) of type `Text`.
 
-<!-- You can create a Font asset by uploading a font file ending in `.ttf`, `.ttc`, `.otf` or `.dfont`. We convert the uploaded font to a multi-channel signed distance field. This makes a font keep its details at various sizes so you only need to upload one font and use the same one for every size you want to display. The technique might work better for some fonts than others. -->
+To draw text on screen, add an Element component to an entity, set its type to `Text`, and then **drag and drop** the font asset onto the font slot of the Element component.
 
-## Creating a Font
+:::note Why an image?
 
-You can create a new font asset directly from the OasisW editor interface. Use the Create Asset menu in the Assets Panel.
-
-:::warning Note
-
-Font upload functionality will be supported in the future.
+A 3D engine does not draw glyphs directly. Instead, it displays text by **cutting and pasting from an image where the glyph shapes are drawn**. That is why a font asset is a bundle of an image and coordinate data. Because of this approach, keep in mind that *only the characters you included in advance* can be displayed.
 
 :::
 
-![Add Font](/img/user-manual/assets/fonts/add-font.png)
+## Creating a Font
 
-Here are the properties you can edit for font assets in the editor:
+You can create a new font asset directly in the editor. Click the **+** button in the Assets Panel and select **Font**.
 
-![Font Asset](/img/user-manual/assets/fonts/font.png)
+:::warning Note
+
+Font **upload** support is planned for a future release. For now, only creating a font in the editor is available.
+
+:::
+
+![Add font](/img/user-manual/assets/fonts/add-font.png)
+
+These are the properties you can edit for a font asset in the editor.
+
+![Font asset properties](/img/user-manual/assets/fonts/font.png)
 
 ## Properties
 
 ### Intensity
 
-Intensity is used to boost the values read from the signed distance field, where 0 is no boost and 1 is maximum boost. This can be useful when a font doesn't render with clean and smooth edges at the default intensity or when rendering fonts at small font sizes.
+Intensity is used to **boost the value read from the signed distance field**. `0` means no boost, and `1` means maximum boost.
 
-<!-- ## Character Presets
+It can help to adjust this when the font's edges do not come out clean and smooth at the default intensity, or when **drawing glyphs at small font sizes**.
 
-Click on a preset to include its characters to the Font asset. Clicking on a preset will add the characters to the existing selection.
+## When Writing Korean
 
-## Custom Character Range
+:::tip Good to know
 
-If you want to include a specific range of characters to the Font asset, enter the range in Hex and click the Plus icon to add the range to the character selection.
+A font asset can only draw **the characters you included**. The alphabet has just 52 letters, but Korean has more than ten thousand composable characters. By including only the characters that actually appear in the text you use, you can greatly reduce the asset size. Characters that are not included appear on screen as blanks or boxes.
 
-## Font
+:::
 
-### Characters
+## Related Documentation
 
-The characters that should be included in the Font asset. If you only need numbers for example, there is no need to include all the other characters of the Font. This is useful to keep Font assets small. Please note that some characters may not exist in the uploaded font.
-
-## Process Font
-
-Click on the Process Font button after you make changes to the Font asset in order to generate a new version. -->
-
-[1]: /user-manual/scenes/components/element/
+- [Element component](/user-manual/scenes/components/element) — Draws text using a font.
+- [User Interface](/user-manual/user-interface) — Builds on-screen UI.
