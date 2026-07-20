@@ -3,19 +3,19 @@ title: 에셋 작업 설정
 sidebar_label: 에셋 작업
 ---
 
-가져온 에셋의 기본 동작 방식을 제어합니다.
+에셋을 가져올 때 기본적으로 어떻게 처리할지 정하는 설정입니다.
 
 :::note
 
-이 설정들은 본인에게만 적용되며, 프로젝트 전체에 대해 전역적으로 사용됩니다.
+이 설정들은 나에게만 적용되며, 내 모든 프로젝트에 공통으로 쓰입니다.
 
 :::
 
-`ASSET TASKS` 섹션으로 이동한 뒤 패널을 확장하세요:
+`ASSET TASKS` 섹션으로 이동한 뒤 패널을 펼치세요:
 
 ![Asset Import Settings](/img/user-manual/editor/interface/settings/asset-import.webp)
 
-아래는 사용 가능한 설정 항목에 대한 설명입니다.
+아래는 사용할 수 있는 설정 항목입니다.
 
 <!-- ## General
 
@@ -28,8 +28,8 @@ sidebar_label: 에셋 작업
 
 | 설정 | 설명 |
 | --- | --- |
-| **Create Atlases** | 활성화하면 텍스처를 가져올 때 Texture와 Texture Atlas 두 가지 에셋이 모두 생성됩니다. |
-| **Create FBX Folder** | FBX 파일을 가지고 올 때, 가져온 FBX 콘텐츠를 저장하기 위해 현재 디렉터리에 새 폴더를 생성합니다. |
+| **Create Atlases** | 켜면 텍스처를 가져올 때 Texture와 Texture Atlas, 두 종류의 에셋을 함께 만듭니다. |
+| **Create FBX Folder** | FBX 파일을 가져올 때, 그 내용을 담아 둘 새 폴더를 지금 위치에 만듭니다. |
 
 <!-- ## Model Import
 

@@ -2,15 +2,15 @@
 title: 로딩 화면
 ---
 
-새로 생성된 모든 OasisW 프로젝트는 기본 로딩 화면을 사용합니다:
+로딩 화면은 앱이 켜지는 동안 잠깐 보여 주는 대기 화면입니다. 새로 만든 모든 OasisW 프로젝트는 아래와 같은 기본 로딩 화면을 사용합니다:
 
 ![Default Loading Screen](/img/user-manual/editor/launch-page/loading-screen/loading-screen-default.webp)
 
-이 로딩 화면은 실행 페이지와 실제로 배포된 애플리케이션 모두에서 표시됩니다.
+이 화면은 에디터의 실행 페이지에서도, 실제로 배포한 앱에서도 똑같이 표시됩니다.
 
 ## 로딩 화면 커스터마이징
 
-커스텀 로딩 화면을 만들고 싶다면, [툴바](../toolbar) 또는 [뷰포트](../viewport)에 있는 톱니바퀴 아이콘을 클릭하여 [인스펙터](../inspector)에 설정을 불러옵니다.
+나만의 로딩 화면을 만들고 싶다면, [툴바](../toolbar)나 [뷰포트](../viewport)에 있는 톱니바퀴 아이콘을 눌러 [인스펙터](../inspector)에 설정을 불러옵니다.
 
 ![Settings](/img/user-manual/editor/toolbar/settings.png)
 
@@ -18,13 +18,13 @@ title: 로딩 화면
 
 ![Loading Screen Settings](/img/user-manual/editor/launch-page/loading-screen/loading-screen-settings.png)
 
-두 가지 선택지가 있습니다:
+선택지는 두 가지입니다:
 
-1. **CREATE DEFAULT** - 기본 로딩 화면의 전체 코드가 포함된 새 로딩 화면 스크립트를 [에셋 패널](../assets)에 생성합니다. 이 스크립트를 원하는 방식으로 자유롭게 수정할 수 있습니다.
-2. **SELECT EXISTING** - 에셋 패널에 이미 존재하는 커스텀 로딩 화면 스크립트를 선택합니다.
+1. **CREATE DEFAULT** - 기본 로딩 화면의 전체 코드가 담긴 새 스크립트를 [에셋 패널](../assets)에 만들어 줍니다. 이 스크립트는 원하는 대로 자유롭게 고칠 수 있습니다.
+2. **SELECT EXISTING** - 에셋 패널에 이미 만들어 둔 로딩 화면 스크립트를 골라서 사용합니다.
 
-여기서는 기존 스크립트가 없다고 가정하고, 기본 로딩 화면 스크립트를 생성해 보겠습니다.  
-단색 배경만 표시하는 매우 단순한 로딩 화면은 다음과 같습니다:
+여기서는 아직 만들어 둔 스크립트가 없다고 보고, 기본 로딩 화면 스크립트를 새로 만들어 보겠습니다.  
+색만 채운 아주 단순한 로딩 화면은 다음과 같습니다:
 
 ```javascript
 pc.script.createLoadingScreen((app) => {
@@ -45,8 +45,8 @@ pc.script.createLoadingScreen((app) => {
 });
 ```
 
-하지만 로딩 바 같은 시각적 피드백을 제공하면 사용자 경험이 훨씬 좋아집니다.
-이제 로딩 바를 추가해 스크립트를 업데이트해 보겠습니다:
+하지만 로딩 바처럼 진행 상황을 눈으로 보여 주면 사용자가 훨씬 편하게 기다릴 수 있습니다.
+이번에는 로딩 바를 넣어 스크립트를 조금 더 발전시켜 보겠습니다:
 
 ```javascript
 pc.script.createLoadingScreen((app) => {
@@ -93,4 +93,4 @@ pc.script.createLoadingScreen((app) => {
 });
 ```
 
-원하는 HTML과 CSS를 자유롭게 사용해, 여러분만의 멋진 로딩 화면을 만들어 보세요!
+여기에 원하는 HTML과 CSS를 마음껏 더해서, 여러분만의 멋진 로딩 화면을 만들어 보세요!
