@@ -2,28 +2,73 @@
 title: 단위 (Units)
 ---
 
-OasisW 씬은 일반적으로 1 유닛을 1미터로 처리합니다.
+OasisW 씬은 일반적으로 **1 유닛을 1미터로** 다룹니다. 에디터에서 Position 값을 `1`만큼 옮겼다면 현실 세계에서 1미터를 움직인 것과 같다고 보면 됩니다.
 
-OasisW를 위한 아트워크를 작성할 때는 원하는 스케일로 작업하는 것이 중요합니다. 이를 위해 선택한 모델링 애플리케이션에서 씬의 작업 단위를 확인해야 합니다. 원하는 작업 단위를 선택할 수 있지만, 이를 준수하는지 확인하세요. 예를 들어, 1미터 크기의 큐브를 만들려면 작업 단위를 미터로 설정하고 1x1x1 큐브를 만들 수 있습니다. 또는 작업 단위를 센티미터로 설정하고 100x100x100 큐브를 만들 수도 있습니다. 두 씬 모두 FBX로 내보내고 OasisW로 가져오면 1x1x1인 큐브가 됩니다.
+:::note 왜 중요한가요
 
-### Blender
+크기 기준이 어긋나면 **사람 캐릭터가 건물만 하게 들어오거나, 자동차가 손톱만 하게 들어옵니다.** 들어온 뒤에 Scale로 억지로 맞출 수도 있지만, 물리 시뮬레이션과 조명 계산이 실제 크기를 기준으로 동작하기 때문에 중력이 어색해지거나 그림자가 이상해집니다. 처음부터 맞춰 두는 편이 훨씬 편합니다.
 
-Blender에서 단위가 올바르게 내보내지도록 하려면 Scene Properties의 단위 시스템이 metric으로 설정되고 스케일이 1.0으로 설정되어 있는지 확인하세요:
+:::
 
-![Blender units](/img/user-manual/assets/models/units/blender-units.png)
+## 기준을 정하고 지키십시오
 
-또한 FBX 형식으로 내보낼 때 "Apply Scaling"이 "FBX All"로 설정되어 있는지 확인하세요:
+OasisW용 아트워크를 만들 때는 **원하는 스케일로 작업하는 것**이 중요합니다. 그러려면 사용하는 모델링 프로그램에서 씬의 **작업 단위**를 먼저 확인해야 합니다.
 
-![Blender FBX Export](/img/user-manual/assets/models/units/blender-fbx-export.png)
+작업 단위 자체는 원하는 대로 고를 수 있습니다. **다만 한 번 정했으면 그 기준을 끝까지 지켜야 합니다.**
 
-### Autodesk 3D Studio Max
+예를 들어 한 변이 1미터인 큐브를 만든다고 해 보겠습니다.
 
-3D Studio Max에서 작업 단위를 확인하거나 설정하려면 Units Setup 대화상자를 열고 System Unit Setup 버튼을 클릭하세요:
+| 작업 단위 | 만들 큐브 크기 | OasisW로 가져온 결과 |
+|---|---|---|
+| 미터 | 1 × 1 × 1 | 1 × 1 × 1 |
+| 센티미터 | 100 × 100 × 100 | 1 × 1 × 1 |
 
-![3DS Max units](/img/user-manual/assets/models/units/max-units.png)
+두 씬 모두 FBX로 내보내 OasisW로 가져오면 **똑같이 1×1×1 큐브**가 됩니다. 중요한 것은 숫자 자체가 아니라 *"내가 정한 단위에서 이 물체가 얼마나 큰가"*가 일관되게 유지되는 것입니다.
 
-### Autodesk Maya
+:::tip 확인하는 요령
 
-Maya에서 작업 단위를 확인하거나 설정하려면 Preferences 대화상자를 열세요:
+모델링 프로그램에 **키 1.7미터짜리 참고용 상자**를 하나 두고 작업하십시오. 캐릭터든 가구든 그 상자와 비교하면 크기가 어긋났는지 바로 알 수 있습니다.
 
-![Maya units](/img/user-manual/assets/models/units/maya-units.png)
+:::
+
+## Blender
+
+Blender에서 단위가 제대로 내보내지도록 하려면 두 곳을 확인하십시오.
+
+1. **Scene Properties**에서 단위 시스템(Unit System)이 `Metric`으로 설정되어 있고, 스케일(Unit Scale)이 `1.0`인지 확인합니다.
+2. **FBX 형식으로 내보낼 때** `Apply Scaling`이 `FBX All`로 설정되어 있는지 확인합니다.
+
+![Blender 단위 설정](/img/user-manual/assets/models/units/blender-units.png)
+
+![Blender FBX 내보내기 설정](/img/user-manual/assets/models/units/blender-fbx-export.png)
+
+:::warning 자주 놓치는 지점
+
+Unit Scale이 `0.01`처럼 1이 아닌 값으로 되어 있으면, Blender 화면에서는 멀쩡해 보여도 **가져왔을 때 100배 차이가 납니다.** 모델이 터무니없이 크거나 작게 들어왔다면 이 값을 가장 먼저 확인하십시오.
+
+:::
+
+## Autodesk 3D Studio Max
+
+3D Studio Max에서 작업 단위를 확인하거나 바꾸려면, **Units Setup** 대화상자를 열고 **System Unit Setup** 버튼을 클릭하십시오.
+
+![3DS Max 단위 설정](/img/user-manual/assets/models/units/max-units.png)
+
+## Autodesk Maya
+
+Maya에서 작업 단위를 확인하거나 바꾸려면 **Preferences** 대화상자를 여십시오.
+
+![Maya 단위 설정](/img/user-manual/assets/models/units/maya-units.png)
+
+## 가져온 크기가 이상할 때
+
+- **100배 또는 0.01배로 어긋났다면** — 미터와 센티미터가 뒤섞인 경우입니다. 모델링 프로그램의 단위 설정을 확인하십시오.
+- **2.54배로 어긋났다면** — 인치 기준으로 작업된 파일입니다. SketchUp이나 미국권 에셋에서 자주 나타납니다.
+- **내려받은 에셋이라 원본을 고칠 수 없다면** — 템플릿 인스턴스의 Scale로 맞추되, 물리를 쓸 계획이라면 Blender에서 크기를 조정해 다시 내보내는 편이 안전합니다.
+- **모델이 옆으로 누워 있다면** — 크기가 아니라 축 문제입니다. 내보낼 때 Y축이 위(Y-up)가 되도록 맞추십시오.
+
+## 관련 문서
+
+- [모델 구축 (Building Models)](/user-manual/assets/models/building) — 프로그램별 내보내기 요령입니다.
+- [3D 모델 가져오기](/user-manual/assets/models) — 파일을 프로젝트에 올립니다.
+- [물리 (Physics)](/user-manual/physics) — 실제 크기를 기준으로 시뮬레이션합니다.

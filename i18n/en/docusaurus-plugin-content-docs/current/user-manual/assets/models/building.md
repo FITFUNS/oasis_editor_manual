@@ -2,167 +2,177 @@
 title: Building Models
 ---
 
-Building art and animations for OasisW can be done using almost any of the many available 3D modeling programs. For example: Blender, SketchUp, Autodesk 3D Studio Max, or Autodesk Maya.
+Art and animations for OasisW can be created with **almost any 3D modeling program**. Blender, SketchUp, Autodesk 3D Studio Max, and Autodesk Maya are among the most common.
 
-OasisW is designed to import content most faithfully through the open-source glTF binary (GLB) format, so generally if a modeling application supports GLB, OasisW supports it too.
+OasisW is designed to import content most faithfully through the open-source **glTF binary (GLB)** format. So generally, **if a modeling program supports GLB, OasisW supports that program too.**
 
-GLB import supports the following glTF features for very fast scene creation:
+:::tip Good to Know First
 
-- Node hierarchy
-- Standard materials
-- Approved material extensions
-- Animated skeleton and skinning data
-- Morph targets
-- Cameras
-- Point light support
-<!-- - Draco compressed models -->
+You **don't** need to install an OasisW-specific plugin or follow any special OasisW-only workflow. Just build your model as usual and export it as GLB. Think of the rest of this document as "tips for getting better results."
 
-Therefore, you don't need to use special art tool plugins to target OasisW, and there's no OasisW-specific workflow to follow.
+:::
 
-![GLB Import Example](/img/user-manual/assets/models/building/glb-import.gif)  
-*Artwork by MAR.COS.*
+## What GLB Import Supports
 
-OasisW also supports importing FBX files, another common exchange format. However, FBX materials are not imported as faithfully as glTF materials and may require some editing after import.
+GLB import supports the following glTF features so you can build scenes very quickly.
 
-For the best experience and highest compatibility, we recommend using GLB whenever possible.
+![GLB Import Example](/img/user-manual/assets/models/building/glb-import.gif)
 
-Modeling and animation programs to consider:
+| Feature | In plain terms |
+|---|---|
+| Node hierarchy | The parent-child structure comes in intact. The relationship where an arm moves along with the torso is preserved. |
+| Standard materials | Color and texture settings carry over as-is. |
+| Approved material extensions | Extra effects like clearcoat and sheen are supported too. |
+| Animated skeleton and skinning data | The bones, and the information about how the skin moves with the bones, come in together. |
+| Morph targets | Animations that deform vertices directly, like facial expressions. |
+| Cameras | Cameras set up in the modeling tool carry over. |
+| Point light support | Point lights come in as well. |
 
-- Free options: Blender\*, Wings3D, Voidworld, SketchUp, Sculptris, Daz Studio\*.
-- Low-cost paid options: 3D-Coat, NVIL, Hexagon.
-- High-cost paid options: ZBrush, Autodesk 3D Studio Max\*, Autodesk Maya\*, Luxology Modo\*.
+## What About FBX
 
-\* *These programs can also create animations.*
+OasisW also supports importing **FBX**, another common exchange format. However, **FBX materials are not imported as faithfully as glTF materials**, and may need some touch-up after import.
 
-Programs to consider for texture creation:
+:::note Recommendation
 
-- Free: Blender, Pixexix Free, xNormal, MaPZone, GIMP, Krita desktop, MyPaint.
-- Paid: Substance Designer (includes Substance Painter and Bitmap2Material), Photoshop, Quixel NDO and DDO, CrazyBump, Pixexix Pro, Clip Studio Paint/Manga Studio, SERIF DrawPlus/PhotoPlus.
+If you want the smoothest experience and the best compatibility, **use GLB whenever possible.** If FBX is all you can get, one option is to open it in Blender and re-export it as GLB.
 
-Many of the modeling programs listed above also allow texture painting. If you want more options, this [external wiki](http://wiki.polycount.com/wiki/Tools) page may be helpful. Some information may be outdated.
+:::
 
-## General Considerations for Building Meshes
+## General Considerations When Building Meshes
 
-There are a few things to know when building 3D scenes for OasisW, regardless of which modeling application you use.
+Whichever modeling program you use, there are a few things to know when building 3D scenes for OasisW.
 
-- Meshes can be skinned to a maximum of 256 bones.
-- NURBS meshes are converted to triangular meshes when converted to OasisW's native format.
+- A mesh can be skinned to a **maximum of 256 bones.** This means a single character shouldn't use more than 256 bones.
+- **NURBS meshes** are **converted to triangular meshes** when converted to OasisW's format. Since surfaces handled by equations are replaced with finely divided triangles, check in advance that you get the precision you want.
 
----
+## Which Program Should I Use
+
+### Modeling and Animation
+
+| Price tier | Programs |
+|---|---|
+| Free | Blender* · Wings3D · Voidworld · SketchUp · Sculptris · Daz Studio* |
+| Low-cost paid | 3D-Coat · NVIL · Hexagon |
+| High-cost paid | ZBrush · Autodesk 3D Studio Max* · Autodesk Maya* · Luxology Modo* |
+
+\* Programs marked with an asterisk **can also create animations.**
+
+### Texture Creation
+
+| Price tier | Programs |
+|---|---|
+| Free | Blender · Pixexix Free · xNormal · MaPZone · GIMP · Krita desktop · MyPaint |
+| Paid | Substance Designer (includes Substance Painter and Bitmap2Material) · Photoshop · Quixel NDO and DDO · CrazyBump · Pixexix Pro · Clip Studio Paint/Manga Studio · SERIF DrawPlus/PhotoPlus |
+
+Many of the modeling programs listed above **also support texture painting**. If you'd like to see more options, [this external wiki](http://wiki.polycount.com/wiki/Tools) page may help. Note that some information may be outdated.
+
+:::tip If You're New
+
+[Blender](https://www.blender.org/) alone can do modeling, animation, and texture painting, and it's free. Unless you have a specific reason otherwise, we recommend starting with Blender.
+
+:::
 
 ## Blender
 
 ![Blender Logo](/img/user-manual/assets/models/building/blender-logo.jpg)
 
-[Blender](https://www.blender.org/) is an excellent free tool for 3D modeling and perfect for creating 3D assets for OasisW.
+[Blender](https://www.blender.org/) is an excellent free tool for 3D modeling and is more than capable of creating 3D assets for OasisW.
 
-Blender supports exporting to GLB, FBX, and COLLADA, but the built-in export tools have some limitations.
+Blender supports exporting to GLB, FBX, and COLLADA, but its built-in export tools have some limitations.
 
-### **Map Types**
+### Map Types
 
-From Blender 2.71, both diffuse maps and normal maps of materials are exported to FBX files. If other map types are lost in the export, you'll need to set these maps in the material editor within the editor.
+From Blender 2.71, a material's **diffuse map and normal map are exported together to the FBX file.** If other map types were dropped during export, you'll need to set them manually in the [material editor](/user-manual/assets/types/material) of the OasisW editor.
 
-### **Texture Embedding**
+### Texture Embedding
 
-Embedded textures make importing much easier.
+Importing is much smoother when textures are **embedded inside** the model file, because you don't have to keep track of the image files separately.
 
-The Blender COLLADA export tool doesn't have the ability to embed textures in the exported model file.
+- Blender's **COLLADA export tool has no ability to embed textures in the file.**
+- From Blender 2.71, the FBX export module was improved so it **can embed multiple textures.** First make sure the object displays correctly inside Blender. Then, when exporting to FBX, set `Path Mode` to `Copy` and check the `Embed Textures` box.
+- Alternatively, you can convert with the [Autodesk FBX Converter](https://www.autodesk.com/developer-network/platform-technologies/fbx-converter-archives). Open the exported file and save it again with the *Embedded Media* checkbox on.
 
-The Blender 2.71 release features an improved FBX export module that enables multiple embedded textures directly from Blender. First, make sure the object renders correctly within Blender. When exporting to FBX, set 'Path Mode' to Copy and check the 'Embed Textures' box.
+:::warning Warning
 
-Alternatively, you can use the [Autodesk FBX Converter](https://www.autodesk.com/developer-network/platform-technologies/fbx-converter-archives) to convert what you exported from Blender to have embedded media. Open the file in FBX Converter and save it again with the *Embedded Media* checkbox set.
+Blender 2.71's FBX export appears to have an issue where it **produces emissivity even when no emissive properties were set in Blender.** This is not an issue with the OasisW engine.
 
-:::warning
-
-There seems to be an issue with Blender 2.71's FBX export where it creates emissivity even though no emissive properties are set in Blender. This is not an issue with the OasisW engine. To avoid this in Blender, you can change the Diffuse color setting of the material to 0 (in the 'Material' tab of the 'Properties Editor'). Or you can simply reduce the emissivity within the OasisW editor.
+There are two ways to avoid it. Either change the material's **Diffuse color setting to 0** in Blender's *Properties Editor* › *Material* tab, or simply **lower the emissivity** in the OasisW editor.
 
 :::
 
-### **Animation**
+### Animation
 
-From Blender 2.71:
+This applies to Blender 2.71. Animations contained in a blend file **export with the default FBX export settings as-is** and are compatible with OasisW's asset import pipeline.
 
-Animations included in blend files are exported with the default fbx export tool settings and are compatible with the OasisW asset import pipeline. For multiple animations for the same model, you'll need to upload multiple fbx files - one for each animation. To save memory, you can either delete the model and textures from the blend file before exporting, or choose to export only the armature in the fbx export tool settings, or simply delete the duplicate 'model' target assets from the asset page of the project dashboard (you can view target assets by selecting 'target' from the dropdown menu on the asset page).
+If a single model has multiple animations, you'll need to **upload multiple FBX files — one file per animation.** Since the same model data is duplicated each time, do one of the following to save memory.
 
-### **Learning Blender**
+- **Delete the model and textures** from the blend file before exporting.
+- Choose to **export only the armature (bones)** in the FBX export settings.
+- After uploading, **delete the duplicate `model` target assets** from the asset page of the project dashboard. Selecting `target` from the dropdown menu on the asset page lets you view only the target assets.
 
-There are many resources available on the web for learning how to use Blender. Here are a few we recommend:
+### Learning Blender
+
+There are many resources on the web for learning how to use Blender. Here are the ones we recommend.
 
 - [Blender Cookie](https://cgcookie.com/learn-blender)
 - [Blender Guru](https://www.blenderguru.com/)
-
----
 
 ## Autodesk 3D Studio Max
 
 ### Max Materials
 
-In Max, you should use the Standard material type, or the Multi/Sub-Object material type if the materials it references are Standard materials. The highlighted areas in the screenshot below show the settings that are respected when exporting to OasisW:
+In Max, you should use the **Standard material** type, or the **Multi/Sub-Object material** type if the materials it references are Standard materials. Other material types may not carry over to OasisW correctly.
 
 ![Max material editor](/img/user-manual/assets/models/building/max-material-editor.jpg)
 
 ### Supported Map Slots
 
-OasisW interprets a subset of 3DS Max material map types when exporting. Maps can be in any format that 3DS Max supports, but if the map is not in a web format (i.e., JPEG, GIF, or PNG), it will be converted to these formats when exporting.
+OasisW interprets only **a subset** of 3DS Max material map types when exporting. The map itself can be in any format that 3DS Max supports, but if it isn't a web format (JPEG · GIF · PNG) it will be converted to these formats on export.
 
-#### Diffuse Color
+| Slot | What happens when you assign it |
+|---|---|
+| `Diffuse Color` | Adding a Bitmap map enables diffuse mapping and overrides the diffuse color set with the color picker. If the diffuse map has an alpha channel, it's used as per-pixel alpha values. Adding an `RGB Multiply` map to this slot enables lightmapping, where Map 1 is the diffuse map and Map 2 is the lightmap. |
+| `Specular Color` | Enables specular mapping and overrides the specular color. You can mask the shiny areas of a surface or tint them with different colors by region. If there's an alpha channel, it's used to set per-pixel glossiness. |
+| `Specular Level` | Enables per-pixel attenuation of the specular color and overrides the specular level set on the material. |
+| `Glossiness` | Enables per-pixel glossiness and overrides the glossiness set on the material. |
+| `Self-Illumination` | Enables emissive mapping. The emissive map doesn't have to be grayscale and can use full RGB. Because it's added to the surface lighting result, **black pixels add nothing** while other colors increase brightness. |
+| `Opacity` | Enables opacity mapping. **Black is fully transparent, white is fully opaque, and gray is in between.** If an opacity map is present, it overrides the diffuse map's alpha channel. |
+| `Bump` | Adding a Normal Bump map enables normal mapping. If there's an alpha channel, that channel is interpreted as a height map and processed as a parallax map. Brighter areas in the height map are the 'higher' areas. |
+| `Reflection` | Adding a Bitmap map enables sphere mapping. It's among the cheapest and least 'convincing' forms of reflection, but is often enough to give a surface a satisfactory gloss. |
 
-Assigning a Bitmap map to this slot enables diffuse mapping in OasisW materials. This essentially overrides the diffuse color set on the material (via the color picker). If the diffuse map has an alpha channel, it's used as per-pixel alpha values in the OasisW runtime.
+:::warning The Amount Value of the Bump Slot
 
-You can also assign an RGB Multiply map to the Diffuse Color slot. This has the effect of enabling lightmapping, where Map 1 is the diffuse map and Map 2 is the lightmap.
+By default, the `Amount` value of the Bump slot is set to **30**. OasisW effectively ignores this value and treats it **as if it were 100**. So, to make the render you see in Max more closely match real-time rendering, **we recommend changing this value to 100 in Max too.**
 
-#### Specular Color
+:::
 
-Assigning a Bitmap map to this slot enables specular mapping in OasisW materials. This essentially overrides the specular color set on the material (via the color picker). This allows you to mask specular areas of the surface or tint specular highlights to different colors in different areas. If the specular map has an alpha channel, it's used to set per-pixel glossiness.
+:::warning You Must Flip the Green Channel of the Normal Map
 
-#### Specular Level
+There are several ways to create normal maps, and the two main methods **differ in the format of the green channel.**
 
-Assigning a Bitmap map to this slot enables per-pixel attenuation of the material's specular color. This essentially overrides the specular level set on the material.
+By default, 3DS Max expects a brick wall's normal map to have **bright lower edges on the protruding parts.** OasisW, however, expects the **green component (the Y component of each normal) to be flipped.**
 
-#### Glossiness
+The fix is simple. Open the file in Photoshop, **select the green channel, and press `Ctrl`+`I`** to invert it. The lighting will then look consistent in OasisW.
 
-Assigning a Bitmap map to this slot enables per-pixel glossiness on the material. This essentially overrides the glossiness set on the material.
-
-#### Self-Illumination
-
-Assigning a Bitmap map to this slot enables emissive mapping in OasisW materials. The emissive map can be full RGB (not limited to grayscale) and is essentially added to the surface lighting result. Therefore, black pixels in the emissive map add nothing to the pixel value. Everything else increases the brightness of the pixel.
-
-#### Opacity
-
-Assigning a Bitmap map to this slot enables opacity mapping in OasisW materials. Black pixels in the opacity map are completely transparent, white pixels are completely opaque, and gray pixels correspond to equivalent intermediate alpha values.
-
-If the material has an opacity map, it overrides the alpha channel set on the diffuse map. Using the opacity map slot is less efficient than using the diffuse map's alpha channel. This is because two textures are created in the OasisW runtime instead of one, and the basic shader has to do a bit more work. However, if performance isn't an issue and using an opacity map is convenient, this feature is supported.
-
-#### Bump
-
-Assigning a Normal Bump map to this slot enables normal mapping. By default, the 'Amount' value of the Bump slot is set to 30. OasisW effectively ignores this value and treats it as if it were set to 100, so it's recommended to set this to 100 in Max as well so that rendering more closely matches real-time rendering.
-
-There are various ways to create normal maps, and the main two differ in the format of the green component. For example, by default, 3DS Max expects a normal map for a brick wall to look like this:
+:::
 
 ![Normal map](/img/user-manual/assets/models/building/wall-norm.jpg)
 
-Notice the brighter areas at the bottom edges of the protruding areas. OasisW expects the green component (or Y component of each normal in the normal map) to be flipped. Load the file into Photoshop, select the green channel, and press Ctrl+I to invert the channel:
-
 ![Normal map with Y component flipped](/img/user-manual/assets/models/building/wall-norm-yflip.jpg)
 
-Now the lighting in OasisW will be consistent.
-
-If the assigned normal map has an alpha channel, it's treated as a parallax map where the alpha channel is interpreted as a height map. Brighter areas in the height map are treated as 'higher' than darker areas.
-
-#### Reflection
-
-Assigning a Bitmap map to this slot enables sphere mapping in OasisW materials. The bitmap should look like this:
-
 ![Sphere map](/img/user-manual/assets/models/building/mountains-sphere.jpg)
-
-Sphere mapping is one of the cheapest and least 'convincing' forms of reflection mapping, but it's sufficient to provide satisfactory gloss on surfaces in many scenarios.
-
----
 
 ## Autodesk Maya
 
 ### Maya Materials
 
-In Maya, you should use standard material types: lambert, blinn, phong. The highlighted areas in the screenshot below show the material settings that are respected when exporting to OasisW:
+In Maya, you should use a **standard material type**: one of the three, `lambert`, `blinn`, or `phong`. Other materials may not have their settings respected when exporting to OasisW.
 
 ![Maya material editor](/img/user-manual/assets/models/building/maya-material-editor.jpg)
+
+## Related Documents
+
+- [Units](/user-manual/assets/models/units) — Match model sizes to the OasisW standard.
+- [Importing 3D Models](/user-manual/assets/models) — Upload the files you created to your project.
+- [Material](/user-manual/assets/types/material) — Refine materials after import.
+- [Third-party Asset Sites](/user-manual/assets/finding) — How to obtain models without building them yourself.

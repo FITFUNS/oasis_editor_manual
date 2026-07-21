@@ -5,7 +5,7 @@ sidebar_label: 프로젝트 툴바
 
 # Project Toolbar
 
-OasisW의 프로젝트 툴바에 있는 프로젝트 관리와 관련된 도구들을 학습합니다.
+프로젝트 툴바는 지금 작업 중인 프로젝트 전체를 다루는 버튼들이 모여 있는 곳입니다. 씬을 고르거나, 설정을 바꾸거나, 완성한 프로젝트를 내려받을 때 이곳을 사용합니다. 각 버튼이 어떤 일을 하는지 하나씩 살펴봅니다.
 
 ## 기능
 | 이미지 | 버튼 | 설명 |
@@ -16,18 +16,18 @@ OasisW의 프로젝트 툴바에 있는 프로젝트 관리와 관련된 도구�
 | ![Toolbar](/img/usage-guide/8_project_toolbar.svg) | **Publish/Download** |  빌드 된 프로젝트 다운로드 |
 
 ### Manage Scenes
-- **기능**: 씬 선택 화면을 엽니다.
+- **기능**: 여러 씬 중에서 작업할 씬을 고를 수 있는 화면을 엽니다.
 
 ![Scenes](/img/usage-guide/8_manage_scenes.png)
 
 ### Settings
-- 프로젝트 설정은 프로젝트 실행 방식과 팀에서 에디터가 작동하는 방식을 제어합니다.
+- 프로젝트가 어떻게 실행되는지, 그리고 팀에서 에디터가 어떻게 동작하는지를 여기서 정할 수 있습니다.
 
 ![Settings](/img/usage-guide/8_settings.png)
 
 ### Publish/Download
 ![Toolbar](/img/usage-guide/8_publish_download.png)
-- **Change Image**: 다운로드 시 사용할 이미지를 선택합니다. (선택하지 않을 경우 기본 이미지가 적용됩니다.)
-- **Choose Scenes**: 시작할 때 보이게 될 첫 씬을 선택합니다.
-- **Title**: 프로젝트 제목을 입력합니다.
-- **Description**: 프로젝트 설명을 입력합니다.
+- **Change Image**: 다운로드할 때 쓸 대표 이미지를 고릅니다. (고르지 않으면 기본 이미지가 들어갑니다.)
+- **Choose Scenes**: 프로젝트를 시작할 때 가장 먼저 보여줄 씬을 고릅니다.
+- **Title**: 프로젝트 제목을 적습니다.
+- **Description**: 프로젝트에 대한 설명을 적습니다.

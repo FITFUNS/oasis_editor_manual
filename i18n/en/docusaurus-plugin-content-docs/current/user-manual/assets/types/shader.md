@@ -2,9 +2,19 @@
 title: Shader
 ---
 
-Shader assets contain GLSL code. You can create a new shader asset by clicking "New Shader" in the editor's Assets Panel or by uploading a file with ```.vert```, ```.frag``` or ```.glsl``` extensions.
+Shader assets contain **GLSL code**. You can create one by selecting **+ › Shader** in the editor's Assets Panel, or by uploading a file with a `.vert`, `.frag`, or `.glsl` extension.
 
-To edit a shader asset, right-click in the editor and select "Edit". Here's an example of using shader assets to create a custom material:
+To edit a shader asset, **right-click** in the editor and select **Edit**.
+
+:::warning An advanced feature
+
+Shaders are code that runs directly on the GPU and require an understanding of the graphics pipeline. If you only need to change an object's color or texture, the properties of a [material](/user-manual/assets/types/material) are usually enough. Consider a shader only when you need an effect that a material cannot express.
+
+:::
+
+## Creating a custom material
+
+The following example creates a custom material using shader assets.
 
 ```javascript
 const vertexShader = this.app.assets.find('my_vertex_shader');
@@ -22,3 +32,10 @@ const shader = new pc.Shader(this.app.graphicsDevice, shaderDefinition);
 const material = new pc.Material();
 material.setShader(shader);
 ```
+
+The name you pass to `find()` must match the name shown in the Assets Panel. Note that a vertex shader (`vshader`) and a fragment shader (`fshader`) are always needed together as a pair.
+
+## Related documentation
+
+- [Material](/user-manual/assets/types/material) — Controls surface appearance without code.
+- [Graphics](/user-manual/graphics)

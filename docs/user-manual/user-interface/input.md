@@ -2,11 +2,11 @@
 title: 입력 (Input)
 ---
 
-사용자는 요소 컴포넌트의 `useInput` 필드를 활성화하여 [Element][1] 컴포넌트와 상호작용할 수 있습니다:
+요소 컴포넌트의 `useInput` 필드를 켜면 사용자가 [Element][1] 컴포넌트와 상호작용할 수 있습니다:
 
 ![Use Input](/img/user-manual/assets/fonts/use-input.png)
 
-이것이 작동하려면 `pc.Application#elementInput`에 대해 초기화된 `pc.ElementInput` 인스턴스가 있어야 합니다. 에디터를 사용하는 경우 이것이 자동으로 생성됩니다. 엔진만 사용하는 경우 `pc.Mouse` 또는 `pc.TouchDevice`와 같은 다른 입력 장치보다 *먼저* 인스턴스를 생성해야 합니다:
+이 기능이 동작하려면 `pc.Application#elementInput`에 `pc.ElementInput` 인스턴스가 초기화되어 있어야 합니다. 에디터를 쓴다면 이 인스턴스는 자동으로 만들어집니다. 엔진만 단독으로 쓴다면 `pc.Mouse`나 `pc.TouchDevice` 같은 다른 입력 장치보다 *먼저* 이 인스턴스를 만들어야 합니다:
 
 ```javascript
 const app = new pc.Application(canvas, {
@@ -21,35 +21,35 @@ const app = new pc.Application(canvas, {
 
 ## 입력 이벤트 (Input Events)
 
-요소 컴포넌트에서 입력을 활성화하면 다음 이벤트가 발생합니다:
+요소 컴포넌트에서 입력을 켜면 다음과 같은 이벤트들이 발생합니다:
 
 ### mousedown
 
-마우스 커서가 컴포넌트 위에 있을 때 마우스가 눌렸을 때 발생합니다.
+마우스 커서가 컴포넌트 위에 있는 상태에서 마우스 버튼을 눌렀을 때 발생합니다.
 
 ### mouseup
 
-마우스 커서가 컴포넌트 위에 있을 때 마우스가 놓였을 때 발생합니다.
+마우스 커서가 컴포넌트 위에 있는 상태에서 마우스 버튼을 놓았을 때 발생합니다.
 
 ### mouseenter
 
-마우스 커서가 컴포넌트에 들어갔을 때 발생합니다.
+마우스 커서가 컴포넌트 안으로 들어왔을 때 발생합니다.
 
 ### mouseleave
 
-마우스 커서가 컴포넌트를 벗어났을 때 발생합니다.
+마우스 커서가 컴포넌트 밖으로 나갔을 때 발생합니다.
 
 ### mousemove
 
-마우스 커서가 컴포넌트 위에서 이동했을 때 발생합니다.
+마우스 커서가 컴포넌트 위에서 움직였을 때 발생합니다.
 
 ### mousewheel
 
-마우스 휠이 컴포넌트에서 스크롤되었을 때 발생합니다.
+컴포넌트 위에서 마우스 휠을 굴렸을 때 발생합니다.
 
 ### click
 
-마우스가 컴포넌트에서 눌렸다가 놓였을 때 또는 터치가 컴포넌트에서 시작되고 끝났을 때 발생합니다.
+컴포넌트에서 마우스를 눌렀다 놓았을 때, 또는 컴포넌트에서 터치가 시작되어 끝났을 때 발생합니다.
 
 ### touchstart
 
@@ -61,7 +61,7 @@ const app = new pc.Application(canvas, {
 
 ### touchmove
 
-컴포넌트를 터치한 후 터치가 이동했을 때 발생합니다.
+컴포넌트를 터치한 뒤 손가락이 움직였을 때 발생합니다.
 
 ### touchcancel
 
@@ -69,7 +69,7 @@ const app = new pc.Application(canvas, {
 
 ## 이벤트 처리 (Event Handling)
 
-입력 이벤트를 처리하려면 요소 컴포넌트에서 이를 수신할 수 있습니다:
+입력 이벤트를 다루려면 요소 컴포넌트에서 해당 이벤트를 듣도록(수신) 등록하면 됩니다:
 
 ```javascript
 this.entity.element.on('click', function (event) {
@@ -79,7 +79,7 @@ this.entity.element.on('click', function (event) {
 
 ## 이벤트 버블링 (Event bubbling)
 
-요소 컴포넌트에서 입력 이벤트가 발생하면 `event.stopPropagation()`을 호출하지 않는 한 부모 요소로 버블링됩니다. 예를 들어:
+요소 컴포넌트에서 입력 이벤트가 발생하면, `event.stopPropagation()`을 부르지 않는 한 그 이벤트는 부모 요소로 계속 전달됩니다(버블링). 예를 들면:
 
 ```javascript
 this.entity.element.on('click', function (event) {
@@ -90,7 +90,7 @@ this.entity.element.on('click', function (event) {
 }, this);
 ```
 
-`stopPropagation`을 호출하면 `pc.Mouse` 또는 `pc.TouchDevice`와 같은 다른 입력 장치에서 이벤트가 처리되는 것도 중지됩니다. 예를 들어 `app.mouse.wasPressed`를 사용하여 마우스 입력을 처리하는 경우, `mousedown` 이벤트에서 `stopPropagation`을 호출하여 `app.mouse.wasPressed`가 true를 반환하지 않도록 할 수 있습니다. 예를 들어:
+`stopPropagation`을 부르면 `pc.Mouse`나 `pc.TouchDevice` 같은 다른 입력 장치에서 그 이벤트를 처리하는 것도 함께 멈춥니다. 예를 들어 `app.mouse.wasPressed`로 마우스 입력을 확인하고 있다면, `mousedown` 이벤트에서 `stopPropagation`을 불러 `app.mouse.wasPressed`가 true를 돌려주지 않게 할 수 있습니다. 예를 들면:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -147,11 +147,11 @@ InputScript.prototype.update = function (dt) {
 
 ## Google Chrome에서 마우스와 터치 이벤트 충돌
 
-Google Chrome은 터치 장치에서도 마우스 이벤트를 시뮬레이션합니다. 이로 인해 예상치 못한 동작이 발생할 수 있습니다. 예를 들어 클릭 이벤트 직후에 버튼을 숨기면, 그 뒤에 있는 다른 UI 요소도 원하지 않는 클릭 이벤트를 받을 수 있습니다.
+Google Chrome은 터치 장치에서도 마우스 이벤트를 흉내 내어 만들어 냅니다. 이 때문에 생각지 못한 동작이 생길 수 있습니다. 예를 들어 클릭 이벤트가 일어난 직후에 버튼을 숨기면, 그 버튼 뒤에 있던 다른 UI 요소까지 원하지 않던 클릭 이벤트를 받을 수 있습니다.
 
-이 동작을 방지하려면 ```pc.EVENT_TOUCHEND``` 이벤트에서 네이티브 이벤트 객체의 ```preventDefault()``` 메서드를 호출할 수 있습니다:
+이런 동작을 막으려면 ```pc.EVENT_TOUCHEND``` 이벤트에서 네이티브 이벤트 객체의 ```preventDefault()``` 메서드를 부르면 됩니다:
 
-다음은 씬에 한 번 포함할 작은 스크립트입니다:
+다음은 씬에 한 번만 넣어 두면 되는 짧은 스크립트입니다:
 
 <Tabs defaultValue="classic" groupId='script-code'>
 <!-- <TabItem  value="esm" label="ESM">

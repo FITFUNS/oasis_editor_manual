@@ -2,55 +2,44 @@
 title: Animation
 ---
 
-Animation assets are used to play a single animation on a 3D model. Animations are imported by uploading a 3D scene (such as an FBX file) that contains animation data. The animation data is extracted from the uploaded file by the asset pipeline and a Target asset is created for use in the game.
+An Animation asset is used to play back a **single animation** on a 3D model. You import one by uploading a 3D scene file (FBX, GLB, etc.) that contains animation data. The asset pipeline extracts the animation data from the file and creates the [Target asset](/user-manual/assets) that your game actually uses.
 
-## Animation Preview
+:::note A helpful way to think about it
 
-The Inspector has a viewer that allows you to preview animations alongside template or model assets. This is useful when you have a single animation that can be applied to different character rigs.
-
-![Asset Inspector Preview](/img/user-manual/assets/animation/inspector-preview.gif)
-
-There is also a viewer in the [Animation State Graph Editor][anim-state-graph-editor] when selecting states in the graph. When selected, all entities in the scene that use the graph are listed and can be selected for preview.
-
-![Animation State Graph Preview](/img/user-manual/assets/animation/anim-state-graph-preview.gif)
-
-<!-- ## Animation Import Settings
-
-:::warning
-
-This is an experimental feature. Please let us know your feedback in the [forums](https://forum.playcanvas.com/).
+If a single model file contains 'walk', 'run', and 'jump' animations, then uploading it creates **three** Animation assets. Each asset is responsible for one motion.
 
 :::
 
-When importing animations, there are settings that can be tweaked to adjust the animation quality against the file size.
+## Importing
 
-They can be found in the Project Settings under Asset Tasks.
+1. Drag a model file that contains animations into the Assets Panel, or upload it with **+ › Upload Files**.
+2. Once conversion finishes, an asset of type `Animation` appears in the list.
+3. Choose `Animation` in the type filter to show only the animations.
 
-![Animation Import Settings](/img/user-manual/assets/animation/animation-import-settings.png)
+The import source is `.glb` · `.fbx`, and the resulting resource extension is `.glb`.
 
-### Naming Strategy
+## Previewing an Animation
 
-Only available for GLB export format. When importing an animation, the generated asset name can either be set from the 'Take Name' in the animation file, or use the animation filename instead.
+The Inspector includes a **viewer that lets you preview an animation together with a template or model asset**. This is especially useful when you have a single animation that can be applied across several character rigs, because you can check whether it looks natural on a given character before placing it in the scene.
 
-This is useful with assets that are brought/taken from a store such as [Mixamo][mixamo] where all the take names are 'mixamo.com' and using the filename as the asset name is clearer.
+![Animation preview in the asset Inspector](/img/user-manual/assets/animation/inspector-preview.gif)
 
-### Sample rate
+The same viewer appears when you select a state in the [Anim State Graph editor](/user-manual/animation/anim-state-graph-assets). When you pick a state, **every entity in the scene that uses that graph is listed**, so you can choose which entity to preview with.
 
-Available for both JSON and GLB export formats. The higher the rate, the higher detail and fidelity the animation at the cost of size. If you would like to keep the keyframes that have been set and defined in the original animation, select Disabled.
+![Preview in the Anim State Graph](/img/user-manual/assets/animation/anim-state-graph-preview.gif)
 
-### Curve tolerance
+## How Do I Use It
 
-Available for both JSON and GLB export formats. Curve tolerance controls a lossy compression setting of the animation import with the idea that a saving in file size can be made with little or no noticeable difference.
+An Animation asset on its own does not play back. You need to add an [Anim component](/user-manual/scenes/components/anim) to an entity and connect this animation into a state graph. A state graph is required whenever you want to switch between several motions depending on the situation.
 
-This is a value between 0 and 100 where the higher number, the smaller the file size but at cost of losing information in the animation. 0 would be no compression and 100 would lose all information.
+:::warning When it doesn't work
 
-1 or 2 is considered to be good starting point.
+If an animation does not play back, check that **the bone (rig) structure of the model matches the bone names in the animation**. If the names differ, the animation loads but no motion appears.
 
-### Cubic curves
+:::
 
-Only available for GLB export formats. Enable this option if you wish to keep the easing in the animation curves from the original animation. However, this will mean that the file will have extra information per keyframe and increase the size.
+## Related Pages
 
-If enabling this option, it is recommended that Sample Rate is disabled and Curve Tolerance is set to 0. -->
-
-[mixamo]: https://www.mixamo.com/
-[anim-state-graph-editor]: /user-manual/animation/anim-state-graph-assets/
+- [Template](/user-manual/assets/types/template) — places the character you attach the animation to into the scene.
+- [Animation](/user-manual/animation) — covers state graphs and blending.
+- [Importing 3D Models](/user-manual/assets/models) — how to upload models and animations together.

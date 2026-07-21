@@ -2,37 +2,51 @@
 title: Preloading and Streaming
 ---
 
-On the web, it's important to get users into your application as quickly as possible after the page loads. Showing loading bars and asking people to wait will cause visitors to leave the page before your application even starts. The OasisW asset system implements several features to streamline the loading process and help get your application running as quickly as possible.
+On the web, **how quickly you can start the game** after the page opens matters. If you leave a loading bar up for too long, visitors leave before the game even starts. The OasisW asset system includes several features for refining the loading process and getting your application running as fast as possible.
 
-## Preloading {#preload}
+## Preload
 
-![Asset Properties](/img/user-manual/assets/preloading-and-streaming/asset-properties.jpg)
+Every asset in your project has a property called `preload`. **The default is on (true).** Assets marked for preloading are all downloaded and made ready *before* the application's initialization phase begins.
 
-All assets in your project have a property called `preload`. By default, this is set to true. When an asset is marked for preloading, it is downloaded and created before the initialization phase of your application begins.
+In the editor, this appears as a `Preload` checkbox in the Inspector when you select an asset. Click the **?** next to it and the following description appears.
 
-You should use preloading for all assets that are required when your application starts. This prevents assets from 'popping in' after your application has started.
+> If true the asset will be loaded during the preload phase of application set up.
 
-## Streaming {#streaming}
+Keep any asset that's needed the moment the game starts on preload. That prevents objects and textures from **'popping in'** late after the game has started.
 
-![Streaming](/img/user-manual/assets/preloading-and-streaming/streaming.gif)
+:::warning Should I just turn them all on?
 
-When entities in your scene reference assets, loading requests are initiated when the entity is enabled. If the entity is enabled in the scene, this request is made as soon as the application starts.
+The more assets you mark for preloading, **the longer it takes for the first screen to appear**. It's better to keep on only what's visible at the very start, and turn off assets that don't show up until, say, the second stage.
 
-All components gracefully handle dynamically loading assets and will start working normally once the asset is loaded. When streaming assets dynamically like this, you will often see "pop-in". Models will appear as soon as they load, even if they don't yet have materials or textures.
+:::
 
-## When are assets loaded? {#when-are-assets-loaded}
+## Streaming
 
-To determine when a specific asset will be loaded, you can follow these rules:
+When an entity in your scene references an asset, a loading request starts **the moment that entity is enabled**. If the entity is active from the start, the request goes out as soon as the application starts.
 
-* If `preload = true`, the asset is loaded before the application starts. Otherwise:
-* The asset is loaded when it is referenced by an enabled component on an entity that is enabled and in the scene hierarchy. Assets are loaded when the entity or component is enabled or when the asset is assigned to the component. For entities that are enabled in the editor, this happens as soon as the application starts, right after preloading is complete. A component is defined as enabled if it is enabled and all entities in the hierarchy above it are enabled.
-* The asset is loaded when it is referenced by another asset that is loaded. For example, if a model is loaded and references a material, the material is loaded, and if the material references a texture, the texture is loaded.
+Every component handles these later-arriving assets without trouble, and works normally once the asset arrives. In this approach, though, you'll often see the **'pop-in'** mentioned earlier. For example, a model appears on screen the moment it loads, even before it has its materials or textures.
+
+## When Are Assets Loaded?
+
+To decide when a given asset will load, work through the following order.
+
+1. If `preload = true`, it loads **before the application starts**. Otherwise, move on below.
+2. It loads when an **enabled component on an enabled entity** in the scene hierarchy references it. Loading starts when the entity or component is enabled, or when the asset is assigned to the component. Here, 'the component is enabled' means *the component itself is on, and every entity in the hierarchy above it is on*.
+3. An asset **referenced by another asset that's already loaded** loads along with it. When a model loads, the materials it uses load, and the textures those materials use load in turn.
+
+:::note In short
+
+An asset loads if it's marked for preloading, if something enabled on screen is using it, or if an already-loaded asset holds it. If none of the three apply, it doesn't load.
+
+:::
 
 ## Asset Tags {#asset-tags}
 
-In many cases, you don't want assets to "pop in" when they load. It's preferable to load a set of assets and then display them. For this, you can use asset tags to create groups of assets. You can then load all assets with a specific tag before using them.
+Often you don't want to watch assets 'pop in' one by one as they arrive. In that case it's better to **fetch all the needed assets as a group in advance, and show them all at once after they've finished**. To do this, you can attach **tags** to assets to form groups.
 
-Here's a JavaScript example showing how to load a set of assets using tags:
+You attach a tag in the `Tags` field of the Inspector. For example, you might tag every asset used in stage 1 with `level-1`. This approach is only meaningful if the tagged assets have `preload` turned off.
+
+Here's a JavaScript example that loads all assets with a given tag and detects when they've all finished.
 
 ```javascript
 const assets = this.app.assets.findByTag("level-1");
@@ -48,3 +62,26 @@ for (let i = 0; i < assets.length; i++) {
     this.app.assets.load(assets[i]);
 }
 ```
+
+Put this code in a [script](/user-manual/scripting/fundamentals/getting-started) and use it together with a loading screen, and you can show the stage only after all the assets are ready.
+
+## Script Loading Order
+
+Unlike other assets, script assets sometimes have a **load order** that matters — when one script uses something defined in another.
+
+Select a script asset and the Inspector shows a `Loading Order` item and a **MANAGE** button. Clicking it takes you to **SETTINGS › SCRIPTS LOADING ORDER**, where you can adjust the order.
+
+In the same place there's also a `Loading Type` item. Its default is `Asset`, meaning the script is loaded like a regular asset.
+
+## What to Check When Loading Is Slow
+
+- Check that **you don't have too many assets set to preload**. Turn off anything not needed on the first screen.
+- Check the **texture resolution**. There's no need to use a 4K texture on an object that appears small on screen.
+- Upload **audio as `.mp3` or `.ogg`**. WAV is several times larger.
+- For **assets you don't use**, turn on `Exclude` in the Inspector to leave them out of the published build, or delete them.
+- **Standardize on GLB for 3D models.** For details, see [Importing 3D Models](/user-manual/assets/models).
+
+## Next
+
+- [Scripting](/user-manual/scripting) — How to work with assets from code.
+- [Assets](/user-manual/assets) — Return to the basic asset concepts.

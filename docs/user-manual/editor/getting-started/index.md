@@ -4,19 +4,21 @@ title: 알아보기
 
 ## 개요
 
-OasisW 에디터는 프로젝트를 구성하는 씬(Scene)과 엔티티(Entity)를 생성하고 편집할 수 있는 비주얼 편집 도구입니다.
+**OasisW 에디터**는 프로젝트를 이루는 **씬(Scene)과 엔티티(Entity)를 눈으로 보며 만들고 편집하는 도구**입니다. 코드로 하나하나 배치하는 대신, 화면에서 직접 보고 옮기며 작업할 수 있습니다.
 <!-- The OasisW Editor is a visual editing tool which you use to create and edit the Scenes and Entities that make up your project. -->
 
-* 브라우저에서 동작하므로 언제 어디서나 사용할 수 있습니다.
-* OasisW 엔진으로 씬을 렌더링하며, 보이는 그대로 결과를 확인할 수 있습니다.
-* 라이브 편집을 지원해 실행 중에도 반복 작업을 바로 적용할 수 있습니다.
-* 한 번의 버튼 클릭으로 새 탭에서 프로젝트를 열 수 있습니다.
+특징을 간단히 정리하면 이렇습니다.
+
+* **브라우저에서 바로** 동작합니다. 따로 설치할 필요 없이 언제 어디서나 쓸 수 있습니다.
+* OasisW 엔진으로 씬을 그려 주므로, **편집 화면이 곧 실제 결과**입니다. 보이는 그대로 나옵니다.
+* **라이브 편집**을 지원해, 실행 중에도 고친 내용이 바로 반영됩니다. 껐다 켤 필요 없이 빠르게 반복 작업할 수 있습니다.
+* 버튼 한 번으로 **새 탭에서 프로젝트를 열어** 확인할 수 있습니다.
 <!-- * 여러 사용자가 동시에 하나의 프로젝트를 편집하는 [실시간 협업](realtime-collaboration)을 지원합니다. -->
 <!-- * 기능별로 분리 관리할 수 있는 [버전 관리](version-control)를 제공합니다. -->
 
 ## 업데이트
 
-OasisW 에디터는 지속적으로 업데이트되며 새로운 기능이 추가되고 기존 기능이 변경될 수 있습니다. 
+OasisW 에디터는 **계속 업데이트**됩니다. 새 기능이 추가되기도 하고, 기존 기능이 바뀌거나 사라지기도 합니다. 그래서 가끔 작업하던 방식이 조금 달라질 수 있으니, 화면 구성이 이전과 다르게 보여도 당황하지 마세요.
 
 <!-- The OasisW Editor is ever changing with each update bringing in new features and deprecating old ones. To keep up, project data may have to be migrated to accommodate such changes. For larger and more complicated changes, you may have to adjust your project manually to ensure it is compatible with your current engine. -->
 

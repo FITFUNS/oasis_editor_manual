@@ -2,11 +2,11 @@
 title: 힘과 임펄스 (Forces and Impulses)
 ---
 
-동적 강체는 힘과 임펄스에 반응하여 움직입니다. 힘은 일정 시간 동안 몸체에 적용되는 반면, 임펄스는 순간적으로 적용되는 힘입니다.
+동적 강체는 힘(force)과 임펄스(impulse)를 받으면 움직입니다. 힘은 일정 시간 동안 꾸준히 미는 것이고, 임펄스는 한순간에 확 밀어 주는 힘이라고 생각하면 됩니다.
 
-강체에 힘이나 임펄스를 적용하려면 [pc.RigidBodyComponent 스크립팅 API][1]를 사용해야 합니다.
+강체에 힘이나 임펄스를 주려면 [pc.RigidBodyComponent 스크립팅 API][1]를 사용합니다.
 
-몇 가지 예를 살펴보겠습니다. 무거운 물체를 바닥에서 밀고 싶다면, 일정 시간 동안 힘을 적용할 것입니다:
+예시를 몇 개 살펴봅시다. 무거운 물체를 바닥에서 밀고 싶다면, 일정 시간 동안 힘을 계속 주면 됩니다:
 
 ```javascript
 MyScript.prototype.update = function(dt) {
@@ -17,7 +17,7 @@ MyScript.prototype.update = function(dt) {
 };
 ```
 
-대포에서 포탄을 발사하고 싶다면, 단일 임펄스를 적용할 것입니다:
+대포에서 포탄을 쏘고 싶다면, 임펄스를 한 번만 주면 됩니다:
 
 ```javascript
 MyScript.prototype.update = function(dt) {

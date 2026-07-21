@@ -2,13 +2,13 @@
 title: 엔진 API 호출 (Calling the Engine API)
 ---
 
-OasisW 스크립트를 작성할 때는 [OasisW Engine API](https://manual.oasisserver.link/engine/)를 사용합니다. 이 페이지에서는 스크립트에서 가장 자주 사용하게 될 핵심 클래스와 패턴을 다룹니다.
+OasisW 스크립트를 만들 때는 [OasisW Engine API](https://manual.oasisserver.link/engine/)를 씁니다. 이 페이지에서는 스크립트를 짜면서 가장 자주 만나게 될 핵심 클래스와 자주 쓰는 패턴을 살펴봅니다.
 
 ## 스크립트 작성자를 위한 핵심 클래스
 
 ### 스크립트 컨텍스트
 
-모든 스크립트는 이러한 핵심 객체에 접근할 수 있습니다:
+모든 스크립트는 아래 두 가지 핵심 객체를 곧바로 쓸 수 있습니다:
 
 ```javascript
 this.app        // 메인 애플리케이션 (AppBase)
@@ -17,7 +17,7 @@ this.entity     // 이 스크립트가 연결된 엔티티
 
 :::important 중요
 
-`this.app`과 `this.entity`는 스크립트 인스턴스에서 정의된 메서드(`initialize`, `update` 등) 내에서만 유효합니다. JavaScript의 `this` 키워드에 대해 [더 알아보세요](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this).
+`this.app`과 `this.entity`는 스크립트 인스턴스에 정의한 메서드(`initialize`, `update` 등) 안에서만 제대로 동작합니다. JavaScript의 `this` 키워드가 궁금하다면 [여기서 더 알아보세요](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this).
 
 :::
 
@@ -53,7 +53,7 @@ const sound = this.entity.sound;
 
 ### 수학 클래스
 
-계산과 변환을 위해 이를 가져오세요:
+계산이나 변환을 할 때는 이 클래스들을 가져와서 쓰세요:
 
 ```javascript
 import { Vec3, Quat, Color } from 'playcanvas';

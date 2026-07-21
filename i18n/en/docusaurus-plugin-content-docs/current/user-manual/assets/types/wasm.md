@@ -2,33 +2,47 @@
 title: WASM Module
 ---
 
-A WASM module (also called a WebAssembly module) contains compiled executable code for the web.
+A WASM module (also called a WebAssembly module) contains **compiled executable code for the web**. It lets code written in languages like C or C++ run fast in the browser.
 
-A WASM module consists of three parts:
+A WASM module consists of three parts.
 
-* Binary executable file
-* JavaScript glue code file
-* Optional fallback asm.js
+- A binary executable file
+- A JavaScript glue code file
+- An optional fallback asm.js
 
-These files can be added to your project by dragging and dropping files to the Assets Panel or selecting 'Upload' from the Assets Panel context menu.
+You can add these files to your project by **dragging and dropping** them onto the Assets panel, or by selecting **Upload** from the Assets panel context menu.
 
-The OasisW editor currently only supports WASM modules compiled with [Emscripten][2].
+:::warning Support scope
 
-## WASM Module Properties
+The OasisW editor currently supports only WASM modules compiled with [Emscripten](https://emscripten.org/).
 
-When files are added to your project, select the WASM module to display properties in the Inspector panel:
-![Wasm Module Properties](/img/user-manual/assets/wasm-module.png)
+:::
+
+:::note You may already be using one
+
+The physics engine `ammo.js` is a classic example of a WASM module. If you open the `ammo.js` folder in your project's Assets panel, you will find exactly the three files described above: `ammo.js` (glue code), `ammo.wasm.js` (glue code), and `ammo.wasm.wasm` (binary).
+
+:::
+
+## WASM module properties
+
+Once the files have been added to your project, select the WASM module to view its properties in the Inspector panel.
+
+![WASM module properties](/img/user-manual/assets/wasm-module.png)
 
 ### Name
 
-The name must match the module name defined in the glue and fallback scripts. This name is used to instantiate the module when loading.
+The name **must match the module name defined in the glue and fallback scripts.** This name is used to instantiate the module when loading.
 
 ### Glue script
 
-This is the JavaScript glue code required to execute the WASM code.
+The JavaScript glue code required to execute the WASM code.
 
 ### Fallback script
 
-This is the optional fallback asm.js script to use when WebAssembly is not supported.
+An **optional** fallback asm.js script to use when WebAssembly is not supported.
 
-[2]: https://emscripten.org/
+## Related
+
+- [Physics](/user-manual/physics) — uses the ammo.js WASM module.
+- [Applying physics to a box](/user-manual/physics)
